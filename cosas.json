@@ -1,0 +1,25 @@
+{
+  "name": "cosas",
+  "title": "Cosas",
+  "version": "0.0.1",
+  "homepage": "http://www.cosas.com/",
+  "author": {
+    "name": "Montana Studio",
+    "email": "mauro@montana-studio.com",
+    "url": "http://www.montana-studio.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Montana-Studio/cosas"
+  },
+  "bugs": {
+    "url": "https://github.com/Montana-Studio/cosas/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.cosas.com//blob/master/LICENSE-MIT"
+    }
+  ],
+  "keywords": []
+}
