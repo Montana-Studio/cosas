@@ -3,7 +3,7 @@
 
 // ** MySQL settings ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'cosas');
+define('DB_NAME', 'cosas_local');
 
 /** MySQL database username */
 define('DB_USER', 'root');
@@ -20,14 +20,14 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
-define('AUTH_KEY',         'aBXVdVG#1mlij{rR)d^>+2LcL|%pH` q^;v`Q8 B$tdOQf>F-]b3(UsLG8:Oxl1F');
-define('SECURE_AUTH_KEY',  '`ATVLPiKd<t`EdC(JzT8<-`+H(Hfz0$9k)v-Z.Nu){ll|t$ESWo!~T^$q)/he9NH');
-define('LOGGED_IN_KEY',    'Bh:dJ4{,ips(I?&RY20-:%(m.X$jO<c&=m5mj};g?c!{fgF-TKwaSm-cHL7zgb>j');
-define('NONCE_KEY',        'c?`0jSdY5A+n*GuF=$r lz@NBz_Pp-X[u/zQ6tA6T~F=5OO7tBO/b<hutY+Wdcdb');
-define('AUTH_SALT',        '2|UMmJ+@r+[2)M+ ~?@lnv[4vK+M fWqxohMO,NHq+Jj+VQmp[oUZ75lL)EGLP~&');
-define('SECURE_AUTH_SALT', 'ghX[5y*+TV&|yB-z8(ka n2}w/4/wqz7*!!DJ,tobxU!I_l,lL&=g|0{-CWc2^VE');
-define('LOGGED_IN_SALT',   'w;!T(f+e:4KI=>=]{<Xb#bsl;HpGO1-3!+j IoN8w9]]+_T}uRNC6g<]_#,5>js3');
-define('NONCE_SALT',       '%G-<A8n$oc_&(,yZY+W]^Y|)2<>-=1du~y]6,0h!XSf}QjmLE#vqM*$6[:U^Mor2');
+define('AUTH_KEY',         'lu<(Q_UR9C+CdQ}BIKkrQ+KG%Lm[x!`lF/qT5O&B.I&,R<9(gw}Nme*Ib%|18TMI');
+define('SECURE_AUTH_KEY',  'iwP,K ^C ,9h-Q`Z59ytN_vz=ZJa/!_$o5LF.{ID:H:P$j:Jny|o^7Ema?>3BaSr');
+define('LOGGED_IN_KEY',    '?z=?|-7{7(KK0gY}F|,cu6M*zDW,3 3rd]t-LWH)C3L0+smUS1^RJv!rd.G2amTb');
+define('NONCE_KEY',        '-8VtTt7s{Ga)c9Jp!X_|PnV9 yhL#%BS||9@(nL<[|[;CwDF 9gOjo~CIvN>e8wl');
+define('AUTH_SALT',        '9IGn%H.69&I3m/2y|SP9&/D,#/g*8zg/w!SfQ|Z8J<|5[J@w ]f?OUS|qiQCZ2SZ');
+define('SECURE_AUTH_SALT', '`9m*Xze8/+(kxdG9K/-Wsjm@,hrM*wY>K]v>LM3nsa-G1@4)Gx)yu~#i@m|,CY4=');
+define('LOGGED_IN_SALT',   'I~uD-Ve{[5!SOc*a2oaB5k?pEK6@S!B|d,l/ Q0--ig>O-?i;jZ1dZ.g-_]UT_Q*');
+define('NONCE_SALT',       '/hq}#/,a.@F{.c1|2c{#$Mnc*JWIAZ*,W~in!R}YG@BQ)gHb,7JNd9:HT<U$_csd');
 
 
 $table_prefix = 'wp_';
@@ -36,7 +36,12 @@ $table_prefix = 'wp_';
 
 
 
-/* That's all, stop editing! Happy blogging. */
+define('MULTISITE', true);
+define('SUBDOMAIN_INSTALL', true);
+define('DOMAIN_CURRENT_SITE', 'cosas.localhost');
+define('PATH_CURRENT_SITE', '/');
+define('SITE_ID_CURRENT_SITE', 1);
+define('BLOG_ID_CURRENT_SITE', 1);/* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )

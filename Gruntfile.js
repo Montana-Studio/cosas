@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('cosas.json'),
 
-        www: 'cosas',
+        www: 'app/wp-content/themes/cosas/css',
         dist: 'prod',
         
         jsout:'js/cosas.min.js',
