@@ -114,9 +114,11 @@ add_action( 'widgets_init', 'cosas_widgets_init' );
  * Enqueue scripts and styles.
  */
 function cosas_scripts() {
-	wp_enqueue_style( 'cosas-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'cosas-style', get_template_directory_uri() .'/css/cosas.min.css' );
 
-	wp_enqueue_script( 'cosas-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script('jquery');
+	
+	wp_enqueue_script( 'cosas-scripts', get_template_directory_uri() . '/js/cosas.min.js', array(), '20160422', true );
 
 	wp_enqueue_script( 'cosas-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -126,6 +128,11 @@ function cosas_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'cosas_scripts' );
 
+/**
+	Remove Emoji
+**/
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
 /**
  * Implement the Custom Header feature.
  */

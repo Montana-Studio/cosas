@@ -1,0 +1,54 @@
+.site-header{
+	@include span-columns(12);
+	background:{color: #000}
+	clear:both;
+	.logo-medio{
+		@include span-columns(6);
+		img{
+			@extend .img-adapt;
+		}
+	}
+	.main-navigation{
+		@include direction-context(right-to-left){
+			@include span-columns(2);
+		}
+		i{
+			color: #999;
+			font:{size:em(30)}
+			padding:15px;
+			cursor:pointer;
+		}
+		.menu{
+			display: none;
+		}
+	}
+	.main-search{
+		@extend .main-navigation;
+	}
+}
+.last-content{
+	@include span-columns(12);
+	@include pad(em(10));
+	background:{color:#363636}
+	color:#fff;
+	.main-last{
+		@include span-columns(4);
+		@include omega;
+		background:{color: #fa4b2a;}
+		@include textAlign(center);
+		@include pad(em(10));
+		span{
+			font:{size:em(60)}
+			line:{height:50px}
+		}
+		small{
+			font:{size:em(10)}
+			text:{transform:uppercase;}
+		}
+	}
+	.post-last{
+		@include span-columns(8.25);
+		background:{color: #272727;}
+		font:{weight:bold;size:em(12)}
+	}
+}

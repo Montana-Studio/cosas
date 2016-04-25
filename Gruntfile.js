@@ -1,20 +1,19 @@
 'use strict';
 
 module.exports = function(grunt) {
-
     grunt.initConfig({
         pkg: grunt.file.readJSON('cosas.json'),
 
-        www: 'app/wp-content/themes/cosas/css',
+        www: 'app/wp-content/themes/cosas',
         dist: 'prod',
         
         jsout:'js/cosas.min.js',
-        cssout:'css/cosas.css',
-        compimg:'img2/**/*.{png,jpg,gif}',
+        cssout:'css/cosas.min.css',
+        compimg:'img/',
 
         js:'js/**/*.js',
         scss:'sass/**/*.scss',
-        img:'img/**/*.{png,jpg,gif}',
+        img:'img/',
 
         sass: {
           deve: {
@@ -94,13 +93,18 @@ module.exports = function(grunt) {
         },
 
         imagemin: {
+          static:{
+            options:{
+              optimizationLevel: 3,
+              svgoPlugins: [{ removeViewBox: false }]
+            }
+          },
           dynamic: {
             files: [{
-              expand: true,
-              optimizationLevel: 3,                
+              expand: true,               
               cwd: '<%= dist %>/<%= compimg %>',
-              src: ['<%= dist %>/<%= img %>'],
-              dest: '<%= dist %>/<%= compimg %>'
+              src: ['**/*.{png,jpg,gif}'],
+              dest: '<%= www %>/<%= img %>'
             }]
           }
         },

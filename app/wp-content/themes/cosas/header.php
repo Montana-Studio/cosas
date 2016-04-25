@@ -17,39 +17,67 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<?php wp_head(); ?>
+<?php
+	wp_head();
+	//Detectar Sección
+	$blog_id = get_current_blog_id();
+?>
 </head>
 
 <body <?php body_class(); ?>>
 
-<?php if ( is_multisite('casas') ) {
-    echo '<h3>hola mundo casa</h3>';
-}?>
-
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'cosas' ); ?></a>
+	<div class="search-content">
+		
+		<?php echo get_search_form(); ?>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
+	</div>
+	<header id="masthead" class="site-header">
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'cosas' ); ?></button>
+		<div class="logo-medio">
+			<a href="<?php echo site_url();?>">
+			<?php if(1==$blog_id){ ?>
+				<img src="<?php echo get_template_directory_uri(); ?>/img/logo-cosas.gif" alt="">
+			<?php } ?>
+			</a>
+		</div>
+	
+		<nav id="site-navigation" class="main-navigation">
+			<i class="fa fa-bars"></i>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
+		<div class="main-search">
+			<i class="fa fa-search"></i>
+		</div>
+
 	</header><!-- #masthead -->
+
+	<div class="last-content">
+		
+		<div class="main-last">
+			
+			<span>17</span>
+			<small>nuevos articulos</small>
+
+		</div>
+		<div class="post-last">
+			<ul id="slides">
+				<?php 
+
+					if ( have_posts() ) :
+						while ( have_posts() ) : the_post();
+
+						get_template_part( 'template-parts/content-last', get_post_format() );
+
+						endwhile;
+					else :
+					get_template_part( 'template-parts/content', 'none' );
+
+					endif;
+				?>
+			</ul>
+		</div>
+
+	</div>
 
 	<div id="content" class="site-content">
