@@ -1,0 +1,14 @@
+.content-area{
+	@include row();
+	.site-main{
+		@include span-columns(12);
+		@include pad(10px);
+		article{
+			@include span-columns(6);
+			@include textAlign(center);
+			&:first-child{
+				@include span-columns(12)
+			}
+		}
+	}
+}

@@ -1,12 +1,12 @@
 body{
 	@extend .no-margins;
-	font:{family:'Open Sans', sans-serif;}
+	font:{family:$openSans;}
 	.site{
 		.search-content{
 			display: none;
 		}
 		.site-content{
-			@include span-columns(12);
+			@include row();
 		}
 	}
 }
