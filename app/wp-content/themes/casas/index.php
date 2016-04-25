@@ -2,18 +2,16 @@
 
 	<main role="main">
 		<!-- section -->
-		<section>
+		<section class="homeSlider">
+			<ul class="rslides">
 
-			<h1><?php _e( 'Latest Posts', 'html5blank' ); ?></h1>
+				<?php get_template_part('loop-slider'); ?>
 
-			<?php get_template_part('loop'); ?>
-
-			<?php get_template_part('pagination'); ?>
+			</ul>
 
 		</section>
 		<!-- /section -->
 	</main>
 
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

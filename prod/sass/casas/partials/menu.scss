@@ -6,25 +6,324 @@
 		-webkit-box-shadow: 0px 2px 9px 0px rgba(135,135,135,0.57);
 		-moz-box-shadow: 0px 2px 9px 0px rgba(135,135,135,0.57);
 		box-shadow: 0px 2px 9px 0px rgba(135,135,135,0.57);
+		background: $white_color;
+		position: absolute;
+		z-index: 9999;
+		top: 0;
 		@include media($notebook) {
-			display: none;
-		}
-		.logo {
-			@include span-columns(5);
+			position: relative;
+			box-shadow: none;
+			@include pad(25px 0);
 		}
 		.mobile-icon-menu {
 			@include span-columns(1.5);
 			@include omega;
+			position: absolute;
+			top:5px;
+			right:10px;
+			z-index: 99999999;
 			float:right;
 			font:{size: 3em;}
 			color:$gold_color;
+			@include media($notebook) {
+				display: none;
+			}
+		}
+	}
+	.logo {
+		@include span-columns(5);
+		@include omega();
+		@include media($notebook) {
+			display: block;
+
+		}
+	}
+	.rrss-desktop {
+		@include span-columns(7);
+		@include omega();
+		float: right;
+		display: none;
+		height: 85px;
+		@include media($notebook) {
+			display: table;
+		}
+		ul {
+			@include span-columns(3);
+			@include pad(0);
+			margin: 0;
+			text:{align:right;}
+			display: table-cell;
+			vertical-align: middle;
+			float: none;
+			li {
+				list-style: none;
+				display: inline-block;
+				font:{size: 2em;}
+				margin:{right: 20px;}
+				a {
+					color:$gray1_color;
+				}
+			}
+		}
+	}
+	.navegacion-home{
+		@include span-columns(12);
+		@include omega();
+		border:1px solid $gray1_color;
+		border-left:0;
+		border-right: 0;
+		@include pad(10px 5px);
+		display: none;
+		@include media($notebook) {
+			display: block;
+			position: relative;
 		}
 		.nav {
+			@include span-columns(10);
 			display: none;
+			margin:{top:5px;}
+			@include media($notebook) {
+				display: block;
+			}
+			.desktop-nav {
+				ul {
+					@include span-columns(12);
+					@include omega();
+					@include pad(0);
+					margin:0;
+					li {
+						list-style: none;
+						display: inline-block;
+						font:{family:$second_font;size: 1.5em;}
+						margin:{right: 20px;}
+					}
+				}
+			}	
 		}
+		.buscar-home {
+			@include span-columns(1);
+			@include omega();
+			float: right;
+		    font-size: 2em;
+			text-align: right;
+			color:$gray1_color;
+			&.hide-search-home {
+				display: none;
+			}
+		}
+	}
+	.buscador-open {
+		@include span-columns(12);
+		height: 300px;
+		position: absolute;
+		z-index: 9999;
+		background: $white_color;
+    	left: 0;
+		display: none;
+    	&.show-search {
+    		display: block;
+    	}
+    	.buscador-desk {
+    		@include span-columns(12);
+    		margin: 0 auto;
+    		padding:0;
+    		display: table;
+    		height: 300px;
+    		.search-formulario {
+    			@include span-columns(12);	
+    			display: table-cell;
+    			vertical-align: middle;
+    			float: none;
+    			form {
+    				@include outer-container(90%);
+    				border-bottom:1px solid $gray1_color;
+	    			.search-input {
+						@include span-columns(10);	
+						@include omega();
+						background: none;
+						color:$gray1_color;
+						border: 0;
+						font:{size: 3em;family:$second_font;weight:900;}
+						outline: none;
+						@include placeholder {
+							color:$gray2_color;
+							text:{transform:uppercase;}
+			    			font:{style:italic;}
+						}
+					}
+					.search-submit {
+						@include span-columns(2);	
+						@include omega();
+						background: none;
+						color: $gray1_color;
+						font:{size:2em;}
+						border:0;
+						text:{align:right;}
+						padding: {bottom:5px;}
+						outline: none;
+						float: right;
+					}	
+    			}
+    		}
+    		.close-search {
+    			@include span-columns(3);
+    			@include omega();
+    			text:{align:right;}
+    			position: absolute;
+    			right: 0;	
+    			color: $gray1_color;
+    			font:{size: 13px;}
+    			i {
+    				color: $gray1_color;
+    				font:{size:2em;}
+    			}
+    		}
+    	}
 	}
 }
 .MenuMobile-Open {
 	@include span-columns(12);
+	@include pad(15px 20px);
 	display: none;
+	background: $black_color;
+	position: absolute;
+	left:0;
+	top:0;
+	&.openMobile {
+		display: block;
+		z-index: 9999;
+	}
+	.header-MenuMobile {
+		@include span-columns(12);
+		.logo {
+			@include span-columns(5);
+			img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+		}
+		.mobile-icon-menu {
+			@include span-columns(1.5);
+			@include omega;
+			position: absolute;
+			top:5px;
+			right:10px;
+			z-index: 99999999;
+			float:right;
+			font:{size: 3em;}
+			color:$gold_color;
+			@include media($notebook) {
+				display: none;
+			}
+		}
+	}
+	.search-menu-mob {
+		@include span-columns(12);
+		@include omega();
+		padding: {top:20px;}
+		.search-input {
+			@include span-columns(10);	
+			@include omega();
+			background: none;
+			color:$gold_color;
+			border: 0;
+			font:{size: 2em;family:$second_font;weight:900;}
+			outline: none;
+			@include placeholder {
+				color:$gold_color;
+				text:{transform:uppercase;}
+    			font:{style:italic;}
+			}
+		}
+		.search-submit {
+			@include span-columns(2);	
+			@include omega();
+			background: none;
+			color: $gray1_color;
+			font:{size:2em;}
+			border:0;
+			text:{align:right;}
+			padding: {bottom:5px;}
+			outline: none;
+		}
+	}
+	.menu-mob {
+		@include span-columns(12);
+		@include omega();
+		.nav {
+			.menu {
+				ul {
+					@include span-columns(12);
+					@include omega();
+					@include pad();
+					margin:0;
+					li {
+						list-style: none;
+						font:{family:$second_font;size: 1.8em;}
+						margin:{bottom:5px;}
+						a {
+							color:$gold_color;
+						}
+					}
+				}
+			}
+		}	
+	}
+	.follow-us {
+		@include span-columns(12);
+		@include omega();
+		border-bottom:1px solid $gray2_color;
+		ul {
+			@include span-columns(12);
+			@include omega();
+			@include pad();
+			text:{align:center;}
+				li {
+				color:$gray1_color;
+				list-style: none;
+				display: inline-block;
+				font:{family:$second_font;size: 1.5em;weight: bold;}
+				margin:{right:5px;}
+				i {
+					color:$gold_color;
+					
+					font:{size: 1.7em}
+				}
+				&.title-li {
+					p {
+						color:$gray1_color;
+						margin:0;
+						display: table-cell;
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+	}
+	.logotypes {
+		@include span-columns(12);
+		@include omega();
+		ul {
+			@include span-columns(12);
+			@include omega(0);
+			@include pad(0);
+			text:{align:center;}
+			li {
+				list-style: none;
+				@include span-columns(3);
+				margin:{right:10px;bottom:5px;}
+				float: none;
+				display: inline-block;
+				a {
+					@include span-columns(12);
+					img {
+						width: 100%;
+						height: auto;
+						display: block;
+					}
+				}
+			}
+		}
+	}
 }

@@ -2,4 +2,11 @@
 	@include span-columns(12);
 	@include pad(0);
 	font:{family:$primary_font;}
+	padding: {top:54px;}
+	@include media($notebook) {
+		@include outer-container(90%);
+		float: none;
+		margin: 0 auto;
+		padding: 0;
+	}
 }
