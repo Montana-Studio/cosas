@@ -26,5 +26,10 @@
 }
 .MenuMobile-Open {
 	@include span-columns(12);
-	display: none;
+	//display: none;
+	background: $black_color;
+	position: absolute;
+	top:0;
+	left:0;
+	height: 100%;
 }
