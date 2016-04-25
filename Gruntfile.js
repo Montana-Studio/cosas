@@ -8,8 +8,8 @@ module.exports = function(grunt) {
         wwwcasas: 'app/wp-content/themes/casas',
         dist: 'prod',
         
-        jsoutcosas:'js/cosas/cosas.min.js',
-        jsoutcasas:'js/casas/casas.min.js',
+        jsoutcosas:'js/cosas.min.js',
+        jsoutcasas:'js/casas.min.js',
         csscosas:'css/cosas.min.css',
         csscasas:'css/casas.min.css',
 

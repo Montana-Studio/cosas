@@ -1,0 +1,5 @@
+.wrapper {
+	@include span-columns(12);
+	@include pad(0);
+	font:{family:$primary_font;}
+}

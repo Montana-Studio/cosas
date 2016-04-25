@@ -1,0 +1,30 @@
+.menuCasas {
+	@include span-columns(12);
+	&.menuMobile {
+		@include span-columns(12);
+		@include pad(5px);
+		-webkit-box-shadow: 0px 2px 9px 0px rgba(135,135,135,0.57);
+		-moz-box-shadow: 0px 2px 9px 0px rgba(135,135,135,0.57);
+		box-shadow: 0px 2px 9px 0px rgba(135,135,135,0.57);
+		@include media($notebook) {
+			display: none;
+		}
+		.logo {
+			@include span-columns(5);
+		}
+		.mobile-icon-menu {
+			@include span-columns(1.5);
+			@include omega;
+			float:right;
+			font:{size: 3em;}
+			color:$gold_color;
+		}
+		.nav {
+			display: none;
+		}
+	}
+}
+.MenuMobile-Open {
+	@include span-columns(12);
+	display: none;
+}

@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,IAAI;EACH,UAAU,EAAE,IAAI",
-"sources": ["../../../../../prod/sass/casas/main.scss"],
-"names": [],
-"file": "casas.min.css"
-}
