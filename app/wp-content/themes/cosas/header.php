@@ -60,6 +60,7 @@
 			<p>nuevos articulos</p>
 
 		</div>
+		
 		<div class="post-last">
 			
 			<ul class="rslides" id="slider3">

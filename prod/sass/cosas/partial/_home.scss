@@ -1,12 +1,12 @@
 .content-area{
 	@include row();
+	@include pad(10px);
 	.site-main{
 		@include span-columns(12);
-		@include pad(10px);
 		article{
 			@include span-columns(6);
 			@include textAlign(center);
-			background:{size:cover;repeat:no-repeat;position:center;}
+			background:{size:contain;repeat:no-repeat;position:center;}
 			position:relative;
 			min-height:167px;
 			&:first-child{
@@ -58,6 +58,133 @@
 						font:{size:em(9);family:$playFair}
 						color:#000;
 					}
+				}
+			}
+		}
+	}
+	h3{
+		@include span-columns(12);
+		@include pad(10px);
+		border: {left:solid 2px $red;}
+		background:{color: #000;}
+		color:$white;
+		font:{size:em(12);family:$openSans;}
+		text:{transform:uppercase;}
+	}
+	.site-main-2{
+		@extend .site-main;
+		article{
+			@include omega(2n);
+			margin:{bottom:10px;}
+			&:first-child{
+				@include span-columns(6);
+				min-height: 167px;
+				.entry-footer{
+					span{
+						font:{size:em(9);}
+					}
+					h2{
+						a{
+							font:{size:em(9);}
+						}
+					}
+				}
+			}
+		}
+	}
+	.site-main-3{
+		@extend .site-main;
+		article{
+			@include span-columns(12);
+			position:relative;
+			min-height:97px;
+			margin:{bottom:10px;}
+			border:solid 1px #ededed;
+			@include textAlign(left);
+			&:first-child{
+				@include span-columns(12);
+				min-height:97px;
+				.entry-footer{
+					h2{
+						a{
+							font:{size:em(11);family:$openSans;}
+						}
+					}
+				}
+			}
+			.img-post{
+				@include span-columns(4);
+				position:relative;
+				overflow: hidden;
+				min-height: 97px;
+				background:{size: contain;}
+				.more-link{
+					position:absolute;
+					right:10px;
+					top:10px;
+					color:#000;
+					font:{size:em(20);}
+				}
+			}
+			.entry-footer{
+				@include span-columns(8);
+				min-height: 97px;
+				.times-post{
+					color:#999;
+					font:{size:em(10);}
+					margin:{bottom:5px;}
+				}
+				h2{
+					line:{height:1;}
+					margin:5px 0;
+					@include pad(0);
+					a{
+						font:{size:em(11);family:$openSans}
+						color:#000;
+					}
+				}
+			}
+		}
+	}
+	.site-main-4{
+		@extend .site-main-3;
+		article{
+			&:first-child{
+				@include span-columns(12);
+				min-height:216px;
+				margin:{bottom:10px;}
+				@include textAlign(center);
+				.entry-footer{
+					position:absolute;
+					bottom:0;
+					background:{color:$white;}
+					width: 80%;
+					left: 0;
+					right: 0;
+					margin: 0 auto;
+					.times-post{
+						color:#999;
+						font:{size:em(9);}
+						margin:{bottom:5px;}
+					}
+					span{
+						display: none;
+					}
+					h2{
+						line:{height:1;}
+						margin:5px;
+						@include pad(0);
+						a{
+							font:{size:em(18);family:$playFair}
+							color:#000;
+						}
+					}
+				}
+			}
+			.entry-footer{
+				background:{color:transparent;}
+				span{
+					display: none;
 				}
 			}
 		}
