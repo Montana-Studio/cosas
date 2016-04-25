@@ -10,15 +10,9 @@
 ?>
 
 <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-
-			if ( is_single() ) {
-				the_title( '<p class="entry-title">', '</p>' );
-			} else {
-				the_title( '<p class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></p>' );
-			}
-		?>
-	</header><!-- .entry-header -->
-
+	
+	<span><?php single_cat_title();?></span>
+	<?php
+		the_title('<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' );
+	?>
 </li><!-- #post-## -->

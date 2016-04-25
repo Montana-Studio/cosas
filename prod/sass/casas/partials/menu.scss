@@ -7,29 +7,219 @@
 		-moz-box-shadow: 0px 2px 9px 0px rgba(135,135,135,0.57);
 		box-shadow: 0px 2px 9px 0px rgba(135,135,135,0.57);
 		@include media($notebook) {
-			display: none;
-		}
-		.logo {
-			@include span-columns(5);
+			box-shadow: none;
+			@include pad(25px 0);
 		}
 		.mobile-icon-menu {
 			@include span-columns(1.5);
 			@include omega;
+			position: absolute;
+			top:5px;
+			right:10px;
+			z-index: 999999;
 			float:right;
 			font:{size: 3em;}
 			color:$gold_color;
+			@include media($notebook) {
+				display: none;
+			}
 		}
-		.nav {
-			display: none;
+	}
+	.logo {
+		@include span-columns(5);
+		@include omega();
+		@include media($notebook) {
+			display: block;
+
+		}
+	}
+	.rrss-desktop {
+		@include span-columns(7);
+		@include omega();
+		float: right;
+		display: none;
+		height: 85px;
+		@include media($notebook) {
+			display: table;
+		}
+		ul {
+			@include span-columns(3);
+			@include pad(0);
+			margin: 0;
+			text:{align:right;}
+			display: table-cell;
+			vertical-align: middle;
+			float: none;
+			li {
+				list-style: none;
+				display: inline-block;
+				font:{size: 2em;}
+				margin:{right: 20px;}
+				a {
+					color:$gray1_color;
+				}
+			}
+		}
+	}
+	.nav {
+		@include span-columns(12);
+		border:1px solid $gray1_color;
+		border-left:0;
+		border-right: 0;
+		display: none;
+		margin:{top:5px;}
+		@include media($notebook) {
+			display: block;
+		}
+		.desktop-nav {
+			ul {
+				@include span-columns(12);
+				@include omega();
+				@include pad(10px 5px);
+				margin:0;
+				li {
+					list-style: none;
+					display: inline-block;
+					font:{family:$second_font;size: 1.5em;}
+					margin:{right: 20px;}
+				}
+			}
 		}
 	}
 }
 .MenuMobile-Open {
 	@include span-columns(12);
-	//display: none;
+	@include pad(15px 20px);
+	display: none;
 	background: $black_color;
 	position: absolute;
 	top:0;
 	left:0;
 	height: 100%;
+	&.openMobile {
+		display: block;
+		z-index: 999;
+	}
+	.header-MenuMobile {
+		@include span-columns(12);
+		.logo {
+			@include span-columns(5);
+			img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+		}
+	}
+	.search-menu-mob {
+		@include span-columns(12);
+		@include omega();
+		padding: {top:20px;}
+		.search-input {
+			@include span-columns(10);	
+			@include omega();
+			background: none;
+			color:$gold_color;
+			border: 0;
+			font:{size: 2em;family:$second_font;weight:900;}
+			outline: none;
+			@include placeholder {
+				color:$gold_color;
+				text:{transform:uppercase;}
+    			font:{style:italic;}
+			}
+		}
+		.search-submit {
+			@include span-columns(2);	
+			@include omega();
+			background: none;
+			color: $gray1_color;
+			font:{size:2em;}
+			border:0;
+			text:{align:right;}
+			padding: {bottom:5px;}
+			outline: none;
+		}
+	}
+	.menu-mob {
+		@include span-columns(12);
+		@include omega();
+		.nav {
+			.menu {
+				ul {
+					@include span-columns(12);
+					@include omega();
+					@include pad();
+					border: 1px solid $gray2_color;
+					border-left: none;
+					border-right: none;
+					margin:0;
+					li {
+						list-style: none;
+						font:{family:$second_font;size: 1.8em;}
+						margin:{bottom:5px;}
+						a {
+							color:$gold_color;
+						}
+					}
+				}
+			}
+		}
+	}
+	.follow-us {
+		@include span-columns(12);
+		@include omega();
+		border-bottom:1px solid $gray2_color;
+		ul {
+			@include span-columns(12);
+			@include omega();
+			@include pad();
+			text:{align:center;}
+				li {
+				color:$gray1_color;
+				list-style: none;
+				display: inline-block;
+				font:{family:$second_font;size: 1.5em;weight: bold;}
+				margin:{right:5px;}
+				i {
+					color:$gold_color;
+					
+					font:{size: 1.7em}
+				}
+				&.title-li {
+					p {
+						color:$gray1_color;
+						margin:0;
+						display: table-cell;
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+	}
+	.logotypes {
+		@include span-columns(12);
+		@include omega();
+		ul {
+			@include span-columns(12);
+			@include omega(0);
+			@include pad(0);
+			text:{align:center;}
+			li {
+				list-style: none;
+				@include span-columns(3);
+				margin:{right:10px;bottom:5px;}
+				float: none;
+				display: inline-block;
+				a {
+					@include span-columns(12);
+					img {
+						width: 100%;
+						height: auto;
+						display: block;
+					}
+				}
+			}
+		}
+	}
 }

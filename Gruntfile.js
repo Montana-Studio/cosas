@@ -14,7 +14,7 @@ module.exports = function(grunt) {
         csscasas:'css/casas.min.css',
 
         jscosas:'js/cosas/**/*.js',
-        jscasas:'js/cosas/**/*.js',
+        jscasas:'js/casas/**/*.js',
         scsscosas:'sass/cosas/**/*.scss',
         scsscasas:'sass/casas/**/*.scss',
 
