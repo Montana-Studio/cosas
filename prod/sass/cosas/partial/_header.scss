@@ -50,5 +50,54 @@
 		@include span-columns(8.25);
 		background:{color: #272727;}
 		font:{weight:bold;size:em(12)}
+		#slider{
+			position: relative;
+  			overflow: hidden;
+  			a{
+  				&.control_next{
+	  				position: absolute;
+					top: 40%;
+					z-index: 999;
+					display: block;
+					padding: 4% 3%;
+					width: auto;
+					height: auto;
+					background: #2a2a2a;
+					color: #fff;
+					text-decoration: none;
+					font-weight: 600;
+					font-size: 18px;
+					opacity: 0.8;
+					cursor: pointer;
+				}
+  			}
+  			ul{
+  				position: relative;
+				margin: 0;
+				padding: 0;
+				height: 200px;
+  				li{
+  					position: relative;
+					display: block;
+					float: left;
+					margin: 0;
+					padding: 0;
+					width: 200px;
+					height: 100px;
+  					span{
+						@include span-columns(12);
+						color:$red;
+						font:{size:em(12);}
+						text:{transform:uppercase;}
+					}
+					a{
+						@include span-columns(12);
+						color:$white;
+						font: {size:em(12);}
+						text:{decoration:none;transform:capitalize}
+					}
+  				}
+  			}
+		}
 	}
 }

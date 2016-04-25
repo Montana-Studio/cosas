@@ -61,21 +61,21 @@
 
 		</div>
 		<div class="post-last">
-			<ul id="slides">
-				<?php 
+		
+			<div id="slider">
+				
+				<a href="#" class="control_next">>></a>
+		  		<a href="#" class="control_prev"><</a>
+				<ul>
 
-					if ( have_posts() ) :
-						while ( have_posts() ) : the_post();
-
-						get_template_part( 'template-parts/content-last', get_post_format() );
-
-						endwhile;
-					else :
-					get_template_part( 'template-parts/content', 'none' );
-
-					endif;
-				?>
-			</ul>
+					<?php query_posts( 'category_name=belleza-y-salud&posts_per_page=17' );
+	 					while ( have_posts() ) : the_post();
+							get_template_part( 'template-parts/content-last', get_post_format() );
+					 	endwhile;
+					?>
+				</ul>
+			</div>
+			
 		</div>
 
 	</div>
