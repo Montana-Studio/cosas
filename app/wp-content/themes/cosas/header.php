@@ -57,24 +57,18 @@
 		<div class="main-last">
 			
 			<span>17</span>
-			<small>nuevos articulos</small>
+			<p>nuevos articulos</p>
 
 		</div>
 		<div class="post-last">
-		
-			<div id="slider">
-				
-				<a href="#" class="control_next">>></a>
-		  		<a href="#" class="control_prev"><</a>
-				<ul>
-
-					<?php query_posts( 'category_name=belleza-y-salud&posts_per_page=17' );
-	 					while ( have_posts() ) : the_post();
-							get_template_part( 'template-parts/content-last', get_post_format() );
-					 	endwhile;
-					?>
-				</ul>
-			</div>
+			
+			<ul class="rslides" id="slider3">
+	      		<?php query_posts( 'category_name=belleza-y-salud&posts_per_page=17' );
+ 					while ( have_posts() ) : the_post();
+						get_template_part( 'template-parts/content-last', get_post_format() );
+				 	endwhile;
+				?>
+		    </ul>
 			
 		</div>
 

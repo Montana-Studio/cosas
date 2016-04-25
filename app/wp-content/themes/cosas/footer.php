@@ -23,6 +23,5 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-<script src="http://www.slidesjs.com/js/jquery.slides.min.js"></script>
 </body>
 </html>
