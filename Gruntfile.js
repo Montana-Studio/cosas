@@ -5,15 +5,18 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('cosas.json'),
 
         www: 'app/wp-content/themes/cosas',
+        wwwcasas: 'app/wp-content/themes/casas',
         dist: 'prod',
         
-        jsout:'js/cosas.min.js',
-        cssout:'css/cosas.min.css',
-        compimg:'img/',
+        jsoutcosas:'js/cosas/cosas.min.js',
+        jsoutcasas:'js/casas/casas.min.js',
+        csscosas:'css/cosas.min.css',
+        csscasas:'css/casas.min.css',
 
-        js:'js/**/*.js',
-        scss:'sass/**/*.scss',
-        img:'img/',
+        jscosas:'js/cosas/**/*.js',
+        jscasas:'js/cosas/**/*.js',
+        scsscosas:'sass/cosas/**/*.scss',
+        scsscasas:'sass/casas/**/*.scss',
 
         sass: {
           deve: {
@@ -21,7 +24,8 @@ module.exports = function(grunt) {
               style: 'nested'
             },
             files: {
-              '<%= www %>/<%= cssout %>': '<%= dist %>/<%= scss %>'
+              '<%= www %>/<%= csscosas %>': '<%= dist %>/<%= scsscosas %>',
+              '<%= wwwcasas %>/<%= csscasas %>': '<%= dist %>/<%= scsscasas %>'
             },
           },
           dist: {
@@ -29,7 +33,8 @@ module.exports = function(grunt) {
               style: 'compressed'
             },
             files: {
-              '<%= www %>/<%= cssout %>': '<%= dist %>/<%= scss %>'
+              '<%= www %>/<%= csscosas %>': '<%= dist %>/<%= scsscosas %>',
+              '<%= wwwcasas %>/<%= csscasas %>': '<%= dist %>/<%= scsscasas %>'
             },
           },
         },
@@ -76,7 +81,8 @@ module.exports = function(grunt) {
                     unused: false
                 },
                 src: [
-                    '<%= dist %>/<%= js %>'
+                    '<%= dist %>/<%= jscosas %>',
+                    '<%= dist %>/<%= jscasas %>'
                 ]
             }
         },
@@ -87,26 +93,10 @@ module.exports = function(grunt) {
             },
             compile: {
                 files: {
-                    '<%= www %>/<%= jsout %>': ['<%= dist %>/<%= js %>']
+                    '<%= www %>/<%= jsoutcosas %>': ['<%= dist %>/<%= jscosas %>'],
+                    '<%= wwwcasas %>/<%= jsoutcasas %>': ['<%= dist %>/<%= jscasas %>']
                 }
             }
-        },
-
-        imagemin: {
-          static:{
-            options:{
-              optimizationLevel: 3,
-              svgoPlugins: [{ removeViewBox: false }]
-            }
-          },
-          dynamic: {
-            files: [{
-              expand: true,               
-              cwd: '<%= dist %>/<%= compimg %>',
-              src: ['**/*.{png,jpg,gif}'],
-              dest: '<%= www %>/<%= img %>'
-            }]
-          }
         },
 
         parallel:{
@@ -120,20 +110,20 @@ module.exports = function(grunt) {
 
         watch: {
           configFiles:{
-            files:['<%= dist %>/<%= scss %>','<%= dist %>/<%= js %>','<%= www %>/**/*.php'],
+            files:['<%= dist %>/<%= scss %>','<%= dist %>/<%= js %>','<%= www %>/**/*.php','<%= dist %>/<%= scsscasas %>','<%= dist %>/<%= jscasas %>','<%= wwwcasas %>/**/*.php'],
             options:{
               livereload: true,
             },
           },
           sass:{
-            files:['<%= dist %>/<%= scss %>'],
+            files:['<%= dist %>/<%= scsscosas %>','<%= dist %>/<%= scsscasas %>'],
             tasks: ['sass:deve'],
             options:{
               livereload:true,
             },
           },
           javascript:{
-            files:['<%= dist %>/<%= js %>','Gruntfile.js'],
+            files:['<%= dist %>/<%= jscosas %>','<%= dist %>/<%= jscasas %>','Gruntfile.js'],
             tasks: ['uglify','jshint'],
             options:{
               livereload:true,
@@ -147,6 +137,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask('dev', ['parallel','watch']);
     grunt.registerTask('uploads', ['sass:deve','uglify']);
-    grunt.registerTask('default', ['sass:dist','uglify','imagemin']);
+    grunt.registerTask('default', ['sass:dist','uglify']);
 
 };

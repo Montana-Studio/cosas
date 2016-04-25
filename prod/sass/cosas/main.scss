@@ -1,0 +1,12 @@
+//DEV's
+@import '../../../bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import '../../../bower_components/neat/app/assets/stylesheets/neat';
+@import '../../../bower_components/font-awesome/scss/font-awesome';
+
+//FONTS
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+//STYLE's
+@import 'partial/clasess';
+@import 'partial/general';
+@import 'partial/header';
