@@ -2180,6 +2180,9 @@ html {
   height: auto;
   display: block; }
 
+a {
+  text-decoration: none; }
+
 ul {
   padding: 0;
   list-style: none; }
@@ -2357,15 +2360,59 @@ body {
       display: block;
       margin-right: 2.35765%;
       width: 48.82117%;
-      text-align: center; }
+      text-align: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+      min-height: 167px; }
       .content-area .site-main article:last-child {
         margin-right: 0; }
       .content-area .site-main article:first-child {
         float: left;
         display: block;
         margin-right: 2.35765%;
-        width: 100%; }
+        width: 100%;
+        min-height: 216px;
+        margin-bottom: 10px; }
         .content-area .site-main article:first-child:last-child {
           margin-right: 0; }
+        .content-area .site-main article:first-child .entry-footer span {
+          font-size: 0.6875em; }
+        .content-area .site-main article:first-child .entry-footer h2 a {
+          font-size: 1.125em;
+          font-family: "Playfair Display", serif;
+          color: #000; }
+      .content-area .site-main article .more-link {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        color: #000;
+        font-size: 1.875em; }
+      .content-area .site-main article .entry-footer {
+        position: absolute;
+        bottom: 0;
+        background-color: #fff;
+        width: 80%;
+        left: 0;
+        right: 0;
+        margin: 0 auto; }
+        .content-area .site-main article .entry-footer .times-post {
+          color: #999;
+          font-size: 0.5625em;
+          margin-bottom: 5px; }
+        .content-area .site-main article .entry-footer span {
+          color: #fa4b2a;
+          font-size: 0.5625em;
+          font-family: "Open Sans", sans-serif;
+          text-transform: uppercase; }
+        .content-area .site-main article .entry-footer h2 {
+          line-height: 1;
+          margin: 5px;
+          padding: 0; }
+          .content-area .site-main article .entry-footer h2 a {
+            font-size: 0.5625em;
+            font-family: "Playfair Display", serif;
+            color: #000; }
 
 /*# sourceMappingURL=cosas.min.css.map */

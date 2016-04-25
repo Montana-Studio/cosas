@@ -6,8 +6,59 @@
 		article{
 			@include span-columns(6);
 			@include textAlign(center);
+			background:{size:cover;repeat:no-repeat;position:center;}
+			position:relative;
+			min-height:167px;
 			&:first-child{
-				@include span-columns(12)
+				@include span-columns(12);
+				min-height:216px;
+				margin:{bottom:10px;}
+				.entry-footer{
+					span{
+						font:{size:em(11);}
+					}
+					h2{
+						a{
+							font:{size:em(18);family:$playFair}
+							color:#000;
+						}
+					}
+				}
+			}
+			.more-link{
+				position:absolute;
+				right:10px;
+				top:10px;
+				color:#000;
+				font:{size:em(30);}
+			}
+			.entry-footer{
+				position:absolute;
+				bottom:0;
+				background:{color:$white;}
+				width: 80%;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				.times-post{
+					color:#999;
+					font:{size:em(9);}
+					margin:{bottom:5px;}
+				}
+				span{
+					color:$red;
+					font:{size:em(9);family:$openSans;}
+					text:{transform:uppercase;}
+				}
+				h2{
+					line:{height:1;}
+					margin:5px;
+					@include pad(0);
+					a{
+						font:{size:em(9);family:$playFair}
+						color:#000;
+					}
+				}
 			}
 		}
 	}

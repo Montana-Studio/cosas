@@ -7,6 +7,9 @@
 	height:auto;
 	display:block;
 }
+a{
+	text:{decoration:none;}
+}
 ul{
 	@extend .no-margins;
 	@include pad(0);
