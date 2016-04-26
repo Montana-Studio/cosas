@@ -2,6 +2,7 @@ body{
 	@extend .no-margins;
 	font:{family:$openSans;}
 	.site{
+		@include span-columns(12);
 		.search-content{
 			display: none;
 		}

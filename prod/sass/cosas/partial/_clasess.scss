@@ -7,6 +7,15 @@
 	height:auto;
 	display:block;
 }
+.titulosh3{
+	@include span-columns(12);
+	@include pad(10px);
+	border: {left:solid 2px $red;}
+	background:{color: #000;}
+	color:$white;
+	font:{size:em(12);family:$openSans;}
+	text:{transform:uppercase;}
+}
 a{
 	text:{decoration:none;}
 }

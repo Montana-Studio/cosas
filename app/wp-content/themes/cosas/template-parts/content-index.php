@@ -17,10 +17,15 @@
 		<div class="img-post" style="background-image: url('<?php echo $src[0]; ?>');">
 			<a href="<?php echo get_permalink(); ?>" class="more-link"><i class="fa fa-plus-circle"></i></a>
 		</div>
-	<?php }else{ ?>
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php echo $src[0]; ?>');">
-
+	<?php }elseif(is_category(array('personaje-nacional','politica-nacional','espectaculos-nacional'))){ ?>
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<div class="img-post" style="background-image: url('<?php echo $src[0]; ?>');">
 			<a href="<?php echo get_permalink(); ?>" class="more-link"><i class="fa fa-plus-circle"></i></a>
+		</div>
+	<?php }else{ ?>
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php echo $src[0]; ?>');">
+
+		<a href="<?php echo get_permalink(); ?>" class="more-link"><i class="fa fa-plus-circle"></i></a>
 	<?php }
 ?>
 
