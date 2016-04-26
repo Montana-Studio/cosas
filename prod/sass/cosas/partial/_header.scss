@@ -1,0 +1,119 @@
+.site-header{
+	@include span-columns(12);
+	background:{color: #000}
+	clear:both;
+	.logo-medio{
+		@include span-columns(6);
+		img{
+			@extend .img-adapt;
+		}
+	}
+	.main-navigation{
+		@include direction-context(right-to-left){
+			@include span-columns(2);
+		}
+		i{
+			color: #999;
+			font:{size:em(30)}
+			padding:15px;
+			cursor:pointer;
+		}
+		.menu{
+			display: none;
+		}
+	}
+	.main-search{
+		@extend .main-navigation;
+	}
+}
+.last-content{
+	@include span-columns(12);
+	@include pad(em(10));
+	background:{color:#363636}
+	color:#fff;
+	.main-last{
+		@include span-columns(4);
+		@include omega;
+		background:{color: #fa4b2a;}
+		@include textAlign(center);
+		@include pad(em(10));
+		height: 91px;
+		span{
+			font:{size:em(60)}
+			line:{height:50px}
+		}
+		p{
+			@extend .no-margins;
+			@include pad(0);
+			line:{height: 1;}
+			font:{size:em(10)}
+			text:{transform:uppercase;}
+		}
+	}
+	.post-last{
+		@include span-columns(8.25);
+		background:{color: #272727;}
+		font:{weight:bold;size:em(12)}
+		height: 91px;
+		position: relative;
+    	overflow: hidden;
+    	.rslides {
+			position: relative;
+			list-style: none;
+			overflow: hidden;
+			@include span-columns(10);
+			li {
+				-webkit-backface-visibility: hidden;
+				position: absolute;
+				display: none;
+				width: 100%;
+				left: 0;
+				top: 0;
+				&:first-child {
+					position: relative;
+					display: block;
+					float: left;
+				}
+				span{
+					@include span-columns(12);
+					color:$red;
+					font:{size:em(12);}
+					text:{transform:uppercase;}
+					margin: {top:10px;left:10px;}
+				}
+				a{
+					@include span-columns(12);
+					color:$white;
+					font: {size:em(12);}
+					text:{decoration:none;transform:capitalize}
+					margin: {left:10px}
+				}
+			}
+		}
+		.rslides_nav{
+			@include textAlign(center);
+			position: absolute;
+		top: 0;
+		right:0;
+		z-index: 999;
+		display: table;
+		width: 45px;
+		height: 45px;
+		text-decoration: none;
+		cursor: pointer;
+		border:{left:1px solid #323232}
+		color:#323232;
+		i{
+			display: table-cell;
+			vertical-align: middle;
+			font:{size:em(28);}
+		}
+		&.next{
+			border:{bottom:1px solid #323232}
+		}
+		&.prev{
+			top:45px;
+		}
+		}
+	}
+}

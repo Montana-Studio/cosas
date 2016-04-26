@@ -1,0 +1,12 @@
+body{
+	@extend .no-margins;
+	font:{family:$openSans;}
+	.site{
+		.search-content{
+			display: none;
+		}
+		.site-content{
+			@include row();
+		}
+	}
+}
