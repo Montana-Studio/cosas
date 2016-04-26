@@ -16,22 +16,22 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-		<?php query_posts( 'cat=-0&posts_per_page=3&orderby=date&order=DESC' );
-				while ( have_posts() ) : the_post();
-				get_template_part( 'template-parts/content-index', get_post_format() );
-		 	endwhile;
-		?>
+            <?php query_posts( 'cat=-0&posts_per_page=3&orderby=date&order=DESC' );
+                    while ( have_posts() ) : the_post();
+                    get_template_part( 'template-parts/content-index', get_post_format() );
+                endwhile;
+            ?>
 
-		</main><!-- #main -->
+		</main>
 
 		<h3 class="titus">espectáculos</h3>
 		
 		<main id="main-2" class="site-main-2">
-		<?php query_posts( 'category_name=espectaculos&posts_per_page=6&orderby=date&order=DESC' );
-				while ( have_posts() ) : the_post();
-				get_template_part( 'template-parts/content-index', get_post_format() );
-		 	endwhile;
-		?>
+            <?php query_posts( 'category_name=espectaculos&posts_per_page=6&orderby=date&order=DESC' );
+                    while ( have_posts() ) : the_post();
+                    get_template_part( 'template-parts/content-index', get_post_format() );
+                endwhile;
+            ?>
 		</main>
 
 		<h3 class="titus">entrevista</h3>
@@ -101,7 +101,7 @@ get_header(); ?>
 					</article>
 			 	<?php endwhile; ?>
 		</main>
-	</div><!-- #primary -->
+	</div>
 
 <?php
 get_footer();

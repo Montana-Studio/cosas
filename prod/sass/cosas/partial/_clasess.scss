@@ -9,12 +9,22 @@
 }
 .titulosh3{
 	@include span-columns(12);
+    margin: 5px 0;
 	@include pad(10px);
 	border: {left:solid 2px $red;}
 	background:{color: #000;}
 	color:$white;
 	font:{size:em(12);family:$openSans;}
 	text:{transform:uppercase;}
+}
+.hide{
+    display: none;
+}
+svg{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
 a{
 	text:{decoration:none;}
