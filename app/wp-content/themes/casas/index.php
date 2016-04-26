@@ -5,7 +5,7 @@
 		<section class="homeSlider">
 			<ul class="rslides">
 
-			<?php get_template_part('loop-slider'); ?>
+				<?php get_template_part('loop-slider'); ?>
 
 			</ul>
 

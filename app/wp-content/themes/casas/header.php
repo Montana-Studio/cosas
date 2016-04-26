@@ -56,11 +56,27 @@
 						</div>
 
 						<!-- nav -->
-						<nav class="nav" role="navigation">
-							<div class="desktop-nav">
-								<?php html5blank_nav(); ?>
+						<div class="navegacion-home">
+							<nav class="nav" role="navigation">
+								<div class="desktop-nav">
+									<?php html5blank_nav(); ?>
+								</div>
+							</nav> 
+							<div class="buscar-home">
+								<i class="fa fa-search"></i>
 							</div>
-						</nav> 
+							<div class="buscador-open">
+								<div class="buscador-desk">
+									<div class="close-search">cerrar buscador <i class="fa fa-close"></i> </div>
+									<div class="search-formulario">
+										<form class="search" method="get" action="<?php echo home_url(); ?>" role="search">
+											<input class="search-input" type="search" name="s" placeholder="<?php _e( 'Buscar', 'html5blank' ); ?>">
+											<button class="search-submit" type="" role="button"><?php _e( '', 'html5blank' ); ?><i class="fa fa-search"></i></button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
 						<!-- /nav -->
 
 					</div>
@@ -72,12 +88,16 @@
 									<img src="<?php echo get_template_directory_uri(); ?>/img/casas_logotype.png" alt="Logo">
 								</a>
 							</div>
+							<div class="mobile-icon-menu">
+								<i class="fa fa-bars"></i>
+							</div>
 						</div>
 						<div class="search-menu-mob">
-							<form class="search" method="get" action="<?php echo home_url(); ?>" role="search">
-								<input class="search-input" type="search" name="s" placeholder="<?php _e( 'Buscar', 'html5blank' ); ?>">
-								<button class="search-submit" type="" role="button"><?php _e( '', 'html5blank' ); ?><i class="fa fa-search"></i></button>
-							</form>
+							
+								<form class="search" method="get" action="<?php echo home_url(); ?>" role="search">
+									<input class="search-input" type="search" name="s" placeholder="<?php _e( 'Buscar', 'html5blank' ); ?>">
+									<button class="search-submit" type="" role="button"><?php _e( '', 'html5blank' ); ?><i class="fa fa-search"></i></button>
+								</form>
 						</div>
 						<div class="menu-mob">
 							<nav class="nav" role="navigation">

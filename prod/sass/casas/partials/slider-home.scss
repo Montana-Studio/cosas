@@ -1,6 +1,10 @@
 .homeSlider {
 	@include span-columns(12);
 	@include omega();
+	border:0;
+	@include media($notebook) {
+		border:1px solid $gold_color;
+	}
 	ul {
 		position: relative;
 		list-style: none;
@@ -15,6 +19,98 @@
 			width: 100%;
 			left: 0;
 			top: 0;
+			img {
+				@include span-columns(12);
+				height: 300px;
+				@include media($notebook) {
+					@include span-columns(7);
+					height: 500px;
+					margin:0;
+				}
+			}
+			.content-SliderHome {
+				@include span-columns(12);
+				padding: 15px 20px;
+				@include media($notebook) {
+					@include span-columns(4);
+					height: 500px;
+					margin:0;
+					display: table;
+				}
+				a {
+					display: none;
+				}
+				.inter-Slider {
+					@include media($notebook) {
+						@include span-columns(4);
+						margin:0;
+						float: none;
+						display: table-cell;
+						vertical-align: middle;
+					}
+					.category-title {
+						@include span-columns(12);
+						color:$gold_color;
+						font:{family:$primary_font;weight:bold;size:12px;}
+						text:{transform:uppercase;}
+						a {
+							color:$gold_color;
+						}
+					}
+					h2 {
+						@include span-columns(12);
+						font:{family:$second_font;size: 2em;weight: bold;}
+						margin:{top:5px;bottom:0;}
+					}
+					.bajada-post {
+						display: none;
+						@include media($notebook) {
+							display: block;
+						}
+					}
+					.date {
+						font:{family:$primary_font;size:11px;style:italic;}
+						color:$gray2_color;
+					}	
+				}
+			}
 		}
+		&:first-child {
+			position: relative;
+			display: block;
+			float: left;
+		}
+		img {
+			display: block;
+			height: auto;
+			float: left;
+			width: 100%;
+			border: 0;
+		}
+	}
+	.rslides_nav {
+		@include span-columns(2);
+		height: 65px;
+		border: 1px solid $gold_color;
+		padding: 5px 20px;
+    	font-size: 3em;
+    	color:$gold_color;
+    	position: absolute;
+    	top:150px;
+    	z-index: 99;
+    	@include media($notebook) {
+    		width: 65px !important;
+    		position: absolute;
+    		top:400px;
+    		left:10px;
+    	}
+    	&.next {
+			@include span-columns(2);
+			right: 0;
+			@include media($notebook) {
+				right: 10px;
+				left: auto;
+			}
+    	}
 	}
 }
