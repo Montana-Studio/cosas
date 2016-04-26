@@ -1,0 +1,66 @@
+.site-footer{
+    @include span-columns(12);
+    background:{color: #000;}
+    color:$white;
+    .newsletter{
+        @include row();
+        clear:both;
+        background:{color: #eee;}
+        @include pad(10px 20px);
+        .titus{
+            @extend .titulosh3;
+            color:#000;
+            font:{size:em(16);}
+            background:{color: #eee;}
+            border:{left:2px solid #000;}
+        }
+        form{
+            @include row();
+            input{
+                @include span-columns(12 of 12);
+                border:1px solid #000;
+                background:{color: #eee;}
+                margin:{top:10px;}
+                @include pad(10px);
+                &[type="submite"]{
+                    background:{color: #000;}
+                    @include textAlign(center);
+                    color:#fff;
+                    text:{transform:uppercase;}
+                    font:{size:em(13);}
+                }
+            }
+        }
+    }
+    .redes{
+        @include span-columns(12);
+        background:{color: #222222;}
+        li{
+            @include span-columns(1.5);
+            @include textAlign(center);
+            @include pad(20px 0);
+            &.logo-cosas{
+                @include span-columns(6);
+                @include pad(0);
+                .footer-red{
+                    fill:#fff;
+                }
+            }
+            a{
+                color:$white;
+            }
+        }
+    }
+    .network{
+        @include span-columns(12);
+        background:{color: #000;}
+        @include textAlign(center);
+        li{
+            display: inline-block;
+            width: 31.76157%;
+            .footer-network{
+                fill:#929292;
+            }
+        }
+    }
+}

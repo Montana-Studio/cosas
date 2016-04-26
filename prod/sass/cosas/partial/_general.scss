@@ -1,8 +1,10 @@
 body{
 	@extend .no-margins;
+    @include pad(0);
 	font:{family:$openSans;}
 	.site{
-		@include span-columns(12);
+		@include row();
+        position: relative;
 		.search-content{
 			display: none;
 		}

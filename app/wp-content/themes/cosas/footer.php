@@ -13,12 +13,43 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'cosas' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'cosas' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'cosas' ), 'cosas', '<a href="http://www.montana-studio.com" rel="designer">Montana Studio</a>' ); ?>
-		</div><!-- .site-info -->
+	<footer id="colophon" class="site-footer">
+        
+        <div class="newsletter">
+            
+            <h3 class="titus">suscribete a nuestro newsletter</h3>
+            <form action="">
+                
+                <input type="text" name="nombre">
+                <input type="text" name="mail">
+                <input type="submite" name="enviar" value="suscribete">
+                
+            </form>
+            
+        </div>
+        <ul class="redes">
+            
+            <li class="logo-cosas">
+                
+                <svg x="0px" y="0px" viewBox="0 0 196.32 64.49">
+                    <use xlink:href="#logo-cosas" class="footer-red"/>
+                </svg>
+                
+            </li>
+            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+            <li><a href=""><i class="fa fa-instagram"></i></a></li>
+            <li><a href=""><i class="fa fa-youtube"></i></a></li>
+            
+        </ul>
+        <ul class="network">
+            <li>
+                <svg x="0px" y="0px" viewBox="0 0 196.32 64.49">
+                    <use xlink:href="#logo-cosas" class="footer-network"/>
+                </svg>
+            </li>
+        </ul>
+        
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

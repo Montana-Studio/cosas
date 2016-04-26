@@ -26,6 +26,40 @@
 
 <body <?php body_class(); ?>>
 
+<?php get_template_part('content-svg', get_post_format()); ?>
+
+<div id="menu-content" class="menu-list">
+   <a href="<?php echo site_url();?>">
+    <?php if(1==$blog_id){ ?>
+        <svg x="0px" y="0px" viewBox="0 0 196.32 64.49" class="menu-logo">
+            <use xlink:href="#logo-cosas" class="logo-menu"/>
+        </svg>
+    <?php } ?>
+    </a>
+    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+    
+    <div class="redes">
+        <ul>
+            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+            <li><a href=""><i class="fa fa-instagram"></i></a></li>
+            <li><a href=""><i class="fa fa-youtube"></i></a></li>
+        </ul>
+    </div>
+    
+    <div class="network">
+        <ul>
+            <li>
+                <svg x="0px" y="0px" viewBox="0 0 196.32 64.49">
+                    <use xlink:href="#logo-cosas" class="net-menu"/>
+                </svg>
+            </li>
+        </ul>
+    </div>
+    
+</div>
+
+
 <div id="page" class="site">
 	<div class="search-content">
 		
@@ -37,15 +71,17 @@
 		<div class="logo-medio">
 			<a href="<?php echo site_url();?>">
 			<?php if(1==$blog_id){ ?>
-				<img src="<?php echo get_template_directory_uri(); ?>/img/logo-cosas.gif" alt="">
+				<svg x="0px" y="0px" viewBox="0 0 196.32 64.49">
+                    <use xlink:href="#logo-cosas" class="logo-head"/>
+                </svg>
 			<?php } ?>
 			</a>
 		</div>
 	
 		<nav id="site-navigation" class="main-navigation">
 			<i class="fa fa-bars"></i>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
+        
 		<div class="main-search">
 			<i class="fa fa-search"></i>
 		</div>
