@@ -1,0 +1,64 @@
+.subscribe-rev {
+	@include span-columns(12);
+	@include omega();
+	height: 300px;
+	padding: 10px;
+	@include media($notebook) {
+		@include span-columns(3);
+		@include omega();
+		padding: 0;
+	}
+	.subscribe-content {
+		@include span-columns(12);
+		@include omega();
+		background-size:cover;
+		background-position: center;
+		height: inherit; 
+		padding: 10px;
+		position: relative;
+		h4 {
+			@include outer-container(70%);
+			float: none;
+			margin:0 auto;
+			display: block;
+			font:{family:$second_font;weight:bold;size:2.5em;}
+			text:{align:center;transform:uppercase;}
+			color:$white_color;
+			line-height: 28px;
+		}
+		.btn-subs {
+			@include span-columns(7);
+			@include omega();
+			background: $gold_color;
+			text:{align:center;}
+			padding: 10px 0;
+			color:$white_color;
+			font:{size:1.2em;weight:bold;}
+			text:{transform:uppercase;}
+			border:0;
+			position: absolute;
+			left:0;
+			right: 0;
+			bottom:10px;
+			float: none;
+    		margin: 0 auto !important;
+			@include media($notebook) {
+				@include span-columns(4);
+				padding: 13px 0;
+			}
+		}
+		.line-gold {
+			@include outer-container(95%);
+			float: none;
+			margin:0 auto;
+			display: block;
+			height: 280px;
+			position: absolute;
+			z-index: 99;
+			border:1px solid $gold_color;
+			left:0;
+			right: 0;
+			top:10px;
+		}
+	}
+}

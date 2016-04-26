@@ -1,0 +1,94 @@
+.senction-video {
+	@include span-columns(12);
+	background: $gray2_color;
+	padding: {top:20px;left:10px;bottom:30px;right:10px;}
+	margin:20px 0;
+	@include media($notebook) {
+		padding: {bottom:50px;}
+		position: relative;
+		margin:60px 0;
+	}	
+	.title-section {
+		color:$white_color;
+		margin:0;
+		border-bottom:1px solid $white_color;
+		@include media($notebook) {
+			@include outer-container(85%);
+			float: none !important;
+			margin:{top:0;bottom:50px;left:auto !important;right:auto!important;}
+			padding: 0;
+			display: block;
+		}
+	}
+	.rslides-video {
+		@include span-columns(12);
+		position: relative;
+		list-style: none;
+		overflow: hidden;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		@include media($notebook) {
+		@include outer-container(50%);
+		float: none;
+		margin: 0 auto;
+		display: block;
+
+		}
+		li {
+			-webkit-backface-visibility: hidden;
+			position: absolute;
+			display: none;
+			width: 100%;
+			left: 0;
+			top: 0;
+			&:first-child {
+				position: relative;
+				display: block;
+				float: left;
+			}
+			.video-all {
+				@include span-columns(12);
+				@include omega();
+				iframe {
+					width: 100%;
+					display: block;
+				}
+			}
+			.title-post {
+				@include outer-container(75%);
+				float: none;
+				margin: 0 auto;
+				color:$white_color;
+				text:{align:center;}
+				font:{size:1.5em;}
+				@include media($notebook) {
+					font:{size:2em;weight:bold;}
+				}
+			} 
+		}
+	}
+	.rslides_nav {
+		@include span-columns(2);
+		height: 50px;
+		border: 1px solid $gold_color;
+		padding: 0px 20px;
+    	font-size: 3em;
+    	color:$gold_color;
+    	margin:{top:-30px;}
+    	@include media($notebook) {
+    		width: 65px !important;
+    		top: 50%;
+		    position: absolute;
+		    left: 20%;
+    	}
+    	&.next {
+			@include span-columns(2);
+			float: right;
+			@include media($notebook) {
+				right: 20%;
+				left: auto;
+			}
+    	}
+	}
+}

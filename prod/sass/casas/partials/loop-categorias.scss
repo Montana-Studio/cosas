@@ -1,0 +1,28 @@
+.section-loop-3cat {
+	@include span-columns(12);
+	margin:0;
+	padding: 10px;
+	@include media($notebook) {
+		@include span-columns(10);
+		padding: 0;
+	}
+	.post-articulo {
+		@include span-columns(12);
+		@include omega();
+		@include media($notebook) {
+			@include span-columns(4);
+		}
+		.title-section {
+			text:{align:left;}
+			margin:{top:20px;bottom:10px;}
+		}
+		.imagen-post {
+			@include span-columns(12);
+			@include omega();
+			height: 300px;
+			position: relative;
+			background-size:cover;
+			background-position: center;
+		}
+	}
+}
