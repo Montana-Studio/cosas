@@ -67,6 +67,9 @@
 	@include pad(em(10));
 	background:{color:#363636}
 	color:#fff;
+    @include media($notebook){
+        @include pad(0);
+    }
 	.main-last{
 		@include span-columns(4);
 		@include omega;
@@ -162,8 +165,47 @@
         @extend .hide;
         @include media($notebook){
             @include span-columns(10);
-            @include shift(2);
-            
+            @include shift(1);
+            ul{
+                @include span-columns(10);
+                @include pad(10px);
+                li{
+                    display: inline-block;
+                    @include pad(0 10px);
+                    a{
+                        color:$white;
+                        font:{size:em(11);family:$openSans;}
+                        text:{transform:uppercase;}
+                    }
+                }
+            }
+            .tools{
+                @include span-columns(2);
+                .main-search{
+                    @include span-columns(2);
+                    @include pad(10px 0);
+                }
+                .lasts{
+                    @include span-columns(10);
+                    background:{color: $red;}
+                    color:$white;
+                    span{
+                        @include span-columns(4);
+                        font:{size:em(36)}
+                    }
+                    p{
+                        @include span-columns(6.5);
+                        @include pad(10px 0);
+                        margin:0;
+                        line:{height:1;}
+                        font:{size:em(13);}
+                        text:{transform:uppercase;}
+                    }
+                    i{
+                        @include pad(15px 0);
+                    }
+                }
+            }
         }
     }
 }

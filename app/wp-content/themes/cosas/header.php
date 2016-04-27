@@ -104,8 +104,22 @@
                     
                     <div class="nav-deskt">
                         
-                       <div class="menu">
-                            <?php html5blank_nav('header-menu'); ?>
+                        <?php html5blank_nav('header-menu'); ?>
+                        
+                        <div class="tools">
+                            
+                            <div class="main-search">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            
+                            <div class="lasts">
+
+                                <span>17</span>
+                                <p>nuevos articulos</p>
+
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+                            
                         </div>
                         
                     </div>

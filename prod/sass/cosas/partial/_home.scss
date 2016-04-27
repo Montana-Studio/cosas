@@ -3,6 +3,9 @@
 	.site-main{
 		@include span-columns(12);
 	    @include pad(10px);
+        @include media($notebook){
+            @include pad(0);
+        }
 		article{
 			@include span-columns(6);
 			@include textAlign(center);
@@ -13,6 +16,10 @@
 				@include span-columns(12);
 				min-height:216px;
 				margin:{bottom:10px;}
+                @include media($notebook){
+                    @include span-columns(6);
+                    min-height:416px;
+                }
 				.entry-footer{
 					span{
 						font:{size:em(11);}
@@ -45,6 +52,9 @@
                         vertical-align: middle;
                     }
                 }
+                @include media($notebook){
+                    display: none;
+                }
 			}
 			.entry-footer{
 				position:absolute;
@@ -74,6 +84,10 @@
 					}
 				}
 			}
+            @include media($notebook){
+                @include span-columns(3);
+                min-height:325px;
+            }
 		}
 	}
 	.titus{
@@ -98,7 +112,19 @@
 					}
 				}
 			}
+            @include media($notebook){
+                @include span-columns(2);
+                @include omega(3n);
+                min-height:290px;
+                &:first-child{
+                    @include span-columns(2);
+                    min-height:290px;
+                }
+            }
 		}
+        @include media($notebook){
+            @include span-columns(8.5);
+        }
 	}
 	.site-main-3{
 		@extend .site-main;
