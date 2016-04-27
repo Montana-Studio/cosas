@@ -1,114 +1,108 @@
-<?php
-/**
- * The header for our theme.
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package cosas
- */
+<!doctype html>
+<html <?php language_attributes(); ?> class="no-js">
+	<head>
+		<meta charset="<?php bloginfo('charset'); ?>">
+		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
 
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+		<link href="//www.google-analytics.com" rel="dns-prefetch">
+        <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
+        <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
 
-<?php
-	wp_head();
-	//Detectar Sección
-	$blog_id = get_current_blog_id();
-?>
-</head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="<?php bloginfo('description'); ?>">
 
-<body <?php body_class(); ?>>
+		<?php 
+            wp_head();
+            $blog_id = get_current_blog_id();
+        ?>
 
-<?php get_template_part('content-svg', get_post_format()); ?>
-
-<div id="menu-content" class="menu-list">
-   <a href="<?php echo site_url();?>">
-    <?php if(1==$blog_id){ ?>
-        <svg x="0px" y="0px" viewBox="0 0 196.32 64.49" class="menu-logo">
-            <use xlink:href="#logo-cosas" class="logo-menu"/>
-        </svg>
-    <?php } ?>
-    </a>
-    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-    
-    <div class="redes">
-        <ul>
-            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-            <li><a href=""><i class="fa fa-instagram"></i></a></li>
-            <li><a href=""><i class="fa fa-youtube"></i></a></li>
-        </ul>
-    </div>
-    
-    <div class="network">
-        <ul>
-            <li>
-                <svg x="0px" y="0px" viewBox="0 0 196.32 64.49">
-                    <use xlink:href="#logo-cosas" class="net-menu"/>
-                </svg>
-            </li>
-        </ul>
-    </div>
-    
-</div>
-
-
-<div id="page" class="site">
-	<div class="search-content">
-		
-		<?php echo get_search_form(); ?>
-
-	</div>
-	<header id="masthead" class="site-header">
-
-		<div class="logo-medio">
-			<a href="<?php echo site_url();?>">
-			<?php if(1==$blog_id){ ?>
-				<svg x="0px" y="0px" viewBox="0 0 196.32 64.49">
-                    <use xlink:href="#logo-cosas" class="logo-head"/>
-                </svg>
-			<?php } ?>
-			</a>
-		</div>
-	
-		<nav id="site-navigation" class="main-navigation">
-			<i class="fa fa-bars"></i>
-		</nav><!-- #site-navigation -->
+	</head>
+	<body <?php body_class(); ?>>
         
-		<div class="main-search">
-			<i class="fa fa-search"></i>
-		</div>
+        <?php get_template_part('content-svg'); ?>
+        
+        <div id="menu-content" class="menu-list">
+           <a href="<?php echo site_url();?>">
+                <?php if(1==$blog_id){ ?>
+                    <svg x="0px" y="0px" viewBox="0 0 196.32 64.49" class="menu-logo">
+                        <use xlink:href="#logo-cosas" class="logo-menu"/>
+                    </svg>
+                <?php } ?>
+            </a>
+            <?php html5blank_nav(); ?>
 
-	</header><!-- #masthead -->
+            <div class="redes">
+                <ul>
+                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                    <li><a href=""><i class="fa fa-youtube"></i></a></li>
+                </ul>
+            </div>
 
-	<div class="last-content">
+            <div class="network">
+                <ul>
+                    <li>
+                        <svg x="0px" y="0px" viewBox="0 0 196.32 64.49">
+                            <use xlink:href="#logo-cosas" class="net-menu"/>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+		<!-- wrapper -->
+		<div id="page" class="site">
+
+            <div class="search-content">
 		
-		<div class="main-last">
-			
-			<span>17</span>
-			<p>nuevos articulos</p>
+                <?php echo get_search_form(); ?>
 
-		</div>
+            </div>
+            <header id="masthead" class="site-header">
+
+                <div class="logo-medio">
+                    <a href="<?php echo site_url();?>">
+                    <?php if(1==$blog_id){ ?>
+                        <svg x="0px" y="0px" viewBox="0 0 196.32 64.49">
+                            <use xlink:href="#logo-cosas" class="logo-head"/>
+                        </svg>
+                    <?php } ?>
+                    </a>
+                </div>
+
+                <nav id="site-navigation" class="main-navigation">
+                    <i class="fa fa-bars"></i>
+                </nav><!-- #site-navigation -->
+
+                <div class="main-search">
+                    <i class="fa fa-search"></i>
+                </div>
+
+            </header><!-- #masthead -->
+            
+            <div class="last-content">
 		
-		<div class="post-last">
-			
-			<ul class="rslides" id="slider3">
-	      		<?php query_posts( 'category_name=belleza-y-salud&posts_per_page=17' );
- 					while ( have_posts() ) : the_post();
-						get_template_part( 'template-parts/content-last', get_post_format() );
-				 	endwhile;
-				?>
-		    </ul>
-			
-		</div>
+                <div class="main-last">
 
-	</div>
+                    <span>17</span>
+                    <p>nuevos articulos</p>
 
-	<div id="content" class="site-content">
+                </div>
+
+                <div class="post-last">
+
+                    <ul class="rslides" id="slider3">
+                        <?php query_posts( 'category_name=0&posts_per_page=17' );
+                            while ( have_posts() ) : the_post();
+                                get_template_part( 'loop-last');
+                            endwhile;
+                        ?>
+                    </ul>
+
+                </div>
+
+            </div>
+            
+           <div id="content" class="site-content">
