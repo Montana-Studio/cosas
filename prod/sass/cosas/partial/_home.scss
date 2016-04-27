@@ -3,16 +3,23 @@
 	.site-main{
 		@include span-columns(12);
 	    @include pad(10px);
+        @include media($notebook){
+            @include pad(0);
+        }
 		article{
 			@include span-columns(6);
 			@include textAlign(center);
-			background:{size:cover;repeat:no-repeat;position:center;}
+			background:{size:cover;repeat:no-repeat;position:center 20%;}
 			position:relative;
 			min-height:167px;
 			&:first-child{
 				@include span-columns(12);
 				min-height:216px;
 				margin:{bottom:10px;}
+                @include media($notebook){
+                    @include span-columns(6);
+                    min-height:416px;
+                }
 				.entry-footer{
 					span{
 						font:{size:em(11);}
@@ -32,8 +39,22 @@
 				position:absolute;
 				right:10px;
 				top:10px;
-				color:#000;
-				font:{size:em(30);}
+				color:$white;
+				font:{size:em(20);}
+                i{
+                    display: table;
+                    &::before{
+                        @include borderRadius(100%);
+                        background:{color:#000;}
+                        width: 29px;
+                        height: 29px;
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+                }
+                @include media($notebook){
+                    display: none;
+                }
 			}
 			.entry-footer{
 				position:absolute;
@@ -63,6 +84,10 @@
 					}
 				}
 			}
+            @include media($notebook){
+                @include span-columns(3);
+                min-height:325px;
+            }
 		}
 	}
 	.titus{
@@ -87,7 +112,19 @@
 					}
 				}
 			}
+            @include media($notebook){
+                @include span-columns(2);
+                @include omega(3n);
+                min-height:290px;
+                &:first-child{
+                    @include span-columns(2);
+                    min-height:290px;
+                }
+            }
 		}
+        @include media($notebook){
+            @include span-columns(8.5);
+        }
 	}
 	.site-main-3{
 		@extend .site-main;
@@ -116,12 +153,24 @@
 				min-height: 97px;
 				background:{size: contain;}
 				.more-link{
-					position:absolute;
-					right:10px;
-					top:10px;
-					color:#000;
-					font:{size:em(20);}
-				}
+                    position:absolute;
+                    right:10px;
+                    top:10px;
+                    color:$white;
+                    font:{size:em(15);}
+                    @include textAlign(center);
+                    i{
+                        display: table;
+                        &::before{
+                            @include borderRadius(100%);
+                            background:{color:#000;}
+                            width: 25px;
+                            height: 25px;
+                            display: table-cell;
+                            vertical-align: middle;
+                        }
+                    }
+                }
 			}
 			.entry-footer{
 				@include span-columns(8);
@@ -298,8 +347,19 @@
 				position:absolute;
 				right:10px;
 				top:10px;
-				color:#000;
-				font:{size:em(30);}
+				color:$white;
+				font:{size:em(20);}
+                i{
+                    display: table;
+                    &::before{
+                        @include borderRadius(100%);
+                        background:{color:#000;}
+                        width: 29px;
+                        height: 29px;
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+                }
 			}
             .entry-footer{
 				position:absolute;

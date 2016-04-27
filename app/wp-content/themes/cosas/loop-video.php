@@ -1,5 +1,6 @@
 <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php echo get_the_content(); ?>
+    <?php //echo get_the_content(); ?>
+    <?php the_excerpt(); ?>
 	<footer class="entry-footer">
     	
 		<h2 class="entry-title">

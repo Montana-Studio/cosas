@@ -2,7 +2,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php echo $src[0]; ?>');">
 
-    <a href="<?php echo get_permalink(); ?>" class="more-link"><i class="fa fa-plus-circle"></i></a>
+    <a href="<?php echo get_permalink(); ?>" class="more-link"><i class="fa fa-plus"></i></a>
 
 	<footer class="entry-footer">
 		<?php

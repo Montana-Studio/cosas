@@ -1,6 +1,9 @@
 /.sass-cache
 /.sass-cache/
 .sass-cache
+/app/wp-content/uploads/
+/app/wp-content/uploads
+app/wp-content/uploads/
 /app/wp-content/themes/cosas/css/cosas.min.css
 /app/wp-content/themes/cosas/css/cosas.min.css.map
 app/wp-content/themes/cosas/css/cosas.min.css

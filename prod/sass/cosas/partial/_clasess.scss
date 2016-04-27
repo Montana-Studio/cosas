@@ -17,6 +17,10 @@
 	color:$white;
 	font:{size:em(12);family:$openSans;}
 	text:{transform:uppercase;}
+    @include media($notebook){
+        @include span-columns(8.5);
+        @include shift(0);
+    }
 }
 .hide{
     display: none;

@@ -30,14 +30,16 @@
                     </svg>
                 <?php } ?>
             </a>
-            <?php html5blank_nav(); ?>
+            <div class="menu">
+                <?php html5blank_nav('header-menu'); ?>
+            </div>
 
             <div class="redes">
                 <ul>
                     <li><a href=""><i class="fa fa-facebook"></i></a></li>
                     <li><a href=""><i class="fa fa-twitter"></i></a></li>
                     <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                    <li><a href=""><i class="fa fa-youtube"></i></a></li>
+                    <li><a href=""><i class="fa fa-youtube-play"></i></a></li>
                 </ul>
             </div>
 
@@ -79,30 +81,83 @@
                 <div class="main-search">
                     <i class="fa fa-search"></i>
                 </div>
+                
+                <div class="meta-info hide">
+                    
+                    <span><?php echo date('l, F g A'); ?></span>
+                    
+                    <div class="redes">
+                        <ul>
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                            <li><a href=""><i class="fa fa-youtube-play"></i></a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
 
             </header><!-- #masthead -->
             
-            <div class="last-content">
-		
-                <div class="main-last">
+    
+                <div class="last-content">
+                    
+                    <div class="nav-deskt">
+                        
+                        <?php html5blank_nav('header-menu'); ?>
+                        
+                        <div class="tools">
+                            
+                            <div class="main-search">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            
+                            <div class="lasts">
 
-                    <span>17</span>
-                    <p>nuevos articulos</p>
+                                <span>17</span>
+                                <p>nuevos articulos</p>
+
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="main-last">
+
+                        <span>17</span>
+                        <p>nuevos articulos</p>
+
+                    </div>
+
+                    <div class="post-last">
+
+                        <ul class="rslides" id="slider3">
+                            <?php
+                                $args = array (
+                                    'post_type' => array( 'post' ),
+                                    'posts_per_page' => '17',
+                                    'order' => 'DESC',
+                                    'orderby' => 'date',
+                                );
+
+                                $query = new WP_Query( $args );
+
+                                if ( $query->have_posts() ) {
+                                    while ( $query->have_posts() ) {
+                                        $query->the_post();
+                                        get_template_part( 'loop-last');
+                                    }
+                                } else {
+                                    echo 'No hay nada para mostrar';
+                                }
+                                wp_reset_postdata();
+                            ?>
+                        </ul>
+
+                    </div>
 
                 </div>
-
-                <div class="post-last">
-
-                    <ul class="rslides" id="slider3">
-                        <?php query_posts( 'category_name=0&posts_per_page=17' );
-                            while ( have_posts() ) : the_post();
-                                get_template_part( 'loop-last');
-                            endwhile;
-                        ?>
-                    </ul>
-
-                </div>
-
-            </div>
             
            <div id="content" class="site-content">

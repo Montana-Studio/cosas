@@ -1,0 +1,9 @@
+@include media($notebook){
+    .sidebar{
+        margin:{top: 5px;bottom:5px;}
+        @include direction-context(right-to-left){
+            @include span-columns(3.5);
+            @include omega();
+        }
+    }
+}
