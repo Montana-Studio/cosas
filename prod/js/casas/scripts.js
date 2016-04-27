@@ -34,6 +34,10 @@ jQuery(document).ready(function($){
 			after: function(){}     // Function: After callback
 		});
 	});
+	$('.share-mobile').click(function() {
+		$('.share-post').toggleClass('show-options-share');
+		$('.share-mobile').toggleClass('options-open');
+	});
 	$('.buscar-home').click(function(){
 		$('.buscador-open').toggleClass('show-search');
 		$('.buscar-home').hide();

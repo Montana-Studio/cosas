@@ -2,6 +2,9 @@
 	@include span-columns(12);
 	@include omega();
 	padding: 10px;
+	@include media($notebook) {
+		padding: 0;
+	}
 	ul {
 		@include span-columns(12);
 		@include pad(0);
@@ -39,17 +42,17 @@
 					color:$white_color;
 				}
 			}
-			&:nth-child(2) {
+			&:nth-child(1) {
 				@include media($notebook) {
 				@include span-columns(6);
 				}
 			}
-			&:nth-child(3) {
+			&:nth-child(2) {
 				@include media($notebook) {
 				@include span-columns(3);
 				}
 			}
-			&:nth-child(4) {
+			&:nth-child(3) {
 				@include media($notebook) {
 				@include span-columns(3);
 				}

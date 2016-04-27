@@ -1,6 +1,10 @@
 .newsletter-casas {
 	@include span-columns(12);
 	padding: 10px;
+	@include media($tabletLand) {
+		@include span-columns(7);
+		padding: 0;
+	}
 	@include media($notebook) {
 		@include span-columns(9);
 		padding: 0;
@@ -12,6 +16,9 @@
 		padding: 30px;
 		text:{align:center;}
 		position: relative;
+		@include media($tabletLand) {
+			padding: 25px 30px;
+		}
 		@include media($notebook) {
 			padding:75px 30px;
 		}	

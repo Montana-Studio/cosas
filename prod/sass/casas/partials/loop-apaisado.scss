@@ -44,6 +44,16 @@
 						vertical-align: middle;
 						float: none;
 					}
+					.bajada-post {
+						display: none;
+						@include media($notebook) {
+							display: block;
+							text:{transform:lowercase;}
+							font-size: 1.3em;
+							line-height: 24px;
+							margin:{top:15px;bottom:10px;}
+						}
+					}
 				}
 			}
 			.read-more {

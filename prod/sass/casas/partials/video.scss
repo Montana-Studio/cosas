@@ -76,6 +76,12 @@
     	font-size: 3em;
     	color:$gold_color;
     	margin:{top:-30px;}
+    	@include media($tablet) {
+    		@include span-columns(1);
+    	}
+    	@include media($tabletLand) {
+    		@include span-columns(1);
+    	}
     	@include media($notebook) {
     		width: 65px !important;
     		top: 50%;
@@ -85,6 +91,16 @@
     	&.next {
 			@include span-columns(2);
 			float: right;
+			@include media($tablet) {
+	    		@include span-columns(1);
+	    		float: right;
+	    		right: 20%;
+	    	}
+	    	@include media($tabletLand) {
+	    		@include span-columns(1);
+	    		float: right;
+	    		left: auto;
+	    	}
 			@include media($notebook) {
 				right: 20%;
 				left: auto;

@@ -30,6 +30,36 @@
 					@include span-columns(4);
 					@include omega();
 				}
+				.share-post {
+					.inter-share {
+						.title-share {
+							display: none;
+							font:{size:1em !important;}
+						}
+						.social-ul {
+							margin:{top:0;}
+							.social-list {
+								@include span-columns(6);
+								text:{align:center;}
+								margin:0;
+								a {
+									font:{size:20px !important;}
+									margin:{right: 5px !important;}
+								}
+							}	
+						}
+						.btn-share-art {
+							display: none !important;
+						}
+					}
+				} 
+				.share-mobile {
+					width: 25px;
+					height: 25px;
+					i {
+						font:{size: 1.2em;}
+					}
+				}
 			}
 			.inter-article {
 				@include span-columns(8);
@@ -88,6 +118,29 @@
 						@include span-columns(12);
 						@include omega();
 					}
+					.share-post {
+						.inter-share {
+							.title-share {
+								display:block;
+								font:{size:1em !important;}
+							}
+							.social-ul {
+								margin:{top:30px;}
+								.social-list {
+									@include span-columns(3);
+									text:{align:center;}
+									margin:0;
+									a {
+										font:{size:30px !important;}
+										margin:{right: 5px !important;}
+									}
+								}	
+							}
+							.btn-share-art {
+								display: block !important;
+							}
+						}
+					} 
 				}
 				.read-more {
 					position: absolute;
