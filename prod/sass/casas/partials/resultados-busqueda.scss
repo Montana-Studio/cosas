@@ -1,0 +1,12 @@
+.search-results {
+	h1 {
+		span {
+			&.number {
+				font:{family:$primary_font;}
+			}
+			&.normal-class {
+				font:{weight:normal;}
+			}
+		}
+	}
+}

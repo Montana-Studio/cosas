@@ -5,9 +5,12 @@ body {
 		@include span-columns(12);
 		@include pad(0);
 		font:{family:$primary_font;}
-		padding: {top:54px;}
+		padding: {top:60px;}
 		@include media($tablet) {
 			padding:{top: 70px;}
+		}
+		@include media($notebook) {
+			padding:{top: 30px;} 
 		}
 		.content-page {
 			@include span-columns(12);
@@ -68,7 +71,7 @@ body {
 			@include span-columns(12);
 			padding: 10px;
 			@include media($notebook) {
-				@include span-columns(10);
+				@include span-columns(9);
 				@include omega();
 				padding: 0;
 			}

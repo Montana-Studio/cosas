@@ -32,7 +32,7 @@
 			}
 			.content-SliderHome {
 				@include span-columns(12);
-				padding: 15px 20px;
+				padding: {top:15px;left: 20px;right:20px;bottom:65px;}
 				@include media($notebook) {
 					@include span-columns(4.5);
 					height: 500px;
@@ -49,6 +49,7 @@
 						float: none;
 						display: table-cell;
 						vertical-align: middle;
+						position: relative;
 					}
 					.category-title {
 						@include span-columns(12);
@@ -89,6 +90,29 @@
 					.date {
 						font:{family:$primary_font;size:11px;style:italic;}
 						color:$gray2_color;
+					}
+					.btn-go {
+						@include span-columns(5);
+						position: absolute;
+						border:1px solid $gold_color;
+						height: 40px;
+						z-index: 9999;
+						bottom: 10px;
+						left: 20px;
+						display: table;
+						@include media($notebook) {
+							left:0;
+						}
+						a {
+							display: block;
+							height:100%;
+							width: 100%;
+							display: table-cell;
+							vertical-align: middle;
+							text:{align:center;transform:uppercase;}
+							color:$gold_color;
+							font:{weight:bold;family:$second_font;size:1.2em;}
+						}
 					}	
 				}
 			}

@@ -1,7 +1,14 @@
 <!-- sidebar -->
 <aside class="sidebar" role="complementary">
+
+	<div class="agenda-sidebar">
+		<h3 class="title-section">Agenda</h3>
+		<ul>
+			<?php get_template_part('loop-agenda'); ?>
+		</ul>
+	</div>
 	
-	<div class="portadas-cosas">
+	<!--div class="portadas-cosas">
 		<div class="line-content"></div>
 		<div class="header-portada">
 			<div class="text-portada">
@@ -11,7 +18,7 @@
 			</div>
 			<div class="img-portada"></div>
 		</div>
-	</div>
+	</div-->
 
 </aside>
 <!-- /sidebar -->

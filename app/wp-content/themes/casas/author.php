@@ -1,77 +1,100 @@
 <?php get_header(); ?>
 
 	<main role="main">
-		<!-- section -->
-		<section>
+		<div class="content-single">
 
-		<?php if (have_posts()): the_post(); ?>
+			<div class="body-sidebar">
 
-			<h1><?php _e( 'Author Archives for ', 'html5blank' ); echo get_the_author(); ?></h1>
+				<section class="section-loop-tags">
 
-		<?php if ( get_the_author_meta('description')) : ?>
+								<?php if (have_posts()): the_post(); ?>
 
-		<?php echo get_avatar(get_the_author_meta('user_email')); ?>
+									<h1 class="title-section" ><?php _e( 'Archivos del autor ', 'html5blank' ); echo get_the_author(); ?></h1>
 
-			<h2><?php _e( 'About ', 'html5blank' ); echo get_the_author() ; ?></h2>
+								<?php if ( get_the_author_meta('description')) : ?>
 
-			<?php echo wpautop( get_the_author_meta('description') ); ?>
+								<?php echo get_avatar(get_the_author_meta('user_email')); ?>
 
-		<?php endif; ?>
+									<h2><?php _e( 'Acerca ', 'html5blank' ); echo get_the_author() ; ?></h2>
 
-		<?php rewind_posts(); while (have_posts()) : the_post(); ?>
+									<?php echo wpautop( get_the_author_meta('description') ); ?>
 
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+								<?php endif; ?>
 
-				<!-- post thumbnail -->
-				<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-						<?php the_post_thumbnail(array(120,120)); // Declare pixel size you need inside the array ?>
-					</a>
-				<?php endif; ?>
-				<!-- /post thumbnail -->
+								<?php rewind_posts(); while (have_posts()) : the_post(); ?>
 
-				<!-- post title -->
-				<h2>
-					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-				</h2>
-				<!-- /Post title -->
+								<!-- article -->
+								<div class="tags-content" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-				<!-- post details -->
-				<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-				<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-				<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-				<!-- /post details -->
+										<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); $imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; ?>')">
+											<div class="share-mobile"><div class="content-share"><i class="fa fa-plus"></i></div></div>
+											<div class="share-post">
+													<div class="inter-share">
+														<div class="title-share">Comparte</div>
+														<div class="social-ul">
+															<div class="social-list"><a href="#"><i class="fa fa-facebook"></i></a></div>
+															<div class="social-list"><a href="#"><i class="fa fa-twitter"></i></a></div>
+															<div class="social-list"><a href="#"><i class="fa fa-google-plus"></i></a></div>
+															<div class="social-list"><a href="#"><i class="fa fa-whatsapp"></i></a></div>
+														</div>	
+														<div class="btn-share-art"><a href="<?php the_permalink(); ?>">leer más</a></div>
+													</div>
+													<div class="bg-share"></div>
+											</div>
+										</div>		
+										<div class="read-more"><a href="<?php the_permalink(); ?>">Leer más</a></div>
 
-				<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
+										<div class="inter-article">
 
-				<br class="clear">
+											<div class="content-article">      
+											
+												<h2 class="title-post">
+													<?php $thetitle = $post->post_title; $getlength = strlen($thetitle); $thelength = 40;
+														echo substr($thetitle, 0, $thelength);
+														if ($getlength > $thelength) echo "...";
+													?>
+												</h2>
 
-				<?php edit_post_link(); ?>
+												<div class="bajada-post">
+													<?php $the_excerpt = $post->post_title; $getlength = strlen($the_excerpt); $thelength = 200;
+														echo substr($thetitle, 0, $thelength);
+														if ($getlength > $thelength) echo "...";
+													?>
+												</div>
 
-			</article>
-			<!-- /article -->
+												<span class="date"><?php foreach((the_time('l, j F Y')) as $time) { echo $time->time_name . ' '; } ?></span>
 
-		<?php endwhile; ?>
+											</div>
 
-		<?php else: ?>
+										</div>
+								</div>
+								<!-- /article -->
 
-			<!-- article -->
-			<article>
+								<?php endwhile; ?>
 
-				<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+								<?php else: ?>
 
-			</article>
-			<!-- /article -->
+									<!-- article -->
+									<article>
 
-		<?php endif; ?>
+										<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
 
-			<?php get_template_part('pagination'); ?>
+									</article>
+									<!-- /article -->
 
-		</section>
-		<!-- /section -->
+								<?php endif; ?>
+
+								<div class="paginacion-sect">
+									<?php get_template_part('pagination'); ?>
+								</div>
+
+				</section>
+			
+			</div>
+			<?php get_sidebar(); ?>
+		</div>	
 	</main>
 
-<?php get_sidebar(); ?>
+
 
 <?php get_footer(); ?>

@@ -46,6 +46,8 @@
 				</div>
 			</section>
 
+			<?php get_sidebar(); ?>
+
 			<section class="section-loop-3cat">
 					<?php query_posts( 'posts_per_page=-1&cat=arte,cocina,arte buzz' ); $var = 0; ?>
 

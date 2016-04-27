@@ -1,0 +1,28 @@
+.paginacion-sect {
+	@include span-columns(12);
+	margin:20px 0;
+	text:{align:center;}
+	@include media($notebook) {
+		@include span-columns(12);
+		float: right;
+		text:{align:right;}
+		margin:50px 0;
+	}
+	.page-numbers {
+		color:$gray1_color;
+		height: 30px;
+		width: 30px;
+		font:{size:1.5em;}
+		border:1px solid $gray1_color;
+		padding: 5px 12px;
+		@include media($notebook) {
+			padding: 10px 20px;
+			margin-right: 3px;
+		}
+		&.current {
+			font:{weight:bold;}
+			color:$gold_color;
+			border:1px solid $gold_color;
+		}
+	}
+}

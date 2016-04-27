@@ -1,67 +1,163 @@
 <?php get_header(); ?>
 
-	<main role="main">
-	<!-- section -->
-	<section>
+	<main role="main" class="singleArticulo">
+	<div class="content-single">
 
-	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+		<div class="body-sidebar">
+			<section class="singlePost-content">
 
-		<!-- article -->
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-			<!-- post thumbnail -->
-			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-					<?php the_post_thumbnail(); // Fullsize image for the single post ?>
-				</a>
-			<?php endif; ?>
-			<!-- /post thumbnail -->
+					<!-- article -->
+					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<!-- post title -->
-			<h1>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-			</h1>
-			<!-- /post title -->
+						<div class="category-title"><?php the_category(', '); // Separated by commas ?></div>
 
-			<!-- post details -->
-			<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-			<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-			<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-			<!-- /post details -->
+						<h1 class="title-post">
+							<?php the_title(); ?>
+						</h1>
 
-			<?php the_content(); // Dynamic Content ?>
+						<div class="date"><?php foreach((the_time('l, j F Y')) as $time) { echo $time->time_name . ' '; } ?></div>
 
-			<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+						<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); $imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; ?>')">
+							<div class="share-mobile"><div class="content-share"><i class="fa fa-plus"></i></div></div>
+							<div class="share-post">
+									<div class="inter-share">
+										<div class="title-share">Comparte</div>
+										<div class="social-ul">
+											<div class="social-list"><a href="#"><i class="fa fa-facebook"></i></a></div>
+											<div class="social-list"><a href="#"><i class="fa fa-twitter"></i></a></div>
+											<div class="social-list"><a href="#"><i class="fa fa-google-plus"></i></a></div>
+											<div class="social-list"><a href="#"><i class="fa fa-whatsapp"></i></a></div>
+										</div>	
+										<div class="btn-share-art"><a href="<?php the_permalink(); ?>">leer más</a></div>
+									</div>
+									<div class="bg-share"></div>
+							</div>
+						</div>
 
-			<p><?php _e( 'Categorised in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></p>
+						<div class="tag-section">
+							<div class="contentTags">
+								<div class="titleTags"><i class="fa fa-tag"></i>TAG</div><div class="tagsCat"><?php the_category(', '); ?></div>
+							</div>
 
-			<p><?php _e( 'This post was written by ', 'html5blank' ); the_author(); ?></p>
+							<div class="share-social">
+								<ul>
+									<li><a href="#"><div class="content-icon facebook-share"> <div class="icon-share"><i class="fa fa-facebook"></i></div> <div class="social-share">Facebook</div> </div></a></li>
+									<li><a href="#"><div class="content-icon twitter-share"> <div class="icon-share"><i class="fa fa-twitter"></i></div> <div class="social-share">Twitter</div> </div></a></li>
+									<li><a href="#"><div class="content-icon google-share"> <div class="icon-share"><i class="fa fa-google-plus"></i></div> <div class="social-share">Google Plus</div> </div></a></li>
+									<li><a href="#"><div class="content-icon correo-share"> <div class="icon-share"><i class="fa fa-envelope-o"></i></div> <div class="social-share">E-mail</div> </div></a></li>
+								</ul>
+							</div>
 
-			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+						</div>
 
-			<?php comments_template(); ?>
+						<div class="content-postSingle">
+							<?php the_content(); ?>
+						</div>
 
-		</article>
-		<!-- /article -->
+						<div class="author-cosas"><?php _e( 'Escrito por', 'html5blank' ); ?> <?php the_author_posts_link(); ?></div>
 
-	<?php endwhile; ?>
+						<div class="nav-post">
 
-	<?php else: ?>
+							<div class="nav-SinglePost prev-post">
+								<div class="arrow-nav"><a ><i class="fa fa-angle-left"></i></a></div>
+								<div class="contentPost">
+									<div class="title">Post anterior</div>
+									<div class="titlePost"><?php previous_post_link(); ?> </div>
+								</div>
+							</div>
 
-		<!-- article -->
-		<article>
+							<div class="nav-SinglePost next-post">
+								<div class="arrow-nav right-nav"><a><i class="fa fa-angle-right"></i></a></div>
+								<div class="contentPost">
+									<div class="title">Post posterior</div>
+									<div class="titlePost"><?php next_post_link(); ?>  </div>
+								</div>
 
-			<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
+							</div>	
 
-		</article>
-		<!-- /article -->
+						</div>
 
-	<?php endif; ?>
+						<div class="post-related">
+							
+							<?php $orig_post = $post;
+								global $post;
+								$categories = get_the_category($post->ID);
+								if ($categories) {
+								$category_ids = array();
+								foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
 
-	</section>
-	<!-- /section -->
+								$args=array(
+								'category__in' => $category_ids,
+								'post__not_in' => array($post->ID),
+								'posts_per_page'=> 3, // Number of related posts that will be displayed.
+								'caller_get_posts'=>1,
+								'orderby'=>'rand' // Randomize the posts
+								);
+
+								$my_query = new wp_query( $args );
+
+								if( $my_query->have_posts() ) {
+								echo '<div id="perfect-related_by-category" class="clear"><h3 class="title-section">Articulos relacionados</h3><ul>';
+								while( $my_query->have_posts() ) {
+								$my_query->the_post(); ?>
+								<li>
+									<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); $imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; ?>')">
+										<div class="share-mobile"><div class="content-share"><i class="fa fa-plus"></i></div></div>
+										<div class="share-post">
+												<div class="inter-share">
+													<div class="title-share">Comparte</div>
+													<div class="social-ul">
+														<div class="social-list"><a href="#"><i class="fa fa-facebook"></i></a></div>
+														<div class="social-list"><a href="#"><i class="fa fa-twitter"></i></a></div>
+														<div class="social-list"><a href="#"><i class="fa fa-google-plus"></i></a></div>
+														<div class="social-list"><a href="#"><i class="fa fa-whatsapp"></i></a></div>
+													</div>	
+													<div class="btn-share-art"><a href="<?php the_permalink(); ?>">leer más</a></div>
+												</div>
+												<div class="bg-share"></div>
+										</div>
+									</div>
+									<a href="<?php the_permalink()?>" rel="bookmark" title="<?php the_title(); ?>"></a>
+									<div class="title-post">
+										<a href="<? the_permalink()?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+									</div>
+									<span class="date"><?php foreach((the_time('l, j F Y')) as $time) { echo $time->time_name . ' '; } ?></span>
+								</li>
+								<? }
+
+								echo '</ul></div>';
+								} }
+
+								$post = $orig_post;
+							wp_reset_query(); ?> 
+						</div>
+
+
+					</article>
+					<!-- /article -->
+
+				<?php endwhile; ?>
+
+				<?php else: ?>
+
+					<!-- article -->
+					<article>
+
+						<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
+
+					</article>
+					<!-- /article -->
+
+				<?php endif; ?>
+
+			</section>
+		</div>
+		<?php get_sidebar(); ?>
+	</div>
 	</main>
 
-<?php get_sidebar(); ?>
+
 
 <?php get_footer(); ?>
