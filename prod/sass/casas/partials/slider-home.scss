@@ -34,7 +34,7 @@
 				@include span-columns(12);
 				padding: 15px 20px;
 				@include media($notebook) {
-					@include span-columns(4);
+					@include span-columns(4.5);
 					height: 500px;
 					margin:0;
 					display: table;
@@ -61,13 +61,29 @@
 					}
 					h2 {
 						@include span-columns(12);
-						font:{family:$second_font;size: 2em;weight: bold;}
+						font:{family:$second_font;size: 1.5em;weight: bold;}
 						margin:{top:5px;bottom:0;}
+						@include media($notebook) {
+							font:{size:2em;}
+							margin:{bottom:10px;}
+						}
+						@include media($desktop) {
+							font:{size:2.4em;}
+							margin:{bottom:10px;}
+						}
 					}
 					.bajada-post {
 						display: none;
 						@include media($notebook) {
 							display: block;
+							text:{transform:lowercase;}
+							font-size: 1.1em;
+							line-height: 24px;
+							margin:{top:15px;bottom:10px;}
+						}
+						@include media($desktop) {
+							font-size: 1.3em;
+							line-height: 24px;
 						}
 					}
 					.date {
@@ -100,6 +116,12 @@
     	position: absolute;
     	top:150px;
     	z-index: 99;
+    	@include media($tablet) {
+    		@include span-columns(1);
+    	}
+    	@include media($tabletLand) {
+    		@include span-columns(1);
+    	}
     	@include media($notebook) {
     		width: 65px !important;
     		position: absolute;
@@ -109,6 +131,16 @@
     	&.next {
 			@include span-columns(2);
 			right: 0;
+			@include media($tablet) {
+	    		@include span-columns(1);
+	    		float: right;
+	    		right: 0;
+	    	}
+	    	@include media($tabletLand) {
+	    		@include span-columns(1);
+	    		float: right;
+	    		right: 0;
+	    	}
 			@include media($notebook) {
 				right: 10px;
 				left: auto;

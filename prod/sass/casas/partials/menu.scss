@@ -33,6 +33,16 @@
 			float:right;
 			font:{size: 3em;}
 			color:$gold_color;
+			@include media($tablet) {
+				text:{align: right;}
+				padding:{right: 20px;}
+				top:8px;
+			}
+			@include media($tabletLand) {
+				text:{align: right;}
+				padding:{right: 20px;}
+				top:8px;
+			}
 			@include media($notebook) {
 				display: none;
 			}
@@ -41,6 +51,12 @@
 	.logo {
 		@include span-columns(5);
 		@include omega();
+		@include media($tablet) {
+			@include span-columns(3);
+		}
+		@include media($tabletLand) {
+			@include span-columns(2);
+		}
 		@include media($notebook) {
 			display: block;
 
@@ -102,8 +118,11 @@
 					li {
 						list-style: none;
 						display: inline-block;
-						font:{family:$second_font;size: 1.5em;}
+						font:{family:$second_font;size: 1.2em;}
 						margin:{right: 20px;}
+						@include media($desktop) {
+							font:{size: 1.5em;}
+						}
 					}
 				}
 			}	

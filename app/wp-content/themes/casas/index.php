@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<main role="main">
+	<main>
 
 		<div class="content-page">
 
@@ -44,7 +44,6 @@
 						<?php get_template_part('loop-vertical-tres'); ?>
 					</ul>
 				</div>
-
 			</section>
 
 			<section class="section-loop-3cat">
@@ -58,8 +57,22 @@
 
 								<div class="title-section"> <?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?></div> 
 
-								<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); $imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; ?>')"></div>
-
+								<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); $imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; ?>')">
+									<div class="share-mobile"><div class="content-share"><i class="fa fa-plus"></i></div></div>
+									<div class="share-post">
+											<div class="inter-share">
+												<div class="title-share">Comparte</div>
+												<div class="social-ul">
+													<div class="social-list"><a href="#"><i class="fa fa-facebook"></i></a></div>
+													<div class="social-list"><a href="#"><i class="fa fa-twitter"></i></a></div>
+													<div class="social-list"><a href="#"><i class="fa fa-google-plus"></i></a></div>
+													<div class="social-list"><a href="#"><i class="fa fa-whatsapp"></i></a></div>
+												</div>	
+												<div class="btn-share-art"><a href="<?php the_permalink(); ?>">leer más</a></div>
+											</div>
+											<div class="bg-share"></div>
+									</div>
+								</div>
 
 						       	<h2 class="title-post">
 									<?php $thetitle = $post->post_title; $getlength = strlen($thetitle); $thelength = 40;
@@ -81,8 +94,22 @@
 							<div class="post-articulo">
 								<div class="title-section"> <?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?></div> 
 
-								<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); $imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; ?>')"></div>
-
+								<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); $imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; ?>')">
+									<div class="share-mobile"><div class="content-share"><i class="fa fa-plus"></i></div></div>
+									<div class="share-post">
+											<div class="inter-share">
+												<div class="title-share">Comparte</div>
+												<div class="social-ul">
+													<div class="social-list"><a href="#"><i class="fa fa-facebook"></i></a></div>
+													<div class="social-list"><a href="#"><i class="fa fa-twitter"></i></a></div>
+													<div class="social-list"><a href="#"><i class="fa fa-google-plus"></i></a></div>
+													<div class="social-list"><a href="#"><i class="fa fa-whatsapp"></i></a></div>
+												</div>	
+												<div class="btn-share-art"><a href="<?php the_permalink(); ?>">leer más</a></div>
+											</div>
+											<div class="bg-share"></div>
+									</div>
+								</div>
 						        <h2 class="title-post">
 									<?php $thetitle = $post->post_title; $getlength = strlen($thetitle); $thelength = 40;
 										echo substr($thetitle, 0, $thelength);
@@ -104,8 +131,22 @@
 
 								<div class="title-section"> <?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?></div> 
 						
-								<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); $imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; ?>')"></div>
-
+								<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); $imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; ?>')">
+									<div class="share-mobile"><div class="content-share"><i class="fa fa-plus"></i></div></div>
+									<div class="share-post">
+											<div class="inter-share">
+												<div class="title-share">Comparte</div>
+												<div class="social-ul">
+													<div class="social-list"><a href="#"><i class="fa fa-facebook"></i></a></div>
+													<div class="social-list"><a href="#"><i class="fa fa-twitter"></i></a></div>
+													<div class="social-list"><a href="#"><i class="fa fa-google-plus"></i></a></div>
+													<div class="social-list"><a href="#"><i class="fa fa-whatsapp"></i></a></div>
+												</div>	
+												<div class="btn-share-art"><a href="<?php the_permalink(); ?>">leer más</a></div>
+											</div>
+											<div class="bg-share"></div>
+									</div>
+								</div>
 						        <h2 class="title-post">
 									<?php $thetitle = $post->post_title; $getlength = strlen($thetitle); $thelength = 40;
 										echo substr($thetitle, 0, $thelength);
@@ -160,7 +201,6 @@
 					<div class="line-gold"></div>
 				</div>
 			</section>
-
 		</div>
 
 	</main>	

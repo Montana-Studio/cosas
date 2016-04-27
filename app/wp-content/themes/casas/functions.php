@@ -465,5 +465,13 @@ function casas_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'casas_scripts' );
 
+function new_excerpt_more($more) {
+   global $post;
+   if ($post->post_type == 'your-cpt')
+   {
+      return "&nbsp;";
+   }
+}
+add_filter('excerpt_more', 'new_excerpt_more');
 
 ?>

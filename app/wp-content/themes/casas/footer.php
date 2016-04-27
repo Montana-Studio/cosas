@@ -1,12 +1,26 @@
 			<!-- footer -->
-			<footer class="footer" role="contentinfo">
-
-				<!-- copyright -->
-				<p class="copyright">
-					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
-					<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
-				</p>
-				<!-- /copyright -->
+			<footer class="footer">
+				
+				<div class="footer-top">
+					<ul class="redes">
+	            
+			            <li class="logo-casas">
+			                
+			            </li>
+			            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+			            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+			            <li><a href=""><i class="fa fa-instagram"></i></a></li>
+			            <li><a href=""><i class="fa fa-youtube"></i></a></li>
+			            
+			        </ul>
+		        </div>
+		        <ul class="network">
+					<li><a target="_blank" href="http://www.cosas.com/"><img src="<?php echo get_template_directory_uri(); ?>/img/cosas_logotype.png" alt="Logo Cosas"></li>
+					<li><a target="_blank" href="http://www.cosas.com/casas/"><img src="<?php echo get_template_directory_uri(); ?>/img/casas_logotype.png" alt="Logo Casas"></li>
+					<li><a target="_blank" href="http://www.cosas.com/couture/"><img src="<?php echo get_template_directory_uri(); ?>/img/cosasc_logotype.png" alt="Logo Cosas Culture"></li>
+					<li><a target="_blank" href="http://www.cosas.com/?post_type=lujo"><img src="<?php echo get_template_directory_uri(); ?>/img/cosaslujo_logotype.png" alt="Logo"></li>
+					<li><a target="_blank" href="http://www.cosas.com/repost/"><img src="<?php echo get_template_directory_uri(); ?>/img/cosasrepost_logotype.png" alt="Logo"></li>
+				</ul>
 
 			</footer>
 			<!-- /footer -->
@@ -15,16 +29,6 @@
 		<!-- /wrapper -->
 
 		<?php wp_footer(); ?>
-
-		<!-- analytics -->
-		<script>
-		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
-		(f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
-		l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
-		ga('send', 'pageview');
-		</script>
 
 	</body>
 </html>

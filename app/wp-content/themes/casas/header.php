@@ -81,7 +81,7 @@
 
 					</div>
 
-					<div class="MenuMobile-Open">
+					<!--div class="MenuMobile-Open">
 						<div class="header-MenuMobile">
 							<div class="logo">
 								<a href="<?php echo home_url(); ?>">
@@ -122,7 +122,7 @@
 								<li><a target="_blank" href="http://www.cosas.com/repost/"><img src="<?php echo get_template_directory_uri(); ?>/img/cosasrepost_logotype.png" alt="Logo"></li>
 							</ul>
 						</div>
-					</div>
+					</div-->
 
 			</header>
 			<!-- /header -->
