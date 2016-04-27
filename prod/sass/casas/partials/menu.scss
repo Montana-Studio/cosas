@@ -1,5 +1,11 @@
 .menuCasas {
 	@include span-columns(12);
+	@include media($notebook) {
+		@include outer-container(85%);
+		float: none;
+		margin: 0 auto !important;
+		padding: 0;
+	}
 	&.menuMobile {
 		@include span-columns(12);
 		@include pad(5px);
@@ -14,6 +20,8 @@
 			position: relative;
 			box-shadow: none;
 			@include pad(25px 0);
+			margin: 0 auto !important;
+			float: none;
 		}
 		.mobile-icon-menu {
 			@include span-columns(1.5);

@@ -1,0 +1,80 @@
+.sidebar {
+	@include span-columns(12);
+	padding: 0 10px;
+	@include media($notebook) {
+		@include span-columns(2);
+		@include omega();
+		float: right;
+		padding: 0;
+	}
+	.portadas-cosas {
+		@include span-columns(12);
+		background: $black_color;
+		height: 400px;
+		position: relative;
+		display: table;
+		.line-content {
+			@include outer-container(90%);
+			display: table-cell;
+			vertical-align: middle;
+			height: 300px;
+			border: 1px solid $white_color;
+			float: none;
+			position: absolute;
+			right: 0;
+			left: 0;
+			top:50px;
+			z-index: 9;
+		}
+		.header-portada {
+			@include outer-container(70%);
+			float: none;
+			background: $black_color;
+			z-index: 99;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 20px;
+			text:{align:center;}
+			color:$white_color;
+			.text-portada {
+				@include span-columns(6);
+				@include omega();
+				h3 {
+					font:{family:$primary_font;size:0.9em;}
+					text:{transform:uppercase;}
+					margin: 3px 0;
+				}
+				.logotype {
+					@include outer-container(90%);
+					@include omega();
+					float: none;
+					margin: 0 auto;
+					img {
+						width: 100%;
+						height: auto;
+						display: block;
+					}
+				}
+				.btn-site {
+					@include outer-container(60%);
+					@include omega();
+					float: none;
+					margin: {top:10px;left:auto;bottom:0;right:auto;}
+					text:{align:center;transform:uppercase;}
+					font:{size:0.9em;weight:bold;}
+					a {
+						@include span-columns(12);
+						padding: 5px 0;
+						border: 1px solid $white_color;
+						color:$white_color;
+					}
+				}
+			}
+			.img-portada {
+				@include span-columns(6);
+				@include omega();
+			}
+		}
+	}
+}

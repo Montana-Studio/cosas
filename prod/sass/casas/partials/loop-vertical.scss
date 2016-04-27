@@ -1,0 +1,133 @@
+.section-loop-vertical {
+	@include span-columns(12);
+	@include omega();
+	@include media($notebook) {
+		@include span-columns(4);
+	}
+	.title-section {
+		@include span-columns(12);
+		@include omega();
+		text:{align:left;}
+	}
+	ul {
+		@include span-columns(12);
+		@include pad(0);
+		margin:0;
+		li {
+			@include span-columns(12);
+			@include omega();
+			list-style: none;
+			margin:{bottom:30px;}
+			position: relative;
+			.imagen-post {
+				@include span-columns(4);
+				@include omega();
+				height: 100px; 
+				position: relative;
+				background-size:cover;
+				background-position: center;
+				@include media($notebook) {
+					@include span-columns(4);
+					@include omega();
+				}
+			}
+			.inter-article {
+				@include span-columns(8);
+				@include omega();
+				display: table;
+				height: 100px;
+				.content-article {
+					@include span-columns(12);
+					@include omega();
+					padding:0 10px;
+					display: table-cell;
+						vertical-align: middle;
+						float: none;
+					.title-post {
+						font:{size: 1.4em;}
+					}
+				}
+			}
+			.read-more {
+				height:40px;
+				width: 100px;
+				background: $gold_color;
+				position: absolute;
+				top: 260px; 
+				text:{align:center;}
+				display: table;
+				height: 30px;
+				width: 80px;
+				top: 70px;
+				left: 0;
+				@include media($notebook) {
+					left:0;
+					right: initial;
+				}
+				a {
+					display: table-cell;
+					vertical-align: middle;
+					font:{size: 1.5em;weight:600;family:$second_font;style:italic;}
+					color:$white_color;
+				}
+			}
+			&:nth-child(1) {
+				@include span-columns(12);
+				@include omega();
+				list-style: none;
+				margin:{bottom:30px;}
+				position: relative;
+				.imagen-post {
+					@include span-columns(12);
+					@include omega();
+					height: 300px;
+					position: relative;
+					background-size:cover;
+					background-position: center;
+					@include media($notebook) {
+						@include span-columns(12);
+						@include omega();
+					}
+				}
+				.read-more {
+					position: absolute;
+					top: 260px; 
+					display: table;
+					height: 40px !important;
+					width: 100px !important;
+					top: 260px !important;
+					right: 0 !important;
+					@include media($notebook) {
+						left:0;
+						right: initial;
+					}
+					a {
+						display: table-cell;
+						vertical-align: middle;
+						font:{size: 1.5em;weight:600;family:$second_font;style:italic;}
+						color:$white_color;
+					}
+				}
+				.inter-article {
+					@include span-columns(12);
+					@include omega();
+					height:  initial;
+					@include media($notebook) {
+						@include span-columns(12);
+						@include omega();
+					}
+					.content-article {
+						@include span-columns(12);
+						@include omega();
+						@include media($notebook) {
+							padding:10px 0;
+						}
+						.title-post {
+							font:{family:$second_font;size: 2em;}
+						}	
+					}
+				}
+			}
+		}
+	}
+}

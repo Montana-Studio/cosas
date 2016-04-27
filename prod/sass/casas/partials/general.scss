@@ -1,12 +1,62 @@
-.wrapper {
+body {
 	@include span-columns(12);
-	@include pad(0);
-	font:{family:$primary_font;}
-	padding: {top:54px;}
-	@include media($notebook) {
-		@include outer-container(90%);
-		float: none;
-		margin: 0 auto;
-		padding: 0;
-	}
+	@include omega();
+	.wrapper {
+		@include span-columns(12);
+		@include pad(0);
+		font:{family:$primary_font;}
+		padding: {top:54px;}
+		.content-page {
+			@include span-columns(12);
+			@include pad(0);
+			@include media($notebook) {
+				@include outer-container(85%);
+				float: none;
+				margin: 0 auto !important;
+				padding: 0;
+			}
+		}
+		.title-section {
+			@include span-columns(12);
+			@include omega();
+			font:{family:$second_font;size:2em;color:$black_color;}
+			text:{align:center;transform:uppercase;}
+			border-bottom:1px solid $gray1_color;
+			padding: {bottom:5px;}
+			@include media($notebook) {
+				font:{size:2.3em;}
+			}
+		}
+		.title-post {
+			@include span-columns(12);
+			font:{family:$second_font;size: 2em;weight: bold;}
+			margin:{top:5px;bottom:0;left:0;right:0;}
+			@include media($notebook) {
+				font:{weight:normal;}
+			}
+		}
+		.category-title {
+			@include span-columns(12);
+			color:$gold_color;
+			font:{family:$primary_font;weight:bold;size:12px;}
+			text:{transform:uppercase;}
+			margin:0;
+			a {
+				color:$gold_color;
+			}
+		}
+		.date {
+			font:{family:$primary_font;size:11px;style:italic;}
+			color:$gray2_color;
+		}
+		.body-sidebar {
+			@include span-columns(12);
+			padding: 10px;
+			@include media($notebook) {
+				@include span-columns(10);
+				@include omega();
+				padding: 0;
+			}
+		}
+	}	
 }
