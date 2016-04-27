@@ -94,7 +94,7 @@
                 <div class="post-last">
 
                     <ul class="rslides" id="slider3">
-                        <?php query_posts( 'category_name=0&posts_per_page=17' );
+                        <?php query_posts( 'cat=0&posts_per_page=17' );
                             while ( have_posts() ) : the_post();
                                 get_template_part( 'loop-last');
                             endwhile;
