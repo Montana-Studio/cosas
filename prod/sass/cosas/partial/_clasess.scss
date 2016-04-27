@@ -8,8 +8,9 @@
 	display:block;
 }
 .titulosh3{
-	@include span-columns(12);
-    margin: 5px 0;
+	@include span-columns(11.3);
+	@include shift(.3);
+    margin:{top: 5px;bottom:5px;}
 	@include pad(10px);
 	border: {left:solid 2px $red;}
 	background:{color: #000;}
@@ -41,4 +42,10 @@ ul{
 //MIXINS
 @mixin textAlign($align){
 	text:{align:$align;}
+}
+@mixin borderRadius($radios){
+    @include border-top-radius($radios);
+    @include border-right-radius($radios);
+    @include border-bottom-radius($radios);
+    @include border-left-radius($radios);
 }

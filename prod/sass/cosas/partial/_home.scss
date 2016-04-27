@@ -1,8 +1,8 @@
 .content-area{
 	@include span-columns(12);
-	@include pad(10px);
 	.site-main{
 		@include span-columns(12);
+	    @include pad(10px);
 		article{
 			@include span-columns(6);
 			@include textAlign(center);
@@ -187,4 +187,148 @@
 			}
 		}
 	}
+    .site-main-5{
+        @include span-columns(12);
+        @include pad(10px 10px 40px);
+        background:{color: #2c2c2c;}
+        .titus{
+            @include textAlign(center);
+            @include span-columns(2.2);
+	        @include shift(5);
+	        @include pad(0);
+            margin:{top:0;bottom:0;}
+            border:none;
+            background:transparent;
+            border:{bottom:2px solid $red;}
+            font:{size:em(18)}
+        }
+        .content-videos{
+            @include span-columns(12);
+            position: relative;
+            margin:{top:10px;}
+            border:2px solid $white;
+            #slider4{
+                li{
+                    @include span-columns(10);
+                    @include shift(1);
+                    margin:{bottom:-16px;top:20px;}
+                    position: relative;
+                    overflow: hidden;
+                    iframe{
+                        width: 100%;
+                    }
+                    .entry-footer{
+                        @include textAlign(center);
+                        position:absolute;
+                        bottom:0;
+                        background:{color:$white;}
+                        width: 80%;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        .times-post{
+                            color:#999;
+                            font:{size:em(9);}
+                            margin:{bottom:5px;}
+                        }
+                        h2{
+                            line:{height:1;}
+                            @include pad(0);
+                            font:{size:em(27);family:$playFair}
+                            color:#000;
+                        }
+                    }
+                }
+            }
+            .rslides_tabs{
+                @include textAlign(center);
+                width:100%;
+                position: absolute;
+                bottom: -40px;
+                li{
+                    margin: {right:10px;}
+                    background:{color: #515151;}
+                    width:10px;
+                    height: 10px;
+                    display: inline-block;
+                    position: relative;
+                    overflow: hidden;
+                    text:{indent:-1000px; }
+                    @include borderRadius(100%);
+                    a{
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    &.rslides_here{
+                        background:{color: $white;}
+                    }
+                }
+            }
+        }
+    }
+    .site-main-6{
+        @include span-columns(12);
+        margin:{top:10px;bottom:10px;}
+        @include pad(10px 10px 40px);
+        background:{color: #2c2c2c;}
+        .titus{
+            @extend .titulosh3;
+            background:{color: #2c2c2c;}
+        }
+    }
+    .site-main-7{
+        @include span-columns(12);
+        @include pad(10px 10px 40px);
+        background:{color: #ad9469;}
+        svg{
+            @include span-columns(6);
+            @include shift(3);
+            .logo-casas{
+                fill:#fff;
+            }
+        }
+        article{
+            @include span-columns(6);
+            @include textAlign(center);
+			background:{size:cover;repeat:no-repeat;position:center;}
+			position:relative;
+			min-height:167px;
+            .more-link{
+				position:absolute;
+				right:10px;
+				top:10px;
+				color:#000;
+				font:{size:em(30);}
+			}
+            .entry-footer{
+				position:absolute;
+				bottom:0;
+				background:{color:rgba(255,255,255,.8);}
+				width: 100%;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				.times-post{
+					color:#999;
+					font:{size:em(9);}
+					margin:{bottom:5px;}
+				}
+				span{
+					color:$red;
+					font:{size:em(9);family:$openSans;}
+					text:{transform:uppercase;}
+				}
+				h2{
+					line:{height:1;}
+					margin:5px;
+					@include pad(0);
+					a{
+						font:{size:em(9);family:$playFair}
+						color:#000;
+					}
+				}
+			}
+        }
+    }
 }
