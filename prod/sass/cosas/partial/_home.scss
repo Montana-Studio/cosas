@@ -6,7 +6,7 @@
 		article{
 			@include span-columns(6);
 			@include textAlign(center);
-			background:{size:cover;repeat:no-repeat;position:center;}
+			background:{size:cover;repeat:no-repeat;position:center 20%;}
 			position:relative;
 			min-height:167px;
 			&:first-child{
@@ -32,8 +32,19 @@
 				position:absolute;
 				right:10px;
 				top:10px;
-				color:#000;
-				font:{size:em(30);}
+				color:$white;
+				font:{size:em(20);}
+                i{
+                    display: table;
+                    &::before{
+                        @include borderRadius(100%);
+                        background:{color:#000;}
+                        width: 29px;
+                        height: 29px;
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+                }
 			}
 			.entry-footer{
 				position:absolute;
@@ -116,12 +127,24 @@
 				min-height: 97px;
 				background:{size: contain;}
 				.more-link{
-					position:absolute;
-					right:10px;
-					top:10px;
-					color:#000;
-					font:{size:em(20);}
-				}
+                    position:absolute;
+                    right:10px;
+                    top:10px;
+                    color:$white;
+                    font:{size:em(15);}
+                    @include textAlign(center);
+                    i{
+                        display: table;
+                        &::before{
+                            @include borderRadius(100%);
+                            background:{color:#000;}
+                            width: 25px;
+                            height: 25px;
+                            display: table-cell;
+                            vertical-align: middle;
+                        }
+                    }
+                }
 			}
 			.entry-footer{
 				@include span-columns(8);
@@ -298,8 +321,19 @@
 				position:absolute;
 				right:10px;
 				top:10px;
-				color:#000;
-				font:{size:em(30);}
+				color:$white;
+				font:{size:em(20);}
+                i{
+                    display: table;
+                    &::before{
+                        @include borderRadius(100%);
+                        background:{color:#000;}
+                        width: 29px;
+                        height: 29px;
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+                }
 			}
             .entry-footer{
 				position:absolute;

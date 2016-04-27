@@ -37,23 +37,29 @@
 		<main id="main-4" class="site-main-4">
 			
 			<?php 
-
+                
 				$post = $posts[0]; $c=0;
 				
 				query_posts( 'category_name=personaje-nacional,politica-nacional,espectaculos-nacional&posts_per_page=4&orderby=date&order=DESC' );
 				while ( have_posts() ) : the_post();
-					$c++;
-					if( $c == 1) :?>
-
+					
+                    $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' );
+            
+                    $c++;
+					if( $c == 1) :
+                    
+                    ?>
+                    
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php echo $src[0]; ?>');">
 
-						<a href="<?php echo get_permalink(); ?>" class="more-link"><i class="fa fa-plus-circle"></i></a>
+						<a href="<?php echo get_permalink(); ?>" class="more-link"><i class="fa fa-plus"></i></a>
 
 					<?php else: ?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					
 						<div class="img-post" style="background-image: url('<?php echo $src[0]; ?>');">
-							<a href="<?php echo get_permalink(); ?>" class="more-link"><i class="fa fa-plus-circle"></i></a>
+							<a href="<?php echo get_permalink(); ?>" class="more-link"><i class="fa fa-plus"></i></a>
 						</div>
 
 					<?php endif; ?>
@@ -93,7 +99,7 @@
 		    
 		    <div class="content-videos">
 		        <ul class="rslides" id="slider4">
-                    <?php query_posts( 'category_name=videos&posts_per_page=3&orderby=date&order=DESC' );
+                    <?php query_posts( 'post_type=video-galeria&posts_per_page=3&orderby=date&order=DESC' );
                         while ( have_posts() ) : the_post();
                             get_template_part( 'loop-video');
                         endwhile;

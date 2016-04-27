@@ -9,6 +9,9 @@
         .logo-head{
             fill:$white;
         }
+        @include media($notebook){
+            @include span-columns(2);
+        }
 	}
 	.main-navigation{
         @include direction-context(right-to-left){
@@ -22,7 +25,38 @@
 			font:{size:em(30)}
 			cursor:pointer;
 		}
+        @include media($notebook){
+            display:none;
+        }
 	}
+    @include media($notebook){
+        .meta-info{
+            color:#b5b5b5;
+            font:{size:10px;family:$openSans}
+            @include pad(30px 0);
+            @include direction-context(right-to-left){
+                @include span-columns(3);
+            }
+            span{
+                @include span-columns(6);
+            }
+            .redes{
+                @include span-columns(6);
+                ul{
+                    li{
+                        @include span-columns(3);
+                        @include textAlign(center);
+                        a{
+                            color:#b5b5b5;
+                            i{
+                                font:{size:em(25);}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 	.main-search{
 		@extend .main-navigation;
 	}
@@ -39,7 +73,10 @@
 		background:{color: #fa4b2a;}
 		@include textAlign(center);
 		@include pad(em(10));
-		height: 91px;
+		height: 91px;  
+        @include media($notebook){
+            display:none;
+        }
 		span{
 			font:{size:em(60)}
 			line:{height:50px}
@@ -59,6 +96,9 @@
 		height: 91px;
 		position: relative;
     	overflow: hidden;
+        @include media($notebook){
+            display:none;
+        }
     	.rslides {
 			position: relative;
 			list-style: none;
@@ -95,29 +135,37 @@
 		.rslides_nav{
 			@include textAlign(center);
 			position: absolute;
-		top: 0;
-		right:0;
-		z-index: 999;
-		display: table;
-		width: 45px;
-		height: 45px;
-		text-decoration: none;
-		cursor: pointer;
-		border:{left:1px solid #323232}
-		color:#323232;
-		i{
-			display: table-cell;
-			vertical-align: middle;
-			font:{size:em(28);}
-		}
-		&.next{
-			border:{bottom:1px solid #323232}
-		}
-		&.prev{
-			top:45px;
-		}
+            top: 0;
+            right:0;
+            z-index: 999;
+            display: table;
+            width: 45px;
+            height: 45px;
+            text-decoration: none;
+            cursor: pointer;
+            border:{left:1px solid #323232}
+            color:#323232;
+            i{
+                display: table-cell;
+                vertical-align: middle;
+                font:{size:em(28);}
+            }
+            &.next{
+                border:{bottom:1px solid #323232}
+            }
+            &.prev{
+                top:45px;
+            }
 		}
 	}
+    .nav-deskt{
+        @extend .hide;
+        @include media($notebook){
+            @include span-columns(10);
+            @include shift(2);
+            
+        }
+    }
 }
 .menu-list{
     position: fixed;
