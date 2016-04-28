@@ -21,10 +21,25 @@
 				position: relative;
 				background-size: cover;
 				background-position: center;
+				@include media($notebook) {
+					height: 270px;
+				}
+				@include media($desktop) {
+					height: 300px;
+				}
 			}
 			.inter-article {
 				@include span-columns(12);
 				@include omega();
+				.title-post {
+					@include media($notebook) {
+						font:{size: 1.8em;}
+					}
+					@include media($desktop) {
+						font:{size: 2em;}
+					}
+				}
+				
 			}
 			.read-more {
 				height:40px;
@@ -38,11 +53,24 @@
 				display: table;
 				z-index: 99999;
 				@include transition(all 0.3s ease-in-out);
+				@include media($notebook) {
+					top: 230px; 
+				}
+				@include media($desktop) {
+					top: 260px; 
+				}
 				a {
 					display: table-cell;
 					vertical-align: middle;
 					font:{size: 1.5em;weight:600;family:$second_font;style:italic;}
 					color:$white_color;
+					text:{transform:uppercase;}
+					@include media($notebook) {
+						font:{size: 1.3em;}
+					}
+					@include media($desktop) {
+						font:{size: 1.5em;}
+					}
 				}
 				&:hover {
 					border:1px solid $gold_color;

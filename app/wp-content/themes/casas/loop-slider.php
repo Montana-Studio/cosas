@@ -40,7 +40,7 @@
 
 				<span class="date"><?php foreach((the_time('l, j F Y')) as $time) { echo $time->time_name . ' '; } ?></span>
 
-				<div class="btn-go"><a href="<?php the_permalink(); ?>">leer más</a></div>
+				<div class="bnt-leermas"><a href="<?php the_permalink(); ?>">leer más</a></div>
 
 			</div>
 		</div>

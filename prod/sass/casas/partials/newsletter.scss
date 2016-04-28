@@ -6,6 +6,10 @@
 		padding: 0;
 	}
 	@include media($notebook) {
+		@include span-columns(8);
+		padding: 0;
+	}
+	@include media($desktop) {
 		@include span-columns(9);
 		padding: 0;
 	}
@@ -74,12 +78,19 @@
 				text:{align:center;}
 				padding: 10px 0;
 				color:$white_color;
+				border:1px solid $gold_color; 
 				font:{size:1.2em;weight:bold;}
 				text:{transform:uppercase;}
 				border:0;
+				@include transition(all 0.3s ease-in-out);
 				@include media($notebook) {
 					@include span-columns(4);
 					padding: 13px 0;
+				}
+				&:hover {
+					border:1px solid $gold_color;
+					background:$white_color;
+					color:$gold_color;
 				}
 			}
 		}

@@ -1,17 +1,21 @@
 .senction-video {
 	@include span-columns(12);
-	background: $gray2_color;
+	background: $black_color;
 	padding: {top:20px;left:10px;bottom:30px;right:10px;}
 	margin:20px 0;
 	@include media($notebook) {
-		padding: {bottom:50px;}
+		padding: {top:30px;bottom:50px;}
 		position: relative;
 		margin:60px 0;
 	}	
+	@include media($desktop) {
+		padding: {top:50px;}
+	}
 	.title-section {
 		color:$white_color;
 		margin:0;
 		border-bottom:1px solid $white_color;
+		text:{align:center;}
 		@include media($notebook) {
 			@include outer-container(85%);
 			float: none !important;
@@ -83,6 +87,12 @@
     		@include span-columns(1);
     	}
     	@include media($notebook) {
+    		width: 50px !important;
+    		top: 50%;
+		    position: absolute;
+		    left: 20%;
+    	}
+    	@include media($desktop) {
     		width: 65px !important;
     		top: 50%;
 		    position: absolute;

@@ -1,0 +1,26 @@
+.bnt-leermas {
+	border:1px solid $gold_color;
+	height: 40px;
+	z-index: 9999;
+	display: table;
+	@include transition(all 0.3s ease-in-out);
+	a { 
+		display: block;
+		height:100%;
+		width: 100%;
+		display: table-cell;
+		vertical-align: middle;
+		text:{align:center;transform:uppercase;}
+		color:$gold_color; 
+		font:{weight:bold;family:$second_font;size:1.2em;}
+	}
+	&:hover {
+		background: $gold_color;
+		a {
+			color:$white_color;
+		}
+	} 
+}
+.btn-share-art {
+
+}

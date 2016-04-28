@@ -29,6 +29,14 @@
 					height: 500px;
 					margin:0;
 				}
+				.share-post {
+					.social-ul {
+						@include media($notebook) {
+							margin:{top: 40px !important;bottom: 30px !important;}	
+						}
+					}	
+				}
+				
 			}
 			.content-SliderHome {
 				@include span-columns(12);
@@ -65,8 +73,8 @@
 						font:{family:$second_font;size: 1.5em;weight: bold;}
 						margin:{top:5px;bottom:0;}
 						@include media($notebook) {
-							font:{size:2em;}
-							margin:{bottom:10px;}
+							font:{size:1.9em;}
+							margin:{bottom:5px;}
 						}
 						@include media($desktop) {
 							font:{size:2.4em;}
@@ -79,7 +87,7 @@
 							display: block;
 							text:{transform:lowercase;}
 							font-size: 1.1em;
-							line-height: 24px;
+							line-height:19px;
 							margin:{top:15px;bottom:10px;}
 						}
 						@include media($desktop) {
@@ -91,16 +99,14 @@
 						font:{family:$primary_font;size:11px;style:italic;}
 						color:$gray2_color;
 					}
-					.btn-go {
+					.bnt-leermas {
 						@include span-columns(5);
 						position: absolute;
-						border:1px solid $gold_color;
 						height: 40px;
 						z-index: 9999;
 						bottom: 10px;
 						left: 20px;
 						display: table;
-						@include transition(all 0.3s ease-in-out);
 						@include media($notebook) {
 							left:0;
 						}
@@ -154,8 +160,17 @@
     		@include span-columns(1);
     	}
     	@include media($notebook) {
+    		width: 55px !important;
+    		height: 55px !important;
+    		position: absolute;
+    		padding: 3px 20px;
+    		top:200px;
+    		left:10px;
+    	}
+    	@include media($desktop) {
     		width: 65px !important;
     		position: absolute;
+    		padding: 8px 26px;
     		top:200px;
     		left:10px;
     	}
