@@ -315,26 +315,22 @@
             <svg x="0px" y="0px" viewBox="0 0 196.32 64.49">
                 <use xlink:href="#logo-cosas" class="logo-casas"/>
             </svg>
+            <div class="maxcasas">
+                <?php
+                    global $switched;
+                    switch_to_blog(3); //switched to blog id 2
 
-            <?php/* query_posts( 'category_name=espectaculos&posts_per_page=4&orderby=date&order=DESC' );
-                    while ( have_posts() ) : the_post();
-                    get_template_part( 'loop-casas');
-                endwhile;
-            */?>
-            <?php
-                global $switched;
-                switch_to_blog(3); //switched to blog id 2
+                    // Get latest Post
+                    $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC');
+                    $cnt =0;
+                ?> 
 
-                // Get latest Post
-                $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC');
-                $cnt =0;
-            ?> 
-            
-            <?php foreach($latest_posts as $post) : setup_postdata($post);
-                get_template_part( 'loop-casas');                               
-             endforeach ; ?>
+                <?php foreach($latest_posts as $post) : setup_postdata($post);
+                    get_template_part( 'loop-casas');                               
+                 endforeach ; ?>
 
-            <?php restore_current_blog(); //switched back to main site ?>
+                <?php restore_current_blog(); //switched back to main site ?>  
+            </div>
 
         </main>
 	<?php } ?>
