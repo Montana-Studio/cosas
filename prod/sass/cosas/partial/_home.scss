@@ -15,14 +15,79 @@
             @include span-columns(6.122);
             @include omega();
             background:{color: #363636;}
+            position: relative;
+            overflow: hidden;
+            .rslides {
+                position: relative;
+                list-style: none;
+                overflow: hidden;
+                @include span-columns(10);
+                li {
+                    -webkit-backface-visibility: hidden;
+                    position: absolute;
+                    display: none;
+                    width: 100%;
+                    left: 0;
+                    top: 0;
+                    &:first-child {
+                        position: relative;
+                        display: block;
+                        float: left;
+                    }
+                    span{
+                        @include span-columns(12);
+                        color:$red;
+                        font:{size:em(12);}
+                        text:{transform:uppercase;}
+                        margin: {top:10px;left:10px;}
+                    }
+                    a{
+                        @include span-columns(12);
+                        color:$white;
+                        font: {size:em(12);}
+                        text:{decoration:none;transform:capitalize}
+                        margin: {left:10px}
+                    }
+                }
+            }
+            .rslides_nav{
+                @include textAlign(center);
+                position: absolute;
+                top: 0;
+                right:0;
+                z-index: 999;
+                display: table;
+                width: 45px;
+                height: 45px;
+                text-decoration: none;
+                cursor: pointer;
+                border:{left:1px solid #323232}
+                color:#323232;
+                i{
+                    display: table-cell;
+                    vertical-align: middle;
+                    font:{size:em(28);}
+                }
+                &.next{
+                    border:{bottom:1px solid #323232}
+                }
+                &.prev{
+                    top:45px;
+                }
+            }
         }
-		.home-posts{
+        @include span-columns(12);
+	    @include pad(10px);
+        @include media($notebook){
+            @include pad(0);
+        }
+		article{
 			@include span-columns(6);
 			@include textAlign(center);
 			background:{size:cover;repeat:no-repeat;position:center 20%;}
 			position:relative;
 			min-height:167px;
-			&:nth-of-type(1){
+			&:first-child{
 				@include span-columns(12);
 				min-height:216px;
 				margin:{bottom:10px;}
@@ -465,6 +530,7 @@
         }
         article{
             @include span-columns(6);
+            @include omega(3n);
             @include textAlign(center);
 			background:{size:cover;repeat:no-repeat;position:center;}
 			position:relative;
@@ -542,7 +608,7 @@
         position: relative;
         margin:{top:10px;}
         border:2px solid $white;
-        #slider4{
+        .rslides{
             li{
                 @include span-columns(10);
                 @include shift(1);
@@ -573,7 +639,20 @@
                         color:#000;
                     }
                 }
+                @include media($notebook){
+                    @include span-columns(5);
+                    @include shift(0);
+                    &:first-child{
+                        @include span-columns(7);
+                        max-height:457px;
+                    }
+                }
             }
+        }
+        @include media($notebook){
+            @include span-columns(10);
+            @include shift(1);
+            @include pad(0 10px);
         }
         .rslides_tabs{
             @include textAlign(center);

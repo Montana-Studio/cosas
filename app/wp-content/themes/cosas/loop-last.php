@@ -1,5 +1,4 @@
 <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	
 	<span>
         <?php 
             $cats = get_the_category();

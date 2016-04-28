@@ -4,18 +4,70 @@
 	    
 		<main id="main" class="site-main">
             
-            <?php query_posts( 'cat=-0&posts_per_page=3&orderby=date&order=DESC' );
+            <?php /*query_posts( 'cat=-0&posts_per_page=3&orderby=date&order=DESC' );
                     while ( have_posts() ) : the_post();
             
                     if( $wp_query->current_post == 1 ) {?>
                     
-                    <div class="destacados">
-                    </div>
+                    
                     
                     <?php }
                         get_template_part( 'loop-index');
-                endwhile;
-            ?>
+                endwhile;*/
+            
+            // WP_Query arguments
+            $args = array (
+                'cat'                    => '0',
+                'posts_per_page'         => '3',
+                'order'                  => 'DESC',
+                'orderby'                => 'date',
+            );
+            $args1 = array (
+                'category_name'          => 'cultura',
+                'posts_per_page'         => '4',
+                'order'                  => 'DESC',
+                'orderby'                => 'date',
+            );
+
+            // The Query
+            $cosas = new WP_Query( $args );
+            $cosas1 = new WP_Query( $args1 );
+
+            // The Loop
+            if ( $cosas->have_posts() ) {
+                $variable=1;
+                
+                while ( $cosas->have_posts() ) {
+                    $cosas->the_post();
+                    
+                    get_template_part( 'loop-index');
+                    
+                    if($variable == 1&&!wp_is_mobile()){ ?>
+                        <div class="destacados">
+                            <ul class="rslides" id="slider5">
+                            <?php 
+                                if($cosas1->have_posts()){
+                                    while ($cosas1->have_posts()){
+                                        $cosas1->the_post();
+                                        
+                                        get_template_part( 'loop-last'); }
+                                    
+                                }else{
+                                    echo 'no hay post';
+                                }
+                                wp_reset_postdata();
+                            ?>
+                            </ul>
+                        </div>
+                    <?php }
+                    
+                    $variable++;
+                }
+            } else {
+                echo 'no hay post';
+            }
+            
+            wp_reset_postdata(); ?>
 
 		</main>
           
@@ -142,11 +194,20 @@
                     <use xlink:href="#logo-cosas" class="logo-casas"/>
                 </svg>
 
-                <?php query_posts( 'category_name=espectaculos&posts_per_page=4&orderby=date&order=DESC' );
-                        while ( have_posts() ) : the_post();
-                        get_template_part( 'loop-casas');
-                    endwhile;
-                ?>
+                <?php
+                    global $switched;
+                    switch_to_blog(3); //switched to blog id 2
+
+                    // Get latest Post
+                    $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC');
+                    $cnt =0;
+                ?> 
+
+                <?php foreach($latest_posts as $post) : setup_postdata($post);
+                    get_template_part( 'loop-casas');                               
+                 endforeach ; ?>
+
+                <?php restore_current_blog(); //switched back to main site ?>
 
             </main>
             
@@ -218,16 +279,14 @@
         
 	</div>
 	
-	<?php if ( wp_is_mobile() ) {?>
-	
-	<?php }else{ ?>
+	<?php if ( !wp_is_mobile() ){ ?>
         <main id="main-5" class="site-main-5-mobile">
 
             <h3 class="titus">videos</h3>
 
             <div class="content-videos">
-                <ul class="rslides" id="slider4">
-                    <?php query_posts( 'post_type=video-galeria&posts_per_page=3&orderby=date&order=DESC' );
+                <ul class="rslides">
+                    <?php query_posts( 'post_type=video-galeria&posts_per_page=4&orderby=date&order=DESC' );
                         while ( have_posts() ) : the_post();
                             get_template_part( 'loop-video');
                         endwhile;
@@ -257,11 +316,25 @@
                 <use xlink:href="#logo-cosas" class="logo-casas"/>
             </svg>
 
-            <?php query_posts( 'category_name=espectaculos&posts_per_page=4&orderby=date&order=DESC' );
+            <?php/* query_posts( 'category_name=espectaculos&posts_per_page=4&orderby=date&order=DESC' );
                     while ( have_posts() ) : the_post();
                     get_template_part( 'loop-casas');
                 endwhile;
-            ?>
+            */?>
+            <?php
+                global $switched;
+                switch_to_blog(3); //switched to blog id 2
+
+                // Get latest Post
+                $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC');
+                $cnt =0;
+            ?> 
+            
+            <?php foreach($latest_posts as $post) : setup_postdata($post);
+                get_template_part( 'loop-casas');                               
+             endforeach ; ?>
+
+            <?php restore_current_blog(); //switched back to main site ?>
 
         </main>
 	<?php } ?>
