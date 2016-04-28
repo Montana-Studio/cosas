@@ -9,6 +9,11 @@
 		padding: 0;
 	}
 	@include media($notebook) {
+		@include span-columns(4);
+		@include omega();
+		padding: 0; 
+	}
+	@include media($desktop) {
 		@include span-columns(3);
 		@include omega();
 		padding: 0;
@@ -47,9 +52,15 @@
 			bottom:10px;
 			float: none;
     		margin: 0 auto !important;
+    		z-index: 10;
+			@include transition(all 0.3s ease-in-out);
 			@include media($notebook) {
 				@include span-columns(4);
 				padding: 13px 0;
+			}
+			&:hover {
+				background:$white_color;
+				color:$gold_color; 
 			}
 		}
 		.line-gold {
@@ -63,7 +74,8 @@
 			border:1px solid $gold_color;
 			left:0;
 			right: 0;
-			top:10px;
+			bottom:10px;
+			z-index: 1;
 		}
 	}
 }

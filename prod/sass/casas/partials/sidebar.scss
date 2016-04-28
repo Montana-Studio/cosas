@@ -2,6 +2,12 @@
 	@include span-columns(12);
 	padding: 0 10px;
 	@include media($notebook) {
+		@include span-columns(3.6);
+		@include omega();
+		float: right;
+		padding: 0;
+	}
+	@include media($desktop) {
 		@include span-columns(3);
 		@include omega();
 		float: right;
@@ -120,6 +126,13 @@
 							}
 						}
 					} 
+					.share-mobile {
+						width: 25px;
+						height: 25px;
+						i {
+							font:{size: 1.2em;}
+						}
+					}
 				}
 				.content-infoAgenda {
 					@include span-columns(8);
@@ -135,6 +148,12 @@
 					.title-post {
 						font-size: 1.4em;
 						padding: 0 10px;
+						@include media($notebook) {
+							font:{size: 1.2em;}
+						}
+						@include media($desktop) {
+							font:{size: 1.4em;}
+						}
 					}
 					.read-more {
 						position: absolute;

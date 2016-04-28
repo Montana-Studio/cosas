@@ -60,7 +60,7 @@
 						<div class="nav-post">
 
 							<div class="nav-SinglePost prev-post">
-								<div class="arrow-nav"><a ><i class="fa fa-angle-left"></i></a></div>
+								<div class="arrow-nav"><a href="<?php echo get_permalink(get_adjacent_post(false,'',true)); ?>"><i class="fa fa-angle-left"></i></a></div>
 								<div class="contentPost">
 									<div class="title">Post anterior</div>
 									<div class="titlePost"><?php previous_post_link(); ?> </div>
@@ -68,7 +68,7 @@
 							</div>
 
 							<div class="nav-SinglePost next-post">
-								<div class="arrow-nav right-nav"><a><i class="fa fa-angle-right"></i></a></div>
+								<div class="arrow-nav right-nav"><a href="<?php echo get_permalink(get_adjacent_post(true,'',false)); ?>"><i class="fa fa-angle-right"></i></a></div>
 								<div class="contentPost">
 									<div class="title">Post posterior</div>
 									<div class="titlePost"><?php next_post_link(); ?>  </div>
