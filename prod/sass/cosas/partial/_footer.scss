@@ -13,6 +13,12 @@
             font:{size:em(15);}
             background:{color: #eee;}
             border:{left:2px solid #000;}
+            @include media($notebook){
+                border:{left:none;right:1px solid #000;}
+                @include span-columns(2.5);
+                @include shift(1);
+                @include textAlign(right);
+            }
         }
         form{
             @include row();
@@ -28,6 +34,12 @@
                     color:#fff;
                     text:{transform:uppercase;}
                     font:{size:em(13);}
+                }
+                @include media($notebook){
+                    @include span-columns(3);
+                    &[type="submite"]{
+                        @include span-columns(2);
+                    }
                 }
             }
         }
@@ -45,9 +57,21 @@
                 .footer-red{
                     fill:#fff;
                 }
+                @include media($notebook){
+                    @include span-columns(6);
+                    svg{
+                        max-height:66px;
+                    }
+                }
             }
             a{
                 color:$white;
+            }
+            @include media($notebook){
+                @include span-columns(1);
+                &:nth-child(2){
+                    @include shift(1);
+                }
             }
         }
     }

@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
     
-    $('#slider3').responsiveSlides({
+    $('#slider3, #slider5').responsiveSlides({
         auto:false,
         nav: true,
         prevText:'<i class="fa fa-angle-right"></i>',
