@@ -15,7 +15,6 @@
 			@include omega();
 			list-style: none;
 			margin:{bottom:30px;}
-			position: relative;
 			.imagen-post {
 				@include span-columns(12);
 				@include omega();
@@ -30,6 +29,7 @@
 			.inter-article {
 				@include span-columns(12);
 				@include omega();
+				position: relative;
 				@include media($notebook) {
 					@include span-columns(8);
 					@include omega();
@@ -59,21 +59,32 @@
 			.read-more {
 				height:40px;
 				width: 100px;
+				border:1px solid $gold_color;
 				background: $gold_color;
 				position: absolute;
 				right: 0;
-				top: 260px; 
+				top: -40px;
 				text:{align:center;}
 				display: table;
+				z-index: 99999;
+				@include transition(all 0.3s ease-in-out);
 				@include media($notebook) {
 					left:0;
 					right: initial;
+					top: 260px; 
 				}
 				a {
 					display: table-cell;
 					vertical-align: middle;
 					font:{size: 1.5em;weight:600;family:$second_font;style:italic;}
 					color:$white_color;
+				}
+				&:hover {
+					border:1px solid $gold_color;
+					background: $white_color;
+					a {
+						color:$gold_color;
+					}
 				}
 			}
 		}

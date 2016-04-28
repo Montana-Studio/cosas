@@ -100,6 +100,7 @@
 						bottom: 10px;
 						left: 20px;
 						display: table;
+						@include transition(all 0.3s ease-in-out);
 						@include media($notebook) {
 							left:0;
 						}
@@ -112,6 +113,12 @@
 							text:{align:center;transform:uppercase;}
 							color:$gold_color;
 							font:{weight:bold;family:$second_font;size:1.2em;}
+						}
+						&:hover {
+							background: $gold_color;
+							a {
+								color:$white_color;
+							}
 						}
 					}	
 				}

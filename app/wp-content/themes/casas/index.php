@@ -74,6 +74,7 @@
 											</div>
 											<div class="bg-share"></div>
 									</div>
+									<div class="read-more"><a href="<?php the_permalink(); ?>">leer más</a></div>
 								</div>
 
 						       	<h2 class="title-post">
@@ -111,6 +112,7 @@
 											</div>
 											<div class="bg-share"></div>
 									</div>
+									<div class="read-more"><a href="<?php the_permalink(); ?>">leer más</a></div>
 								</div>
 						        <h2 class="title-post">
 									<?php $thetitle = $post->post_title; $getlength = strlen($thetitle); $thelength = 40;
@@ -148,6 +150,7 @@
 											</div>
 											<div class="bg-share"></div>
 									</div>
+									<div class="read-more"><a href="<?php the_permalink(); ?>">leer más</a></div>
 								</div>
 						        <h2 class="title-post">
 									<?php $thetitle = $post->post_title; $getlength = strlen($thetitle); $thelength = 40;

@@ -29,17 +29,27 @@
 			.read-more {
 				height:40px;
 				width: 100px;
+				border:1px solid $gold_color;
 				background: $gold_color;
 				position: absolute;
 				right: 0;
 				top: 260px; 
 				text:{align:center;}
 				display: table;
+				z-index: 99999;
+				@include transition(all 0.3s ease-in-out);
 				a {
 					display: table-cell;
 					vertical-align: middle;
 					font:{size: 1.5em;weight:600;family:$second_font;style:italic;}
 					color:$white_color;
+				}
+				&:hover {
+					border:1px solid $gold_color;
+					background: $white_color;
+					a {
+					 	color:$gold_color;
+					}
 				}
 			}
 			&:nth-child(1) {
