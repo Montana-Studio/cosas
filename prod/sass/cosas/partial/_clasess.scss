@@ -22,6 +22,10 @@
         @include shift(0);
     }
 }
+.titulosh3-large{
+    @extend .titulosh3;
+    @include span-columns(12);
+}
 .hide{
     display: none;
 }

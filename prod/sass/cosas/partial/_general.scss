@@ -10,10 +10,6 @@ body{
 		}
 		.site-content{
 			@include row();
-            @include media($notebook){
-                @include span-columns(10);
-                @include shift(1);
-            }
 		}
 	}
 }
