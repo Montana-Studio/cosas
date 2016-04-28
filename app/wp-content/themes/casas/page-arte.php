@@ -1,4 +1,4 @@
-<?php  ?>
+<?php /*Template name: Arte */ ?>
 <?php get_header(); ?>
 
 	<main role="main">

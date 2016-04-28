@@ -30,7 +30,6 @@
 											<div class="social-list"><a href="#"><i class="fa fa-google-plus"></i></a></div>
 											<div class="social-list"><a href="#"><i class="fa fa-whatsapp"></i></a></div>
 										</div>	
-										<div class="btn-share-art"><a href="<?php the_permalink(); ?>">leer más</a></div>
 									</div>
 									<div class="bg-share"></div>
 							</div>

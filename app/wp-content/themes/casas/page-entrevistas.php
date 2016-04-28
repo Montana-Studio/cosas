@@ -1,7 +1,7 @@
-<?php  ?>
+<?php /*Template name: Entrevistas */ ?>
 <?php get_header(); ?>
 
-	<main role="main">
+	<main role="main"> 
 		<!-- section -->
 		<div class="content-single">
 
@@ -12,7 +12,7 @@
 					<h1 class="title-section"><?php the_title(); ?></h1>
 
 					<ul>
-						<?php query_posts( 'category_name=arte&posts_per_page=10' );
+						<?php query_posts( 'category_name=entrevistas&posts_per_page=10' );
 	 					while ( have_posts() ) : the_post();
 							?>
 								<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

@@ -26,6 +26,7 @@
 	            @include pad(20px 0);
 	            text:{align:center;}
 	            font:{size:2em;}
+	            @include transition(all 0.3s ease-in-out);
 	           	@include media($notebook) {
 	           		@include span-columns(1);
 	           		font:{size:2.5em;}
@@ -41,6 +42,9 @@
 	                	@include media($notebook) {
 		                	float: left;
 		                }
+		                &:hover {
+		                	color:$gold_color;
+		                }
 	                }
 		        }
 	            a{
@@ -48,15 +52,25 @@
 	                height: 100%;
 	                display: block;
 	                color:$gray1_color;
+	                @include transition(all 0.3s ease-in-out);
 	                @include media($notebook) {
 	                	@include span-columns(3);
 						float: none;
 						margin: 0 auto;
 	                }
+                 	&:hover {
+	                	color:$gold_color;
+	                	svg {
+	                		path {
+	                			fill:$gold_color;
+	                		}
+	                	}
+	                }
 	                svg {
 						width: 100%;
 	                	height: 100%;
 	                	display: block;
+	                	@include transition(all 0.3s ease-in-out);
 	                	path {
 	                		fill:$gray1_color;
 	                	}
@@ -101,6 +115,13 @@
 						fill:$gray1_color;
 					}
 				}
+				&:hover {
+                	svg {
+                		path {
+                			fill:$gold_color;
+                		}
+                	}
+                }
 			}
 		}
 	}

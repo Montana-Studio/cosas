@@ -13,9 +13,9 @@
 		-moz-box-shadow: 0px 2px 9px 0px rgba(135,135,135,0.57);
 		box-shadow: 0px 2px 9px 0px rgba(135,135,135,0.57);
 		background: $white_color;
-		position: absolute;
-		z-index: 9999;
-		top: 0;
+		top: -1px;
+		position: fixed;
+   		z-index: 999999;
 		@include media($notebook) {
 			position: relative;
 			box-shadow: none;
@@ -101,6 +101,10 @@
 				margin:{right: 20px;}
 				a {
 					color:$gray1_color;
+					@include transition(all 0.3s ease-in-out);
+					&:hover {
+						color:$gold_color;
+					}
 				}
 			}
 		}
@@ -135,8 +139,20 @@
 						display: inline-block;
 						font:{family:$second_font;size: 1.2em;}
 						margin:{right: 20px;}
+						@include transition(all 0.3s ease-in-out);
 						@include media($desktop) {
 							font:{size: 1.5em;}
+						}
+						&.current-menu-item {
+							a {
+								color:$gray2_color;
+								font:{weight:bold;}
+							}
+						}
+						&:hover {
+							a {
+								color:$gray1_color;
+							}
 						}
 					}
 				}
@@ -229,20 +245,31 @@
 	display: none;
 	background: $black_color;
 	position: absolute;
-	left:0;
-	top:0;
+	position: fixed;
+    left: 0;
+    top: 0;
+    overflow-x: scroll;
+    height: 100%;
 	&.openMobile {
 		display: block;
-		z-index: 9999;
+   		z-index: 99999999;
 	}
 	.header-MenuMobile {
 		@include span-columns(12);
 		.logo {
 			@include span-columns(5);
-			img {
+			a {
 				width: 100%;
-				height: auto;
+				height: 100%;
 				display: block;
+				svg {
+					width: 100%;
+					height: auto;
+					display: block;
+					path {
+						fill:$gray1_color;
+					}
+				}
 			}
 		}
 		.mobile-icon-menu {
@@ -294,19 +321,17 @@
 		@include span-columns(12);
 		@include omega();
 		.nav {
-			.menu {
-				ul {
-					@include span-columns(12);
-					@include omega();
-					@include pad();
-					margin:0;
-					li {
-						list-style: none;
-						font:{family:$second_font;size: 1.8em;}
-						margin:{bottom:5px;}
-						a {
-							color:$gold_color;
-						}
+			ul {
+				@include span-columns(12);
+				@include omega();
+				@include pad();
+				margin:0;
+				li {
+					list-style: none;
+					font:{family:$second_font;size: 1.8em;}
+					margin:{bottom:5px;}
+					a {
+						color:$gold_color;
 					}
 				}
 			}
@@ -358,11 +383,16 @@
 				float: none;
 				display: inline-block;
 				a {
-					@include span-columns(12);
-					img {
+					width: 100%;
+					height: 100%;
+					display: block;
+					svg {
 						width: 100%;
 						height: auto;
 						display: block;
+						path {
+							fill: $gray1_color;
+						}
 					}
 				}
 			}

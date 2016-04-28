@@ -97,6 +97,29 @@
 					height: 100px;
 					background-size: cover;
 					background-position: center;
+					.share-post {
+						.inter-share {
+							.title-share {
+								display: none;
+								font:{size:1em !important;}
+							}
+							.social-ul {
+								margin:{top:0;}
+								.social-list {
+									@include span-columns(6);
+									text:{align:center;}
+									margin:0;
+									a {
+										font:{size:20px !important;}
+										margin:{right: 5px !important;}
+									}
+								}	
+							}
+							.btn-share-art {
+								display: none !important;
+							}
+						}
+					} 
 				}
 				.content-infoAgenda {
 					@include span-columns(8);
@@ -119,10 +142,18 @@
 						bottom: -1px;
 						border:1px solid $gold_color;
 						padding: 5px 10px;
+						@include transition(all 0.3s ease-in-out);
 						a {
 							color: $gold_color;
 							font:{weight:bold;family:$primary_font;}
     						text:{transform: uppercase;}
+						}
+						&:hover {
+							border:1px solid $gold_color;
+							background: $gold_color;
+							a {
+								color:$white_color; 
+							}
 						}
 					}
 				}
