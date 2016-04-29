@@ -22,14 +22,14 @@
 		        </div>
 		        <ul class="network">
 					<li>
-						<a target="_blank" href="http://www.cosas.com/">
+						<a target="_blank" href="<?php echo get_site_url(1); ?>">
 							<svg viewBox="0 0 792 268">
 	                            <use xlink:href="#cosas-logotype"/>
 	                        </svg>
 						</a>
 					</li>
 					<li>
-						<a target="_blank" href="http://www.cosas.com/casas/">
+						<a target="_blank" href="<?php echo get_site_url(3); ?>">
 							<svg viewBox="0 0 792 268">
 	                            <use xlink:href="#casas-logotype"/>
 	                        </svg>
