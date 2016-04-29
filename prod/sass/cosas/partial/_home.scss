@@ -117,6 +117,7 @@
 				top:10px;
 				color:$white;
 				font:{size:em(20);}
+                z-index: 9;
                 i{
                     display: table;
                     &::before{
@@ -166,31 +167,6 @@
                 min-height:325px;
                 position: relative;
                 overflow: hidden;
-                .hover-content{
-                    position: absolute;
-                    z-index: 99;
-                    background:{color:rgba(0,0,0,.8);}
-                    width:100%;
-                    height: 100%;
-                    top:0;
-                    left:0;
-                    right:0;
-                    bottom:0;
-                    display: none;
-                    .btn_more{
-                        @include span-columns(6);
-                        @include shift(3);
-                        @include pad(5px);
-                        position: absolute;
-                        bottom: 20%;
-                        border:1px solid $white;
-                        a{
-                            color:$white;
-                            font:{size:em(13)}
-                            text:{transform:uppercase;}
-                        }
-                    }
-                }
                 &:hover{
                     .hover-content{
                         display: block;
@@ -270,31 +246,6 @@
             @include media($notebook){
                 position: relative;
                 overflow: hidden;
-                .hover-content{
-                    position: absolute;
-                    z-index: 99;
-                    background:{color:rgba(0,0,0,.8);}
-                    width:100%;
-                    height: 100%;
-                    top:0;
-                    left:0;
-                    right:0;
-                    bottom:0;
-                    display: none;
-                    .btn_more{
-                        @include span-columns(7);
-                        @include shift(2.5);
-                        @include pad(5px);
-                        position: absolute;
-                        bottom: 20%;
-                        border:1px solid $white;
-                        a{
-                            color:$white;
-                            font:{size:em(13)}
-                            text:{transform:uppercase;}
-                        }
-                    }
-                }
                 &:hover{
                     .hover-content{
                         display: block;
@@ -335,6 +286,7 @@
                     top:10px;
                     color:$white;
                     font:{size:em(15);}
+                    z-index: 9;
                     @include textAlign(center);
                     i{
                         display: table;
@@ -408,31 +360,6 @@
             @include media($notebook){
                 position: relative;
                 overflow: hidden;
-                .hover-content{
-                    position: absolute;
-                    z-index: 99;
-                    background:{color:rgba(0,0,0,.8);}
-                    width:100%;
-                    height: 100%;
-                    top:0;
-                    left:0;
-                    right:0;
-                    bottom:0;
-                    display: none;
-                    .btn_more{
-                        @include span-columns(6);
-                        @include shift(3);
-                        @include pad(5px);
-                        position: absolute;
-                        bottom: 20%;
-                        border:1px solid $white;
-                        a{
-                            color:$white;
-                            font:{size:em(13)}
-                            text:{transform:uppercase;}
-                        }
-                    }
-                }
                 &:hover{
                     .hover-content{
                         display: block;
