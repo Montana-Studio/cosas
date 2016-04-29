@@ -455,6 +455,8 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 function casas_scripts() {
     wp_enqueue_style( 'colorbox-style', get_template_directory_uri() .'/css/colorbox.css' ); 
 
+    wp_enqueue_style( 'galery3d', get_template_directory_uri() .'/css/style_galery3d.css' ); 
+
     wp_enqueue_style( 'casas-style', get_template_directory_uri() .'/css/casas.min.css' );
 
     wp_enqueue_script('jquery');
@@ -464,6 +466,10 @@ function casas_scripts() {
     wp_enqueue_script( 'casas-scripts', get_template_directory_uri() . '/js/casas.min.js', array(), '20160422', true );
 
     wp_enqueue_script( 'resp-slider', get_template_directory_uri() .'/js/responsiveslides.min.js',array(),'20160424', true );
+
+    wp_enqueue_script( 'mdrnz', get_template_directory_uri() .'/js/modernizr.custom.53451.js',array(),'20160424', true );
+
+    wp_enqueue_script( 'galery3djs', get_template_directory_uri() .'/js/jquery.gallery.js',array(),'20160424', true ); 
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
@@ -495,3 +501,4 @@ function jgallery_sc() {
     return do_shortcode('[gallery link="file"]');
 }
 add_shortcode('jgallery','jgallery_sc'); 
+

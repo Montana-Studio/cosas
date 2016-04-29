@@ -70,14 +70,15 @@ jQuery(document).ready(function($){
 	});  
 	$('.gallery').prepend('<div class="title-section">Galería de imágenes</div>');
 
-	$('#cboxPrevious').append('>');
-	$('#cboxNext').append('<');
-	$('#cboxClose').append('x'); 
-
 	$(document).bind('cbox_open', function() {
 	    $('html').css({ overflow: 'hidden' });
 	}).bind('cbox_closed', function() {
 	    $('html').css({ overflow: '' });
 	});
 
+	$('#dg-container').gallery({
+		current		: 0,	
+		autoplay	: true,
+		interval	: 5000  
+	}); 
 }); 
