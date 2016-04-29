@@ -98,6 +98,8 @@ function html5blank_header_scripts()
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
         
         wp_enqueue_script( 'resp-slider', get_template_directory_uri() .'/js/responsiveslides.min.js',array(),'20160424', true );
+        
+        //wp_enqueue_script( 'jsshares', get_template_directory_uri() .'/js/whatsappShare.min.js',array(),'20160428', true );
     }
 }
 

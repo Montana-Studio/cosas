@@ -2,6 +2,16 @@
 <html <?php language_attributes(); ?> class="no-js">
 	<head>
 		<meta charset="<?php bloginfo('charset'); ?>">
+		<meta property="og:title" content="<?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?>" />
+        <meta property="og:description" content="<?php bloginfo('description'); ?>" />
+        <?php 
+            if(is_single()){
+                if ( has_post_thumbnail() ) { ?>
+                    <meta property="og:image" content="<?php the_post_thumbnail_url(); ?>" />
+            
+        <?php   }
+            } 
+        ?>
 		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
 
 		<link href="//www.google-analytics.com" rel="dns-prefetch">
@@ -55,46 +65,39 @@
             <div class="network">
                 <ul>
                     <li>
-                        <svg viewBox="0 0 759 232">
-                            <use xlink:href="#logo-cosas" class="net-menu"/>
-                        </svg>
-                    </li>
-                    
-                    <li>
-                        
-                        <svg viewBox="0 0 751.333 195.333">
-                            
-                            <use xlink:href="#logo-casas" class="net-menu"/>
-                            
-                        </svg>
-                        
+                        <a target="_blank" href="http://www.cosas.com/">
+                            <svg viewBox="0 0 792 268">
+                                <use xlink:href="#logo-cosas"/>
+                            </svg>
+                        </a>
                     </li>
                     <li>
-                        
-                        <svg viewBox="0 0 759 232">
-                            
-                            <use xlink:href="#logo-couture" class="net-menu"/>
-                            
-                        </svg>
-                        
+                        <a target="_blank" href="http://www.cosas.com/casas/">
+                            <svg viewBox="0 0 792 268">
+                                <use xlink:href="#logo-casas"/>
+                            </svg>
+                        </a>	
                     </li>
                     <li>
-                        
-                        <svg viewBox="0 0 1088 199">
-                            
-                            <use xlink:href="#logo-lujo" class="net-menu"/>
-                            
-                        </svg>
-                        
+                        <a target="_blank" href="http://www.cosas.com/couture/">
+                            <svg viewBox="0 0 792 268">
+                                <use xlink:href="#logo-couture"/>
+                            </svg>
+                        </a>
                     </li>
                     <li>
-                        
-                        <svg viewBox="0 0 640 268">
-                            
-                            <use xlink:href="#logo-repost" class="net-menu"/>
-                            
-                        </svg>
-                        
+                        <a target="_blank" href="http://www.cosas.com/?post_type=lujo">
+                            <svg viewBox="0 0 792 268">
+                                <use xlink:href="#logo-lujo"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="http://www.cosas.com/repost/">
+                            <svg viewBox="0 0 792 268">
+                                <use xlink:href="#logo-repost"/>
+                            </svg>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -113,7 +116,7 @@
                 <div class="logo-medio">
                     <a href="<?php echo site_url();?>">
                     <?php if(1==$blog_id){ ?>
-                        <svg  viewBox="0 0 759 232">
+                        <svg  viewBox="0 0 759 262">
                             <use xlink:href="#logo-cosas" class="logo-head"/>
                         </svg>
                     <?php } ?>
@@ -147,7 +150,7 @@
             
     
                 <div class="last-content">
-                    
+                    <?php if(!wp_is_mobile()){ ?>
                     <div class="nav-deskt">
                         
                         <?php html5blank_nav('header-menu'); ?>
@@ -158,7 +161,7 @@
                                 <i class="fa fa-search"></i>
                             </div>
                             
-                            <div class="lasts">
+                            <div id="view-lasts" class="lasts">
 
                                 <span>17</span>
                                 <p>nuevos articulos</p>
@@ -169,7 +172,7 @@
                         </div>
                         
                     </div>
-                    
+                    <?php } ?>
                     <div class="main-last">
 
                         <span>17</span>
@@ -205,5 +208,50 @@
                     </div>
 
                 </div>
+                <?php if(!wp_is_mobile()){ ?>
+                    <div class="last-content-desk">
+                        <ul class="post-last-desk">
+                        <?php 
+                            // WP_Query arguments
+                            $lastspage = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                            $args = array (
+                                'cat'                    => '0',
+                                'posts_per_page'         => '6',
+                                'order'                  => 'DESC',
+                                'orderby'                => 'date',
+                                'paged'                  => $lastspage
+                            );
+
+                            // The Query
+                            $lasts = new WP_Query( $args );
+
+                            // The Loop
+                            if ( $lasts->have_posts() ) {
+                                while ( $lasts->have_posts() ) {
+                                    $lasts->the_post();
+                                        get_template_part('loop-lasts');
+                                }
+                            } else {
+                                // no posts found
+                            }
+
+                            // Restore original Post Data
+                            wp_reset_postdata();
+                            global $lasts;
+
+                            $big = 999999999;
+
+                            echo paginate_links( array(
+                                'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                                'format' => '?paged=%#%',
+                                'current' => max( 1, get_query_var('paged') ),
+                                'total' => $lasts->max_num_pages,
+                                'prev_text'    => '<i class="fa fa-angle-left"></i> anterior',
+                                'next_text'    => 'siguiente <i class="fa fa-angle-right"></i>'
+                            ) );
+                        ?>
+                        </ul>
+                    </div>
+                <?php } ?>
             
            <div id="content" class="site-content">

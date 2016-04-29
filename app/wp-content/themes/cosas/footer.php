@@ -30,50 +30,42 @@
 
                 </ul>
                 <ul class="network">
-                    <li>
-                        <svg viewBox="0 0 759 232">
-                            
-                            <use xlink:href="#logo-cosas" class="footer-network"/>
-                            
-                        </svg>
-                    </li>
-                    <li>
-                        
-                        <svg viewBox="0 0 751.333 195.333">
-                            
-                            <use xlink:href="#logo-casas" class="footer-network"/>
-                            
-                        </svg>
-                        
-                    </li>
-                    <li>
-                        
-                        <svg viewBox="0 0 759 232">
-                            
-                            <use xlink:href="#logo-couture" class="footer-network"/>
-                            
-                        </svg>
-                        
-                    </li>
-                    <li>
-                        
-                        <svg viewBox="0 0 1088 199">
-                            
-                            <use xlink:href="#logo-lujo" class="footer-network"/>
-                            
-                        </svg>
-                        
-                    </li>
-                    <li>
-                        
-                        <svg viewBox="0 0 640 268">
-                            
-                            <use xlink:href="#logo-repost" class="footer-network"/>
-                            
-                        </svg>
-                        
-                    </li>
-                </ul>
+					<li>
+						<a target="_blank" href="<?php echo get_site_url(1); ?>">
+							<svg viewBox="0 0 792 268">
+	                            <use xlink:href="#logo-cosas"/>
+	                        </svg>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="<?php echo get_site_url(3); ?>">
+							<svg viewBox="0 0 792 268">
+	                            <use xlink:href="#logo-casas"/>
+	                        </svg>
+						</A>	
+					</li>
+					<li>
+						<a target="_blank" href="http://www.cosas.com/couture/">
+							<svg viewBox="0 0 792 268">
+	                            <use xlink:href="#logo-couture"/>
+	                        </svg>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="http://www.cosas.com/?post_type=lujo">
+							<svg viewBox="0 0 792 268">
+	                            <use xlink:href="#logo-lujo"/>
+	                        </svg>
+						</a>
+					</li>
+					<li>
+						<a target="_blank" href="http://www.cosas.com/repost/">
+							<svg viewBox="0 0 792 268">
+	                            <use xlink:href="#logo-repost"/>
+	                        </svg>
+						</a>
+					</li>
+				</ul>
 
             </footer><!-- #colophon -->
 
