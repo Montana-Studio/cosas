@@ -16,16 +16,25 @@
             wp_head();
             $blog_id = get_current_blog_id();
         ?>
-
+        
 	</head>
 	<body <?php body_class(); ?>>
+        
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.6";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
         
         <?php get_template_part('content-svg'); ?>
         
         <div id="menu-content" class="menu-list">
            <a href="<?php echo site_url();?>">
                 <?php if(1==$blog_id){ ?>
-                    <svg x="0px" y="0px" viewBox="0 0 196.32 64.49" class="menu-logo">
+                    <svg viewBox="0 0 759 232" class="menu-logo">
                         <use xlink:href="#logo-cosas" class="logo-menu"/>
                     </svg>
                 <?php } ?>
@@ -46,9 +55,46 @@
             <div class="network">
                 <ul>
                     <li>
-                        <svg x="0px" y="0px" viewBox="0 0 196.32 64.49">
+                        <svg viewBox="0 0 759 232">
                             <use xlink:href="#logo-cosas" class="net-menu"/>
                         </svg>
+                    </li>
+                    
+                    <li>
+                        
+                        <svg viewBox="0 0 751.333 195.333">
+                            
+                            <use xlink:href="#logo-casas" class="net-menu"/>
+                            
+                        </svg>
+                        
+                    </li>
+                    <li>
+                        
+                        <svg viewBox="0 0 759 232">
+                            
+                            <use xlink:href="#logo-couture" class="net-menu"/>
+                            
+                        </svg>
+                        
+                    </li>
+                    <li>
+                        
+                        <svg viewBox="0 0 1088 199">
+                            
+                            <use xlink:href="#logo-lujo" class="net-menu"/>
+                            
+                        </svg>
+                        
+                    </li>
+                    <li>
+                        
+                        <svg viewBox="0 0 640 268">
+                            
+                            <use xlink:href="#logo-repost" class="net-menu"/>
+                            
+                        </svg>
+                        
                     </li>
                 </ul>
             </div>
@@ -67,7 +113,7 @@
                 <div class="logo-medio">
                     <a href="<?php echo site_url();?>">
                     <?php if(1==$blog_id){ ?>
-                        <svg x="0px" y="0px" viewBox="0 0 196.32 64.49">
+                        <svg  viewBox="0 0 759 232">
                             <use xlink:href="#logo-cosas" class="logo-head"/>
                         </svg>
                     <?php } ?>

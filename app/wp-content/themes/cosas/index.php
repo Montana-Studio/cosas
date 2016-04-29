@@ -4,70 +4,61 @@
 	    
 		<main id="main" class="site-main">
             
-            <?php /*query_posts( 'cat=-0&posts_per_page=3&orderby=date&order=DESC' );
-                    while ( have_posts() ) : the_post();
-            
-                    if( $wp_query->current_post == 1 ) {?>
-                    
-                    
-                    
-                    <?php }
+            <?php 
+                // WP_Query arguments
+                $args = array (
+                    'cat'                    => '0',
+                    'posts_per_page'         => '3',
+                    'order'                  => 'DESC',
+                    'orderby'                => 'date',
+                );
+                $args1 = array (
+                    'category_name'          => 'cultura',
+                    'posts_per_page'         => '4',
+                    'order'                  => 'DESC',
+                    'orderby'                => 'date',
+                );
+
+                // The Query
+                $cosas = new WP_Query( $args );
+                $cosas1 = new WP_Query( $args1 );
+
+                // The Loop
+                if ( $cosas->have_posts() ) {
+                    $variable=1;
+
+                    while ( $cosas->have_posts() ) {
+                        $cosas->the_post();
+
                         get_template_part( 'loop-index');
-                endwhile;*/
-            
-            // WP_Query arguments
-            $args = array (
-                'cat'                    => '0',
-                'posts_per_page'         => '3',
-                'order'                  => 'DESC',
-                'orderby'                => 'date',
-            );
-            $args1 = array (
-                'category_name'          => 'cultura',
-                'posts_per_page'         => '4',
-                'order'                  => 'DESC',
-                'orderby'                => 'date',
-            );
 
-            // The Query
-            $cosas = new WP_Query( $args );
-            $cosas1 = new WP_Query( $args1 );
+                        if($variable == 1&&!wp_is_mobile()){ ?>
+                            <div class="destacados">
+                                <ul class="rslides" id="slider5">
+                                <?php 
+                                    if($cosas1->have_posts()){
+                                        while ($cosas1->have_posts()){
+                                            $cosas1->the_post();
 
-            // The Loop
-            if ( $cosas->have_posts() ) {
-                $variable=1;
-                
-                while ( $cosas->have_posts() ) {
-                    $cosas->the_post();
-                    
-                    get_template_part( 'loop-index');
-                    
-                    if($variable == 1&&!wp_is_mobile()){ ?>
-                        <div class="destacados">
-                            <ul class="rslides" id="slider5">
-                            <?php 
-                                if($cosas1->have_posts()){
-                                    while ($cosas1->have_posts()){
-                                        $cosas1->the_post();
-                                        
-                                        get_template_part( 'loop-last'); }
-                                    
-                                }else{
-                                    echo 'no hay post';
-                                }
-                                wp_reset_postdata();
-                            ?>
-                            </ul>
-                        </div>
-                    <?php }
-                    
-                    $variable++;
+                                            get_template_part( 'loop-last'); }
+
+                                    }else{
+                                        echo 'no hay post';
+                                    }
+                                    wp_reset_postdata();
+                                ?>
+                                </ul>
+                            </div>
+                        <?php }
+
+                        $variable++;
+                    }
+                } else {
+                    echo 'no hay post';
                 }
-            } else {
-                echo 'no hay post';
-            }
-            
-            wp_reset_postdata(); ?>
+
+                wp_reset_postdata(); 
+            ?>
 
 		</main>
           
@@ -190,8 +181,8 @@
 
             <main id="main-7" class="site-main-7">
 
-                <svg x="0px" y="0px" viewBox="0 0 196.32 64.49">
-                    <use xlink:href="#logo-cosas" class="logo-casas"/>
+                <svg viewBox="0 0 759 232">
+                    <use xlink:href="#logo-casas" class="logo-casas"/>
                 </svg>
 
                 <?php
@@ -245,6 +236,15 @@
                     while ( have_posts() ) : the_post();?>
                         <?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' );?>
                          <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php echo $src[0]; ?>');">
+                            
+                               <?php if(!wp_is_mobile()){ ?>
+                                <div class="hover-content">
+                                    <div class="btn_more">
+                                        <a href="<?php echo get_permalink(); ?>">seguir leyendo</a>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                            
                              <footer class="entry-footer">
                                 <?php
                                     if ( is_single() ) {
@@ -312,8 +312,8 @@
         </main>
         <main id="main-7" class="site-main-7-mobile">
 
-            <svg x="0px" y="0px" viewBox="0 0 196.32 64.49">
-                <use xlink:href="#logo-cosas" class="logo-casas"/>
+            <svg viewBox="0 0 759 232">
+                <use xlink:href="#logo-casas" class="logo-casas"/>
             </svg>
             <div class="maxcasas">
                 <?php

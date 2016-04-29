@@ -1,0 +1,94 @@
+.single-content{
+    @include span-columns(12);
+    @include pad(5px 10px);
+    @include media($notebook){
+        @include span-columns(10);
+        @include shift(1);
+    }
+    article{
+        .img-post-single{
+            @include span-columns(12);
+            position: relative;
+            overflow: hidden;
+            margin:{top:5px;}
+            background: {size:cover;repeat:no-repeat;position: center 20%;}
+            min-height: 216px;
+            .data-post-single{
+                @include span-columns(10);
+                @include shift(1);
+                @include textAlign(center);
+                position: absolute;
+                bottom:0;
+                background:{color: $white;}
+                h1{
+                    @include span-columns(10);
+                    @include shift(1);
+                    @extend .no-margins;
+                    font:{family:$playFair;size:em(18);}
+                }
+                .times-post{
+                    @include span-columns(10);
+                    @include shift(1);
+                    color:#999;
+					font:{size:em(9);}
+					margin:{bottom:5px;}
+                }
+                .author{
+                    @extend .times-post;
+                    a{
+                        color:#999;
+                        font:{weight:bold;}
+                    }
+                }
+                @include media($notebook){
+                    @include span-columns(8);
+                    @include shift(2);
+                }
+            }
+            @include media($notebook){
+                min-height:416px;
+            }
+        }
+        h3{
+            @include span-columns(10);
+            @include shift(1);
+            text:{align:center;}
+            font:{size:em(12);weight:bold;}
+            color:#999;
+        }
+        h5{
+            @include span-columns(12);
+            color:#999;
+            font:{size:em(11);weight:bold;}
+        }
+        blockquote{
+            img{
+                width:100%;
+                height:auto;
+            }
+        }
+        .post-single{
+            p{
+                clear:both;
+                font:{size:em(11);}
+                color:#999;
+                iframe{
+                    width:100%;
+                    max-height:200px;
+                    @include media($notebook){
+                        max-height:640px;
+                    }
+                }
+            }
+            @include media($notebook){
+                clear:none;
+                @include span-columns(8);
+            }
+        }
+        .sidebar{
+            @include direction-context(right-to-left){
+                @include span-columns(4);
+            }
+        }
+    }
+}

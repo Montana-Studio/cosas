@@ -51,6 +51,8 @@
             @include span-columns(1.5);
             @include textAlign(center);
             @include pad(20px 0);
+            position: relative;
+            overflow: hidden;
             &.logo-cosas{
                 @include span-columns(6);
                 @include pad(0);
@@ -81,7 +83,9 @@
         @include textAlign(center);
         li{
             display: inline-block;
-            width: 31.76157%;
+            width:20%;
+            position: relative;
+            overflow: hidden;
             .footer-network{
                 fill:#929292;
             }

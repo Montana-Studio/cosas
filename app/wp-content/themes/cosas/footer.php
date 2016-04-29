@@ -18,7 +18,7 @@
 
                     <li class="logo-cosas">
 
-                        <svg x="0px" y="0px" viewBox="0 0 196.32 64.49">
+                        <svg viewBox="0 0 759 232">
                             <use xlink:href="#logo-cosas" class="footer-red"/>
                         </svg>
 
@@ -31,9 +31,47 @@
                 </ul>
                 <ul class="network">
                     <li>
-                        <svg x="0px" y="0px" viewBox="0 0 196.32 64.49">
+                        <svg viewBox="0 0 759 232">
+                            
                             <use xlink:href="#logo-cosas" class="footer-network"/>
+                            
                         </svg>
+                    </li>
+                    <li>
+                        
+                        <svg viewBox="0 0 751.333 195.333">
+                            
+                            <use xlink:href="#logo-casas" class="footer-network"/>
+                            
+                        </svg>
+                        
+                    </li>
+                    <li>
+                        
+                        <svg viewBox="0 0 759 232">
+                            
+                            <use xlink:href="#logo-couture" class="footer-network"/>
+                            
+                        </svg>
+                        
+                    </li>
+                    <li>
+                        
+                        <svg viewBox="0 0 1088 199">
+                            
+                            <use xlink:href="#logo-lujo" class="footer-network"/>
+                            
+                        </svg>
+                        
+                    </li>
+                    <li>
+                        
+                        <svg viewBox="0 0 640 268">
+                            
+                            <use xlink:href="#logo-repost" class="footer-network"/>
+                            
+                        </svg>
+                        
                     </li>
                 </ul>
 

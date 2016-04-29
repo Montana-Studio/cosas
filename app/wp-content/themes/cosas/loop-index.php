@@ -1,7 +1,15 @@
 <?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' ); ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('home-posts'); ?> style="background-image: url('<?php echo $src[0]; ?>');">
-
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php echo $src[0]; ?>');">
+    
+    <?php if(!wp_is_mobile()){ ?>
+        <div class="hover-content">
+            <div class="btn_more">
+                <a href="<?php echo get_permalink(); ?>">seguir leyendo</a>
+            </div>
+        </div>
+    <?php } ?>
+    
     <a href="<?php echo get_permalink(); ?>" class="more-link"><i class="fa fa-plus"></i></a>
 
 	<footer class="entry-footer">

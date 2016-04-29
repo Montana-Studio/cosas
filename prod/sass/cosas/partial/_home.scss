@@ -61,15 +61,15 @@
                 height: 45px;
                 text-decoration: none;
                 cursor: pointer;
-                border:{left:1px solid #323232}
-                color:#323232;
+                border:{left:1px solid #b3b3b3}
+                color:#b3b3b3;
                 i{
                     display: table-cell;
                     vertical-align: middle;
                     font:{size:em(28);}
                 }
                 &.next{
-                    border:{bottom:1px solid #323232}
+                    border:{bottom:1px solid #b3b3b3}
                 }
                 &.prev{
                     top:45px;
@@ -164,6 +164,38 @@
                 @include span-columns(3.2);
                 @include omega();
                 min-height:325px;
+                position: relative;
+                overflow: hidden;
+                .hover-content{
+                    position: absolute;
+                    z-index: 99;
+                    background:{color:rgba(0,0,0,.8);}
+                    width:100%;
+                    height: 100%;
+                    top:0;
+                    left:0;
+                    right:0;
+                    bottom:0;
+                    display: none;
+                    .btn_more{
+                        @include span-columns(6);
+                        @include shift(3);
+                        @include pad(5px);
+                        position: absolute;
+                        bottom: 20%;
+                        border:1px solid $white;
+                        a{
+                            color:$white;
+                            font:{size:em(13)}
+                            text:{transform:uppercase;}
+                        }
+                    }
+                }
+                &:hover{
+                    .hover-content{
+                        display: block;
+                    }
+                }
             }
 		}
 	}
@@ -234,6 +266,40 @@
 						color:#000;
 					}
 				}
+            }
+            @include media($notebook){
+                position: relative;
+                overflow: hidden;
+                .hover-content{
+                    position: absolute;
+                    z-index: 99;
+                    background:{color:rgba(0,0,0,.8);}
+                    width:100%;
+                    height: 100%;
+                    top:0;
+                    left:0;
+                    right:0;
+                    bottom:0;
+                    display: none;
+                    .btn_more{
+                        @include span-columns(7);
+                        @include shift(2.5);
+                        @include pad(5px);
+                        position: absolute;
+                        bottom: 20%;
+                        border:1px solid $white;
+                        a{
+                            color:$white;
+                            font:{size:em(13)}
+                            text:{transform:uppercase;}
+                        }
+                    }
+                }
+                &:hover{
+                    .hover-content{
+                        display: block;
+                    }
+                }
             }
         }
     }
@@ -339,6 +405,40 @@
 					}
 				}
             }
+            @include media($notebook){
+                position: relative;
+                overflow: hidden;
+                .hover-content{
+                    position: absolute;
+                    z-index: 99;
+                    background:{color:rgba(0,0,0,.8);}
+                    width:100%;
+                    height: 100%;
+                    top:0;
+                    left:0;
+                    right:0;
+                    bottom:0;
+                    display: none;
+                    .btn_more{
+                        @include span-columns(6);
+                        @include shift(3);
+                        @include pad(5px);
+                        position: absolute;
+                        bottom: 20%;
+                        border:1px solid $white;
+                        a{
+                            color:$white;
+                            font:{size:em(13)}
+                            text:{transform:uppercase;}
+                        }
+                    }
+                }
+                &:hover{
+                    .hover-content{
+                        display: block;
+                    }
+                }
+            }
         }
     }
 	.site-main-4{
@@ -422,6 +522,40 @@
                     a{
                         font:{size:em(11);family:$playFair}
                         color:#000;
+                    }
+                }
+            }
+            @include media($notebook){
+                position: relative;
+                overflow: hidden;
+                .hover-content{
+                    position: absolute;
+                    z-index: 99;
+                    background:{color:rgba(0,0,0,.8);}
+                    width:100%;
+                    height: 100%;
+                    top:0;
+                    left:0;
+                    right:0;
+                    bottom:0;
+                    display: none;
+                    .btn_more{
+                        @include span-columns(6);
+                        @include shift(3);
+                        @include pad(5px);
+                        position: absolute;
+                        bottom: 20%;
+                        border:1px solid $white;
+                        a{
+                            color:$white;
+                            font:{size:em(13)}
+                            text:{transform:uppercase;}
+                        }
+                    }
+                }
+                &:hover{
+                    .hover-content{
+                        display: block;
                     }
                 }
             }
