@@ -179,4 +179,32 @@
 			}
 		}
 	}
-}
+	.facebook-widget {
+		@include span-columns(12);
+		@include omega();
+		text:{align: center;}
+		margin:{bottom:30px;} 
+		@include media($tablet) {
+			@include span-columns(6);
+		}
+		@include media($tabletLand) {
+			@include span-columns(6);
+		}
+		@include media($notebook) {
+			@include span-columns(12);
+		}
+	}
+	.widget-tw {
+		@include span-columns(12);
+		@include omega();
+		@include media($tablet) {
+			@include span-columns(6);
+		}
+		@include media($tabletLand) {
+			@include span-columns(6);
+		}
+		@include media($notebook) {
+			@include span-columns(12);
+		}
+	}
+}	

@@ -5,6 +5,81 @@
 	@include media($notebook) {
 		padding: 0;
 	}
+	ul {
+		@include span-columns(12);
+		margin:0;
+		padding: 0;
+		li {
+			@include span-columns(5.8);
+			list-style: none;
+			display: inline-block;
+			margin:{bottom:10px;} 
+			@include media($notebook) {
+				@include span-columns(3);
+				list-style: none;
+				margin:{bottom:30px;} 
+			}
+			.imagen-post {
+				@include span-columns(12);
+				@include omega();
+				height: 200px;
+				background-position: center;
+				background-size: cover;
+				position: relative;
+				@include media($notebook) {
+					height: 320px !important;
+				}
+				@include media($desktop) {
+					height: 380px !important;
+				}	
+				.share-mobile {
+					background:$black_color;
+					.btn-share-art {
+						color:$black_color;
+					}
+				}
+				.inter-article {
+					background: $white_color;
+					@include outer-container(90%);
+					margin: 0 auto;
+					left:0;
+					right: 0;
+					bottom: 0;
+					position: absolute;
+					text:{align:center;}
+					padding: 5px 0;
+					@include media($notebook) {
+						padding: 5px 10px;
+					}
+					.title-post {
+						font:{size: 1em;}
+						text:{transform:lowercase;}
+						&::first-letter {
+							text:{transform:uppercase;}
+						}
+						@include media($notebook) {
+							font:{size: 1.6em;weight:bold;}
+						}
+					}
+					.date {
+						font:{size:10px;}
+					}
+				}
+				.share-post {
+					.bg-share {
+						background: $black_color;
+					}
+					.btn-share-art {
+						&:hover {
+							a {
+								color:$black_color !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	.title-section {
 		text:{align:left !important;}
 	}

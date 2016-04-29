@@ -3,8 +3,14 @@
 						?>
 <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+			<?php 
+				global $post, $posts;
+				$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+				$first_img = $matches [1] [0];
+				$first_img=str_replace('local.mediatrends/_Montana-Stusio/sitios/_COSAS/htdocs/app', 'www.cosas.com', $first_img);
+			?>
+			<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>')">
 
-		<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); $imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; ?>')">
 			<div class="share-mobile"><div class="content-share"><i class="fa fa-plus"></i></div></div>
 			<div class="share-post">
 					<div class="inter-share">
@@ -24,7 +30,7 @@
 		<div class="content-SliderHome">
 			<div class="inter-Slider">
 
-				<div class="category-title"> <?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?></div> 
+				<div class="category-title"> <?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' / '; } ?></div> 
 
 				<h2 class="title-post">
 					<?php $thetitle = $post->post_title; $getlength = strlen($thetitle); $thelength = 70;

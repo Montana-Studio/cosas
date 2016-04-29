@@ -44,12 +44,9 @@
 						<?php get_template_part('loop-vertical-tres'); ?>
 					</ul>
 				</div>
-			</section>
 
-			<?php get_sidebar(); ?>
-
-			<section class="section-loop-3cat">
-					<?php query_posts( 'posts_per_page=-1&cat=arte,cocina,arte buzz' ); $var = 0; ?>
+				<div class="section-loop-3cat">
+					<?php query_posts( 'posts_per_page=-1&cat=arte,gastronomia,arte-buzz' ); $var = 0; ?>
 
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -57,9 +54,32 @@
 
 					    	<div class="post-articulo">
 
-								<div class="title-section"> <?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?></div> 
+								<div class="title-section"> 
+								<?php $category = get_the_category(); 
+									if($category[0]->cat_name == "featured") {
 
-								<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); $imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; ?>')">
+									     $name = $category[1]->cat_name;
+									     $cat_id = get_cat_ID( $name );
+									     $link = get_category_link( $cat_id );
+									     echo '<a href="'. esc_url( $link ) .'"">'. $name .'</a>';
+									} else {
+
+									     $name = $category[0]->cat_name;
+									     $cat_id = get_cat_ID( $name );
+									     $link = get_category_link( $cat_id );
+									     echo '<a href="'. esc_url( $link ) .'"">'. $name .'</a>';
+									}
+								?>
+								</div> 
+
+								<?php 
+									global $post, $posts;
+									$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+									$first_img = $matches [1] [0];
+									$first_img=str_replace('local.mediatrends/_Montana-Stusio/sitios/_COSAS/htdocs/app', 'www.cosas.com', $first_img);
+								?>
+									<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>')">
+
 									<div class="share-mobile"><div class="content-share"><i class="fa fa-plus"></i></div></div>
 									<div class="share-post">
 											<div class="inter-share">
@@ -92,12 +112,35 @@
 							</div>
 					    <?php $var++; ?>
 
-					    <?php elseif ( in_category('cocina') && $var == 1 ): ?>
+					    <?php elseif ( in_category('gastronomia') && $var == 1 ): ?>
 
 							<div class="post-articulo">
-								<div class="title-section"> <?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?></div> 
+								<div class="title-section"> 
+								<?php $category = get_the_category(); 
+									if($category[0]->cat_name == "featured") {
 
-								<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); $imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; ?>')">
+									     $name = $category[1]->cat_name;
+									     $cat_id = get_cat_ID( $name );
+									     $link = get_category_link( $cat_id );
+									     echo '<a href="'. esc_url( $link ) .'"">'. $name .'</a>';
+									} else {
+
+									     $name = $category[0]->cat_name;
+									     $cat_id = get_cat_ID( $name );
+									     $link = get_category_link( $cat_id );
+									     echo '<a href="'. esc_url( $link ) .'"">'. $name .'</a>';
+									}
+								?>
+								</div> 
+
+								<?php 
+									global $post, $posts;
+									$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+									$first_img = $matches [1] [0];
+									$first_img=str_replace('local.mediatrends/_Montana-Stusio/sitios/_COSAS/htdocs/app', 'www.cosas.com', $first_img);
+								?>
+									<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>')">
+
 									<div class="share-mobile"><div class="content-share"><i class="fa fa-plus"></i></div></div>
 									<div class="share-post">
 											<div class="inter-share">
@@ -129,13 +172,36 @@
 							</div>
 					    <?php $var++; ?>
 
-					    <?php elseif ( in_category('arte buzz') && $var == 2 ): ?>
+					    <?php elseif ( in_category('arte-buzz') && $var == 2 ): ?>
 								
 							<div class="post-articulo">
 
-								<div class="title-section"> <?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?></div> 
+								<div class="title-section"> 
+								<?php $category = get_the_category(); 
+									if($category[0]->cat_name == "featured") {
+
+									     $name = $category[1]->cat_name;
+									     $cat_id = get_cat_ID( $name );
+									     $link = get_category_link( $cat_id );
+									     echo '<a href="'. esc_url( $link ) .'"">'. $name .'</a>';
+									} else {
+
+									     $name = $category[0]->cat_name;
+									     $cat_id = get_cat_ID( $name );
+									     $link = get_category_link( $cat_id );
+									     echo '<a href="'. esc_url( $link ) .'"">'. $name .'</a>';
+									}
+								?>
+								</div> 
+
+								<?php 
+									global $post, $posts;
+									$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+									$first_img = $matches [1] [0];
+									$first_img=str_replace('local.mediatrends/_Montana-Stusio/sitios/_COSAS/htdocs/app', 'www.cosas.com', $first_img);
+								?>
+									<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>')">
 						
-								<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); $imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; ?>')">
 									<div class="share-mobile"><div class="content-share"><i class="fa fa-plus"></i></div></div>
 									<div class="share-post">
 											<div class="inter-share">
@@ -170,7 +236,10 @@
 					    <?php endif; ?>
 
 					<?php endwhile; endif; ?>
+				</div>
 			</section>
+			
+			<?php get_sidebar(); ?>
 
 		</div>
 
@@ -185,6 +254,23 @@
 
 			<section class="cosas-ult-art">
 				<h3 class="title-section">Ultimos Articulos COSAS</h3>
+
+				<ul>
+					<?php
+	                    global $switched;
+	                    switch_to_blog(1); //switched to blog id 2
+
+	                    // Get latest Post
+	                    $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC');
+	                    $cnt =0;
+	                ?> 
+
+	                <?php foreach($latest_posts as $post) : setup_postdata($post);
+	                   	get_template_part('loop-cosas');                              
+	                 endforeach ; ?>
+
+	                <?php restore_current_blog(); //switched back to main site ?>  
+				</ul>
 			</section>
 
 			<section class="newsletter-casas">

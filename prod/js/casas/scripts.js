@@ -35,8 +35,9 @@ jQuery(document).ready(function($){
 		});
 	});
 	$('.share-mobile').click(function() {
-		$('.share-post').toggleClass('show-options-share');
-		$('.share-mobile').toggleClass('options-open');
+		//$('.share-post').toggleClass('show-options-share');
+		$(this).siblings('div').toggleClass('show-options-share');
+		$(this).closest('div').toggleClass('options-open');
 	});
 	$('.buscar-home').click(function(){
 		$('.buscador-open').toggleClass('show-search');
