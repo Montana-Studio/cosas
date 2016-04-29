@@ -1,7 +1,7 @@
 <?php query_posts( 'category_name=arte&posts_per_page=4' );
  					while ( have_posts() ) : the_post();
 						?>
-<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 			<?php 
 				global $post, $posts;
@@ -50,7 +50,7 @@
 
 			</div>
 		</div>
-</li>
+	</li> 
 <?php
 endwhile;
 ?>

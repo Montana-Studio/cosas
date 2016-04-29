@@ -453,9 +453,13 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 
 /**  Enqueue scripts and styles.  */
 function casas_scripts() {
+    wp_enqueue_style( 'colorbox-style', get_template_directory_uri() .'/css/colorbox.css' ); 
+
     wp_enqueue_style( 'casas-style', get_template_directory_uri() .'/css/casas.min.css' );
 
     wp_enqueue_script('jquery');
+
+   wp_enqueue_script( 'color-box', get_template_directory_uri() .'/js/jquery.colorbox-min.js',array(),'', true ); 
     
     wp_enqueue_script( 'casas-scripts', get_template_directory_uri() . '/js/casas.min.js', array(), '20160422', true );
 
@@ -476,4 +480,18 @@ function new_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
-?>
+function rkv_imagelink_setup() {
+    $image_set = get_option( 'image_default_link_type' );
+    
+    if ($image_set !== 'none') {
+        update_option('image_default_link_type', 'none');
+    }
+}
+add_action('admin_init', 'rkv_imagelink_setup', 10); 
+
+function jgallery_sc() {
+    wp_enqueue_script('colorbox-js', get_template_directory_uri().'/colorbox/colorbox.min.js',array('jquery'));
+    wp_enqueue_style('colorbox-css', get_template_directory_uri().'/colorbox/colorbox.css');
+    return do_shortcode('[gallery link="file"]');
+}
+add_shortcode('jgallery','jgallery_sc'); 
