@@ -49,7 +49,7 @@
 
 						<!-- logo -->
 						<div class="logo">
-							<a href="<?php echo home_url(); ?>">
+							<a href="<?php echo get_site_url(3); ?>">
 								<svg viewBox="0 0 792 268">
 		                            <use xlink:href="#casas-logotype"/>
 		                        </svg>
@@ -63,10 +63,11 @@
 
 						<div class="rrss-desktop">
 							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-								<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+								<li><div class="current-date"><?php setlocale(LC_ALL,"es_ES"); echo strftime("%A %d de %B del %Y");?></div></li> 
+								<li><a target="_blank" href="https://www.facebook.com/RevistaCASAS/"><i class="fa fa-facebook"></i></a></li>
+			            		<li><a target="_blank" href="https://twitter.com/revista_casas"><i class="fa fa-twitter"></i></a></li>
+			            		<li><a target="_blank" href="https://www.instagram.com/revistacasas/"><i class="fa fa-instagram"></i></a></li>
+			            		<li><a target="_blank" href="https://www.youtube.com/user/revistacosas"><i class="fa fa-youtube"></i></a></li> 
 							</ul>
 						</div>
 
@@ -124,23 +125,23 @@
 						<div class="follow-us">
 							<ul>
 								<li class="title-li"><p>Siguenos en</p></li>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-								<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+								<li><a target="_blank" href="https://www.facebook.com/RevistaCASAS/"><i class="fa fa-facebook"></i></a></li>
+			            		<li><a target="_blank" href="https://twitter.com/revista_casas"><i class="fa fa-twitter"></i></a></li>
+			            		<li><a target="_blank" href="https://www.instagram.com/revistacasas/"><i class="fa fa-instagram"></i></a></li>
+			            		<li><a target="_blank" href="https://www.youtube.com/user/revistacosas"><i class="fa fa-youtube"></i></a></li> 
 							</ul>
 						</div>
 						<div class="logotypes">
 							<ul>
 								<li>
-									<a target="_blank" href="http://www.cosas.com/">
+									<a target="_blank" href="<?php echo get_site_url(1); ?>">
 										<svg viewBox="0 0 792 268">
 				                            <use xlink:href="#cosas-logotype"/>
 				                        </svg>
 									</a>
 								</li>
-								<li>
-									<a target="_blank" href="http://www.cosas.com/casas/">
+								<li> 
+									<a target="_blank" href="<?php echo get_site_url(3); ?>">
 										<svg viewBox="0 0 792 268">
 				                            <use xlink:href="#casas-logotype"/>
 				                        </svg>

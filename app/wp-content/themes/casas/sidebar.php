@@ -19,17 +19,84 @@
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	</div>
 
-	<!--div class="portadas-cosas">
+	<div class="portadas-cosas">
 		<div class="line-content"></div>
 		<div class="header-portada">
 			<div class="text-portada">
 				<h3>ultimas portadas</h3>
-				<div class="logotype"><img src="<?php echo get_template_directory_uri(); ?>/img/cosas_logotype.png" alt="Logo Cosas"></div>
+					<div class="logotype">
+						<svg viewBox="0 0 792 268">
+		                    <use xlink:href="#cosas-logotype"/>
+		                </svg>
+					</div>
 				<div class="btn-site"><a href="#">ver más</a></div>
 			</div>
 			<div class="img-portada"></div>
 		</div>
-	</div-->
+		<div class="portadas-list">
+			<ul>
+				<li><div class="img-portada"></div></li>
+				<li><div class="img-portada"></div></li>
+				<li><div class="img-portada"></div></li>
+				<li><div class="img-portada"></div></li>
+				<li><div class="img-portada"></div></li>
+				<li><div class="img-portada"></div></li>
+			</ul>
+		</div>
+	</div> 
+	<div class="portadas-cosas portadas-casas">
+		<div class="line-content"></div>
+		<div class="header-portada">
+			<div class="text-portada">
+				<h3>ultimas portadas</h3>
+					<div class="logotype">
+						<svg viewBox="0 0 792 268">
+		                    <use xlink:href="#casas-logotype"/>
+		                </svg>
+					</div>
+				<div class="btn-site"><a href="#">ver más</a></div>
+			</div>
+			<div class="img-portada"></div>
+		</div>
+		<div class="portadas-list">
+			<ul>
+				<li><div class="img-portada"></div></li>
+				<li><div class="img-portada"></div></li>
+				<li><div class="img-portada"></div></li>
+				<li><div class="img-portada"></div></li>
+				<li><div class="img-portada"></div></li>
+				<li><div class="img-portada"></div></li>
+			</ul>
+		</div>
+	</div> 
+	<div class="ultimas-portadas-cosas">
+		<div class="line-content"></div>
+		<div class="header-portada">
+			<div class="text-portada">
+				<h3>ultimas portadas</h3>
+				<div class="btn-site"><a href="#">ver más</a></div>
+			</div>
+		</div>
+		<div class="content-3dp">
+			<div id="dg-container" class="dg-container">
+				<div class="dg-wrapper">
+					<a href="#">
+						<img src="http://www.cosas.com/wp-content/uploads/2016/04/Portada1032.jpg" alt="image01">
+					</a>
+					<a href="#">
+						<img src="http://www.cosas.com/wp-content/uploads/2016/04/Portada1032.jpg" alt="image01">
+					</a>
+					<a href="#">
+						<img src="http://www.cosas.com/wp-content/uploads/2016/04/Portada1032.jpg" alt="image01">
+					</a>
+				</div>
+				<nav>	
+					<span class="dg-prev"><</span>
+					<span class="dg-next">></span>
+				</nav>
+			</div> 
+		</div>
+	</div> 
 
 </aside>
 <!-- /sidebar -->

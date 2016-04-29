@@ -1,6 +1,9 @@
 .sidebar {
 	@include span-columns(12);
 	padding: 0 10px;
+	@include media($mobileLand) {
+		padding: 0 100px;
+	}
 	@include media($notebook) {
 		@include span-columns(3.6);
 		@include omega();
@@ -16,14 +19,27 @@
 	.portadas-cosas {
 		@include span-columns(12);
 		background: $black_color;
-		height: 400px;
+		height:495px;
 		position: relative;
 		display: table;
+		margin:{bottom:20px;}
+		@include media($tablet) {
+			@include outer-container(70%);
+			margin:0 auto !important;
+			float: none;
+			height: 580px;
+		}
+		@include media($tabletLand) {
+			@include outer-container(60%);
+			margin:0 auto !important;
+			float: none;
+			height: 600px;
+		}
 		.line-content {
 			@include outer-container(90%);
 			display: table-cell;
 			vertical-align: middle;
-			height: 300px;
+			height: 395px;
 			border: 1px solid $white_color;
 			float: none;
 			position: absolute;
@@ -31,6 +47,12 @@
 			left: 0;
 			top:50px;
 			z-index: 9;
+			@include media($tablet) {
+				height: 480px;
+			}
+			@include media($tabletLand) {
+				height: 500px;
+			}
 		}
 		.header-portada {
 			@include outer-container(70%);
@@ -46,6 +68,7 @@
 			.text-portada {
 				@include span-columns(6);
 				@include omega();
+				margin:{top: 20px;}
 				h3 {
 					font:{family:$primary_font;size:0.9em;}
 					text:{transform:uppercase;}
@@ -56,10 +79,11 @@
 					@include omega();
 					float: none;
 					margin: 0 auto;
-					img {
+					svg {
 						width: 100%;
 						height: auto;
 						display: block;
+						fill:$gray1_color;
 					}
 				}
 				.btn-site {
@@ -78,8 +102,145 @@
 				}
 			}
 			.img-portada {
-				@include span-columns(6);
+				@include span-columns(5.5);
 				@include omega();
+				@include media($mobileLand) {
+					@include span-columns(4.8); 
+					@include omega();
+				}
+				@include media($tablet) {
+					@include span-columns(4.6); 
+					@include omega();
+					height: 163px;
+				}
+				@include media($tabletLand) {
+					height: 194px;
+				}	
+				height: 140px;
+				background: $gray1_color;
+			}
+		}
+		.portadas-list {
+			@include outer-container(93%);
+			float: none;
+			z-index: 99;
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin:0 auto !important;
+			bottom: 20px;
+			text:{align:center;}
+			ul {
+				@include span-columns(12);
+				margin:0;
+				padding: 0;
+				li {
+					@include span-columns(3.5);
+					float: none;
+					list-style: none;
+					display: inline-block;
+					margin:{top:0;left:3px;bottom:5px;right:3px;}
+					height: 140px;
+
+					@include media($mobileLand) {
+						@include span-columns(3); 
+						@include omega();
+						height: 163px;
+					}
+					@include media($tablet) {
+						@include span-columns(3.8); 
+						@include omega();
+						height: 175px;
+						margin:{top:0;left:6px;bottom:10px;right:6px;}
+					}
+					@include media($tabletLand) {
+						height: 170px;
+					}
+					.img-portada {
+						@include span-columns(12);
+						@include omega();
+						height: 100%;
+						background: $gray1_color;
+					} 
+				}
+			}
+		}
+		&.portadas-casas {
+			background: $gold_color;
+			.header-portada {
+				background: $gold_color;
+				.logotype { 
+					svg {
+						fill:$white_color;
+					}
+				}	
+			}	
+		}
+	}
+	.ultimas-portadas-cosas {
+		@include span-columns(12);
+		background: $black_color;
+		height:320px;
+		position: relative;
+		display: table;
+		margin:{bottom:20px;}
+		.line-content {
+			@include outer-container(90%);
+			display: table-cell;
+			vertical-align: middle;
+			height: 290px;
+			border: 1px solid $white_color;
+			float: none;
+			position: absolute;
+			right: 0;
+			left: 0;
+			top:10px;
+			z-index: 9;
+		}
+		.header-portada {
+			@include outer-container(80%);
+			float: none;
+			background: $black_color;
+			z-index: 99;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 10px;
+			text:{align:center;}
+			color:$white_color;
+			.text-portada {
+				@include span-columns(12);
+				@include omega();
+				margin:{top: 5px;}
+				text:{align:center;}
+				h3 {
+					@include span-columns(12);
+					@include omega();
+					font:{family:$primary_font;size:1.5em;}
+					text:{transform:uppercase;}
+					margin: 3px 0;
+				}
+			}
+		}
+		.content-3dp {
+			@include span-columns(12);
+			@include omega();
+			.dg-container {
+				@include span-columns(12);
+				@include omega(); 
+				margin-top: 70px;
+				height: 250px;
+				.dg-wrapper {
+					@include span-columns(12);
+					@include omega(); 
+					a {
+						width: 150px !important;
+						height: 70px !important;
+						img {
+							padding: 0 !important; 
+						}
+					}
+				}
 			}
 		}
 	}
@@ -185,7 +346,7 @@
 		text:{align: center;}
 		margin:{bottom:30px;} 
 		@include media($tablet) {
-			@include span-columns(6);
+			@include span-columns(5.5);
 		}
 		@include media($tabletLand) {
 			@include span-columns(6);
@@ -198,7 +359,8 @@
 		@include span-columns(12);
 		@include omega();
 		@include media($tablet) {
-			@include span-columns(6);
+			@include span-columns(5.5);
+			float: right;
 		}
 		@include media($tabletLand) {
 			@include span-columns(6);

@@ -68,7 +68,7 @@
 							</div>
 
 							<div class="nav-SinglePost next-post">
-								<div class="arrow-nav right-nav"><a href="<?php next_post_link( $format, $link, $in_same_term = false, $excluded_terms = '', $taxonomy = 'category' ); ?>"><i class="fa fa-angle-right"></i></a></div>
+								<div class="arrow-nav right-nav"><a href="<?php echo get_permalink(get_adjacent_post(false,'',false)); ?>"><i class="fa fa-angle-right"></i></a></div>
 								<div class="contentPost">
 									<div class="title">Post posterior</div>
 									<div class="titlePost"><?php next_post_link(); ?> </div>
