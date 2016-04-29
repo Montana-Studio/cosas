@@ -321,7 +321,7 @@
                     switch_to_blog(3); //switched to blog id 2
 
                     // Get latest Post
-                    $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC');
+                    $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC'); 
                     $cnt =0;
                 ?> 
 

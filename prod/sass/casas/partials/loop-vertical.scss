@@ -2,7 +2,7 @@
 	@include span-columns(12);
 	@include omega();
 	@include media($notebook) {
-		@include span-columns(4);
+		@include span-columns(3.9);
 	}
 	.title-section {
 		@include span-columns(12);

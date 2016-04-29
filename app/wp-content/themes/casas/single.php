@@ -11,7 +11,7 @@
 					<!-- article -->
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-						<div class="category-title"><?php the_category(', '); // Separated by commas ?></div>
+						<div class="category-title"><?php the_category(' / '); // Separated by commas ?></div>
 
 						<h1 class="title-post">
 							<?php the_title(); ?>
@@ -37,7 +37,7 @@
 
 						<div class="tag-section">
 							<div class="contentTags">
-								<div class="titleTags"><i class="fa fa-tag"></i>TAG</div><div class="tagsCat"><?php the_category(', '); ?></div>
+								<div class="titleTags"><i class="fa fa-tag"></i>TAG</div><div class="tagsCat"><?php the_category(' / '); ?></div>
 							</div>
 
 							<div class="share-social">
@@ -68,10 +68,10 @@
 							</div>
 
 							<div class="nav-SinglePost next-post">
-								<div class="arrow-nav right-nav"><a href="<?php echo get_permalink(get_adjacent_post(true,'',false)); ?>"><i class="fa fa-angle-right"></i></a></div>
+								<div class="arrow-nav right-nav"><a href="<?php next_post_link( $format, $link, $in_same_term = false, $excluded_terms = '', $taxonomy = 'category' ); ?>"><i class="fa fa-angle-right"></i></a></div>
 								<div class="contentPost">
 									<div class="title">Post posterior</div>
-									<div class="titlePost"><?php next_post_link(); ?>  </div>
+									<div class="titlePost"><?php next_post_link(); ?> </div>
 								</div>
 
 							</div>	
@@ -132,6 +132,27 @@
 								$post = $orig_post;
 							wp_reset_query(); ?> 
 						</div>
+
+						<section class="cosas-ult-art">
+							<h3 class="title-section">Ultimos Articulos COSAS</h3>
+
+							<ul>
+								<?php
+				                    global $switched;
+				                    switch_to_blog(1); //switched to blog id 2
+
+				                    // Get latest Post
+				                    $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC');
+				                    $cnt =0;
+				                ?> 
+
+				                <?php foreach($latest_posts as $post) : setup_postdata($post);
+				                   	get_template_part('loop-cosas');                              
+				                 endforeach ; ?>
+
+				                <?php restore_current_blog(); //switched back to main site ?>  
+							</ul>
+						</section>
 
 
 					</article>

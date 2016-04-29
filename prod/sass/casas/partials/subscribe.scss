@@ -3,6 +3,11 @@
 	@include omega();
 	height: 300px;
 	padding: 10px;
+	@include media($tablet) {
+		@include span-columns(6);
+		@include omega();
+		padding: 0;
+	}
 	@include media($tabletLand) {
 		@include span-columns(5);
 		@include omega();

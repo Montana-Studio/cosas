@@ -59,8 +59,12 @@ body {
 			@include span-columns(12);
 			font:{family:$second_font;size: 2em;weight: bold;}
 			margin:{top:5px;bottom:0;left:0;right:0;}
+			text:{transform:lowercase;}
 			@include media($notebook) {
 				font:{weight:normal;}
+			}
+			&::first-letter {
+				text:{transform:uppercase;}
 			}
 		}
 		.category-title {
