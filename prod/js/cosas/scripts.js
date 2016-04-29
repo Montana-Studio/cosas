@@ -54,10 +54,17 @@ jQuery(document).ready(function($){
     });
     
     //SEARCH
-    $('.main-search').toggle(function(){
+    $('.close-search').on('click',function(){
+        $('.search-content').fadeOut();
+        $('.main-search i').toggleClass('fa-times fa-search');
+    });
+    
+    $('.main-search-open').toggle(function(){
         $('.search-content').fadeIn();
+        $('.main-search i').toggleClass('fa-search fa-times');
     },function(){
         $('.search-content').fadeOut();
+        $('.main-search i').toggleClass('fa-times fa-search');
     });
 });
 

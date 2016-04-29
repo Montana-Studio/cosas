@@ -1,3 +1,13 @@
+//MIXINS
+@mixin textAlign($align){
+	text:{align:$align;}
+}
+@mixin borderRadius($radios){
+    @include border-top-radius($radios);
+    @include border-right-radius($radios);
+    @include border-bottom-radius($radios);
+    @include border-left-radius($radios);
+}
 //CLASESS
 input, textarea{
     outline:none;
@@ -95,10 +105,11 @@ input, textarea{
     background:{color:rgba(0,0,0,.6);}
     z-index: 9999;
     @extend .hide;
+    @include pad(53px 0 0);
     form{
         @include span-columns(10);
         @include shift(1);
-        margin: {top:50%;}
+        margin: {top:35%;}
         input{
             @include span-columns(12);
             @include pad(20px 0);
@@ -107,13 +118,28 @@ input, textarea{
             background:{color: transparent;}
             color: #fff;
             text:{transform:uppercase;}
-            font:{size:em(15)}
+            font:{size:em(11)}
             @include placeholder {
                 color: $white;
             }
         }
         @include media($notebook){
-            margin:{top:20%;}
+            margin:{top:15%;}
+            input{
+                font:{size:em(15);}
+            }
+        }
+    }
+    @include media($notebook){
+    @include pad(73px 0 0);
+        .close-search{
+            @include span-columns(10);
+            @include shift(1);
+            @include textAlign(right);
+            i{
+                font:{size:em(20)}
+                color:$white;
+            }
         }
     }
 }
@@ -128,14 +154,4 @@ ul{
 		@extend .no-margins;
 		@include pad(0);
 	}
-}
-//MIXINS
-@mixin textAlign($align){
-	text:{align:$align;}
-}
-@mixin borderRadius($radios){
-    @include border-top-radius($radios);
-    @include border-right-radius($radios);
-    @include border-bottom-radius($radios);
-    @include border-left-radius($radios);
 }

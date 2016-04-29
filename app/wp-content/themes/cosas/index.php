@@ -161,7 +161,7 @@
 
                 </div>
             </main>
-
+<?php /*
             <main id="main-6" class="site-main-6">
 
                 <h3 class="titus">sociales</h3>
@@ -177,7 +177,7 @@
 
                 </div>
             </main>
-
+*/?>
             <main id="main-7" class="site-main-7">
 
                 <a href="<?php echo get_site_url(3); ?>">
@@ -292,7 +292,7 @@
 	</div>
 	
 	<?php if ( !wp_is_mobile() ){ ?>
-        <main id="main-5" class="site-main-5-mobile">
+        <?php /*/<main id="main-5" class="site-main-5-mobile">
 
             <h3 class="titus">videos</h3>
 
@@ -322,6 +322,7 @@
 
             </div>
         </main>
+        */?>
         <main id="main-7" class="site-main-7-mobile">
             <a href="<?php echo get_site_url(3); ?>">
                 

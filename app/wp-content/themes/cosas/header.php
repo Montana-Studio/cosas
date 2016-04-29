@@ -133,7 +133,7 @@
                     <i class="fa fa-bars"></i>
                 </nav><!-- #site-navigation -->
 
-                <div class="main-search">
+                <div class="main-search main-search-open">
                     <i class="fa fa-search"></i>
                 </div>
                 
@@ -163,7 +163,7 @@
                         
                         <div class="tools">
                             
-                            <div class="main-search">
+                            <div class="main-search main-search-open">
                                 <i class="fa fa-search"></i>
                             </div>
                             
