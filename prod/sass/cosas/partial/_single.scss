@@ -49,6 +49,26 @@
                 min-height:416px;
             }
         }
+        .sharecontent{
+            @include span-columns(12);
+            @include textAlign(center);
+            a{
+                display: inline-block;
+                font:{size:em(30);}
+                @include pad(10px 20px);
+                i{
+                    &.fa-facebook-square{
+                        color:#3b5998;    
+                    }
+                    &.fa-twitter-square{
+                        color:#00aced;
+                    }
+                    &.fa-pinterest-square{
+                        color:#cb2027;
+                    }
+                }
+            }
+        }
         h3{
             @include span-columns(10);
             @include shift(1);

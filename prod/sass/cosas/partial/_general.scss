@@ -12,4 +12,67 @@ body{
 			@include row();
 		}
 	}
+    &.search{
+        background:{color:#000;}
+        .site-content{
+            h1{
+                @include span-columns(12);
+                @include pad(0 10px);
+                @include media($notebook){
+                    @include span-columns(10);
+                    @include shift(1);
+                    @include pad(0);
+                }
+                color:$white;
+                font:{size:em(18);weight:normal;}
+                span{
+                    font:{weight:bold;}
+                }
+            }
+            section{
+                @include span-columns(12);
+                @include pad(0 10px);
+                @include media($notebook){
+                    @include span-columns(10);
+                    @include shift(1);
+                    @include pad(0);
+                }
+                article{
+                    @include span-columns(12);
+                    @include media($notebook){
+                        @include span-columns(6);
+                        @include omega(2n);
+                    }
+                    @include pad(10px 0);
+                    border:{top:1px solid #7b7b7a;bottom:1px solid #7b7b7a;}
+                    .img-search-content{
+                        @include span-columns(3);
+                        min-height:100px;
+                    }
+                    h2{
+                        @include span-columns(8);
+                        font:{size:em(18);weight:normal;}
+                        margin:5px 0;
+                        a{
+                            color:$white;
+                        }
+                    }
+                    span{
+                        @include span-columns(8);
+                        color:$white;
+                        font:{size:em(10);;}
+                    }
+                }
+            }
+            .pagination{
+                @include span-columns(10);
+                @include shift(1);
+                @include pad(10px 0);
+                color:$white;
+                a{
+                    color:$white;
+                }
+            }
+        }
+    }
 }

@@ -52,6 +52,13 @@ jQuery(document).ready(function($){
             $('#view-lasts i').toggleClass('fa-angle-up fa-angle-down');
         });
     });
+    
+    //SEARCH
+    $('.main-search').toggle(function(){
+        $('.search-content').fadeIn();
+    },function(){
+        $('.search-content').fadeOut();
+    });
 });
 
 

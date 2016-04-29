@@ -1,4 +1,10 @@
 //CLASESS
+input, textarea{
+    outline:none;
+    &::focus{
+        outline:none;
+    }
+}
 .no-margins{
 	margin:0;
 }
@@ -82,11 +88,35 @@
         }
     }
 }
-/*svg{
+.search-content{
+    position: fixed;
     width:100%;
-    position: relative;
-    height: auto;
-}*/
+    height: 100%;
+    background:{color:rgba(0,0,0,.6);}
+    z-index: 9999;
+    @extend .hide;
+    form{
+        @include span-columns(10);
+        @include shift(1);
+        margin: {top:50%;}
+        input{
+            @include span-columns(12);
+            @include pad(20px 0);
+            border: none;
+            border:{bottom: 3px solid #fff;}
+            background:{color: transparent;}
+            color: #fff;
+            text:{transform:uppercase;}
+            font:{size:em(15)}
+            @include placeholder {
+                color: $white;
+            }
+        }
+        @include media($notebook){
+            margin:{top:20%;}
+        }
+    }
+}
 a{
 	text:{decoration:none;}
 }

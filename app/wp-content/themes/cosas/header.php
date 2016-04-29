@@ -103,6 +103,12 @@
             </div>
 
         </div>
+        
+        <div class="search-content">
+            
+            <?php get_template_part('searchform'); ?>
+            
+        </div>
 		<!-- wrapper -->
 		<div id="page" class="site">
 
@@ -163,7 +169,7 @@
                             
                             <div id="view-lasts" class="lasts">
 
-                                <span>17</span>
+                                <span>6</span>
                                 <p>nuevos articulos</p>
 
                                 <i class="fa fa-angle-down"></i>

@@ -3,6 +3,8 @@
 	background:{color: #000}
     max-height: 53px;
 	clear:both;
+    position: relative;
+    z-index: 9999;
 	.logo-medio{
         position: relative;
         overflow: hidden;
@@ -124,7 +126,7 @@
 				-webkit-backface-visibility: hidden;
 				position: absolute;
 				display: none;
-				width: 100%;
+				width: 80%;
 				left: 0;
 				top: 0;
 				&:first-child {
@@ -202,8 +204,10 @@
                     @include span-columns(10);
                     background:{color: $red;}
                     color:$white;
+                    cursor:pointer;
                     span{
                         @include span-columns(4);
+                        @include textAlign(center);
                         font:{size:em(36)}
                     }
                     p{

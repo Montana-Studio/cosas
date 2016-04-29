@@ -1,19 +1,22 @@
-<?php get_header(); ?>
+<?php
+get_header();
+?>
+<section class="page-content">
+            <div class="breadcrumbs">
 
-	<main role="main">
-		<!-- section -->
-		<section>
+                <?php the_breadcrumb(); ?>
 
-			<h1><?php _e( 'Categories for ', 'html5blank' ); single_cat_title(); ?></h1>
+            </div>
 
-			<?php get_template_part('loop'); ?>
-
-			<?php get_template_part('pagination'); ?>
-
+            <h1 class="titus"><?php _e( 'Categories for ', 'html5blank' ); single_cat_title(); ?></h1>
+            
+            <div class="post-list">
+                <?php get_template_part('loop-paginas'); ?>
+            </div>
+            <div class="pagination">
+                <?php get_template_part('pagination-main'); ?>
+            </div>
 		</section>
-		<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
-
-<?php get_footer(); ?>
+<?php
+get_footer();
+?>
