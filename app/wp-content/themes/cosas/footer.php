@@ -59,7 +59,7 @@
 						</a>
 					</li>
 					<li>
-						<a target="_blank" href="http://www.cosas.com/repost/">
+						<a target="_blank" href="<?php echo get_site_url(4); ?>">
 							<svg viewBox="0 0 792 268">
 	                            <use xlink:href="#logo-repost"/>
 	                        </svg>

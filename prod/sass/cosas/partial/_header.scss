@@ -11,10 +11,16 @@
         @include span-columns(6);
         .logo-head{
             fill:$white;
+            &.repost{
+                fill:#000
+            }
         }
         svg{
             background:{color: $red;}
             height: 53px;
+            &.repost-bg{
+                background:{color: #fff;}
+            }
         }
         @include media($notebook){
             @include span-columns(6);
@@ -278,6 +284,9 @@
         @include pad(10px 0);
         .logo-menu{
             fill:#fff;
+            &.repost{
+                fill:$white;
+            }
         }
     }
     .menu{
@@ -361,7 +370,7 @@
 						width: 100%;
 						height: auto;
 						display: block;
-						fill: #999;
+						fill: #999 !important;
 					}
 				}
 			}

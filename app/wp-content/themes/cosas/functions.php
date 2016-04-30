@@ -100,6 +100,9 @@ function html5blank_header_scripts()
         wp_enqueue_script( 'resp-slider', get_template_directory_uri() .'/js/responsiveslides.min.js',array(),'20160424', true );
         
         //wp_enqueue_script( 'jsshares', get_template_directory_uri() .'/js/whatsappShare.min.js',array(),'20160428', true );
+        wp_enqueue_script( 'color-box', get_template_directory_uri() .'/js/jquery.colorbox-min.js',array(),'', true ); 
+        
+        wp_enqueue_script( 'galery3djs', get_template_directory_uri() .'/js/jquery.gallery.js',array(),'20160424', true ); 
     }
 }
 
@@ -115,7 +118,9 @@ function html5blank_conditional_scripts()
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
-
+    
+    wp_enqueue_style( 'colorbox-style', get_template_directory_uri() .'/css/colorbox.css' ); 
+    
     wp_register_style('html5blank', get_template_directory_uri() . '/css/cosas.min.css', array(), '1.0', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
 }
@@ -500,4 +505,21 @@ function the_breadcrumb() {
 		}
 	}
 }
+/**
+GALLERY'S
+**/
+function rkv_imagelink_setup() {
+    $image_set = get_option( 'image_default_link_type' );
+    
+    if ($image_set !== 'none') {
+        update_option('image_default_link_type', 'none');
+    }
+}
+add_action('admin_init', 'rkv_imagelink_setup', 10); 
+function jgallery_sc() {
+    wp_enqueue_script('colorbox-js', get_template_directory_uri().'/colorbox/colorbox.min.js',array('jquery'));
+    wp_enqueue_style('colorbox-css', get_template_directory_uri().'/colorbox/colorbox.css');
+    return do_shortcode('[gallery link="file"]');
+}
+add_shortcode('jgallery','jgallery_sc'); 
 ?>

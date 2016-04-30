@@ -25,8 +25,17 @@
 		<?php 
             wp_head();
             $blog_id = get_current_blog_id();
-        ?>
         
+            if(4==$blog_id){
+        ?>
+        <style>
+            .color-repost{
+                fill:#fa4b2a;
+            }
+        </style>
+        <?php
+            }
+        ?>
 	</head>
 	<body <?php body_class(); ?>>
         
@@ -47,6 +56,10 @@
                     <svg viewBox="0 0 759 232" class="menu-logo">
                         <use xlink:href="#logo-cosas" class="logo-menu"/>
                     </svg>
+                <?php }elseif(4==$blog_id){ ?>
+                    <svg  viewBox="0 0 759 262" class="menu-logo repost-bg">
+                        <use xlink:href="#logo-repost" class="logo-menu repost"/>
+                    </svg>
                 <?php } ?>
             </a>
             <div class="menu">
@@ -65,14 +78,14 @@
             <div class="network">
                 <ul>
                     <li>
-                        <a target="_blank" href="http://www.cosas.com/">
+                        <a target="_blank" href="<?php echo get_site_url(1); ?>">
                             <svg viewBox="0 0 792 268">
                                 <use xlink:href="#logo-cosas"/>
                             </svg>
                         </a>
                     </li>
                     <li>
-                        <a target="_blank" href="http://www.cosas.com/casas/">
+                        <a target="_blank" href="<?php echo get_site_url(3); ?>">
                             <svg viewBox="0 0 792 268">
                                 <use xlink:href="#logo-casas"/>
                             </svg>
@@ -93,7 +106,7 @@
                         </a>
                     </li>
                     <li>
-                        <a target="_blank" href="http://www.cosas.com/repost/">
+                        <a target="_blank" href="<?php echo get_site_url(4); ?>">
                             <svg viewBox="0 0 792 268">
                                 <use xlink:href="#logo-repost"/>
                             </svg>
@@ -124,6 +137,10 @@
                     <?php if(1==$blog_id){ ?>
                         <svg  viewBox="0 0 759 262">
                             <use xlink:href="#logo-cosas" class="logo-head"/>
+                        </svg>
+                    <?php }elseif(4==$blog_id){ ?>
+                        <svg  viewBox="0 0 759 262" class="repost-bg">
+                            <use xlink:href="#logo-repost" class="logo-head repost"/>
                         </svg>
                     <?php } ?>
                     </a>

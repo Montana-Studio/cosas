@@ -5,20 +5,35 @@
 		<main id="main" class="site-main">
             
             <?php 
-                // WP_Query arguments
-                $args = array (
-                    'cat'                    => '0',
-                    'posts_per_page'         => '3',
-                    'order'                  => 'DESC',
-                    'orderby'                => 'date',
-                );
-                $args1 = array (
-                    'category_name'          => 'cultura',
-                    'posts_per_page'         => '4',
-                    'order'                  => 'DESC',
-                    'orderby'                => 'date',
-                );
-
+                if(4==$blog_id){
+                   // WP_Query arguments
+                    $args = array (
+                        'category_name'          => 'belleza',
+                        'posts_per_page'         => '3',
+                        'order'                  => 'DESC',
+                        'orderby'                => 'date',
+                    );
+                    $args1 = array (
+                        'category_name'          => 'cultura',
+                        'posts_per_page'         => '4',
+                        'order'                  => 'DESC',
+                        'orderby'                => 'date',
+                    ); 
+                }else{
+                    // WP_Query arguments
+                    $args = array (
+                        'cat'                    => '0',
+                        'posts_per_page'         => '3',
+                        'order'                  => 'DESC',
+                        'orderby'                => 'date',
+                    );
+                    $args1 = array (
+                        'category_name'          => 'cultura',
+                        'posts_per_page'         => '4',
+                        'order'                  => 'DESC',
+                        'orderby'                => 'date',
+                    );
+                }
                 // The Query
                 $cosas = new WP_Query( $args );
                 $cosas1 = new WP_Query( $args1 );
