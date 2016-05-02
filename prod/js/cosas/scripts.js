@@ -104,6 +104,29 @@ jQuery(document).ready(function($){
 	    $('html').css({ overflow: '' });
 	});
     
+    
+    //FORMUBLARIO NEWSLETTER
+    $('.newsletter_form').on('submit', function(){
+		var nombre = $('#nombre_newsletter').val();
+		var correo = $('#correo_newsletter').val();
+		$.ajax({
+			type: 'POST',  
+            url: 'wp-content/themes/cosas/js/procesar_correo.php',  
+            data: 'nombre='+nombre+'&correo='+correo,
+			success: function(data){
+				if (data==='exito'){
+                    $('.newsletter_form').hide();
+                    $('.form-send').show();
+                    $('.form-send').text('Mensaje enviado con éxito.');
+                } else {
+                    $('.newsletter_form').hide();
+                    $('.form-send').show();
+                    $('.form-send').text('No hemos podido enviar tu mensaje. Inténtalo nuevamente.');
+                }
+			}
+		});
+        return false;	
+	});
 });
 
 

@@ -5,13 +5,12 @@
                 <div class="newsletter">
 
                     <h3 class="titus">suscribete a nuestro newsletter</h3>
-                    <form action="">
-
-                        <input type="text" name="nombre">
-                        <input type="text" name="mail">
-                        <input type="submite" name="enviar" value="suscribete">
-
+                    <form class="newsletter_form">
+                        <input type="text" placeholder="Nombre" id="nombre_newsletter">
+                        <input type="email" placeholder="email" id="correo_newsletter">
+                        <input type="submit" name="enviar" value="Suscríbete" placeholder="Suscríbete"/>
                     </form>
+                    <h3 class="form-send" style="color:#000;"></h3>
 
                 </div>
                 <ul class="redes">
