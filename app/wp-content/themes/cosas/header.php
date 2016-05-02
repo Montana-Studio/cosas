@@ -156,7 +156,9 @@
                 
                 <div class="meta-info hide">
                     
-                    <span><?php setlocale(LC_ALL,"es_ES"); echo strftime("%A %d de %B  %Y.  %T");?></span>
+                    <span>
+                        <?php $nommes = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"); $nomdia = array("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"); $dia = date("j"); $mes = date("n"); $diasemana = date("w"); $hoy = $nomdia[$diasemana]." ".$dia." de ".$nommes[$mes-1]." del ".date(Y); echo $hoy; ?>
+                    </span>
                     
                     <div class="redes">
                         <ul>
