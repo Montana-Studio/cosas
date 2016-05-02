@@ -19,11 +19,12 @@
 										<div class="inter-share">
 											<div class="title-share">Comparte</div>
 											<div class="social-ul">
-												<div class="social-list"><a href="#"><i class="fa fa-facebook"></i></a></div>
-												<div class="social-list"><a href="#"><i class="fa fa-twitter"></i></a></div>
-												<div class="social-list"><a href="#"><i class="fa fa-google-plus"></i></a></div>
-												<div class="social-list"><a href="#"><i class="fa fa-whatsapp"></i></a></div>
-											</div>	
+												<div class="social-list"><a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-facebook"></i></a></div>
+												<div class="social-list"><a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', 520, 350)"><i class="fa fa-twitter"></i></a></div>
+												<div class="social-list"><a href="javascript:piShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_post_thumbnail_url(); ?>', '', 520, 350)"><i class="fa fa-pinterest"></i></a></div>
+												<div class="social-list"><a href="https://plus.google.com/share?url=<?php the_permalink(); ?>" onclick="window.open('https://plus.google.com/share?url=<?php the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i></a></div>
+												<div class="social-list whatsapp-list"><a href="whatsapp://send?text=<?php the_title(); ?> – <?php urlencode(the_permalink()); ?>" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a></div> 
+											</div>
 											<div class="btn-share-art"><a href="<?php the_permalink(); ?>">leer más</a></div>
 										</div>
 										<div class="bg-share"></div>

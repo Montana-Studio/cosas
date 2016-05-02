@@ -77,44 +77,44 @@ jQuery(document).ready(function($){
     
     //GALLERIES
     $('.gallery-icon a').colorbox({
-		rel:'gallery',
-		width: '95%',
-		height: 'auto',
-		maxWidth: '760',
-		maxHeight: '700',
-		previous:'<i class="fa fa-angle-left"></i>',
-		next:'<i class="fa fa-angle-right"></i>',
-		close: '<i class="fa fa-close"></i>',
-		current:'Imagen {current} de {total}',
-		title: function() { return $(this).find('img').attr('alt'); },
-		transition:'fade',
-		scalePhotos: true,
-		preloading: false,
-		className: true,
-		fadeOut: 600,
-		slideshowAuto: true,
-		scrolling: 'false'
+        rel:'gallery',
+        width: '95%',
+        height: 'auto',
+        maxWidth: '760',
+        maxHeight: '700',
+        previous:'<i class="fa fa-angle-left"></i>',
+        next:'<i class="fa fa-angle-right"></i>',
+        close: '<i class="fa fa-close"></i>',
+        current:'Imagen {current} de {total}',
+        title: function() { return $(this).find('img').attr('alt'); },
+        transition:'fade',
+        scalePhotos: true,
+        preloading: false,
+        className: true,
+        fadeOut: 600,
+        slideshowAuto: true,
+        scrolling: 'false'
 
-	});  
-	$('.gallery').prepend('<div class="title-section">Galería de imágenes</div>');
+    });  
+    $('.gallery').prepend('<div class="title-section">Galería de imágenes</div>');
 
-	$(document).bind('cbox_open', function() {
-	    $('html').css({ overflow: 'hidden' });
-	}).bind('cbox_closed', function() {
-	    $('html').css({ overflow: '' });
-	});
+    $(document).bind('cbox_open', function() {
+        $('html').css({ overflow: 'hidden' });
+    }).bind('cbox_closed', function() {
+        $('html').css({ overflow: '' });
+    });
     
     
     //FORMUBLARIO NEWSLETTER
     $('.newsletter_form').on('submit', function(){
-		var nombre = $('#nombre_newsletter').val();
-		var correo = $('#correo_newsletter').val();
-		$.ajax({
-			type: 'POST',  
+        var nombre = $('#nombre_newsletter').val();
+        var correo = $('#correo_newsletter').val();
+        $.ajax({
+            type: 'POST',  
             url: 'wp-content/themes/cosas/js/procesar_correo.php',  
             data: 'nombre='+nombre+'&correo='+correo,
-			success: function(data){
-				if (data==='exito'){
+            success: function(data){
+                if (data==='exito'){
                     $('.newsletter_form').hide();
                     $('.form-send').show();
                     $('.form-send').text('Mensaje enviado con éxito.');
@@ -123,10 +123,10 @@ jQuery(document).ready(function($){
                     $('.form-send').show();
                     $('.form-send').text('No hemos podido enviar tu mensaje. Inténtalo nuevamente.');
                 }
-			}
-		});
-        return false;	
-	});
+            }
+        });
+        return false;   
+    });
 });
 
 

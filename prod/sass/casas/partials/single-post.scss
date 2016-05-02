@@ -72,6 +72,24 @@
 					@include media($notebook) {
 						height: 500px;
 					}
+					.share-post {
+						.inter-share {
+							.social-ul {
+								@include media($notebook) {
+									margin:{top:60px;}
+								}
+								.social-list {
+									a {
+									}
+									&.whatsapp-list {
+										@include media($notebook) {
+											display: none;
+										}
+									}
+								} 
+							}
+						}
+					}
 				}
 				.content-postSingle {
 					@include span-columns(12);
@@ -126,16 +144,16 @@
 				}
 				.share-social {
 					@include span-columns(12);
-					@include omega();
+					@include omega(); 	
 					ul {
 						@include span-columns(12);
 						margin:{top:10px;bottom:0;}
 						padding: 0;
 						text:{align:center;}
 						@include media($notebook) {
-							@include outer-container(70%);
+							@include outer-container(80%);
 							float: none;
-							margin:0 auto !important;
+							margin:{top:0;left:auto !important;bottom:0; right:auto !important;} 
 						}
 						li {
 							@include span-columns(5.8);
@@ -144,7 +162,8 @@
 							float: none;
 		    				display: inline-block;
 		    				@include media($notebook) {
-								@include span-columns(3);
+								@include span-columns(2);
+								float: none;
 		    					display: inline-block;
 		    					margin:{right:10px;}
 							}
@@ -179,19 +198,79 @@
 										vertical-align: middle;
 										text:{align: left;}
 										font:{weight:bold;size:11px;family:$primary_font;}
-									}
+										@include transition(all 0.3s ease-in-out);
+									} 
 									&.facebook-share {
 										background:$facebook;
+										&:hover {
+											background: none;
+											color: $facebook;
+											border:1px solid  $facebook;
+											.icon-share {
+												color:$facebook;
+											}
+										}
 									}
 									&.twitter-share {
 										background:$twitter;
+										&:hover {
+											background: none;
+											color: $twitter;
+											border:1px solid $twitter ;
+											.icon-share {
+												color:$twitter ;
+											}
+										}
 									}
 									&.google-share {
 										background:$google;
+										&:hover {
+											background: none;
+											color:$google ;
+											border:1px solid  $google;
+											.icon-share {
+												color: $google;
+											}
+										}
 									}
 									&.correo-share {
 										background:$correo;
+										&:hover {
+											background: none;
+											color: $correo;
+											border:1px solid $correo ;
+											.icon-share {
+												color: $correo;
+											}
+										}
 									}
+									&.pinterest-share {
+										background:$pinterest;
+										&:hover {
+											background: none;
+											color: $pinterest;
+											border:1px solid $pinterest ;
+											.icon-share {
+												color:$pinterest;
+											}
+										}
+									}
+									&.whatsapp-share {
+										background:$whatsapp; 
+										&:hover {
+											background: none;
+											color: $whatsapp;
+											border:1px solid $whatsapp ;
+											.icon-share {
+												color: $whatsapp;
+											}
+										}
+									}
+								}
+							}
+							&.whatsapp-share-btn {
+								@include media($notebook) {
+									display: none;
 								}
 							}
 						}
