@@ -55,7 +55,7 @@
             a{
                 display: inline-block;
                 font:{size:em(30);}
-                @include pad(10px 20px);
+                @include pad(10px 5px);
                 i{
                     &.fa-facebook-square{
                         color:#3b5998;    
@@ -71,6 +71,9 @@
                     }
                     &.fa-envelope-square{
                         color:#c0c0c0;
+                    }
+                    &.fa-whatsapp{
+                        color:#43d854;
                     }
                 }
             }
