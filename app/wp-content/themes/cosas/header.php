@@ -156,7 +156,7 @@
                 
                 <div class="meta-info hide">
                     
-                    <span><?php setlocale(LC_ALL,"es_ES"); echo strftime("%A %d de %B del %Y");?></span>
+                    <span><?php setlocale(LC_ALL,"es_ES"); echo strftime("%A %d de %B  %Y.  %T");?></span>
                     
                     <div class="redes">
                         <ul>
@@ -186,7 +186,7 @@
                             
                             <div id="view-lasts" class="lasts">
 
-                                <span>6</span>
+                                <span>06</span>
                                 <p>nuevos articulos</p>
 
                                 <i class="fa fa-angle-down"></i>

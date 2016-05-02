@@ -56,7 +56,7 @@
             font:{size:10px;family:$openSans}
             @include pad(25px 0);
             @include direction-context(right-to-left){
-                @include span-columns(3);
+                @include span-columns(3.5);
             }
             span{
                 @include span-columns(6);
@@ -201,7 +201,9 @@
                 }
             }
             .tools{
-                @include span-columns(2);
+                @include direction-context(right-to-left){
+                    @include span-columns(2);
+                }
                 .main-search{
                     @include span-columns(2);
                     @include pad(10px 0);

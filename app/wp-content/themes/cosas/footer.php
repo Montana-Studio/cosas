@@ -73,8 +73,6 @@
 		<!-- /#page -->
 
 		<?php wp_footer(); ?>
-		
-		<script src="//cdn.jsdelivr.net/jquery.marquee/1.3.9/jquery.marquee.min.js"></script>
 
 		<!-- analytics -->
 		<script>

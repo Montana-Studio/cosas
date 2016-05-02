@@ -1,7 +1,9 @@
 <li id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image:url('<?php the_post_thumbnail_url(); ?>');">
-   
-    <!--a href="<?php echo the_permalink(); ?>" title="<?php the_title(); ?>"></a-->
-    
+    <span class="hoverzoom hide">
+        
+        <i class="fa fa-search-plus"></i>
+        
+    </span>
     <script type="text/javascript" async>
     
         jQuery(document).ready(function($){
