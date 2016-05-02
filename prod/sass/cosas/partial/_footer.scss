@@ -28,7 +28,7 @@
                 background:{color: #eee;}
                 margin:{top:10px;}
                 @include pad(10px);
-                &[type="submite"]{
+                &[type="submit"]{
                     background:{color: #000;}
                     @include textAlign(center);
                     color:#fff;
@@ -37,7 +37,7 @@
                 }
                 @include media($notebook){
                     @include span-columns(3);
-                    &[type="submite"]{
+                    &[type="submit"]{
                         @include span-columns(2);
                     }
                 }
