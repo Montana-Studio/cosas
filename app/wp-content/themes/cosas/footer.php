@@ -23,10 +23,10 @@
                         </svg>
 
                     </li>
-                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                    <li><a href=""><i class="fa fa-youtube-play"></i></a></li>
+                    <li><a href="https://www.facebook.com/revistacosas"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/RevistaCosas"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/revistacosas"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://www.youtube.com/user/CosasChile"><i class="fa fa-youtube-play"></i></a></li>
 
                 </ul>
                 <ul class="network">
@@ -73,6 +73,7 @@
 		<!-- /#page -->
 
 		<?php wp_footer(); ?>
+
 		<!-- analytics -->
 		<script>
 		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){

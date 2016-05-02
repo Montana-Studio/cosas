@@ -66,6 +66,44 @@ jQuery(document).ready(function($){
         $('.search-content').fadeOut();
         $('.main-search i').toggleClass('fa-times fa-search');
     });
+    
+    //MARQUEE
+    $('.marquee').marquee({
+        pauseOnHover:true,
+        duplicated:true,
+        startVisible:true,
+        duration:10000
+    });
+    
+    //GALLERIES
+    $('.gallery-icon a').colorbox({
+		rel:'gallery',
+		width: '95%',
+		height: 'auto',
+		maxWidth: '760',
+		maxHeight: '700',
+		previous:'<i class="fa fa-angle-left"></i>',
+		next:'<i class="fa fa-angle-right"></i>',
+		close: '<i class="fa fa-close"></i>',
+		current:'Imagen {current} de {total}',
+		title: function() { return $(this).find('img').attr('alt'); },
+		transition:'fade',
+		scalePhotos: true,
+		preloading: false,
+		className: true,
+		fadeOut: 600,
+		slideshowAuto: true,
+		scrolling: 'false'
+
+	});  
+	$('.gallery').prepend('<div class="title-section">Galería de imágenes</div>');
+
+	$(document).bind('cbox_open', function() {
+	    $('html').css({ overflow: 'hidden' });
+	}).bind('cbox_closed', function() {
+	    $('html').css({ overflow: '' });
+	});
+    
 });
 
 

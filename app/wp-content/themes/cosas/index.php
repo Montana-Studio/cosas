@@ -176,23 +176,50 @@
 
                 </div>
             </main>
-<?php /*
             <main id="main-6" class="site-main-6">
 
                 <h3 class="titus">sociales</h3>
 
                 <div class="content-sociales">
-                    <ul>
-                        <?php query_posts( 'category_name=sociales&posts_per_page=-0&orderby=date&order=DESC' );
-                            while ( have_posts() ) : the_post();
-                                get_template_part( 'loop-sociales');
-                            endwhile;
+                    <ul class="marquee social-content">
+                        <?php
+                            // WP_Query arguments
+                            $args = array (
+                                'category_name'          => 'vidasocial',
+                                'order'                  => 'DESC',
+                                'orderby'                => 'date',
+                            );
+
+                            // The Query
+                            $sociales = new WP_Query( $args );
+
+                            // The Loop
+                            if ( $sociales->have_posts() ) {
+                                while ( $sociales->have_posts() ) {
+                                    $sociales->the_post();
+                                    get_template_part( 'loop-sociales');
+                                }
+                            } else {
+                                // no posts found
+                            }
+
+                            // Restore original Post Data
+                            wp_reset_postdata();    
                         ?>
                     </ul>
+                    
+                    <div id="loadOverlay">
+                        <div class="closeimage"><i class="fa fa-times"></i></div>
+                        <div class="loadimage">
+                        </div>
 
+                        <div class="dataimage"></div>
+                        
+                    </div>
+                    
                 </div>
             </main>
-*/?>
+<?php /*
             <main id="main-7" class="site-main-7">
 
                 <a href="<?php echo get_site_url(3); ?>">
@@ -219,7 +246,7 @@
                 <?php restore_current_blog(); //switched back to main site ?>
 
             </main>
-            
+*/?>   
             <?php }else{ ?>
             
             <?php get_sidebar(); ?>
@@ -261,9 +288,11 @@
                                     <p>comparte en</p>
                                     <a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-facebook"></i></a>
 
-                                    <a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', '', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-twitter"></i></a>
+                                    <a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', 520, 350)"><i class="fa fa-twitter"></i></a>
 
                                     <a href="javascript:piShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_post_thumbnail_url(); ?>', '', 520, 350)"><i class="fa fa-pinterest"></i></a>
+                                    
+                                   <a target="_blank" href="https://plus.google.com/share?url=<?php echo the_permalink(); ?>" onclick="window.open('https://plus.google.com/share?url=<?php echo the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i></a>
 
                                    </div>
                                     <div class="btn_more">
@@ -322,22 +351,51 @@
 
             </div>
         </main>
+        */
+    ?>
         <main id="main-6" class="site-main-6-mobile">
 
             <h3 class="titus">sociales</h3>
 
             <div class="content-sociales">
-                <ul>
-                <?php query_posts( 'category_name=sociales&posts_per_page=-0&orderby=date&order=DESC' );
-                    while ( have_posts() ) : the_post();
-                        get_template_part( 'loop-sociales');
-                    endwhile;
-                ?>
-                </ul>
+                
+                <ul class="marquee social-content">
+                    <?php
+                        // WP_Query arguments
+                        $args = array (
+                            'category_name'          => 'vidasocial',
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        );
 
+                        // The Query
+                        $sociales = new WP_Query( $args );
+
+                        // The Loop
+                        if ( $sociales->have_posts() ) {
+                            while ( $sociales->have_posts() ) {
+                                $sociales->the_post();
+                                get_template_part( 'loop-sociales');
+                            }
+                        } else {
+                            // no posts found
+                        }
+
+                        // Restore original Post Data
+                        wp_reset_postdata();    
+                    ?>
+                </ul>
+                <div id="loadOverlay">
+                    <div class="closeimage"><i class="fa fa-times"></i></div>
+                    <div class="loadimage">
+                    </div>
+
+                    <div class="dataimage"></div>
+
+                </div>
             </div>
         </main>
-        */?>
+        <?php /*
         <main id="main-7" class="site-main-7-mobile">
             <a href="<?php echo get_site_url(3); ?>">
                 
@@ -365,6 +423,7 @@
             </div>
 
         </main>
+        */ ?>
 	<?php } ?>
 
 <?php get_footer(); ?>

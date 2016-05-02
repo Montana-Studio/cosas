@@ -424,7 +424,7 @@
             &:first-child{
                 @include span-columns(6.15);
                 @include omega();
-                min-height:396px;
+                min-height:400px;
             }
             .entry-footer{
                 position:absolute;
@@ -576,6 +576,66 @@
         .titus{
             @extend .titulosh3;
             background:{color: #2c2c2c;}
+        }
+        .content-sociales{
+            @include span-columns(12);
+            #loadOverlay{
+                @extend .hide;
+                position: fixed;
+                top:0;
+                left:0;
+                bottom: 0;
+                right:0;
+                width:100%;
+                height:100%;
+                background: rgba(0,0,0,.7);
+                z-index: 9999;
+                .loadimage{
+                    margin:{top:5px;left:auto;right:auto;}
+                    width:300px;
+                    height:300px;
+                    background:{position:top;size:cover;repeat:no-repeat;}
+                }
+                .dataimage{
+                    @include pad(10px);
+                    border:{left:solid $red 3px;}
+                    width:300px;
+                    margin:{top:5px;left:auto;right:auto;}
+                    background:{color: #000;}
+                    color:$white;
+                    h2{
+                        font:{size:em(12);weight:bold;}
+                        @include pad(0);
+                        @extebd .no-margin;
+                    }
+                }
+                .closeimage{
+                    width: 300px;
+                    margin:{top:15%;left:auto;right:auto;}
+                    @include textAlign(right);
+                    color:$white;
+                    font:{size:em(18)}
+                    cursor:pointer;
+                }
+            }
+            ul{
+                @include span-columns(12);
+                @include pad(0);
+                @include omega();
+                overflow: hidden;
+                position: relative;
+                li{
+                    display: inline-block;
+                    width:200px;
+                    height: 200px;
+                    background: {size:cover;repeat:no-repeat;position: center;}
+                    a{
+                        display: block;
+                        width:100%;
+                        height:100%;
+                    }
+                }
+            }
         }
     }
     .site-main-7{
@@ -750,6 +810,87 @@
     .titus{
         @extend .titulosh3;
         background:{color: #2c2c2c;}
+    }
+    .content-sociales{
+        @include span-columns(12);
+        #loadOverlay{
+            @extend .hide;
+            position: fixed;
+            top:0;
+            left:0;
+            bottom: 0;
+            right:0;
+            width:100%;
+            height:100%;
+            background: rgba(0,0,0,.7);
+            z-index: 9999;
+            .loadimage{
+                margin:{top:5px;left:auto;right:auto;}
+                width:600px;
+                height:600px;
+                background:{position:top;size:cover;repeat:no-repeat;}
+            }
+            .dataimage{
+                @include pad(10px);
+                border:{left:solid $red 3px;}
+                width:600px;
+                margin:{top:5px;left:auto;right:auto;}
+                background:{color: #000;}
+                color:$white;
+                h2{
+                    font:{size:em(12);weight:bold;}
+                    @include pad(0);
+                    @extebd .no-margin;
+                }
+            }
+            .closeimage{
+                width: 600px;
+                margin:{top:5%;left:auto;right:auto;}
+                @include textAlign(right);
+                color:$white;
+                font:{size:em(18)}
+                cursor:pointer;
+            }
+        }
+        ul{
+            @include span-columns(12);
+            @include pad(0);
+            @include omega();
+            overflow: hidden;
+            position: relative;
+            li{
+                position: relative;
+                overflow: hidden;
+                display: inline-block;
+                width:200px;
+                height: 200px;
+                background: {size:cover;repeat:no-repeat;position: center;}
+                a{
+                    display: block;
+                    width:100%;
+                    height:100%;
+                }
+                &:hover{
+                    .hoverzoom{
+                        cursor:pointer;
+                        position: absolute;
+                        width: 200px;
+                        height: 200px;
+                        background-color: rgba(0,0,0,.8);
+                        display: table;
+                        text-align: center;
+                        i{
+                            display: table-cell;
+                            font-size: 30px;
+                            vertical-align: middle;
+                            color: #fff;
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 .site-main-7-mobile{

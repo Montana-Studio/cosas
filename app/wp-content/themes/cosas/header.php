@@ -68,10 +68,10 @@
 
             <div class="redes">
                 <ul>
-                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                    <li><a href=""><i class="fa fa-youtube-play"></i></a></li>
+                    <li><a href="https://www.facebook.com/revistacosas"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/RevistaCosas"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/revistacosas"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://www.youtube.com/user/CosasChile"><i class="fa fa-youtube-play"></i></a></li>
                 </ul>
             </div>
 
@@ -156,14 +156,16 @@
                 
                 <div class="meta-info hide">
                     
-                    <span><?php echo date('l, F g A'); ?></span>
+                    <span>
+                        <?php $nommes = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"); $nomdia = array("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"); $dia = date("j"); $mes = date("n"); $diasemana = date("w"); $hoy = $nomdia[$diasemana]." ".$dia." de ".$nommes[$mes-1]." del ".date(Y); echo $hoy; ?>
+                    </span>
                     
                     <div class="redes">
                         <ul>
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                            <li><a href=""><i class="fa fa-youtube-play"></i></a></li>
+                            <li><a href="https://www.facebook.com/revistacosas"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/RevistaCosas"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/revistacosas"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://www.youtube.com/user/CosasChile"><i class="fa fa-youtube-play"></i></a></li>
                         </ul>
                     </div>
                     
@@ -186,7 +188,7 @@
                             
                             <div id="view-lasts" class="lasts">
 
-                                <span>6</span>
+                                <span>06</span>
                                 <p>nuevos articulos</p>
 
                                 <i class="fa fa-angle-down"></i>
