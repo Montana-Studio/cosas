@@ -176,23 +176,49 @@
 
                 </div>
             </main>
-<?php /*
             <main id="main-6" class="site-main-6">
 
                 <h3 class="titus">sociales</h3>
 
                 <div class="content-sociales">
-                    <ul>
-                        <?php query_posts( 'category_name=sociales&posts_per_page=-0&orderby=date&order=DESC' );
-                            while ( have_posts() ) : the_post();
-                                get_template_part( 'loop-sociales');
-                            endwhile;
+                    <ul class="marquee social-content">
+                        <?php
+                            // WP_Query arguments
+                            $args = array (
+                                'category_name'          => 'vidasocial',
+                                'order'                  => 'DESC',
+                                'orderby'                => 'date',
+                            );
+
+                            // The Query
+                            $sociales = new WP_Query( $args );
+
+                            // The Loop
+                            if ( $sociales->have_posts() ) {
+                                while ( $sociales->have_posts() ) {
+                                    $sociales->the_post();
+                                    get_template_part( 'loop-sociales');
+                                }
+                            } else {
+                                // no posts found
+                            }
+
+                            // Restore original Post Data
+                            wp_reset_postdata();    
                         ?>
                     </ul>
+                    
+                    <div id="loadOverlay">
+                        <div class="closeimage"><i class="fa fa-times"></i></div>
+                        <div class="loadimage">
+                        </div>
 
+                        <div class="dataimage"></div>
+                        
+                    </div>
+                    
                 </div>
             </main>
-*/?>
 <?php /*
             <main id="main-7" class="site-main-7">
 
@@ -323,22 +349,50 @@
 
             </div>
         </main>
+        */
+    ?>
         <main id="main-6" class="site-main-6-mobile">
 
             <h3 class="titus">sociales</h3>
 
             <div class="content-sociales">
-                <ul>
-                <?php query_posts( 'category_name=sociales&posts_per_page=-0&orderby=date&order=DESC' );
-                    while ( have_posts() ) : the_post();
-                        get_template_part( 'loop-sociales');
-                    endwhile;
-                ?>
-                </ul>
+                
+                <ul class="marquee social-content">
+                    <?php
+                        // WP_Query arguments
+                        $args = array (
+                            'category_name'          => 'vidasocial',
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        );
 
+                        // The Query
+                        $sociales = new WP_Query( $args );
+
+                        // The Loop
+                        if ( $sociales->have_posts() ) {
+                            while ( $sociales->have_posts() ) {
+                                $sociales->the_post();
+                                get_template_part( 'loop-sociales');
+                            }
+                        } else {
+                            // no posts found
+                        }
+
+                        // Restore original Post Data
+                        wp_reset_postdata();    
+                    ?>
+                </ul>
+                <div id="loadOverlay">
+                    <div class="closeimage"><i class="fa fa-times"></i></div>
+                    <div class="loadimage">
+                    </div>
+
+                    <div class="dataimage"></div>
+
+                </div>
             </div>
         </main>
-        */?>
         <?php /*
         <main id="main-7" class="site-main-7-mobile">
             <a href="<?php echo get_site_url(3); ?>">
