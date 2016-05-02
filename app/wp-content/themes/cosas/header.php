@@ -68,10 +68,10 @@
 
             <div class="redes">
                 <ul>
-                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                    <li><a href=""><i class="fa fa-youtube-play"></i></a></li>
+                    <li><a href="https://www.facebook.com/revistacosas"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/RevistaCosas"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/revistacosas"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://www.youtube.com/user/CosasChile"><i class="fa fa-youtube-play"></i></a></li>
                 </ul>
             </div>
 
@@ -156,14 +156,14 @@
                 
                 <div class="meta-info hide">
                     
-                    <span><?php echo date('l, F g A'); ?></span>
+                    <span><?php setlocale(LC_ALL,"es_ES"); echo strftime("%A %d de %B del %Y");?></span>
                     
                     <div class="redes">
                         <ul>
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                            <li><a href=""><i class="fa fa-youtube-play"></i></a></li>
+                            <li><a href="https://www.facebook.com/revistacosas"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/RevistaCosas"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/revistacosas"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://www.youtube.com/user/CosasChile"><i class="fa fa-youtube-play"></i></a></li>
                         </ul>
                     </div>
                     

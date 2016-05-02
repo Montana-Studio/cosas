@@ -193,6 +193,7 @@
                 </div>
             </main>
 */?>
+<?php /*
             <main id="main-7" class="site-main-7">
 
                 <a href="<?php echo get_site_url(3); ?>">
@@ -219,7 +220,7 @@
                 <?php restore_current_blog(); //switched back to main site ?>
 
             </main>
-            
+*/?>   
             <?php }else{ ?>
             
             <?php get_sidebar(); ?>
@@ -338,6 +339,7 @@
             </div>
         </main>
         */?>
+        <?php /*
         <main id="main-7" class="site-main-7-mobile">
             <a href="<?php echo get_site_url(3); ?>">
                 
@@ -365,6 +367,7 @@
             </div>
 
         </main>
+        */ ?>
 	<?php } ?>
 
 <?php get_footer(); ?>
