@@ -65,6 +65,12 @@
                         max-height:66px;
                     }
                 }
+                @include media($tabletLand){
+                    @include span-columns(6);
+                    svg{
+                        max-height:66px;
+                    }
+                }
             }
             a{
                 color:$white;

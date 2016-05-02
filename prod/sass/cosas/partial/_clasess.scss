@@ -10,9 +10,11 @@
 }
 //CLASESS
 input, textarea{
+    @include appearance(none);
     outline:none;
     &::focus{
         outline:none;
+        @include appearance(none);
     }
 }
 .no-margins{
