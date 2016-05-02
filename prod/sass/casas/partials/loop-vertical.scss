@@ -40,14 +40,29 @@
 						.social-ul {
 							margin:{top:0;}
 							.social-list {
-								@include span-columns(6);
+								@include span-columns(3.8);
 								text:{align:center;}
 								margin:0;
+								float: none;
+								display: inline-block;
+								@include media($notebook) {
+									@include span-columns(5);
+									float: none;
+									display: inline-block;
+								}
 								a {
 									font:{size:20px !important;}
 									margin:{right: 5px !important;}
 								}
-							}	
+								&.whatsapp-list {
+									@include media($tablet) {
+										display: none;
+									}
+									@include media($notebook) {
+										display: none;
+									}
+								}
+							}	 
 						}
 						.btn-share-art {
 							display: none !important;
@@ -161,6 +176,14 @@
 									a {
 										font:{size:30px !important;}
 										margin:{right: 5px !important;}
+									}
+									&.whatsapp-list {
+										@include media($tablet) {
+											display: none;
+										}
+										@include media($notebook) {
+											display: none;
+										}
 									}
 								}	
 							}

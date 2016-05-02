@@ -172,12 +172,25 @@ body {
 					margin: {top:20px;left: auto;bottom:10px;right:auto;}
 					text:{align:center;}
 					.social-list {
-						@include span-columns(2.5);
+						@include span-columns(3);
 						display: inline-block;
 						float: none;
+						@include media($notebook) {
+							@include span-columns(2);
+							display: inline-block;
+							float: none;
+						}
 						a {
 							color:$white_color;
 							font:{size:3em;}
+							@include media($notebook) {
+								font:{size:2em;}
+							}
+						}
+						&.whatsapp-list {
+							@include media($notebook) {
+								display: none;
+							}
 						}
 					}
 				}

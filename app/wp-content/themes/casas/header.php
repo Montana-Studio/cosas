@@ -63,7 +63,7 @@
 
 						<div class="rrss-desktop">
 							<ul>
-								<li><div class="current-date"><?php setlocale(LC_ALL,"es_ES"); echo strftime("%A %d de %B del %Y");?></div></li> 
+								<li><div class="current-date"><?php $nommes = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"); $nomdia = array("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"); $dia = date("j"); $mes = date("n"); $diasemana = date("w"); $hoy = $nomdia[$diasemana]." ".$dia." de ".$nommes[$mes-1]." del ".date(Y); echo $hoy; ?></div></li>  
 								<li><a target="_blank" href="https://www.facebook.com/RevistaCASAS/"><i class="fa fa-facebook"></i></a></li>
 			            		<li><a target="_blank" href="https://twitter.com/revista_casas"><i class="fa fa-twitter"></i></a></li>
 			            		<li><a target="_blank" href="https://www.instagram.com/revistacasas/"><i class="fa fa-instagram"></i></a></li>

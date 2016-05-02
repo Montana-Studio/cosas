@@ -34,6 +34,7 @@
 				top: 260px !important;
 				right: 0 !important;
 				z-index: 99999;
+				text:{transform:uppercase;}
 				@include media($notebook) {
 					right:0;
 					right: initial;
@@ -41,7 +42,7 @@
 				a {
 					display: table-cell;
 					vertical-align: middle;
-					font:{size: 1.5em;weight:600;family:$second_font;style:italic;}
+					font:{size: 1.3em;weight:600;family:$second_font;style:italic;}
 					color:$white_color;
 				}
 				&:hover {
