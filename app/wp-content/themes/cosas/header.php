@@ -16,7 +16,7 @@
             wp_head();
             $blog_id = get_current_blog_id();
         
-            if(5==$blog_id){
+            if(4==$blog_id){
         ?>
         <style>
             .color-repost{
@@ -46,7 +46,7 @@
                     <svg viewBox="0 0 759 232" class="menu-logo">
                         <use xlink:href="#logo-cosas" class="logo-menu"/>
                     </svg>
-                <?php }elseif(5==$blog_id){ ?>
+                <?php }elseif(4==$blog_id){ ?>
                     <svg  viewBox="0 0 759 262" class="menu-logo repost-bg">
                         <use xlink:href="#logo-repost" class="logo-menu repost"/>
                     </svg>
@@ -128,7 +128,7 @@
                         <svg  viewBox="0 0 759 262">
                             <use xlink:href="#logo-cosas" class="logo-head"/>
                         </svg>
-                    <?php }elseif(5==$blog_id){ ?>
+                    <?php }elseif(4==$blog_id){ ?>
                         <svg  viewBox="0 0 759 262" class="repost-bg">
                             <use xlink:href="#logo-repost" class="logo-head repost"/>
                         </svg>
