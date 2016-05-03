@@ -4,7 +4,7 @@
 				<div class="footer-top">
 					
 					<div class="logo-casas">
-						 <a href="<?php echo get_site_url(3); ?>">
+						 <a href="<?php echo get_site_url(2); ?>">
 		                	<svg viewBox="0 0 792 268">
                             
 	                            <use xlink:href="#casas-logotype"/>
@@ -29,7 +29,7 @@
 						</a>
 					</li>
 					<li>
-						<a target="_blank" href="<?php echo get_site_url(3); ?>">
+						<a target="_blank" href="<?php echo get_site_url(2); ?>">
 							<svg viewBox="0 0 792 268">
 	                            <use xlink:href="#casas-logotype"/>
 	                        </svg>
@@ -64,7 +64,7 @@
 		</div>
 		<!-- /wrapper -->
 
-		<?php wp_footer(); ?>
+		<?php wp_footer(); ?> 
 
 	</body>
 </html>
