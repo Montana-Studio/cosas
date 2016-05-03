@@ -94,9 +94,15 @@
 				.content-postSingle {
 					@include span-columns(12);
 					@include omega();
+					font:{size:14px;} 
+    				line-height: 1.6;
 					blockquote {
 						text:{transform:lowercase;}
 						margin:10px 0;
+						line-height: 23px;
+						&::first-letter {
+							text:{transform:uppercase;} 
+						}
 					}
 					h5 {
 						font:{size: 1.2em;}
