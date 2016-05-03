@@ -5,7 +5,7 @@
 		float: none;
 		margin: 0 auto !important;
 		padding: 0;
-	}
+	} 
 	@include media($desktop) {
 		@include outer-container(85%);
 		float: none;
@@ -19,7 +19,7 @@
 		-moz-box-shadow: 0px 2px 9px 0px rgba(135,135,135,0.57);
 		box-shadow: 0px 2px 9px 0px rgba(135,135,135,0.57);
 		background: $white_color;
-		top: -1px;
+		top: -7px;
 		position: fixed;
    		z-index: 999999;
 		@include media($notebook) {
@@ -33,7 +33,7 @@
 			@include span-columns(1.5);
 			@include omega;
 			position: absolute;
-			top:5px;
+			top:13px;
 			right:10px;
 			z-index: 99999999;
 			float:right;
@@ -57,7 +57,7 @@
 			@include media($notebook) {
 				display: none;
 			}
-		}
+		} 
 	}
 	.logo {
 		@include span-columns(5);
@@ -372,8 +372,9 @@
 			}
 		}
 		.search-submit {
-			@include span-columns(2);	
+			@include span-columns(1.5);	  
 			@include omega();
+			display: inline-block;
 			background: none;
 			color: $gold_color;
 			font:{size:2em;}
@@ -381,6 +382,7 @@
 			text:{align:right;}
 			padding: {bottom:5px;}
 			outline: none;
+			float: right;
 		}
 	}
 	.menu-mob {

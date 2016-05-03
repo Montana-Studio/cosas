@@ -66,7 +66,7 @@
 					}
 				}
 				.imagen-post {
-					height: 400px;
+					height: 200px;
 					background-size: cover;
 					background-position: center;
 					@include media($notebook) {
@@ -80,10 +80,13 @@
 								}
 								.social-list {
 									a {
+										@include media($notebook) {
+											font:{size:4em;}
+										}
 									}
 									&.whatsapp-list {
 										@include media($notebook) {
-											display: none;
+											display: none; 
 										}
 									}
 								} 
@@ -176,7 +179,7 @@
 							a {
 								@include span-columns(12);
 								margin: 0;
-								height: 100%;
+								height: 100%; 
 								display: block;
 								.content-icon {
 									@include span-columns(12);
@@ -184,7 +187,7 @@
 									display: table;
 									height: 40px;
 									color:$white_color;
-									.icon-share {
+									.icon-share { 
 										@include span-columns(5);
 										float: none;
 										margin: 0;
@@ -393,7 +396,39 @@
 							line-height: 1.4em;
 						}
 						.imagen-post {
+							margin:{top:10px;} 
 							height: 300px;
+							.social-ul {
+								@include media($notebook) {
+									margin:{top: 38px !important;}
+								}
+								.social-list {
+									a {
+										@include media($notebook) {
+											font:{size:3em !important;}  
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.cosas-ult-art {
+				.imagen-post {
+					.social-ul {
+						margin:{bottom: 0;}
+						@include media($notebook) {
+							margin:{top: 38px !important;}
+							margin:{bottom: 10px;}
+						}
+						.social-list {
+							a {
+								font:{size:2em !important;} 
+								@include media($notebook) {
+									font:{size:3em !important;}  
+								}
+							}
 						}
 					}
 				}

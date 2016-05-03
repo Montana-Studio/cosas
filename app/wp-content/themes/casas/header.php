@@ -10,7 +10,6 @@
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="<?php bloginfo('description'); ?>">
 
 		<?php wp_head(); ?>
 		<script>
@@ -49,7 +48,7 @@
 
 						<!-- logo -->
 						<div class="logo">
-							<a href="<?php echo get_site_url(3); ?>">
+							<a href="<?php echo get_site_url(4); ?>"> 
 								<svg viewBox="0 0 792 268">
 		                            <use xlink:href="#casas-logotype"/>
 		                        </svg>
@@ -59,7 +58,7 @@
 
 						<div class="mobile-icon-menu">
 							<i class="fa fa-bars"></i>
-						</div>
+						</div> 
 
 						<div class="rrss-desktop">
 							<ul>
@@ -141,7 +140,7 @@
 									</a>
 								</li>
 								<li> 
-									<a target="_blank" href="<?php echo get_site_url(3); ?>">
+									<a target="_blank" href="<?php echo get_site_url(4); ?>">
 										<svg viewBox="0 0 792 268">
 				                            <use xlink:href="#casas-logotype"/>
 				                        </svg>
