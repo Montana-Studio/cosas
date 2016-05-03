@@ -26,6 +26,25 @@
         <?php
             }
         ?>
+        
+        <script type='text/javascript'>
+          (function() {
+            var useSSL = 'https:' == document.location.protocol;
+            var src = (useSSL ? 'https:' : 'http:') +
+                '//www.googletagservices.com/tag/js/gpt.js';
+            document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+          })();
+        </script>
+
+        <script type='text/javascript'>
+          googletag.cmd.push(function() {
+            googletag.defineSlot('/92947493/300x250_COSAS_ALL', [300, 250], 'div-gpt-ad-1462310738320-0').addService(googletag.pubads());
+            googletag.pubads().collapseEmptyDivs();
+            googletag.pubads().enableSyncRendering();
+            googletag.enableServices();
+          });
+        </script>
+        
 	</head>
 	<body <?php body_class(); ?>>
         

@@ -282,7 +282,7 @@
 
                 <?php
                     global $switched;
-                    switch_to_blog(3); //switched to blog id 2
+                    switch_to_blog(4); 
 
                     // Get latest Post
                     $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC');
@@ -293,7 +293,7 @@
                     get_template_part( 'loop-casas');                               
                  endforeach ; ?>
 
-                <?php restore_current_blog(); //switched back to main site ?>
+                <?php restore_current_blog(); ?>
 
             </main>
                 <?php } ?>
@@ -513,9 +513,8 @@
             <div class="maxcasas">
                 <?php
                     global $switched;
-                    switch_to_blog(4); //switched to blog id 2
+                    switch_to_blog(4);
 
-                    // Get latest Post
                     $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC'); 
                     $cnt =0;
                 ?> 
@@ -524,7 +523,7 @@
                     get_template_part( 'loop-casas');                               
                  endforeach ; ?>
 
-                <?php restore_current_blog(); //switched back to main site ?>  
+                <?php restore_current_blog(); ?>  
             </div>
 
         </main>
