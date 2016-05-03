@@ -1,4 +1,4 @@
-<?php /*Template name: Ilustres */ ?>
+<?php ?>
 <?php get_header(); ?>
 
 	<main role="main"> 

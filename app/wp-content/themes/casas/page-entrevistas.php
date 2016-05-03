@@ -1,4 +1,4 @@
-<?php /*Template name: Entrevistas */ ?>
+<?php ?>
 <?php get_header(); ?>
 
 	<main role="main"> 

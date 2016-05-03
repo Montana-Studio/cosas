@@ -1,71 +1,334 @@
-<?php  ?>
 <?php get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<div class="content-single">
+<!-- PAGE CASAS -->
+<div class="content-single">
 
-			<div class="body-sidebar">
+        <div class="body-sidebar">
 
-				<section class="section-loop-apaisado">
+            <section class="section-loop-apaisado">
 
-					<h1 class="title-section"><?php the_title(); ?></h1>
+                <h1 class="title-section"><?php the_title(); ?></h1>
 
-					<ul>
-						<?php query_posts( 'category_name=arte&posts_per_page=10' );
-	 					while ( have_posts() ) : the_post();
-							?>
-								<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <?php 
 
-										<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); $imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; ?>')">
-											<div class="share-mobile"><div class="content-share"><i class="fa fa-plus"></i></div></div>
-											<div class="share-post">
-													<div class="inter-share">
-														<div class="title-share">Comparte</div>
-														<div class="social-ul">
-															<div class="social-list"><a href="#"><i class="fa fa-facebook"></i></a></div>
-															<div class="social-list"><a href="#"><i class="fa fa-twitter"></i></a></div>
-															<div class="social-list"><a href="#"><i class="fa fa-google-plus"></i></a></div>
-															<div class="social-list"><a href="#"><i class="fa fa-whatsapp"></i></a></div>
-														</div>	
-														<div class="btn-share-art"><a href="<?php the_permalink(); ?>">leer más</a></div>
-													</div>
-													<div class="bg-share"></div>
-											</div>
-										</div>		
+                    if(is_page('arte')){
 
-										<div class="inter-article">
+                        // WP_Query arguments
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        $args = array (
+                            'category_name'          => 'arte',
+                            'posts_per_page'         => '10',
+                            'paged'                  => $paged,
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        );
 
-											<div class="content-article">      
-											
-												<h2 class="title-post">
-													<?php $thetitle = $post->post_title; $getlength = strlen($thetitle); $thelength = 40;
-														echo substr($thetitle, 0, $thelength);
-														if ($getlength > $thelength) echo "...";
-														?>
-												</h2>
+                        // The Query
+                        $paginas = new WP_Query( $args );
 
-												<div class="bajada-post">
-													<?php the_excerpt(); ?>
-												</div>
+                        // The Loop
+                        if ( $paginas->have_posts() ) {
+                            while ( $paginas->have_posts() ) {
+                                $paginas->the_post(); ?>
+                                <?php get_template_part('loop-apaisado'); ?>
+                           <?php  }
+                        } else { ?>
 
-												<span class="date"><?php the_time('l, j F Y'); ?></span>
+                            <article>
 
-												<div class="read-more"><a href="<?php the_permalink(); ?>">Leer más</a></div>
+                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
 
-											</div>
-										</div>
-								</li>
-						<?php
-						endwhile;
-						?>
+                            </article>
 
-					</ul>
+                        <?php }
 
-				</section>
-			</div>
-			<?php get_sidebar(); ?>
-		</div>		
-	</main>
+                        // Restore original Post Data
+                        wp_reset_postdata();   
+
+                    }elseif(is_page('arquitectura')){
+
+                        // WP_Query arguments
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        $args = array (
+                            'category_name'          => 'arquitectura',
+                            'posts_per_page'         => '10',
+                            'paged'                  => $paged,
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        );
+
+                        // The Query
+                        $paginas = new WP_Query( $args );
+
+                        // The Loop
+                        if ( $paginas->have_posts() ) {
+                            while ( $paginas->have_posts() ) {
+                                $paginas->the_post(); ?>
+                                <?php get_template_part('loop-apaisado'); ?>
+                           <?php  }
+                        } else { ?>
+
+                            <article>
+
+                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+
+                            </article>
+
+                        <?php }
+
+                        // Restore original Post Data
+                        wp_reset_postdata(); 
+
+                    }elseif(is_page('decoracion')){
+
+                        // WP_Query arguments
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        $args = array (
+                            'category_name'          => 'decoracion',
+                            'posts_per_page'         => '10',
+                            'paged'                  => $paged,
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        );
+
+                        // The Query
+                        $paginas = new WP_Query( $args );
+
+                        // The Loop
+                        if ( $paginas->have_posts() ) {
+                            while ( $paginas->have_posts() ) {
+                                $paginas->the_post(); ?>
+                                <?php get_template_part('loop-apaisado'); ?>
+                           <?php  }
+                        } else { ?>
+
+                            <article>
+
+                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+
+                            </article>
+
+                        <?php }
+
+                        // Restore original Post Data
+                        wp_reset_postdata(); 
+
+                    }elseif(is_page('diseño')){
+
+                        // WP_Query arguments
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        $args = array (
+                            'category_name'          => 'diseno',
+                            'posts_per_page'         => '10',
+                            'paged'                  => $paged,
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        );
+
+                        // The Query
+                        $paginas = new WP_Query( $args );
+
+                        // The Loop
+                        if ( $paginas->have_posts() ) {
+                            while ( $paginas->have_posts() ) {
+                                $paginas->the_post(); ?>
+                                <?php get_template_part('loop-apaisado'); ?>
+                           <?php  }
+                        } else { ?>
+
+                            <article>
+
+                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+
+                            </article>
+
+                        <?php }
+
+                        // Restore original Post Data
+                        wp_reset_postdata(); 
+
+                    }elseif(is_page('mi lugar')){
+
+                        // WP_Query arguments
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        $args = array (
+                            'category_name'          => 'mi-lugar',
+                            'posts_per_page'         => '10',
+                            'paged'                  => $paged,
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        );
+
+                        // The Query
+                        $paginas = new WP_Query( $args );
+
+                        // The Loop
+                        if ( $paginas->have_posts() ) {
+                            while ( $paginas->have_posts() ) {
+                                $paginas->the_post(); ?>
+                                <?php get_template_part('loop-apaisado'); ?>
+                           <?php  }
+                        } else { ?>
+
+                            <article>
+
+                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+
+                            </article>
+
+                        <?php }
+
+                        // Restore original Post Data
+                        wp_reset_postdata(); 
+
+                    }elseif(is_page('ilustres')){
+
+                        // WP_Query arguments
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        $args = array (
+                            'category_name'          => 'ilustres',
+                            'posts_per_page'         => '10',
+                            'paged'                  => $paged,
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        );
+
+                        // The Query
+                        $paginas = new WP_Query( $args );
+
+                        // The Loop
+                        if ( $paginas->have_posts() ) {
+                            while ( $paginas->have_posts() ) {
+                                $paginas->the_post(); ?>
+                                <?php get_template_part('loop-apaisado'); ?>
+                           <?php  }
+                        } else { ?>
+
+                            <article>
+
+                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+
+                            </article>
+
+                        <?php }
+
+                        // Restore original Post Data
+                        wp_reset_postdata(); 
+
+                    }elseif(is_page('en viaje')){
+
+                        // WP_Query arguments
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        $args = array (
+                            'category_name'          => 'en-viaje',
+                            'posts_per_page'         => '10',
+                            'paged'                  => $paged,
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        );
+
+                        // The Query
+                        $paginas = new WP_Query( $args );
+
+                        // The Loop
+                        if ( $paginas->have_posts() ) {
+                            while ( $paginas->have_posts() ) {
+                                $paginas->the_post(); ?>
+                                <?php get_template_part('loop-apaisado'); ?>
+                           <?php  }
+                        } else { ?>
+
+                            <article>
+
+                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+
+                            </article>
+
+                        <?php }
+
+                        // Restore original Post Data
+                        wp_reset_postdata(); 
+
+                    }elseif(is_page('entrevistas')){
+
+                        // WP_Query arguments
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        $args = array (
+                            'category_name'          => 'entrevistas',
+                            'posts_per_page'         => '10',
+                            'paged'                  => $paged,
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        );
+
+                        // The Query
+                        $paginas = new WP_Query( $args );
+
+                        // The Loop
+                        if ( $paginas->have_posts() ) {
+                            while ( $paginas->have_posts() ) {
+                                $paginas->the_post(); ?>
+                                <?php get_template_part('loop-apaisado'); ?>
+                           <?php  }
+                        } else { ?>
+
+                            <article>
+
+                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+
+                            </article>
+
+                        <?php }
+
+                        // Restore original Post Data
+                        wp_reset_postdata(); 
+
+                    }elseif(is_page('cocina')){
+
+                        // WP_Query arguments
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        $args = array (
+                            'category_name'          => 'gastronomía',
+                            'posts_per_page'         => '10',
+                            'paged'                  => $paged,
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        );
+
+                        // The Query
+                        $paginas = new WP_Query( $args );
+
+                        // The Loop
+                        if ( $paginas->have_posts() ) {
+                            while ( $paginas->have_posts() ) {
+                                $paginas->the_post(); ?>
+                                <?php get_template_part('loop-apaisado'); ?>
+                           <?php  }
+                        } else { ?>
+
+                            <article>
+
+                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+
+                            </article>
+
+                        <?php }
+
+                        // Restore original Post Data
+                        wp_reset_postdata(); 
+
+                    }
+                      
+                    ?> 
+
+                <div class="paginacion-sect">
+                    <?php get_template_part('pagination'); ?>
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>    
 
 <?php get_footer(); ?>

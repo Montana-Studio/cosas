@@ -1,4 +1,4 @@
-<?php /*Template name: Diseño */ ?>
+<?php  ?>
 <?php get_header(); ?>
 
 	<main role="main">

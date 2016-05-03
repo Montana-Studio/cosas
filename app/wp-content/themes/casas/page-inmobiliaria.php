@@ -1,4 +1,4 @@
-<?php /*Template name: Inmobiliaria */ ?>
+<?php ?>
 <?php get_header(); ?>
 
 	<main role="main"> 

@@ -1,4 +1,4 @@
-<?php /*Template name: mi-lugar */ ?>
+<?php ?>
 <?php get_header(); ?>
 
 	<main role="main"> 
