@@ -277,13 +277,14 @@
 					<div class="contenido-suscripcion"> <!-- display-form -->
 						<h4>¡Subscribete a nuestro <span>newsletter</span>!</h4> 
 						<div class="bajada-news">Recibe lo último de nuestra revista casas</div>
-						<form action="">
-							<input class="class-input" type="text" placeholder="Nombre" required>
-							<input class="class-input" type="email" placeholder="Correo Electrónico" required>
-							<input class="btn-subs" type="submit" value="Suscribir">
-						</form>
+						
+						<form class="newsletter_form">
+                            <input class="class-input" type="text" placeholder="Nombre" id="nombre_newsletter">
+                            <input class="class-input" type="email" placeholder="Correo Electrónico" id="correo_newsletter">
+                            <input class="btn-subs" type="submit" name="enviar" value="Suscríbete" placeholder="Suscríbete"/>
+                        </form>
 					</div>
-					<div class="message-user display-message">  <!-- display-message -->
+					<div class="form-send message-user display-message">  <!-- display-message -->
 						Tus datos se han enviado con éxito.
 					</div>
 				</div>

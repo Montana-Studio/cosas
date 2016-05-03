@@ -17,7 +17,8 @@
 							<?php the_title(); ?>
 						</h1>
 
-						<div class="date"><?php foreach((the_time('l, j F Y')) as $time) { echo $time->time_name . ' '; } ?></div>
+						<div class="date">
+						<?php// foreach((the_time('l, j F Y')) as $time) { echo $time->time_name . ' '; } ?></div>
 
 						<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); $imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; ?>')">
 							<div class="share-mobile"><div class="content-share"><i class="fa fa-plus"></i></div></div>
@@ -150,7 +151,7 @@
 									<div class="title-post">
 										<a href="<? the_permalink()?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 									</div>
-									<span class="date"><?php foreach((the_time('l, j F Y')) as $time) { echo $time->time_name . ' '; } ?></span>
+									<span class="date"><?php //foreach((the_time('l, j F Y')) as $time) { echo $time->time_name . ' '; } ?></span>
 								</li>
 								<? }
 

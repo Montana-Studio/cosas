@@ -117,11 +117,11 @@ jQuery(document).ready(function($){
                 if (data==='exito'){
                     $('.newsletter_form').hide();
                     $('.form-send').show();
-                    $('.form-send').text('Mensaje enviado con éxito.');
+                    $('.form-send').text('Suscripción enviada con éxito.');
                 } else {
                     $('.newsletter_form').hide();
                     $('.form-send').show();
-                    $('.form-send').text('No hemos podido enviar tu mensaje. Inténtalo nuevamente.');
+                    $('.form-send').text('No hemos podido enviar tu suscripción. Inténtalo nuevamente.');
                 }
             }
         });
