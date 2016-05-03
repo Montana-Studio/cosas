@@ -37,7 +37,7 @@
 						</a>
 					</li>
 					<li>
-						<a target="_blank" href="<?php echo get_site_url(3); ?>">
+						<a target="_blank" href="<?php echo get_site_url(4); ?>">
 							<svg viewBox="0 0 792 268">
 	                            <use xlink:href="#logo-casas"/>
 	                        </svg>
@@ -58,7 +58,7 @@
 						</a>
 					</li>
 					<li>
-						<a target="_blank" href="<?php echo get_site_url(4); ?>">
+						<a target="_blank" href="<?php echo get_site_url(5); ?>">
 							<svg viewBox="0 0 792 268">
 	                            <use xlink:href="#logo-repost"/>
 	                        </svg>

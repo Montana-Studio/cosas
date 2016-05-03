@@ -5,7 +5,7 @@
 		<main id="main" class="site-main">
             
             <?php 
-                if(4==$blog_id){
+                if(5==$blog_id){
                    // WP_Query arguments
                     $args = array (
                         'category_name'          => 'belleza',
@@ -221,7 +221,7 @@
             </main>
             <main id="main-7" class="site-main-7">
 
-                <a href="<?php echo get_site_url(3); ?>">
+                <a href="<?php echo get_site_url(4); ?>">
                 
                     <svg viewBox="0 0 792 268">
                         <use xlink:href="#logo-casas" class="logo-casas"/>
@@ -394,7 +394,7 @@
             </div>
         </main>
         <main id="main-7" class="site-main-7-mobile">
-            <a href="<?php echo get_site_url(3); ?>">
+            <a href="<?php echo get_site_url(4); ?>">
                 
                 <svg viewBox="0 0 792 268">
                     <use xlink:href="#logo-casas" class="logo-casas"/>
@@ -405,7 +405,7 @@
             <div class="maxcasas">
                 <?php
                     global $switched;
-                    switch_to_blog(3); //switched to blog id 2
+                    switch_to_blog(4); //switched to blog id 2
 
                     // Get latest Post
                     $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC'); 
