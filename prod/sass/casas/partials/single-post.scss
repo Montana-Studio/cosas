@@ -66,7 +66,7 @@
 					}
 				}
 				.imagen-post {
-					height: 400px;
+					height: 200px;
 					background-size: cover;
 					background-position: center;
 					@include media($notebook) {
@@ -83,7 +83,7 @@
 									}
 									&.whatsapp-list {
 										@include media($notebook) {
-											display: none;
+											display: none; 
 										}
 									}
 								} 
