@@ -54,6 +54,7 @@
 					.title-post {
 						font:{size: 1em;}
 						text:{transform:lowercase;}
+						padding: 0;
 						&::first-letter {
 							text:{transform:uppercase;}
 						}

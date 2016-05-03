@@ -4595,7 +4595,8 @@ body {
               padding: 5px 10px; } }
           .cosas-ult-art ul li .imagen-post .inter-article .title-post {
             font-size: 1em;
-            text-transform: lowercase; }
+            text-transform: lowercase;
+            padding: 0; }
             .cosas-ult-art ul li .imagen-post .inter-article .title-post::first-letter {
               text-transform: uppercase; }
             @media screen and (min-width: 80em) {

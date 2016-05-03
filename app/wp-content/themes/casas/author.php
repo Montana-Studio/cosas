@@ -63,7 +63,7 @@
 													?>
 												</div>
 
-												<span class="date"><?php foreach((the_time('l, j F Y')) as $time) { echo $time->time_name . ' '; } ?></span>
+												<span class="date"><?php the_time('l, j F Y'); ?></span> 
 
 											</div>
 

@@ -44,7 +44,7 @@
 					<?php //html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
 				</div>
 
-				<span class="date"><?php foreach((the_time('l, j F Y')) as $time) { echo $time->time_name . ' '; } ?></span>
+				<span class="date"><?php the_time('l, j F Y'); ?></span>
 
 				<div class="bnt-leermas"><a href="<?php the_permalink(); ?>">leer más</a></div>
 

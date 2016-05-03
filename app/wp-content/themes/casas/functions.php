@@ -467,7 +467,7 @@ function casas_scripts() {
 
     wp_enqueue_script( 'resp-slider', get_template_directory_uri() .'/js/responsiveslides.min.js',array(),'20160424', true );
 
-    wp_enqueue_script( 'mdrnz', get_template_directory_uri() .'/js/modernizr.custom.53451.js',array(),'20160424', true );
+   // wp_enqueue_script( 'mdrnz', get_template_directory_uri() .'/js/modernizr.custom.53451.js',array(),'20160424', true ); 
 
     wp_enqueue_script( 'galery3djs', get_template_directory_uri() .'/js/jquery.gallery.js',array(),'20160424', true ); 
 
