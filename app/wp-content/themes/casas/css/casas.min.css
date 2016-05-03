@@ -4572,6 +4572,8 @@ body {
             height: 380px !important; } }
         .cosas-ult-art ul li .imagen-post .share-mobile {
           background: #000; }
+          .cosas-ult-art ul li .imagen-post .share-mobile.options-open .content-share i {
+            color: #fff; }
           .cosas-ult-art ul li .imagen-post .share-mobile .btn-share-art {
             color: #000; }
         .cosas-ult-art ul li .imagen-post .inter-article {
@@ -4609,6 +4611,25 @@ body {
           background: #000; }
         .cosas-ult-art ul li .imagen-post .share-post .btn-share-art:hover a {
           color: #000 !important; }
+        .cosas-ult-art ul li .imagen-post .share-post .social-ul {
+          max-width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+          margin: 0 auto !important; }
+          .cosas-ult-art ul li .imagen-post .share-post .social-ul::after {
+            clear: both;
+            content: "";
+            display: table; }
+          @media screen and (min-width: 80em) {
+            .cosas-ult-art ul li .imagen-post .share-post .social-ul {
+              max-width: 80%;
+              margin-left: auto;
+              margin-right: auto;
+              margin: 0 auto !important; }
+              .cosas-ult-art ul li .imagen-post .share-post .social-ul::after {
+                clear: both;
+                content: "";
+                display: table; } }
   .cosas-ult-art .title-section {
     text-align: left !important; }
 
@@ -5086,6 +5107,9 @@ body {
             .content-single .body-sidebar .singlePost-content article .imagen-post .share-post .inter-share .social-ul {
               margin-top: 60px; } }
           @media screen and (min-width: 80em) {
+            .content-single .body-sidebar .singlePost-content article .imagen-post .share-post .inter-share .social-ul .social-list a {
+              font-size: 4em; } }
+          @media screen and (min-width: 80em) {
             .content-single .body-sidebar .singlePost-content article .imagen-post .share-post .inter-share .social-ul .social-list.whatsapp-list {
               display: none; } }
         .content-single .body-sidebar .singlePost-content article .content-postSingle {
@@ -5480,6 +5504,23 @@ body {
               line-height: 1.4em; }
             .content-single .body-sidebar .singlePost-content .post-related ul li .imagen-post {
               height: 300px; }
+              @media screen and (min-width: 80em) {
+                .content-single .body-sidebar .singlePost-content .post-related ul li .imagen-post .social-ul {
+                  margin-top: 38px !important; } }
+              @media screen and (min-width: 80em) {
+                .content-single .body-sidebar .singlePost-content .post-related ul li .imagen-post .social-ul .social-list a {
+                  font-size: 3em !important; } }
+      .content-single .body-sidebar .singlePost-content .cosas-ult-art .imagen-post .social-ul {
+        margin-bottom: 0; }
+        @media screen and (min-width: 80em) {
+          .content-single .body-sidebar .singlePost-content .cosas-ult-art .imagen-post .social-ul {
+            margin-top: 38px !important;
+            margin-bottom: 10px; } }
+        .content-single .body-sidebar .singlePost-content .cosas-ult-art .imagen-post .social-ul .social-list a {
+          font-size: 2em !important; }
+          @media screen and (min-width: 80em) {
+            .content-single .body-sidebar .singlePost-content .cosas-ult-art .imagen-post .social-ul .social-list a {
+              font-size: 3em !important; } }
 
 .search-results h1 span.number {
   font-family: "Open Sans", sans-serif; }

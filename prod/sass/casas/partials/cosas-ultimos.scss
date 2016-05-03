@@ -34,6 +34,13 @@
 				}	
 				.share-mobile {
 					background:$black_color;
+					&.options-open {
+						.content-share {
+							i {
+								color:$white_color;
+							}
+						}
+					}
 					.btn-share-art {
 						color:$black_color;
 					}
@@ -76,6 +83,14 @@
 								color:$black_color !important;
 							}
 						}
+					}
+					.social-ul {
+						@include outer-container(90%);
+						margin: 0 auto !important;
+						@include media($notebook) {
+							@include outer-container(80%);
+							margin: 0 auto !important;
+						} 
 					}
 				}
 			}

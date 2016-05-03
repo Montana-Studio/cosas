@@ -80,6 +80,9 @@
 								}
 								.social-list {
 									a {
+										@include media($notebook) {
+											font:{size:4em;}
+										}
 									}
 									&.whatsapp-list {
 										@include media($notebook) {
@@ -394,6 +397,37 @@
 						}
 						.imagen-post {
 							height: 300px;
+							.social-ul {
+								@include media($notebook) {
+									margin:{top: 38px !important;}
+								}
+								.social-list {
+									a {
+										@include media($notebook) {
+											font:{size:3em !important;}  
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.cosas-ult-art {
+				.imagen-post {
+					.social-ul {
+						margin:{bottom: 0;}
+						@include media($notebook) {
+							margin:{top: 38px !important;}
+							margin:{bottom: 10px;}
+						}
+						.social-list {
+							a {
+								font:{size:2em !important;} 
+								@include media($notebook) {
+									font:{size:3em !important;}  
+								}
+							}
 						}
 					}
 				}
