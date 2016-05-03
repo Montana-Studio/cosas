@@ -3038,15 +3038,17 @@ body {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 14.70196%;
+      width: 10.43705%;
       margin-right: 0;
+      display: inline-block;
       background: none;
       color: #c9a96e;
       font-size: 2em;
       border: 0;
       text-align: right;
       padding-bottom: 5px;
-      outline: none; }
+      outline: none;
+      float: right; }
       .MenuMobile-Open .search-menu-mob .search-submit:last-child {
         margin-right: 0; }
   .MenuMobile-Open .menu-mob {
@@ -5503,6 +5505,7 @@ body {
               font-size: 1.5em;
               line-height: 1.4em; }
             .content-single .body-sidebar .singlePost-content .post-related ul li .imagen-post {
+              margin-top: 10px;
               height: 300px; }
               @media screen and (min-width: 80em) {
                 .content-single .body-sidebar .singlePost-content .post-related ul li .imagen-post .social-ul {

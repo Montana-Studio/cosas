@@ -372,8 +372,9 @@
 			}
 		}
 		.search-submit {
-			@include span-columns(2);	
+			@include span-columns(1.5);	  
 			@include omega();
+			display: inline-block;
 			background: none;
 			color: $gold_color;
 			font:{size:2em;}
@@ -381,6 +382,7 @@
 			text:{align:right;}
 			padding: {bottom:5px;}
 			outline: none;
+			float: right;
 		}
 	}
 	.menu-mob {
