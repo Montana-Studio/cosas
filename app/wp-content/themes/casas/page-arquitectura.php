@@ -1,7 +1,4 @@
-<?php 
-/*Template name: Arquitectura 
-*/ 
-?> 
+<?php ?> 
 <?php get_header(); ?>
 
 	<main role="main">

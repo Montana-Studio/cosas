@@ -1,4 +1,4 @@
-<?php /*Template name: En Viaje */ ?>
+<?php  ?>
 <?php get_header(); ?>
 
 	<main role="main"> 
