@@ -82,7 +82,28 @@ jQuery(document).ready(function($){
 		interval	: 5000  
 	}); 
 
-
+    //FORMUBLARIO NEWSLETTER
+    $('.newsletter_form').on('submit', function(){
+        var nombre = $('#nombre_newsletter').val();
+        var correo = $('#correo_newsletter').val();
+        $.ajax({
+            type: 'POST',  
+            url: 'wp-content/themes/casas/js/procesar_correo.php',  
+            data: 'nombre='+nombre+'&correo='+correo,
+            success: function(data){
+                if (data==='exito'){
+                    $('.newsletter_form').hide();
+                    $('.form-send').show();
+                    $('.form-send').text('Suscripción enviada con éxito.');
+                } else {
+                    $('.newsletter_form').hide();
+                    $('.form-send').show();
+                    $('.form-send').text('No hemos podido enviar tu suscripción. Inténtalo nuevamente.');
+                }
+            }
+        });
+        return false;   
+    });
 }); 
 
 
