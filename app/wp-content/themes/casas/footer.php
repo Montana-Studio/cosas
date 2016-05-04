@@ -17,7 +17,7 @@
 			            <li><a target="_blank" href="https://www.facebook.com/RevistaCASAS/"><i class="fa fa-facebook"></i></a></li>
 			            <li><a target="_blank" href="https://twitter.com/revista_casas"><i class="fa fa-twitter"></i></a></li>
 			            <li><a target="_blank" href="https://www.instagram.com/revistacasas/"><i class="fa fa-instagram"></i></a></li>
-			            <li><a target="_blank" href="https://www.youtube.com/user/revistacosas"><i class="fa fa-youtube"></i></a></li>
+			            <li><a target="_blank" href="https://www.youtube.com/user/revistacosas"><i class="fa fa-youtube-play"></i></a></li>
 			        </ul> 
 		        </div>
 		        <ul class="network">
