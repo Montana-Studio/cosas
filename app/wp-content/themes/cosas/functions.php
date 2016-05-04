@@ -522,4 +522,22 @@ function jgallery_sc() {
     return do_shortcode('[gallery link="file"]');
 }
 add_shortcode('jgallery','jgallery_sc'); 
+
+/**
+    VARS GLOBAL DETECT BLOGS
+**/
+function blogs_global_vars() {
+
+    global $detectBlogs;
+    $detectBlogs = array(
+        
+        'blogId'    => get_current_blog_id(),
+        'cosas'     => '1',
+        'casas'     => '3',
+        'repost'    => '4',
+
+    );
+
+}
+
 ?>

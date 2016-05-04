@@ -30,14 +30,14 @@
                 </ul>
                 <ul class="network">
 					<li>
-						<a target="_blank" href="<?php echo get_site_url(1); ?>">
+						<a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['cosas']); ?>">
 							<svg viewBox="0 0 792 268">
 	                            <use xlink:href="#logo-cosas"/>
 	                        </svg>
 						</a>
 					</li>
 					<li>
-						<a target="_blank" href="<?php echo get_site_url(4); ?>">
+						<a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['casas']); ?>">
 							<svg viewBox="0 0 792 268">
 	                            <use xlink:href="#logo-casas"/>
 	                        </svg>
@@ -58,7 +58,7 @@
 						</a>
 					</li>
 					<li>
-						<a target="_blank" href="<?php echo get_site_url(5); ?>">
+						<a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['repost']); ?>">
 							<svg viewBox="0 0 792 268">
 	                            <use xlink:href="#logo-repost"/>
 	                        </svg>

@@ -14,15 +14,15 @@
 
 		<?php 
             wp_head();
-            $blog_id = get_current_blog_id();
         
-            if(4==$blog_id){
+            blogs_global_vars();
+            if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){
         ?>
-        <style>
-            .color-repost{
-                fill:#fa4b2a;
-            }
-        </style>
+                <style>
+                    .color-repost{
+                        fill:#fa4b2a;
+                    }
+                </style>
         <?php
             }
         ?>
@@ -61,14 +61,17 @@
         
         <div id="menu-content" class="menu-list">
            <a href="<?php echo site_url();?>">
-                <?php if(1==$blog_id){ ?>
-                    <svg viewBox="0 0 759 232" class="menu-logo">
-                        <use xlink:href="#logo-cosas" class="logo-menu"/>
-                    </svg>
-                <?php }elseif(4==$blog_id){ ?>
-                    <svg  viewBox="0 0 759 262" class="menu-logo repost-bg">
-                        <use xlink:href="#logo-repost" class="logo-menu repost"/>
-                    </svg>
+                <?php 
+                    if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){ 
+                ?>
+                        <svg  viewBox="0 0 759 262" class="menu-logo repost-bg">
+                            <use xlink:href="#logo-repost" class="logo-menu repost"/>
+                        </svg>
+                <?php }else{ ?>
+                        <svg viewBox="0 0 759 232" class="menu-logo">
+                            <use xlink:href="#logo-cosas" class="logo-menu"/>
+                        </svg>
+                    
                 <?php } ?>
             </a>
             <div class="menu">
@@ -87,14 +90,14 @@
             <div class="network">
                 <ul>
                     <li>
-                        <a target="_blank" href="<?php echo get_site_url(1); ?>">
+                        <a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['cosas']) ?>">
                             <svg viewBox="0 0 792 268">
                                 <use xlink:href="#logo-cosas"/>
                             </svg>
                         </a>
                     </li>
                     <li>
-                        <a target="_blank" href="<?php echo get_site_url(3); ?>">
+                        <a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['casas']) ?>">
                             <svg viewBox="0 0 792 268">
                                 <use xlink:href="#logo-casas"/>
                             </svg>
@@ -115,7 +118,7 @@
                         </a>
                     </li>
                     <li>
-                        <a target="_blank" href="<?php echo get_site_url(4); ?>">
+                        <a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['repost']) ?>">
                             <svg viewBox="0 0 792 268">
                                 <use xlink:href="#logo-repost"/>
                             </svg>
@@ -143,13 +146,14 @@
 
                 <div class="logo-medio">
                     <a href="<?php echo site_url();?>">
-                    <?php if(1==$blog_id){ ?>
-                        <svg  viewBox="0 0 759 262">
-                            <use xlink:href="#logo-cosas" class="logo-head"/>
-                        </svg>
-                    <?php }elseif(4==$blog_id){ ?>
+                    <?php if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){ ?>
                         <svg  viewBox="0 0 759 262" class="repost-bg">
                             <use xlink:href="#logo-repost" class="logo-head repost"/>
+                        </svg>
+                        
+                    <?php }else{ ?>
+                        <svg  viewBox="0 0 759 262">
+                            <use xlink:href="#logo-cosas" class="logo-head"/>
                         </svg>
                     <?php } ?>
                     </a>
@@ -171,10 +175,18 @@
                     
                     <div class="redes">
                         <ul>
-                            <li><a href="https://www.facebook.com/revistacosas"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://twitter.com/RevistaCosas"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="https://www.instagram.com/revistacosas"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="https://www.youtube.com/user/CosasChile"><i class="fa fa-youtube-play"></i></a></li>
+                            <li>
+                                <a href="https://www.facebook.com/revistacosas"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/RevistaCosas"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/revistacosas"><i class="fa fa-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/user/CosasChile"><i class="fa fa-youtube-play"></i></a
+                            ></li>
                         </ul>
                     </div>
                     

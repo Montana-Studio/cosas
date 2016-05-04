@@ -88,7 +88,11 @@
         h5{
             @include span-columns(12);
             color:#999;
-            font:{size:em(11);weight:bold;}
+            font:{size:em(14);weight:bold;}
+            line:{height:16px;}
+            @include media($notebook){
+                font:{size:em(11);}
+            }
         }
         blockquote{
             img{
@@ -99,7 +103,8 @@
         .post-single{
             p{
                 clear:both;
-                font:{size:em(11);}
+                font:{size:em(14);}
+                line:{height:16px;}
                 color:#999;
                 iframe{
                     width:100%;
@@ -112,6 +117,9 @@
             @include media($notebook){
                 clear:none;
                 @include span-columns(8);
+                p{
+                    font:{size:em(11);}
+                }
             }
         }
         .sidebar{

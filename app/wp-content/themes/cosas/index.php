@@ -5,7 +5,7 @@
 		<main id="main" class="site-main">
             
             <?php 
-                if(5==$blog_id){
+                if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){
                    // WP_Query arguments
                     $args = array (
                         'category_name'          => 'belleza-repost',
@@ -77,18 +77,24 @@
 		</main>
           
         <?php
-        if ( wp_is_mobile() ) {?>
-           
-           <?php if(5==$blog_id){ ?>
+            
+        //SI ES MOBILE
+        if ( wp_is_mobile() ) {
+           //SI ES BLOG Repost
+            if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){ 
+        ?>
             
             <h3 class="titus">entretención</h3>
+            
             <main id="main-2" class="site-main-2">
+               
                 <?php query_posts( 'category_name=entretencion-repost&posts_per_page=6&orderby=date&order=DESC' );
                         while ( have_posts() ) : the_post();
                         get_template_part( 'loop-espectaculo');
                     endwhile;
                 ?>
             </main>
+            
             <h3 class="titus">Moda</h3>
 
             <main id="main-3" class="site-main-3">
@@ -100,9 +106,10 @@
                 ?>
 
             </main>
+            
             <main id="main-7" class="site-main-7">
 
-                <a href="<?php echo get_site_url(4); ?>">
+                <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['casas']); ?>">
                 
                     <svg viewBox="0 0 792 268">
                         <use xlink:href="#logo-casas" class="logo-casas"/>
@@ -112,22 +119,24 @@
 
                 <?php
                     global $switched;
-                    switch_to_blog(3); //switched to blog id 2
+                    
+                    switch_to_blog($GLOBALS['detectBlogs']['casas']);
 
-                    // Get latest Post
                     $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC');
                     $cnt =0;
-                ?> 
-
-                <?php foreach($latest_posts as $post) : setup_postdata($post);
-                    get_template_part( 'loop-casas');                               
-                 endforeach ; ?>
-
-                <?php restore_current_blog(); //switched back to main site ?>
+                             
+                    foreach($latest_posts as $post) : setup_postdata($post);
+                        get_template_part( 'loop-casas');                               
+                    endforeach ;
+                    restore_current_blog();
+                
+                ?>
 
             </main>
             
-            <?php }else{ ?>
+        <?php 
+            }else{ 
+        ?>
             
             <h3 class="titus">espectáculos</h3>
 
@@ -139,7 +148,7 @@
                 ?>
             </main>
 
-            <h3 class="titus">entrevista</h3>
+            <h3 class="titus">entrevistas</h3>
 
             <main id="main-3" class="site-main-3">
 
@@ -160,56 +169,67 @@
                     $post = $posts[0]; $c=0;
 
                     query_posts( 'category_name=personaje-nacional,politica-nacional,espectaculos-nacional&posts_per_page=4&orderby=date&order=DESC' );
+                    
                     while ( have_posts() ) : the_post();
 
-                        $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' );
+                    $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' );
 
-                        $c++;
-                        if( $c == 1) :
+                    $c++;
+                    if( $c == 1) :
 
-                        ?>
+                ?>
 
-                        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php echo $src[0]; ?>');">
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php echo $src[0]; ?>');">
 
-                            <a href="<?php echo get_permalink(); ?>" class="more-link"><i class="fa fa-plus"></i></a>
+                        <a href="<?php echo get_permalink(); ?>" class="more-link">
+                            <i class="fa fa-plus"></i>
+                        </a>
 
-                        <?php else: ?>
+                <?php else: ?>
 
-                        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                            <div class="img-post" style="background-image: url('<?php echo $src[0]; ?>');">
-                                <a href="<?php echo get_permalink(); ?>" class="more-link"><i class="fa fa-plus"></i></a>
-                            </div>
+                        <div class="img-post" style="background-image: url('<?php echo $src[0]; ?>');">
+                            <a href="<?php echo get_permalink(); ?>" class="more-link">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        </div>
 
-                        <?php endif; ?>
+                <?php endif; ?>
 
-                            <footer class="entry-footer">
-                                <?php
-                                    if ( is_single() ) {
-                                        the_title( '<h1 class="entry-title">', '</h1>' );
-                                    } else {
+                        <footer class="entry-footer">
+                            <?php
+                                if ( is_single() ) {
+                                    the_title( '<h1 class="entry-title">', '</h1>' );
+                                } else {
 
-                                    $cats = get_the_category();
-                                ?>
-                                    <span><?php echo $cats[0]->cat_name;?></span>
+                                $cats = get_the_category();
+                            ?>
+                                <span><?php echo $cats[0]->cat_name;?></span>
 
-                                <?php } ?>
+                            <?php } ?>
 
-                                <h2 class="entry-title">
-                                    <a href="<?php echo esc_url( get_permalink() );?>" rel="bookmark">
-                                    <?php if (strlen($post->post_title) > 35) {
+                            <h2 class="entry-title">
+                                <a href="<?php echo esc_url( get_permalink() );?>" rel="bookmark">
+                                <?php 
+                                    if (strlen($post->post_title) > 35) {
                                         echo substr(the_title($before = '', $after = '', FALSE), 0, 35) . '...';
                                     } else {
                                         the_title();
-                                    }?>
-                                    </a>
-                                </h2>
-                                <div class="times-post">
-                                    <i class="fa fa-clock-o"></i> <?php the_time('l, F g A');?>
-                                </div>
-                            </footer>
-                        </article>
-                    <?php endwhile; ?>
+                                    }
+                                ?>
+                                </a>
+                            </h2>
+                            
+                            <div class="times-post">
+                                <i class="fa fa-clock-o"></i> <?php the_time('l, F g A');?>
+                            </div>
+                            
+                        </footer>
+                        
+                    </article>
+                <?php endwhile; ?>
+                
             </main>
 
             <main id="main-5" class="site-main-5">
@@ -227,6 +247,7 @@
 
                 </div>
             </main>
+            
             <main id="main-6" class="site-main-6">
 
                 <h3 class="titus">sociales</h3>
@@ -260,6 +281,7 @@
                     </ul>
                     
                     <div id="loadOverlay">
+                       
                         <div class="closeimage"><i class="fa fa-times"></i></div>
                         <div class="loadimage">
                         </div>
@@ -270,9 +292,10 @@
                     
                 </div>
             </main>
+            
             <main id="main-7" class="site-main-7">
 
-                <a href="<?php echo get_site_url(4); ?>">
+            <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['casas']); ?>">
                 
                     <svg viewBox="0 0 792 268">
                         <use xlink:href="#logo-casas" class="logo-casas"/>
@@ -282,25 +305,32 @@
 
                 <?php
                     global $switched;
-                    switch_to_blog(4); 
+                    
+                    switch_to_blog($GLOBALS['detectBlogs']['casas']);
 
                     // Get latest Post
                     $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC');
                     $cnt =0;
-                ?> 
-
-                <?php foreach($latest_posts as $post) : setup_postdata($post);
-                    get_template_part( 'loop-casas');                               
-                 endforeach ; ?>
-
-                <?php restore_current_blog(); ?>
-
+                    foreach($latest_posts as $post) : setup_postdata($post);
+                        get_template_part( 'loop-casas');                               
+                    endforeach ;
+                    restore_current_blog();
+                ?>
             </main>
-                <?php } ?>
-            <?php }else{ ?>
-            
-            <?php get_sidebar(); ?>
-            <?php if(5==$blog_id){ ?>
+        <?php 
+            } 
+        ?>
+           
+        <?php
+        //SI NO ES MOBILE
+        }else{ 
+        ?>
+        <?php get_sidebar(); ?>
+           
+        <?php
+            //SI ES REPOST
+            if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){ 
+        ?>
             <h3 class="titus">entretención</h3>
             
             <div id="main-2" class="site-main-2-mobile">
@@ -322,7 +352,10 @@
                 ?>
                 
             </div>
-            <?php }else{ ?>
+            
+        <?php 
+            }else{ 
+        ?>
             <h3 class="titus">espectáculos</h3>
             
             <div id="main-2" class="site-main-2-mobile">
@@ -333,7 +366,7 @@
                 ?>
             </div>
             
-            <h3 class="titus">entrevista</h3>
+            <h3 class="titus">entrevistas</h3>
             
             <div id="main-3" class="site-main-3-mobile">
                 
@@ -349,70 +382,102 @@
             
             <div id="main-4" class="site-main-4-mobile">
                 
-                <?php query_posts( 'category_name=personaje-nacional,politica-nacional,espectaculos-nacionala&posts_per_page=5&orderby=date&order=DESC' );
-                    while ( have_posts() ) : the_post();?>
-                        <?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' );?>
-                         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php echo $src[0]; ?>');">
+        <?php 
+                query_posts( 'category_name=personaje-nacional,politica-nacional,espectaculos-nacionala&posts_per_page=5&orderby=date&order=DESC' );
+
+                while ( have_posts() ) : the_post();
+
+                $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' );
+        ?>
+                
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php echo $src[0]; ?>');">
                             
-                               <?php if(!wp_is_mobile()){ ?>
-                                <div class="hover-content">
-                                   <div class="shares-post">
-                                    <p>comparte en</p>
-                                    <a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-facebook"></i></a>
+        <?php 
+                //SI NO ES MOBILE
+                if(!wp_is_mobile()){ 
+        ?>
+                    <div class="hover-content">
+                        <div class="shares-post">
+                            <p>comparte en</p>
+                               
+                            <a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)">
+                                <i class="fa fa-facebook"></i>
+                            </a>
 
-                                    <a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', 520, 350)"><i class="fa fa-twitter"></i></a>
+                            <a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', 520, 350)">
+                                <i class="fa fa-twitter"></i>
+                            </a>
 
-                                    <a href="javascript:piShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_post_thumbnail_url(); ?>', '', 520, 350)"><i class="fa fa-pinterest"></i></a>
-                                    
-                                   <a target="_blank" href="https://plus.google.com/share?url=<?php echo the_permalink(); ?>" onclick="window.open('https://plus.google.com/share?url=<?php echo the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i></a>
+                            <a href="javascript:piShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_post_thumbnail_url(); ?>', '', 520, 350)">
+                                <i class="fa fa-pinterest"></i>
+                            </a>
 
-                                   </div>
-                                    <div class="btn_more">
-                                        <a href="<?php echo get_permalink(); ?>">seguir leyendo</a>
-                                    </div>
-                                </div>
-                            <?php } ?>
+                            <a target="_blank" href="https://plus.google.com/share?url=<?php echo the_permalink(); ?>" onclick="window.open('https://plus.google.com/share?url=<?php echo the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+
+                        </div>
+                        <div class="btn_more">
+                            <a href="<?php echo get_permalink(); ?>">seguir leyendo</a>
+                        </div>
+                    </div>
+        <?php 
+                } 
+        ?>
                             
-                             <footer class="entry-footer">
-                                <?php
-                                    if ( is_single() ) {
-                                        the_title( '<h1 class="entry-title">', '</h1>' );
-                                    } else {
+                     <footer class="entry-footer">
+        <?php
+                        if ( is_single() ) {
+                            the_title( '<h1 class="entry-title">', '</h1>' );
+                        } else {
 
-                                    $cats = get_the_category();
-                                ?>
-                                    <span><?php echo $cats[0]->cat_name;?></span>
+                        $cats = get_the_category();
+        ?>
+                        <span><?php echo $cats[0]->cat_name;?></span>
 
-                                <?php } ?>
+        <?php 
+                        } 
+        ?>
 
-                                <h2 class="entry-title">
-                                    <a href="<?php echo esc_url( get_permalink() );?>" rel="bookmark">
-                                    <?php if (strlen($post->post_title) > 35) {
-                                        echo substr(the_title($before = '', $after = '', FALSE), 0, 35) . '...';
-                                    } else {
-                                        the_title();
-                                    }?>
-                                    </a>
-                                </h2>
-                                <div class="times-post">
-                                    <i class="fa fa-clock-o"></i> <?php the_time('l, F g A');?>
-                                </div>
-                            </footer>
-                        </article>
-                    <?php endwhile;
-                ?>
+                        <h2 class="entry-title">
+                            <a href="<?php echo esc_url( get_permalink() );?>" rel="bookmark">
+                            <?php 
+                                if (strlen($post->post_title) > 35) {
+                                    echo substr(the_title($before = '', $after = '', FALSE), 0, 35) . '...';
+                                } else {
+                                    the_title();
+                                }
+                            ?>
+                            </a>
+                        </h2>
+                        <div class="times-post">
+                            <i class="fa fa-clock-o"></i> <?php the_time('l, F g A');?>
+                        </div>
+                    </footer>
+                       
+                </article>
+        <?php 
+                endwhile;
+        ?>
                 
             </div>
-            <?php } ?>
-        <?php }?>
+        <?php 
+            }
+        }
+        ?>
         
 	</div>
 	
-	<?php if ( !wp_is_mobile() ){ ?>
-        <?php if(5==$blog_id){ ?>
+	<?php
+        //SI NO ES MOBILE
+        if ( !wp_is_mobile() ){ 
+            //SI ES Repost
+            if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){ 
+    ?>
         
         <main id="main-7" class="site-main-7-mobile">
-            <a href="<?php echo get_site_url(4); ?>">
+           
+            <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['casas']); ?>">
                 
                 <svg viewBox="0 0 792 268">
                     <use xlink:href="#logo-casas" class="logo-casas"/>
@@ -423,23 +488,24 @@
             <div class="maxcasas">
                 <?php
                     global $switched;
-                    switch_to_blog(4); //switched to blog id 2
+                    
+                    switch_to_blog($GLOBALS['detectBlogs']['casas']);
 
                     // Get latest Post
                     $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC'); 
                     $cnt =0;
-                ?> 
-
-                <?php foreach($latest_posts as $post) : setup_postdata($post);
-                    get_template_part( 'loop-casas');                               
-                 endforeach ; ?>
-
-                <?php restore_current_blog(); //switched back to main site ?>  
+                    foreach($latest_posts as $post) : setup_postdata($post);
+                        get_template_part( 'loop-casas');                               
+                    endforeach ;
+                    restore_current_blog(); 
+                ?>  
             </div>
 
         </main>
         
-        <?php }else{ ?>
+    <?php 
+            }else{ 
+    ?>
        
         <?php /*/<main id="main-5" class="site-main-5-mobile">
 
@@ -502,7 +568,7 @@
         </main>
         
         <main id="main-7" class="site-main-7-mobile">
-            <a href="<?php echo get_site_url(4); ?>">
+            <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['casas']); ?>">
                 
                 <svg viewBox="0 0 792 268">
                     <use xlink:href="#logo-casas" class="logo-casas"/>
@@ -513,21 +579,23 @@
             <div class="maxcasas">
                 <?php
                     global $switched;
-                    switch_to_blog(4);
+                    
+                    switch_to_blog($GLOBALS['detectblogs']['casas']);
 
                     $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC'); 
                     $cnt =0;
-                ?> 
 
-                <?php foreach($latest_posts as $post) : setup_postdata($post);
-                    get_template_part( 'loop-casas');                               
-                 endforeach ; ?>
-
-                <?php restore_current_blog(); ?>  
+                    foreach($latest_posts as $post) : setup_postdata($post);
+                        get_template_part( 'loop-casas');                               
+                    endforeach ;
+                    restore_current_blog();
+                ?>  
             </div>
 
         </main>
-        <?php } ?>
-	<?php } ?>
-
-<?php get_footer(); ?>
+    <?php 
+        } 
+    } 
+    get_footer();
+    
+    ?>

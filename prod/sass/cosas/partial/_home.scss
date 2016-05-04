@@ -640,7 +640,7 @@
     }
     .site-main-7{
         @include span-columns(12);
-        @include pad(10px 10px 40px);
+        @include pad(10px 10px 0);
         background:{color: #ad9469;}
         svg{
             @include span-columns(6);
@@ -653,6 +653,7 @@
             @include span-columns(6);
             @include omega(3n);
             @include textAlign(center);
+            margin:{bottom:10px;}
 			background:{size:cover;repeat:no-repeat;position:center;}
 			position:relative;
 			min-height:167px;
