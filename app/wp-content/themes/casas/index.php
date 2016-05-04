@@ -11,7 +11,7 @@
 			</section>
 			
 			<section class="art-3columns">
-				<h3 class="title-section">Articulos recientes</h3>
+				<h3 class="title-section">Artículos recientes</h3>
 				<ul>
 					<?php get_template_part('loop-3c'); ?>
 				</ul>
@@ -253,7 +253,7 @@
 		<div class="content-page">
 
 			<section class="cosas-ult-art">
-				<h3 class="title-section">Ultimos Articulos COSAS</h3>
+				<h3 class="title-section">Últimos Artículos COSAS</h3>
 
 				<ul>
 					<?php
@@ -275,7 +275,7 @@
 			<section class="newsletter-casas">
 				<div class="content-newsletter">
 					<div class="contenido-suscripcion"> <!-- display-form -->
-						<h4>¡Subscribete a nuestro <span>newsletter</span>!</h4> 
+						<h4>¡Subscríbete a nuestro <span>newsletter</span>!</h4>  
 						<div class="bajada-news">Recibe lo último de nuestra revista casas</div>
 						
 						<form class="newsletter_form">

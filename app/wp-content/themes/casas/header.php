@@ -11,6 +11,14 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+		
+	<meta property="og:title" content="Mediatrends Group" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="http://mediatrendsgroup.com/" />
+	<meta property="og:image" content="http://mediatrendsgroup.com/img/mediatrends-group.jpg" />
+	<meta property="og:description" content="Somos un holding enfocado en generar valor integral para marcas en ecosistemas digitales." />
+	<meta property="og:site_name" content="Mediatrends Group" />
+
 		<?php wp_head(); ?>
 		<script>
         // conditionizr.com
@@ -66,7 +74,7 @@
 								<li><a target="_blank" href="https://www.facebook.com/RevistaCASAS/"><i class="fa fa-facebook"></i></a></li>
 			            		<li><a target="_blank" href="https://twitter.com/revista_casas"><i class="fa fa-twitter"></i></a></li>
 			            		<li><a target="_blank" href="https://www.instagram.com/revistacasas/"><i class="fa fa-instagram"></i></a></li>
-			            		<li><a target="_blank" href="https://www.youtube.com/user/revistacosas"><i class="fa fa-youtube"></i></a></li> 
+			            		<li><a target="_blank" href="https://www.youtube.com/user/revistacosas"><i class="fa fa-youtube-play"></i></a></li> 
 							</ul>
 						</div>
 
@@ -127,7 +135,7 @@
 								<li><a target="_blank" href="https://www.facebook.com/RevistaCASAS/"><i class="fa fa-facebook"></i></a></li>
 			            		<li><a target="_blank" href="https://twitter.com/revista_casas"><i class="fa fa-twitter"></i></a></li>
 			            		<li><a target="_blank" href="https://www.instagram.com/revistacasas/"><i class="fa fa-instagram"></i></a></li>
-			            		<li><a target="_blank" href="https://www.youtube.com/user/revistacosas"><i class="fa fa-youtube"></i></a></li> 
+			            		<li><a target="_blank" href="https://www.youtube.com/user/revistacosas"><i class="fa fa-youtube-play"></i></a></li> 
 							</ul>
 						</div>
 						<div class="logotypes">
