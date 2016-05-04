@@ -135,6 +135,7 @@
             </main>
             
         <?php 
+            //SI NO ES UN SUBDOMAIN
             }else{ 
         ?>
             
@@ -159,7 +160,15 @@
                 ?>
 
             </main>
-
+            
+            <main id="main-8" class="site-main-8">
+                
+                <h3>instagram</h3>
+                <div class="contInstagram">
+                  <?php get_template_part('instagram'); ?> 
+                </div>
+                
+            </main>
             <h3 class="titus">nacional</h3>
 
             <main id="main-4" class="site-main-4">

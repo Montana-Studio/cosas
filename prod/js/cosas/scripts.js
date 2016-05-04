@@ -127,6 +127,11 @@ jQuery(document).ready(function($){
         });
         return false;   
     });
+    
+    $('.contInstagram').isotope({
+        layoutMode: 'packery',
+        percentPosition: true
+    });
 });
 
 
