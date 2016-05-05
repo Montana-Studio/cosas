@@ -21,8 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
-<div class="content-woocomerce-center">
-
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.
@@ -56,7 +54,5 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_sidebar' );
 	?>
-
-	</div>
 
 <?php get_footer( 'shop' ); ?>

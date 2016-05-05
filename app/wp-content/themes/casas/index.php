@@ -172,7 +172,7 @@
 							</div>
 					    <?php $var++; ?>
 
-					    <?php elseif ( in_category('arte-buzz') && $var == 2 ): ?>
+					    <?php elseif ( in_category('arte') && $var == 2 ): ?> 
 								
 							<div class="post-articulo">
 
