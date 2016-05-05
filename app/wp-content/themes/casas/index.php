@@ -243,12 +243,12 @@
 
 		</div>
 
-		<section class="senction-video">
+		<!--section class="senction-video">
 			<h3 class="title-section">Video</h3>
 			<ul class="rslides-video">
 				<?php get_template_part('loop-video'); ?>
 			</ul>
-		</section>
+		</section-->
 
 		<div class="content-page">
 
