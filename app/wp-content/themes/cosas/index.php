@@ -387,6 +387,15 @@
                 
             </div>
             
+            <main id="main-8" class="site-main-8">
+                
+                <h3>instagram</h3>
+                <div class="contInstagram">
+                  <?php get_template_part('instagram'); ?> 
+                </div>
+                
+            </main>
+            
             <h3 class="titus-large">nacional</h3>
             
             <div id="main-4" class="site-main-4-mobile">
@@ -589,7 +598,7 @@
                 <?php
                     global $switched;
                     
-                    switch_to_blog($GLOBALS['detectblogs']['casas']);
+                    switch_to_blog($GLOBALS['detectBlogs']['casas']);
 
                     $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC'); 
                     $cnt =0;

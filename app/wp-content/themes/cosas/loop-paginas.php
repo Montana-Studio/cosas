@@ -9,7 +9,7 @@
 				the_title();
 			}  ?></a></h2>
         <div class="times-post">
-            <i class="fa fa-clock-o"></i> <?php the_time('l, F g A');?>
+            <i class="fa fa-clock-o"></i> <?php the_date('l d, F ');?>
         </div>
     </div>
 </article>

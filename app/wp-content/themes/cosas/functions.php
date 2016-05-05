@@ -98,11 +98,10 @@ function html5blank_header_scripts()
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
         
         wp_enqueue_script( 'resp-slider', get_template_directory_uri() .'/js/responsiveslides.min.js',array(),'20160424', true );
-        
         wp_enqueue_script( 'marquee', get_template_directory_uri() .'/js/jquery.marquee.min.js',array(),'20160502', true );
-        
-        //wp_enqueue_script( 'jsshares', get_template_directory_uri() .'/js/whatsappShare.min.js',array(),'20160428', true );
         wp_enqueue_script( 'color-box', get_template_directory_uri() .'/js/jquery.colorbox-min.js',array(),'', true ); 
+        wp_enqueue_script( 'isotope', get_template_directory_uri() .'/js/isotope-docs.min.js',array(),'20160505', true ); 
+        wp_enqueue_script( 'packery', get_template_directory_uri() .'/js/packery-mode.pkgd.min.js',array(),'20160505', true ); 
     }
 }
 
@@ -533,8 +532,8 @@ function blogs_global_vars() {
         
         'blogId'    => get_current_blog_id(),
         'cosas'     => '1',
-        'casas'     => '3',
-        'repost'    => '4',
+        'casas'     => '4',
+        'repost'    => '5',
 
     );
 
