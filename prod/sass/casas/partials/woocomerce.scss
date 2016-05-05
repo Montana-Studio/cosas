@@ -1,6 +1,7 @@
 .content-woocomerce-center {
 	@include span-columns(12);
-	@include pad(0);
+	@include pad(10px);
+	font:{family:$primary_font;}
 	@include media($tablet) {
 		@include outer-container(85%);
 		float: none;
@@ -24,5 +25,97 @@
 		float: none;
 		margin: 0 auto !important;
 		padding: 0;
+	}
+	.title-susc {
+		@include span-columns(12);
+		text:{transform:uppercase;}
+		border-bottom:1px solid $black_color;  
+		margin:{bottom:15px;}
+		@include media($notebook) {
+			margin:{bottom:30px;}
+		}
+		h1 {
+			margin:{bottom:5px;}
+			font:{size: 1.6em;}
+			@include media($notebook) {
+				font:{size: 2em;}
+			}
+		}
+	}
+	.products {
+		@include span-columns(12);
+		@include omega();
+		@include media($notebook) {
+			@include span-columns(9);
+			@include omega();
+		}
+		li {
+			width:100% !important;
+			max-width: 100% !important;
+			display: block;
+			@include media($notebook) {
+				width:32% !important;
+				margin:{right:10px !important;}
+			}
+			img {
+				margin:{bottom:0 !important;}
+				@include media($notebook) {
+					height: 450px !important;
+					margin:{bottom:10px !important;}
+				}
+			}
+			&.product { 
+				@include omega(); 
+			}	
+			h3 {
+				@include span-columns(12);
+				@include omega();
+				text:{align:center;transform:uppercase;}
+				font:{size: 1.6em !important;}
+				@include media($notebook) {
+					font:{size: 1.9em !important;} 
+				}
+			}
+			.button {
+				display: block;
+				margin: 0 auto;
+				width: 150px;
+				text:{align: center;transform: uppercase;}
+				padding: 13px 10px;
+				background: none;
+				border: 1px solid $black_color;
+				border-radius: 0;
+				color: $black_color;
+				&:hover {
+					background: $black_color;
+					border: 1px solid $black_color;
+					color: $white_color;
+				}
+			}
+			.onsale {
+				display: none;
+			}
+			.added_to_cart {
+				display: block;
+				margin: 10px auto;
+				width: 150px;
+				text:{align: center;transform: uppercase;}
+				padding: 13px 10px;
+				background: none;
+				border: 1px solid $black_color;
+				border-radius: 0;
+				color: $black_color;
+				font:{weight:bold;}
+				@include media($notebook) {
+					margin:{top:50px;} 
+					width: 100%;
+				}
+				&:hover {
+					background: $black_color;
+					border: 1px solid $black_color;
+					color: $white_color;
+				}
+			}
+		}
 	}
 }

@@ -1,4 +1,4 @@
-<?php query_posts( 'category_name=en-viaje&posts_per_page=4' );
+<?php query_posts( 'category_name=mural&posts_per_page=4' );
  					while ( have_posts() ) : the_post();
 						?>
 <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

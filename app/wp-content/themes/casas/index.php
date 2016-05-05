@@ -172,7 +172,7 @@
 							</div>
 					    <?php $var++; ?>
 
-					    <?php elseif ( in_category('arte-buzz') && $var == 2 ): ?>
+					    <?php elseif ( in_category('arte') && $var == 2 ): ?> 
 								
 							<div class="post-articulo">
 
@@ -243,12 +243,12 @@
 
 		</div>
 
-		<section class="senction-video">
+		<!--section class="senction-video">
 			<h3 class="title-section">Video</h3>
 			<ul class="rslides-video">
 				<?php get_template_part('loop-video'); ?>
 			</ul>
-		</section>
+		</section-->
 
 		<div class="content-page">
 

@@ -1,4 +1,5 @@
 <!-- sidebar -->
+
 <aside class="sidebar" role="complementary">
 
 	<div class="agenda-sidebar">
