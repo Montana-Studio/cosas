@@ -1,5 +1,11 @@
 <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	
+	<?php 
+    if(!wp_is_mobile()){
+    ?>
+    <div class="img-last" style="background-image:url('<?php the_post_thumbnail_url(); ?>');"></div>
+    <?php    
+    }   
+    ?>
     <span>
         <?php 
             $cats = get_the_category();

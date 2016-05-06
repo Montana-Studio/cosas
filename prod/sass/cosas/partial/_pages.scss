@@ -6,6 +6,11 @@
         @include shift(1);
         @include pad(5px 0);
     }
+    @include media($desktop){
+        max-width:1119px;
+        margin:0 auto !important;
+        float:none;
+    }
     .titus{
         @extend .titulosh3;
         @include span-columns(12);

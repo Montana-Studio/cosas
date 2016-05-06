@@ -1,7 +1,7 @@
 jQuery(document).ready(function($){
     
     $('#slider3, #slider5').responsiveSlides({
-        auto:false,
+        auto:true,
         nav: true,
         prevText:'<i class="fa fa-angle-right"></i>',
         nextText:'<i class="fa fa-angle-left"></i>'
@@ -72,7 +72,7 @@ jQuery(document).ready(function($){
         pauseOnHover:true,
         duplicated:true,
         startVisible:true,
-        duration:10000
+        duration:20000
     });
     
     //GALLERIES

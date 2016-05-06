@@ -72,8 +72,6 @@
 		<!-- /#page -->
 
 		<?php wp_footer(); ?>
-		<script src="http://isotope.metafizzy.co/js/isotope-docs.min.js"></script>
-		<script src="../../../../bower_components/isotope-packery/packery-mode.pkgd.min.js"></script>
 
 		<!-- analytics -->
 		<script>

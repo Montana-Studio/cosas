@@ -1,20 +1,20 @@
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
-	<head>
-		<meta charset="<?php bloginfo('charset'); ?>">
+    <head>
+        <meta charset="<?php bloginfo('charset'); ?>">
 
-		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
+        <title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
 
-		<link href="//www.google-analytics.com" rel="dns-prefetch">
+        <link href="//www.google-analytics.com" rel="dns-prefetch">
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
 
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<?php 
+        <?php
             wp_head();
-        
+
             blogs_global_vars();
             if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){
         ?>
@@ -26,7 +26,6 @@
         <?php
             }
         ?>
-        
         <script type='text/javascript'>
           (function() {
             var useSSL = 'https:' == document.location.protocol;
@@ -38,16 +37,16 @@
 
         <script type='text/javascript'>
           googletag.cmd.push(function() {
-            googletag.defineSlot('/92947493/300x250_COSAS_ALL', [300, 250], 'div-gpt-ad-1462310738320-0').addService(googletag.pubads());
+            googletag.defineSlot('/92947493/250x250_COSAS_ALL', [250, 250], 'div-gpt-ad-1462495429825-0').addService(googletag.pubads());
             googletag.pubads().collapseEmptyDivs();
             googletag.pubads().enableSyncRendering();
             googletag.enableServices();
           });
         </script>
-        
+
 	</head>
-	<body <?php body_class(); ?>>
-        
+        <body <?php body_class(); ?>>
+
         <div id="fb-root"></div>
         <script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
@@ -56,13 +55,13 @@
           js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.6";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
-        
+
         <?php get_template_part('content-svg'); ?>
-        
+
         <div id="menu-content" class="menu-list">
            <a href="<?php echo site_url();?>">
-                <?php 
-                    if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){ 
+                <?php
+                    if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){
                 ?>
                         <svg  viewBox="0 0 759 262" class="menu-logo repost-bg">
                             <use xlink:href="#logo-repost" class="logo-menu repost"/>

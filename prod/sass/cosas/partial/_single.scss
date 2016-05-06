@@ -5,6 +5,11 @@
         @include span-columns(10);
         @include shift(1);
     }
+    @include media($desktop){
+        max-width:1119px;
+        margin: 0 auto !important;
+        float:none;
+    }
     article{
         .img-post-single{
             @include span-columns(12);
