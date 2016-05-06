@@ -189,14 +189,20 @@
             @include shift(1);
             ul{
                 @include span-columns(10);
-                @include pad(10px);
+                //@include pad(10px);
                 li{
                     display: inline-block;
-                    @include pad(0 10px);
+                    //@include pad(0 10px);
                     a{
                         color:$white;
                         font:{size:em(11);family:$openSans;}
                         text:{transform:uppercase;}
+                        @include pad(17px 10px);
+                        display: block;
+                        &:hover{
+                            @include transition(background .5s ease-in-out);
+                            background:{color:$greyTwo;}
+                        }
                     }
                 }
             }
@@ -231,6 +237,11 @@
                     }
                 }
             }
+        }
+        @include media($desktop){
+            @include span-columns(0);
+            @include outer-container(1119px);
+            float:none;
         }
     }
 }
