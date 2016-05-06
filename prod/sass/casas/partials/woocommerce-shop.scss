@@ -1,6 +1,6 @@
 .content-woocomerce-center {
 	@include span-columns(12);
-	@include pad(10px);
+	@include pad(10px); 
 	font:{family:$primary_font;}
 	@include media($tablet) {
 		@include outer-container(85%);
@@ -60,9 +60,14 @@
 			img {
 				margin:{bottom:0 !important;}
 				@include media($notebook) {
+					height: 365px !important;
+					margin:{bottom:10px !important;}
+				}
+				@include media($desktop) {
 					height: 450px !important;
 					margin:{bottom:10px !important;}
 				}
+
 			}
 			&.product { 
 				@include omega(); 
@@ -73,6 +78,10 @@
 				text:{align:center;transform:uppercase;}
 				font:{size: 1.6em !important;}
 				@include media($notebook) {
+					font:{size: 1.7em !important;} 
+					padding:{bottom:3px !important;}
+				}
+				@include media($desktop) {
 					font:{size: 1.9em !important;} 
 				}
 			}
@@ -115,6 +124,9 @@
 					border: 1px solid $black_color;
 					color: $white_color;
 				}
+			}
+			.star-rating {
+				display: none;
 			}
 		}
 	}

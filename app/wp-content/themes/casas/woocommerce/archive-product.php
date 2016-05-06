@@ -98,16 +98,62 @@ get_header( 'shop' ); ?>
 			 */
 			do_action( 'woocommerce_after_main_content' );
 		?>
+		<div class="sidebar-woocomerce">
 
-		<?php
+			<div class="sidebar-seccion despacho-seccion"  style="background:url('<?php echo get_template_directory_uri(); ?>/img/delivery-cosas.jpg?>');">  
+				<div class="inside-despacho">
+					<div class="title-despacho">
+						<mark>Cobertura de </mark>
+						<mark>despacho</mark>
+					</div>
+				</div>
+			</div>
+
+			<div class="info-sidebar popups-despacho">
+				<div class="popups-bg"></div>
+				<div class="popups-info">
+					<h3 class="title-susc">Cobertura de despacho</h3>
+					<div class="close-popups close-despacho"><i class="fa fa-close"></i></div>
+					<div class="cobertura">
+					</div>
+				</div>
+			</div>
+
+			<div class="sidebar-seccion medios-de-pago"  style="background:url('<?php echo get_template_directory_uri(); ?>/img/medios-de-pago-cosas.jpg?>');">  
+				<div class="inside-medios-pago">
+					<div class="title-despacho">
+						<mark>Medios de </mark>
+						<mark>Pago</mark>
+					</div>
+				</div>
+			</div>
+
+			<div class="info-sidebar popups-medios-pago">
+				<div class="popups-bg"></div>
+				<div class="popups-info">
+					<h3 class="title-susc">Medios de pago</h3>
+					<div class="close-popups close-medios"><i class="fa fa-close"></i></div>
+					<div class="cobertura">
+					</div>
+				</div>
+			</div>
+
+		</div>	
+
+	</div>	
+
+
+
+		<!--?php
 			/**
 			 * woocommerce_sidebar hook.
 			 *
 			 * @hooked woocommerce_get_sidebar - 10
 			 */
 			//do_action( 'woocommerce_sidebar' );
-		?>
+		?-->
+	
 
-	</div>	
+	
 
 <?php get_footer( 'shop' ); ?>

@@ -46,12 +46,14 @@
 		}
 		h1 {
 			@include span-columns(12);
+			float: inherit;
 			text:{transform:uppercase;}
 			border-bottom:1px solid $black_color;  
 			margin:{bottom:15px;}
 			font:{size: 1.6em;}
 			@include media($notebook) {
 				margin:{bottom:30px;}
+				float: inherit;
 				font:{size: 2em;}
 			}
 		}
@@ -203,5 +205,8 @@
 				}		
 			}
 		}
+	}
+	.sidebar {
+		display: none;
 	}
 }
