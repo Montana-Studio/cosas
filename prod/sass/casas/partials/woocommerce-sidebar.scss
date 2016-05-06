@@ -1,0 +1,13 @@
+.sidebar-woocomerce {
+	@include span-columns(12);
+	height: 400px;  
+	@include media($notebook) {
+		@include span-columns(3);
+		float: right;
+	}
+	.despacho-seccion {
+		@include span-columns(12);
+		height: 350px;
+		background: #000; 
+	}
+}

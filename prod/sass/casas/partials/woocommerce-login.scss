@@ -1,0 +1,42 @@
+.woocommerce {
+	.login {
+		border-radius:0 !important;
+		@include media($notebook) {
+			@include outer-container(40%);
+			margin: 0 auto !important;
+			padding: 40px 20px !important;
+		}
+		.form-row {
+			width: 100% !important;
+			@include media($notebook) {
+				width: 80% !important;
+    			margin: 0 auto;
+			}
+			label {
+				font:{size: 1.2em !important;weight:bold;}
+				color:$black_color;
+			}
+			.input-text  {
+				background: none;
+				border: 1px solid #ccc !important;  
+				color: $black_color;
+				padding: 10px;
+				clear: none !important;
+				font:{size: 1.4em;} 
+			}
+			.button {
+				@include span-columns(12);
+				margin:{top:5px;bottom:5px;}
+			}
+			.inline {
+				display: block;
+				clear: both;
+			}   
+		}
+		.lost_password {
+			@include media($notebook) {
+				text:{align:center;}
+			}
+		} 
+	}
+}

@@ -45,7 +45,7 @@
 	<div class="logotipos-all">
 		<?php get_template_part('iconos'); ?>
 	</div>
-	
+
 		<!-- wrapper -->
 		<div class="wrapper">
 

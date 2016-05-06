@@ -98,16 +98,26 @@ get_header( 'shop' ); ?>
 			 */
 			do_action( 'woocommerce_after_main_content' );
 		?>
+		<div class="sidebar-woocomerce">
+			<div class="despacho-seccion">
+				
+			</div>
+		</div>	
 
-		<?php
+	</div>	
+
+
+
+		<!--?php
 			/**
 			 * woocommerce_sidebar hook.
 			 *
 			 * @hooked woocommerce_get_sidebar - 10
 			 */
 			//do_action( 'woocommerce_sidebar' );
-		?>
+		?-->
+	
 
-	</div>	
+	
 
 <?php get_footer( 'shop' ); ?>
