@@ -1,13 +1,120 @@
 .sidebar-woocomerce {
 	@include span-columns(12);
-	height: 400px;  
 	@include media($notebook) {
 		@include span-columns(3);
 		float: right;
 	}
-	.despacho-seccion {
+	.sidebar-seccion {
 		@include span-columns(12);
 		height: 350px;
 		background: #000; 
+		background-position: center !important;
+		background-size: cover !important;
+		position: relative;
+		margin:{bottom:20px;}
+		@include media($notebook) {
+			height: 290px;
+		}
+		@include media($desktop) {
+			height: 350px;
+		}
+		.inside-despacho {
+			@include outer-container(92%);
+			height: 330px;
+			position: absolute;
+			top:10px;
+			left:0;
+			right: 0;
+			border:1px solid #000; 
+			padding: {right:40%;}
+			@include media($notebook) {
+				height: 270px;
+			}
+			@include media($desktop) {
+				height: 330px;
+				padding: {right:50%;}
+			}
+			.title-despacho {
+				@include span-columns(8);
+				position: absolute;
+				top:50%;
+				font:{size:2em;weight:bold;}
+				display: table-cell;
+				vertical-align: middle;
+				@include media($notebook) {
+					top:40%;
+				}
+				@include media($desktop) {
+					top:50%;
+				}
+				mark {
+					background: #000;
+					color:#fff;
+					padding: 5px 10px;
+				}
+			}
+		}
+		.inside-medios-pago {
+			@extend .inside-despacho;
+		}
+	}
+	.info-sidebar {
+		@include span-columns(12);
+		@include omega();
+		display: none;
+		.popups-bg {
+			@include span-columns(12);
+			@include omega();
+			background: #000;
+			height: 100%;
+			position: absolute;
+			top:0;
+			left:0;
+			z-index: 9999999990;
+			opacity: 0.7;
+		}
+		.popups-info {
+			@include outer-container(90%);
+			background: #fff;
+			height: 500px;
+			position: fixed;
+			z-index: 9999999999;
+			left:0;
+			right: 0;
+			top:10%; 
+			padding: 10px 20px;
+			@include media($notebook) {
+				@include outer-container(60%);
+				padding: 20px 30px;
+				height: 700px;  
+				top:5%; 
+			}
+			@include media($notebook) {
+				top:10%; 
+			}	
+			.title-susc {
+				margin:{top: 5px;}
+    			padding:{bottom: 5px;}
+    			@include media($notebook) {
+					font-size: 1.6em;
+					padding-bottom: 6px;
+    			}
+			} 
+			.close-popups {
+				color:#000;
+				font:{size:1.9em;}
+				position: absolute;
+				top:5px;
+				right: 22px;
+				@include media($notebook) {
+					font-size: 2.2em;
+					top: 9px;
+					right: 19px;
+    			}
+			}
+		}
+		&.show-popups {
+			display: block;
+		}
 	}
 }

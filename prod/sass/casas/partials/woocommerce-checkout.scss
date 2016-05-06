@@ -18,6 +18,7 @@
 	}
 	.form-row {
 		width: 100% !important;
+		font:{size:inherit;}
 		@include media($notebook) {
 			width: 50% !important;
 		}
@@ -91,12 +92,32 @@
 }
 .woocommerce-thankyou-order-received {
 	font:{size:1.5em}
+	@include media($notebook) {
+		text:{align:center;}
+	}	
 }
 .woocommerce-thankyou-order-details {
 	&.order_details {
 		@include span-columns(12);
 		margin: 0;
-		padding: 0;
+		padding: 20px 10px; 
+		border:1px solid #000;
+		@include media($notebook) {
+			@include outer-container(60%);
+			float: none;
+			margin:0 auto !important;
+			padding: 40px; 
+		}
+		li {
+			@include span-columns(6);
+			@include omega();
+			padding: 0 10px !important;
+			font:{size:1em;}
+			@include media($notebook) {
+				padding: 0 !important;
+				@include span-columns(3);
+			}	
+		}
 	}
 }
 .woocommerce {
@@ -139,6 +160,15 @@
 			}		
 		}
 	}
-}
-.woocommerce-page {
+	.shop-table-cosas {
+		@include span-columns(12);
+		margin: 0;
+		padding: 20px 10px; 
+		@include media($notebook) {
+			@include outer-container(60%);
+			float: none;
+			margin:0 auto !important;
+			padding: 0;  
+		} 
+	}
 }

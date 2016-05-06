@@ -104,6 +104,23 @@ jQuery(document).ready(function($){
         });
         return false;   
     });
+
+    $('.inside-despacho').click(function(){
+    	$('.info-sidebar.popups-despacho').toggleClass('show-popups');  
+    });
+
+    $('.close-popups.close-despacho').click(function(){
+    	$('.info-sidebar.popups-despacho').toggleClass('show-popups');  
+    });
+
+    $('.inside-medios-pago').click(function(){
+    	$('.info-sidebar.popups-medios-pago').toggleClass('show-popups');  
+    });
+
+    $('.close-popups.close-medios').click(function(){
+    	$('.info-sidebar.popups-medios-pago').toggleClass('show-popups');  
+    });
+
 });  
 
 
@@ -128,3 +145,5 @@ function GoogleShare(url, title, image, winWidth, winHeight) {
     po.src = 'https://apis.google.com/js/platform.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 } 
+
+
