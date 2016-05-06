@@ -44,14 +44,14 @@
 						</A>	
 					</li>
 					<li>
-						<a target="_blank" href="http://www.cosas.com/couture/">
+						<a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['couture']); ?>">
 							<svg viewBox="0 0 792 268">
 	                            <use xlink:href="#logo-couture"/>
 	                        </svg>
 						</a>
 					</li>
 					<li>
-						<a target="_blank" href="http://www.cosas.com/?post_type=lujo">
+						<a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['lujo']); ?>">
 							<svg viewBox="0 0 792 268">
 	                            <use xlink:href="#logo-lujo"/>
 	                        </svg>

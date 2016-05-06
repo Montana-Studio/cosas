@@ -4,7 +4,7 @@ function actualiza($id,$url,$likes,$comments,$link,$mysqli){
 }
 
 function actualiza_fotos($mysqli){
-    $client_id = '7cb05e275c664adb80bae7a501fe295b';
+    $client_id = '174d0cb396b04980b74bda086403347f';
     $json_user_url='https://api.instagram.com/v1/users/55672867/media/recent/?client_id='.$client_id;
     $json_user= file_get_contents($json_user_url);
     $links_user_url= json_decode($json_user);

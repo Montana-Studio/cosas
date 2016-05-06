@@ -12,7 +12,7 @@ get_header();
             
             <div class="post-list">
             <?php
-                if(5==$blog_id){
+                if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){
                     if(is_page('moda')){
                     
                         // WP_Query arguments
@@ -143,6 +143,203 @@ get_header();
 
                         // Restore original Post Data
                         wp_reset_postdata();
+                    }
+                }elseif($GLOBALS['detectBlogs']['lujo']==$GLOBALS['detectBlogs']['blogId']){
+                    if(is_page('cultura')){
+
+                        // WP_Query arguments
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        $args = array (
+                            'category_name'          => 'cultura',
+                            'posts_per_page'         => '9',
+                            'paged'                  => $paged,
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        );
+
+                        // The Query
+                        $paginas = new WP_Query( $args );
+
+                        // The Loop
+                        if ( $paginas->have_posts() ) {
+                            while ( $paginas->have_posts() ) {
+                                $paginas->the_post(); ?>
+                                <?php get_template_part('loop-paginas'); ?>
+                           <?php  }
+                        } else { ?>
+
+                            <article>
+
+                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+
+                            </article>
+
+                        <?php }
+
+                        // Restore original Post Data
+                        wp_reset_postdata();  
+
+                    }elseif(is_page('personajes')){
+                        // WP_Query arguments
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        $args = array (
+                            'category_name'          => 'personajes',
+                            'posts_per_page'         => '9',
+                            'paged'                  => $paged,
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        );
+
+                        // The Query
+                        $paginas = new WP_Query( $args );
+
+                        // The Loop
+                        if ( $paginas->have_posts() ) {
+                            while ( $paginas->have_posts() ) {
+                                $paginas->the_post(); ?>
+                                <?php get_template_part('loop-paginas'); ?>
+                           <?php  }
+                        } else { ?>
+
+                            <article>
+
+                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+
+                            </article>
+
+                        <?php }
+
+                        // Restore original Post Data
+                        wp_reset_postdata();  
+                    }elseif(is_page('de-coleccion')){
+                        // WP_Query arguments
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        $args = array (
+                            'category_name'          => 'de-coleccion',
+                            'posts_per_page'         => '9',
+                            'paged'                  => $paged,
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        );
+
+                        // The Query
+                        $paginas = new WP_Query( $args );
+
+                        // The Loop
+                        if ( $paginas->have_posts() ) {
+                            while ( $paginas->have_posts() ) {
+                                $paginas->the_post(); ?>
+                                <?php get_template_part('loop-paginas'); ?>
+                           <?php  }
+                        } else { ?>
+
+                            <article>
+
+                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+
+                            </article>
+
+                        <?php }
+
+                        // Restore original Post Data
+                        wp_reset_postdata();  
+                    }elseif(is_page('moda')){
+                        
+                        // WP_Query arguments
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        $args = array (
+                            'category_name'          => 'moda',
+                            'posts_per_page'         => '9',
+                            'paged'                  => $paged,
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        );
+
+                        // The Query
+                        $paginas = new WP_Query( $args );
+
+                        // The Loop
+                        if ( $paginas->have_posts() ) {
+                            while ( $paginas->have_posts() ) {
+                                $paginas->the_post(); ?>
+                                <?php get_template_part('loop-paginas'); ?>
+                           <?php  }
+                        } else { ?>
+
+                            <article>
+
+                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+
+                            </article>
+
+                        <?php }
+
+                        // Restore original Post Data
+                        wp_reset_postdata();  
+                    }elseif('viajes'){
+                        // WP_Query arguments
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        $args = array (
+                            'category_name'          => 'viajes',
+                            'posts_per_page'         => '9',
+                            'paged'                  => $paged,
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        );
+
+                        // The Query
+                        $paginas = new WP_Query( $args );
+
+                        // The Loop
+                        if ( $paginas->have_posts() ) {
+                            while ( $paginas->have_posts() ) {
+                                $paginas->the_post(); ?>
+                                <?php get_template_part('loop-paginas'); ?>
+                           <?php  }
+                        } else { ?>
+
+                            <article>
+
+                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+
+                            </article>
+
+                        <?php }
+
+                        // Restore original Post Data
+                        wp_reset_postdata();  
+                    }elseif(is_page('ecoturismo')){
+                        // WP_Query arguments
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        $args = array (
+                            'category_name'          => 'ecoturismo',
+                            'posts_per_page'         => '9',
+                            'paged'                  => $paged,
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        );
+
+                        // The Query
+                        $paginas = new WP_Query( $args );
+
+                        // The Loop
+                        if ( $paginas->have_posts() ) {
+                            while ( $paginas->have_posts() ) {
+                                $paginas->the_post(); ?>
+                                <?php get_template_part('loop-paginas'); ?>
+                           <?php  }
+                        } else { ?>
+
+                            <article>
+
+                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+
+                            </article>
+
+                        <?php }
+
+                        // Restore original Post Data
+                        wp_reset_postdata();  
                     }
                 }else{
                     if(is_page('moda')){

@@ -21,15 +21,18 @@
     </script>
     </div>
     
-    <div class="fb-page" data-href="https://www.facebook.com/revistacosas" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" dat$
+    <div class="fb-page" data-href="https://www.facebook.com/revistacosas" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/revistacosas"><a href="https://www.facebook.com/revistacosas">Revista Cosas</a></blockquote></div></div>
+    
+    <a class="twitter-timeline" href="https://twitter.com/RevistaCosas" data-widget-id="728631581099831297">Tweets por el @RevistaCosas.</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-        <div class="sidebar-widget">
-                <?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-1')) ?>
-        </div>
+    <div class="sidebar-widget">
+            <?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-1')) ?>
+    </div>
 
-        <div class="sidebar-widget">
-                <?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-2')) ?>
-        </div>
+    <div class="sidebar-widget">
+            <?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-2')) ?>
+    </div>
 
 </aside>
 <!-- /sidebar -->

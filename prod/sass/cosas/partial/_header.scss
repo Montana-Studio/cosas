@@ -21,6 +21,9 @@
             &.repost-bg{
                 background:{color: #fff;}
             }
+            &.lujo-bg{
+                background:{color: #fff;}
+            }
         }
         @include media($notebook){
             @include span-columns(6);

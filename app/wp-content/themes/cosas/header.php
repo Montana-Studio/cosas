@@ -66,6 +66,12 @@
                         <svg  viewBox="0 0 759 262" class="menu-logo repost-bg">
                             <use xlink:href="#logo-repost" class="logo-menu repost"/>
                         </svg>
+                <?php
+                    }elseif($GLOBALS['detectBlogs']['lujo']==$GLOBALS['detectBlogs']['blogId']){
+                ?>
+                        <svg viewBox="0 0 792 268" class="lujo-bg">
+                            <use xlink:href="#logo-lujo" class="logo-menu"/>
+                        </svg>
                 <?php }else{ ?>
                         <svg viewBox="0 0 759 232" class="menu-logo">
                             <use xlink:href="#logo-cosas" class="logo-menu"/>
@@ -150,6 +156,12 @@
                             <use xlink:href="#logo-repost" class="logo-head repost"/>
                         </svg>
                         
+                    <?php
+                        }elseif($GLOBALS['detectBlogs']['lujo']==$GLOBALS['detectBlogs']['blogId']){
+                    ?>
+                        <svg viewBox="0 0 792 268" class="lujo-bg">
+                            <use xlink:href="#logo-lujo" class="logo-menu"/>
+                        </svg>
                     <?php }else{ ?>
                         <svg  viewBox="0 0 759 262">
                             <use xlink:href="#logo-cosas" class="logo-head"/>

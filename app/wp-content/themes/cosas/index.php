@@ -18,7 +18,21 @@
                         'posts_per_page'         => '4',
                         'order'                  => 'DESC',
                         'orderby'                => 'date',
-                    ); 
+                    );
+                }elseif($GLOBALS['detecBlogs']['lujo']==$GLOBALS['detectBlogs']['blogId']){
+                    // WP_Query arguments
+                    $args = array (
+                        'category_name'          => 'personajes',
+                        'posts_per_page'         => '3',
+                        'order'                  => 'DESC',
+                        'orderby'                => 'date',
+                    );
+                    $args1 = array (
+                        'category_name'          => 'cultura',
+                        'posts_per_page'         => '4',
+                        'order'                  => 'DESC',
+                        'orderby'                => 'date',
+                    );
                 }else{
                     // WP_Query arguments
                     $args = array (
@@ -135,6 +149,58 @@
             </main>
             
         <?php 
+            }elseif($GLOBALS['detectBlogs']['lujo']==$GLOBALS['detectBlogs']['blogId']){
+        ?>
+            <h3 class="titus">moda</h3>
+            
+            <main id="main-2" class="site-main-2">
+               
+                <?php query_posts( 'category_name=moda&posts_per_page=6&orderby=date&order=DESC' );
+                        while ( have_posts() ) : the_post();
+                        get_template_part( 'loop-espectaculo');
+                    endwhile;
+                ?>
+            </main>
+            
+            <h3 class="titus">De colección</h3>
+
+            <main id="main-3" class="site-main-3">
+
+                <?php query_posts( 'category_name=de-coleccion&posts_per_page=3&orderby=date&order=DESC' );
+                    while ( have_posts() ) : the_post();
+                        get_template_part( 'loop-entrevista');
+                    endwhile;
+                ?>
+
+            </main>
+            
+            <main id="main-7" class="site-main-7">
+
+                <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['casas']); ?>">
+                
+                    <svg viewBox="0 0 792 268">
+                        <use xlink:href="#logo-casas" class="logo-casas"/>
+                    </svg>
+
+                </a>
+
+                <?php
+                    global $switched;
+                    
+                    switch_to_blog($GLOBALS['detectBlogs']['casas']);
+
+                    $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC');
+                    $cnt =0;
+                             
+                    foreach($latest_posts as $post) : setup_postdata($post);
+                        get_template_part( 'loop-casas');                               
+                    endforeach ;
+                    restore_current_blog();
+                
+                ?>
+
+            </main>
+        <?php
             //SI NO ES UN SUBDOMAIN
             }else{ 
         ?>
@@ -362,7 +428,31 @@
                 
             </div>
             
-        <?php 
+        <?php
+            }elseif($GLOBALS['detectBlogs']['lujo']==$GLOBALS['detectBlogs']['blogId']){
+        ?>
+        <h3 class="titus">moda</h3>
+            
+            <div id="main-2" class="site-main-2-mobile">
+                <?php query_posts( 'category_name=moda&posts_per_page=9&orderby=date&order=DESC' );
+                        while ( have_posts() ) : the_post();
+                        get_template_part( 'loop-espectaculo');
+                    endwhile;
+                ?>
+            </div>
+            
+            <h3 class="titus">De colección</h3>
+            
+            <div id="main-3" class="site-main-3-mobile">
+                
+                <?php query_posts( 'category_name=de-coleccion&posts_per_page=2&orderby=date&order=DESC' );
+                    while ( have_posts() ) : the_post();
+                        get_template_part( 'loop-entrevistamobile');
+                    endwhile;
+                ?>
+                
+            </div>
+        <?php
             }else{ 
         ?>
             <h3 class="titus">espectáculos</h3>
@@ -522,6 +612,36 @@
         </main>
         
     <?php 
+            }elseif($GLOBALS['detectBlogs']['lujo']==$GLOBALS['detectBlogs']['blogId']){
+    ?>
+        <main id="main-7" class="site-main-7-mobile">
+           
+            <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['casas']); ?>">
+                
+                <svg viewBox="0 0 792 268">
+                    <use xlink:href="#logo-casas" class="logo-casas"/>
+                </svg>
+                
+            </a>
+            
+            <div class="maxcasas">
+                <?php
+                    global $switched;
+                    
+                    switch_to_blog($GLOBALS['detectBlogs']['casas']);
+
+                    // Get latest Post
+                    $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC'); 
+                    $cnt =0;
+                    foreach($latest_posts as $post) : setup_postdata($post);
+                        get_template_part( 'loop-casas');                               
+                    endforeach ;
+                    restore_current_blog(); 
+                ?>  
+            </div>
+
+        </main>
+    <?php
             }else{ 
     ?>
        
