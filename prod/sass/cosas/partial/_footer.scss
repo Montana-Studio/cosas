@@ -2,7 +2,6 @@
     background:{color: #000;}
     @include span-columns(12); 
     color:$white;
-    margin:{top:20px;}
     @include media($notebook) {
         padding:{bottom:10px;}
     }
