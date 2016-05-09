@@ -38,6 +38,14 @@
 			width:100% !important;
 			max-width: 100% !important;
 			display: block;
+			@include media($tablet) {
+				width:32% !important;
+				margin:{right:8px !important;}
+			}
+			@include media($tabletLand) {
+				width:32% !important;
+				margin:{right:8px !important;}
+			}
 			@include media($notebook) {
 				width:32% !important;
 				margin:{right:10px !important;}

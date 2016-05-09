@@ -27,6 +27,12 @@
         }
         form{
             @include row();
+            @include media($tablet) {
+                @include pad(0 20px);
+            }
+            @include media($tabletLand) {
+                @include pad(0 23px);
+            }
             input{
                 @include span-columns(12 of 12);
                 border:1px solid #000;
@@ -40,6 +46,14 @@
                     color:#fff;
                     text:{transform:uppercase;}
                     font:{size:em(13);}
+                }
+                 @include media($tablet) {
+                    @include span-columns(4);
+                    margin:{right:10px;}
+                }
+                @include media($tabletLand) {
+                    @include span-columns(4);
+                    margin:{right:10px;}
                 }
                 @include media($notebook){
                     @include span-columns(3);
@@ -127,6 +141,10 @@
                 text:{align:center;}
                 font:{size:1.5em;}
                 @include transition(all 0.3s ease-in-out);
+                @include media($tabletLand) {
+                    font:{size:1.8em;}
+                    padding: 36px 0;
+                }
                 @include media($notebook) {
                     font:{size:1.7em;}
                 } 

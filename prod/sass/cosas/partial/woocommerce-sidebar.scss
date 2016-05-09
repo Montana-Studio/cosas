@@ -12,11 +12,28 @@
 		background-size: cover !important;
 		position: relative;
 		margin:{bottom:20px;}
+		@include media($tablet) {
+			@include span-columns(6);
+			@include omega();
+		}
+		@include media($tabletLand) {
+			@include span-columns(6);
+			@include omega();
+		}
 		@include media($notebook) {
 			height: 290px;
+			
 		}
 		@include media($desktop) {
 			height: 350px;
+		}
+		&.despacho-seccion {
+			@include media($tablet) {
+				margin:{right:10px;}
+			}
+			@include media($tabletLand) {
+				margin:{right:10px;}
+			}	
 		}
 		.inside-despacho {
 			@include outer-container(92%);
