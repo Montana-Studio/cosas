@@ -19,7 +19,10 @@
 	<meta property="og:description" content="Somos un holding enfocado en generar valor integral para marcas en ecosistemas digitales." />
 	<meta property="og:site_name" content="Mediatrends Group" />
 
-		<?php wp_head(); ?>
+		<?php 
+            wp_head(); 
+            blogs_global_vars();
+        ?>
 		<script>
         // conditionizr.com
         // configure environment tests
@@ -56,7 +59,7 @@
 
 						<!-- logo -->
 						<div class="logo">
-							<a href="<?php echo get_site_url(4); ?>"> 
+							<a href="<?php echo get_site_url($GLOBALS['detectBlogs']['casas']); ?>"> 
 								<svg viewBox="0 0 792 268">
 		                            <use xlink:href="#casas-logotype"/>
 		                        </svg>
@@ -141,40 +144,40 @@
 						<div class="logotypes">
 							<ul>
 								<li>
-									<a target="_blank" href="<?php echo get_site_url(1); ?>">
-										<svg viewBox="0 0 792 268">
-				                            <use xlink:href="#cosas-logotype"/>
-				                        </svg>
-									</a>
-								</li>
-								<li> 
-									<a target="_blank" href="<?php echo get_site_url(4); ?>">
-										<svg viewBox="0 0 792 268">
-				                            <use xlink:href="#casas-logotype"/>
-				                        </svg>
-									</a>	
-								</li>
-								<li>
-									<a target="_blank" href="http://www.cosas.com/couture/">
-										<svg viewBox="0 0 792 268">
-				                            <use xlink:href="#cosascouture-logotype"/>
-				                        </svg>
-									</a>
-								</li>
-								<li>
-									<a target="_blank" href="http://www.cosas.com/?post_type=lujo">
-										<svg viewBox="0 0 792 268">
-				                            <use xlink:href="#cosaslujo-logotype"/>
-				                        </svg>
-									</a>
-								</li>
-								<li>
-									<a target="_blank" href="http://www.cosas.com/repost/">
-										<svg viewBox="0 0 792 268">
-				                            <use xlink:href="#cosasrepost-logotype"/>
-				                        </svg>
-									</a>
-								</li>
+                                    <a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['cosas']); ?>">
+                                        <svg viewBox="0 0 792 268">
+                                            <use xlink:href="#cosas-logotype"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['casas']); ?>"> 
+                                        <svg viewBox="0 0 792 268">
+                                            <use xlink:href="#casas-logotype"/>
+                                        </svg>
+                                    </A>	
+                                </li>
+                                <li>
+                                    <a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['couture']); ?>">
+                                        <svg viewBox="0 0 792 268"> 
+                                            <use xlink:href="#cosascouture-logotype"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['lujo']); ?>">
+                                        <svg viewBox="0 0 792 268">
+                                            <use xlink:href="#cosaslujo-logotype"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['repost']); ?>">
+                                        <svg viewBox="0 0 792 268">
+                                            <use xlink:href="#cosasrepost-logotype"/>
+                                        </svg>
+                                    </a>
+                                </li>
 							</ul>
 						</div>
 					</div>
