@@ -4,61 +4,65 @@
         
                 <div class="newsletter">
 
-                    <h3 class="titus">suscribete a nuestro newsletter</h3>
+                    <h3 class="titus">suscríbete a nuestro newsletter</h3>
                     <form class="newsletter_form">
                         <input type="text" placeholder="Nombre" id="nombre_newsletter">
-                        <input type="email" placeholder="email" id="correo_newsletter">
+                        <input type="email" placeholder="Email" id="correo_newsletter">
                         <input type="submit" name="enviar" value="Suscríbete" placeholder="Suscríbete"/>
                     </form>
                     <h3 class="form-send" style="color:#000;"></h3>
 
                 </div>
-                <ul class="redes">
+                <div class="footer-top">
+					
+					<div class="logo-cosas">
+						 <a href="<?php echo get_site_url(4); ?>">
+		                	<svg viewBox="0 0 792 268">
+                            
+	                            <use xlink:href="#logo-cosas"/>
+	                            
+	                        </svg>
+			            </a>
+					</div>
 
-                    <li class="logo-cosas">
-
-                        <svg viewBox="0 0 759 232">
-                            <use xlink:href="#logo-cosas" class="footer-red"/>
-                        </svg>
-
-                    </li>
-                    <li><a href="https://www.facebook.com/revistacosas"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="https://twitter.com/RevistaCosas"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="https://www.instagram.com/revistacosas"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="https://www.youtube.com/user/CosasChile"><i class="fa fa-youtube-play"></i></a></li>
-
-                </ul>
-                <ul class="network">
+					<ul class="redes">
+			            <li><a target="_blank" href="https://www.facebook.com/revistacosas"><i class="fa fa-facebook"></i></a></li>
+			            <li><a target="_blank" href="https://twitter.com/RevistaCosas"><i class="fa fa-twitter"></i></a></li>
+			            <li><a target="_blank" href="https://www.instagram.com/revistacosas"><i class="fa fa-instagram"></i></a></li>
+			            <li><a target="_blank" href="https://www.youtube.com/user/CosasChile"><i class="fa fa-youtube-play"></i></a></li>
+			        </ul> 
+		        </div>
+		        <ul class="network">
 					<li>
-						<a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['cosas']); ?>">
+						<a target="_blank" href="<?php echo get_site_url(1); ?>">
 							<svg viewBox="0 0 792 268">
 	                            <use xlink:href="#logo-cosas"/>
 	                        </svg>
 						</a>
 					</li>
 					<li>
-						<a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['casas']); ?>">
+						<a target="_blank" href="<?php echo get_site_url(4); ?>"> 
 							<svg viewBox="0 0 792 268">
 	                            <use xlink:href="#logo-casas"/>
 	                        </svg>
 						</A>	
 					</li>
 					<li>
-						<a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['couture']); ?>">
-							<svg viewBox="0 0 792 268">
+						<a target="_blank" href="<?php echo get_site_url(8); ?>">
+							<svg viewBox="0 0 792 268"> 
 	                            <use xlink:href="#logo-couture"/>
 	                        </svg>
 						</a>
 					</li>
 					<li>
-						<a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['lujo']); ?>">
+						<a target="_blank" href="<?php echo get_site_url(7); ?>">
 							<svg viewBox="0 0 792 268">
 	                            <use xlink:href="#logo-lujo"/>
 	                        </svg>
 						</a>
 					</li>
 					<li>
-						<a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['repost']); ?>">
+						<a target="_blank" href="<?php echo get_site_url(5); ?>">
 							<svg viewBox="0 0 792 268">
 	                            <use xlink:href="#logo-repost"/>
 	                        </svg>

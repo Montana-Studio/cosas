@@ -36,21 +36,21 @@
 						</A>	
 					</li>
 					<li>
-						<a target="_blank" href="http://www.cosas.com/couture/">
+						<a target="_blank" href="<?php echo get_site_url(8); ?>">
 							<svg viewBox="0 0 792 268"> 
 	                            <use xlink:href="#cosascouture-logotype"/>
 	                        </svg>
 						</a>
 					</li>
 					<li>
-						<a target="_blank" href="http://www.cosas.com/?post_type=lujo">
+						<a target="_blank" href="<?php echo get_site_url(7); ?>">
 							<svg viewBox="0 0 792 268">
 	                            <use xlink:href="#cosaslujo-logotype"/>
 	                        </svg>
 						</a>
 					</li>
 					<li>
-						<a target="_blank" href="http://www.cosas.com/repost/">
+						<a target="_blank" href="<?php echo get_site_url(5); ?>">
 							<svg viewBox="0 0 792 268">
 	                            <use xlink:href="#cosasrepost-logotype"/>
 	                        </svg>

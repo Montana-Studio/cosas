@@ -1,12 +1,16 @@
 .site-footer{
-    @include span-columns(12);
     background:{color: #000;}
+    @include span-columns(12); 
     color:$white;
+    margin:{top:20px;}
+    @include media($notebook) {
+        padding:{bottom:10px;}
+    }
     .newsletter{
         @include row();
         clear:both;
         background:{color: #eee;}
-        @include pad(10px 20px);
+        padding:{top: 30px;left:20px;right:20px;bottom: 10px;}
         .titus{
             @extend .titulosh3;
             color:#000;
@@ -15,9 +19,10 @@
             border:{left:2px solid #000;}
             @include media($notebook){
                 border:{left:none;right:1px solid #000;}
-                @include span-columns(2.5);
-                @include shift(1);
+                @include span-columns(2.2);
+                @include shift(0.9);
                 @include textAlign(right);
+                margin:{right:10px;}
             }
         }
         form{
@@ -28,6 +33,7 @@
                 background:{color: #eee;}
                 margin:{top:10px;}
                 @include pad(10px);
+                @include appearance(none);
                 &[type="submit"]{
                     background:{color: #000;}
                     @include textAlign(center);
@@ -37,6 +43,8 @@
                 }
                 @include media($notebook){
                     @include span-columns(3);
+                    margin:{right:10px;}
+                    font:{size: 0.8em;}
                     &[type="submit"]{
                         @include span-columns(2);
                     }
@@ -44,93 +52,193 @@
             }
         }
     }
-    .redes{
+    .footer-top {
         @include span-columns(12);
-        background:{color: #222222;}
-        li{
-            @include span-columns(1.5);
-            @include textAlign(center);
-            @include pad(20px 0);
-            position: relative;
-            overflow: hidden;
-            &.logo-cosas{
-                @include span-columns(6);
-                @include pad(0);
-                .footer-red{
-                    fill:#fff;
-                }
-                @include media($notebook){
-                    @include span-columns(6);
-                    svg{
-                        max-height:66px;
-                    }
-                }
-                @include media($tabletLand){
-                    @include span-columns(6);
-                    svg{
-                        max-height:66px;
-                    }
-                }
+        @include omega();
+        border-bottom:1px solid $gray1_color;
+        @include media($notebook) {
+            @include outer-container(85%);
+            float: none;
+            display: block;
+            margin:{top:0;bottom:10px;left:auto;right:auto;}
+        }
+        .logo-cosas{
+            @include span-columns(5);
+            @include pad(16px 0);
+            @include media($mobileLand) {
+                @include span-columns(3);
+            }   
+            @include media($tablet) {
+                @include span-columns(3);
             }
-            a{
+           @include media($tabletLand) {
+                @include span-columns(3);
+            }
+            @include media($notebook) {
+                @include span-columns(2);
+                @include pad(15px 0);
+            }   
+            a {
+                @include transition(all 0.3s ease-in-out);
+                svg {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    fill:$white;
+                    path {
+                        fill:$white;
+                    }
+                }
+            &:hover {
                 color:$white;
-            }
-            @include media($notebook){
-                @include span-columns(1);
-                &:nth-child(2){
-                    @include shift(1);
+                svg {
+                    fill:$white;
                 }
+            }
+            }
+        }
+        .redes{
+            @include span-columns(5.5);
+            float: right;
+            margin:{right:10px !important;}
+            padding: 0; 
+            @include media($mobileLand) {
+                @include span-columns(4);
+                float: right;
+            }
+            @include media($tablet) {
+                @include span-columns(4);
+                 @include omega();
+                float: right;
+            }
+            @include media($tabletLand) {
+                @include span-columns(4);
+                 @include omega();
+                float: right;
+            }
+            @include media($notebook) {
+                @include span-columns(3);
+                 @include omega();
+                float: right;
+            }
+            li{
+                @include span-columns(3);
+                @include pad(23px 0);
+                text:{align:center;}
+                font:{size:1.5em;}
+                @include transition(all 0.3s ease-in-out);
+                @include media($notebook) {
+                    font:{size:1.7em;}
+                } 
+                @include media($desktop) {
+                     @include pad(33px 0);
+                    font:{size:2em;}
+                }   
+                a{
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    color:$gray1_color;
+                    @include transition(all 0.3s ease-in-out);
+                    &:hover {
+                        color:$white;
+                        svg {
+                            fill:$white;
+                        }
+                    }
+                    svg {
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                        fill:$gray1_color;
+                        path {
+                            fill:$white;
+                        }
+                    }
+                }
+            } 
+        }
+    }   
+    .network {
+        @include span-columns(12);
+        margin:0;
+        @include pad(10px 0);
+        text:{align:center;}
+        @include media($mobileLand) {
+            @include outer-container(80%);
+            margin: 0 auto !important;
+            float: none;
+        }
+        @include media($tablet) {
+            @include outer-container(60%);
+            margin: 0 auto !important;
+            float: none;
+        }
+        @include media($tabletLand) {
+            @include outer-container(60%);
+            margin: 0 auto !important;
+            float: none;
+        }
+        @include media($notebook) {
+            @include outer-container(75%);
+            float: none;
+            margin:0 auto !important;
+            display: block;
+            text:{align:center;}
+            padding: 10px 0;
+        }
+        @include media($desktop) {
+            @include outer-container(70%);
+            float: none;
+            margin:0 auto !important;
+            display: block;
+            text:{align:center;}
+            padding: 20px 0;
+        }
+        li {
+            list-style: none;
+            @include span-columns(3.5);
+            margin:{right:10px;bottom:0;}
+            float: none;
+            display: inline-block;
+            @include media($mobileLand) {
+                @include span-columns(2.4);
+                margin:{top:20px;bottom:20px;}
+            }
+            @include media($tablet) {
+                @include span-columns(2.4);
+                margin:{top:20px;bottom:20px;}
+            }
+            @include media($tabletLand) {
+                @include span-columns(2.4);
+                margin:{top:20px;bottom:20px;}
+            }   
+            @include media($notebook) {
+                @include span-columns(1.3);
+                 margin:{bottom:5px;}
+                float: none;
+                display: inline-block;
+            }
+            a {
+                width: 100%;
+                display: table;
+                height: 40px;
+                @include transition(all 0.3s ease-in-out);
+                svg {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    fill:$gray1_color;
+                    path {
+                        fill:$gray1_color;
+                    }
+                }
+                &:hover {
+                    svg {
+                        fill:$white; 
+                    }
+                } 
             }
         }
     }
-    .network {
-    	@include span-columns(12);
-		margin:0;
-		@include pad(0);
-		text:{align:center;}
-		li {
-			list-style: none;
-			@include span-columns(3.5);
-			margin:{right:10px;bottom:5px;}
-			float: none;
-			display: inline-block;
-			@include media($mobileLand) {
-				@include span-columns(2.4);
-				margin:{top:20px;bottom:20px;}
-			}
-			@include media($tablet) {
-				@include span-columns(2.4);
-				margin:{top:20px;bottom:20px;}
-			}
-			@include media($tabletLand) {
-				@include span-columns(2.4);
-				margin:{top:20px;bottom:20px;}
-			}	
-			@include media($notebook) {
-				@include span-columns(1.3);
-				float: none;
-				display: inline-block;
-			}
-			a {
-				width: 100%;
-				display: table;
-    			height: 40px;
-	            @include transition(all 0.3s ease-in-out);
-				svg {
-                	display: block;
-                	width: 100%;
-                	height: auto;
-                    fill:#999;
-                	path {
-                		fill:#999;
-                	}
-                }
-				&:hover {
-                	svg {
-                		fill:#999;
-                	}
-                }
-			}
-		}
-	}
 }
