@@ -55,6 +55,7 @@
                 
                 <?php the_content(); ?>
                 
+                <div class="fb-comments" data-href="<?php echo the_permalink(); ?>" data-numposts="3" data-width="100%" data-order-by="reverse_time"></div>
             </div>
             
             <?php 
