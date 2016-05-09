@@ -133,6 +133,7 @@ jQuery(document).ready(function($){
         percentPosition: true
     });
 
+    //WOOCOMMERCE
     $('.inside-despacho').click(function(){
         $('.info-sidebar.popups-despacho').toggleClass('show-popups');  
     });

@@ -535,6 +535,7 @@ function blogs_global_vars() {
         'casas'     => '4',
         'repost'    => '5',
         'lujo'      => '7',
+        'suscripciones' => '8',
 
     );
 
