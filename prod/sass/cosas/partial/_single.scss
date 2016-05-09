@@ -82,6 +82,9 @@
                     }
                 }
             }
+            @include media($tabletLand){
+                @include span-columns(8);
+            }
         }
         h3{
             @include span-columns(10);
@@ -118,6 +121,12 @@
                         max-height:640px;
                     }
                 }
+            }
+            .fb-comments{
+                @include span-columns(12);
+            }
+            @include media($tabletLand){
+                @include span-columns(8);
             }
             @include media($notebook){
                 clear:none;

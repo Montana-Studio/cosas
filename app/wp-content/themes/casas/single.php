@@ -80,6 +80,8 @@
 
 						<div class="content-postSingle">
 							<?php the_content(); ?>
+							
+							<div class="fb-comments" data-href="<?php echo the_permalink(); ?>" data-numposts="3" data-width="100%" data-order-by="reverse_time"></div>
 						</div>
 
 						<div class="author-cosas"><?php _e( 'Escrito por', 'html5blank' ); ?> <?php the_author_posts_link(); ?></div>
