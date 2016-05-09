@@ -8,31 +8,6 @@
 	.post-edit-link {
 		display: none;
 	}
-	.empty-section {
-		@include span-columns(12);
-		height: 350px;
-		display: table;
-		text:{align: center;}
-		@include media($notebook) {
-			height: 400px;
-		} 
-		.button {
-			@include media($notebook) {
-				@include outer-container(30%);
-				margin:0 auto !important;
-			}
-			&.wc-backward {
-				margin: 0 auto !important;
-				float: none;
-			}
-		}
-		.inside-empty-section {
-			@include span-columns(12);
-			float: none;
-			display: table-cell;
-			vertical-align: middle;
-		}	
-	}
 	.direccion-user {
 		@include span-columns(12);
 		@include omega();
@@ -188,4 +163,46 @@
  			font:{size: 1.2em;}
  		}
 	}
+}
+.empty-section {
+	@include span-columns(12);
+	height: 350px;
+	display: table;
+	text:{align: center;}
+	@include media($notebook) {
+		height: 400px;
+	} 
+	h2 {
+		font:{size:3em;}
+	}
+	.button {
+		display: block;
+		margin: 0 auto;
+		width: 150px;
+		text:{align: center;transform: uppercase;}
+		padding: 13px 10px;
+		background: none;
+		border: 1px solid $black_color;
+		border-radius: 0;
+		color: $black_color;
+		&:hover {
+			background: $black_color;
+			border: 1px solid $black_color;
+			color: $white_color;
+		}
+		@include media($notebook) {
+			@include outer-container(30%);
+			margin:0 auto !important;
+		}
+		&.wc-backward {
+			margin: 0 auto !important;
+			float: none;
+		}
+	}
+	.inside-empty-section {
+		@include span-columns(12);
+		float: none;
+		display: table-cell;
+		vertical-align: middle;
+	}	
 }
