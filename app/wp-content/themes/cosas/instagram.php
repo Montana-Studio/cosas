@@ -46,7 +46,7 @@ if(date('H')>'8' && date('H')<'14'){
 }
 
 
-$result = $mysqli->query("SELECT * FROM instagram_fotos ");
+$result = $mysqli->query("SELECT * FROM instagram_fotos ORDER by likes DESC");
 $row= mysqli_fetch_array($result, MYSQLI_BOTH);
 
 //Muestro Datos

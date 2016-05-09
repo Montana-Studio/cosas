@@ -6,8 +6,8 @@
 
                     <h3 class="titus">suscríbete a nuestro newsletter</h3>
                     <form class="newsletter_form">
-                        <input type="text" placeholder="Nombre" id="nombre_newsletter">
-                        <input type="email" placeholder="Email" id="correo_newsletter">
+                        <input type="text" placeholder="Nombre" id="nombre_newsletter" required>
+                        <input type="email" placeholder="Email" id="correo_newsletter" required>
                         <input type="submit" name="enviar" value="Suscríbete" placeholder="Suscríbete"/>
                     </form>
                     <h3 class="form-send" style="color:#000;"></h3>
