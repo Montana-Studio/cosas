@@ -1,0 +1,93 @@
+.product-type-simple {
+		width: 85%;
+		margin:{top:20px;left: auto;bottom:0;right:auto;}
+	}
+.product {
+	.precio-menusal-box {
+		&.single-price {
+			text:{align:left;}  
+		}
+	}
+	.button {
+		background: none !important;
+		border: 1px solid #000 !important;
+		border-radius: 0 !important;
+		color: #000 !important;
+		padding: 13px 10px !important;
+		&:hover {
+			background: #000 !important;
+			border: 1px solid #000 !important;
+			color: #fff!important;
+		}
+	}
+	.quantity {
+		.input-text {
+			border:1px solid #ccc;
+			height: 40px;
+    		font-size: 1.5em;
+    		width: 46px;
+		}
+	}
+	.description {
+		margin:{top:10px !important;}
+		@include media($notebook) {
+			margin:{top:20px !important;}
+		}
+		.nombre-descrip {
+			text:{transform:uppercase;}
+			font:{size:0.8em;weight:bold;}
+		}
+		p {
+			font:{size:14px;}
+			line-height: 23px;
+			margin:{top: 2px;}
+		}
+	}
+	.cart {
+		.quantity {
+			font:{size:1em;}
+		}
+		.button {
+			font:{size:0.8em;}
+		}
+	}
+	#reviews {
+		textarea {
+			border:1px solid #ccc !important;
+		}
+		.submit {
+			display: block;
+			margin: 0 auto;
+			width: 150px;
+			text:{align: center;transform: uppercase;}
+			padding: 13px 10px;
+			background: none !important;
+			border-radius: 0 !important;
+			border: 1px solid #000 !important;
+			border-radius: 0;
+			color:  #000 !important;
+			&:hover {
+				background:  #000 !important;
+				border: 1px solid  #000 !important;
+				color:  #fff !important;
+			}
+		}
+	}
+	.woocommerce-tabs {
+		.tabs {
+			&.wc-tabs {
+				font:{size: 0.9em;}
+			}
+		} 
+		.panel {
+			h2 {
+				font-size: 1em;
+   				text-transform: uppercase;	
+			}
+			p {
+				line-height: 23px;
+    			font-size: 0.9em;
+			}
+		}
+	}
+}

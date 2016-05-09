@@ -1,0 +1,186 @@
+.woc-checkout {
+	@include span-columns(12);
+	h3 {
+		@include span-columns(12);
+		@include omega();
+		text:{transform:uppercase;}
+		font:{size: 1em !important;}
+		@include media($notebook) {
+			font:{size: 1em !important;} 
+		}
+	}
+	.contenido-formlulario-check {
+		@include span-columns(12);
+		@include omega();
+		@include media($notebook) {
+			@include span-columns(6);
+		}
+	}
+	.form-row {
+		width: 100% !important;
+		font:{size:inherit;}
+		@include media($notebook) {
+			width: 50% !important;
+		}
+		label {
+			font:{size: 0.9em !important;weight:bold;}
+			color:$black_color;
+		}
+		.input-text  {
+			background: none;
+			border: 1px solid #ccc !important;  
+			color: $black_color;
+			padding: 10px;
+			clear: none !important;
+			font:{size: 0.8em;}
+		}
+		.clear {
+			display: none !important;
+		}
+		&.validate-phone {
+			float: left;
+		}
+		&.address-field {
+			display: inline-block !important;
+			width: 100% !important;
+		}
+		&#billing_country_field {
+			@include media($notebook) {
+				width: 50% !important;
+			}
+			#select2-chosen-1 {
+				padding: 2px !important;
+			}
+		}
+		&.notes {
+			width: 100% !important;
+			textarea {
+				width: 100%;
+			}
+		}
+	}
+	.woocommerce-checkout-payment {
+		border-radius:0px !important;
+		.place-order {
+			margin: 0;
+		    float: right;
+		    padding: 10px 0;
+			.button {
+				display: block;
+				margin: 0 auto;
+				width: 100%;
+				text:{align: center;transform: uppercase;}
+				padding: 13px 10px;
+				background: none;
+				border: 1px solid $black_color;
+				border-radius: 0;
+				color: $black_color;
+				background: $black_color;
+				border: 1px solid $black_color;
+				color: $white_color;
+				@include media($notebook) {
+					width: 250px;
+				}
+				&:hover {
+					border: 1px solid $black_color;
+					background:none;
+					color: $black_color;
+				}
+			}
+		}
+	}
+}
+.woocommerce-thankyou-order-received {
+	font:{size:1.5em}
+	@include media($notebook) {
+		text:{align:center;}
+	}	
+}
+.woocommerce-thankyou-order-details {
+	&.order_details {
+		@include span-columns(12);
+		margin: 0;
+		padding: 20px 10px; 
+		border:1px solid #000;
+		@include media($notebook) {
+			@include outer-container(60%);
+			float: none;
+			margin:0 auto !important;
+			padding: 40px 20px; 
+		}
+		li {
+			@include span-columns(6);
+			@include omega();
+			padding: 0 10px !important;
+			font:{size:0.8em;}
+			@include media($notebook) {
+				padding: 0 !important;
+				@include span-columns(3);
+			}	
+		}
+	}
+}
+.woocommerce {
+	table {
+		border-radius:0px !important;
+		thead {
+			font:{size: 1.8em;}
+			text:{transform:uppercase;}
+		}
+		tbody {
+			.cart_item {
+				font:{size: 1.4em;}
+				.product-thumbnail {
+					a {
+						img {
+							width: 65px;
+								display: block;
+							margin: 0 auto;
+						}
+					}
+				}
+				.product-remove {
+					a {
+						@include media($notebook) {
+							width: 20px;
+							display: block;
+							margin: 0 auto;	
+						}
+					}
+				} 
+			}
+			.button {
+				width: 100%;
+				margin: 10px 0;  
+				@include media($notebook) {
+					@include span-columns(3);
+					float: right;
+					margin: 15px 0; 
+				}
+			}		
+		}
+	}
+	.shop-table-cosas {
+		@include span-columns(12);
+		margin: 0;
+		padding: 20px 10px; 
+		@include media($notebook) {
+			@include outer-container(60%);
+			float: none;
+			margin:0 auto !important;
+			padding: 0;  
+		} 
+		h2 {
+			font:{size:1.1em;}
+			text:{transform:uppercase;}
+		}
+	}
+}
+.woocommerce-order-received {
+	.button {
+		font:{size:1em;}
+		float: none !important;
+   		display: block !important;
+    	margin:{top: 50px !important; left: auto !important; bottom: 30px !important; right: auto !important;}
+	}
+}

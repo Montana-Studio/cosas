@@ -1,0 +1,209 @@
+.woocommerce-page { 
+	main {
+		@include span-columns(12);
+		@include omega();
+		@include pad(10px);
+		font:{family:$primary_font;}
+		@include media($tablet) {
+			@include outer-container(85%);
+			float: none;
+			margin: 0 auto !important;
+			padding: 0;
+		}
+		@include media($tabletLand) {
+			@include outer-container(85%);
+			float: none;
+			margin: 0 auto !important;
+			padding: 0;
+		}
+		@include media($notebook) {
+			@include outer-container(95%);
+			float: none;
+			margin: 0 auto !important;
+			padding: 0; 
+		}
+		@include media($desktop) {
+			@include outer-container(85%);
+			float: none;
+			margin: 0 auto !important;
+			padding: 0;
+		}
+		.button {
+			@include span-columns(6); 
+			display: block;
+			margin: 0 auto;
+			text:{align: center;transform: uppercase;}
+			padding: 13px 10px;
+			background: none;
+			border: 1px solid $black_color;
+			border-radius: 0;
+			color: $black_color;
+			&:hover {
+				background: $black_color;
+				border: 1px solid $black_color;
+				color: $white_color;
+			}
+		}
+		h1 {
+			text:{transform:uppercase;}
+			border-bottom:1px solid $black_color;  
+		}
+		.carro-compra {
+			@include span-columns(12);
+			@include pad(0);
+			@include omega();
+			form {
+				table {
+					border-radius:0px !important;
+					thead {
+						font:{size: 1.2em;}
+						text:{transform:uppercase;}
+					}
+					tbody {
+						.cart_item {
+							font:{size: 1em;}
+							.product-thumbnail {
+								a {
+									img {
+										width: 65px;
+   										display: block;
+    									margin: 0 auto;
+									}
+								}
+							}
+							.product-remove {
+								a {
+									@include media($notebook) {
+										width: 20px;
+										display: block;
+										margin: 0 auto;	
+									}
+								}
+							} 
+						}
+						.coupon {
+							@include span-columns(12);
+							@include omega();
+							@include media($notebook) {
+								@include span-columns(5);
+							}
+							.input-text {
+								@include span-columns(6);
+								background: none;
+								border:1px solid $black_color !important;
+								padding: 13px 10px !important;
+							}
+						}
+						.button {
+							width: 100%;
+							margin: 10px 0;  
+							font:{size:0.9em !important;}
+							@include media($notebook) {
+								@include span-columns(3);
+								float: right;
+								margin: 15px 0; 
+							}
+						}		
+					}
+				}
+			}
+			.cart-collaterals {
+				.cart_totals {
+					h2 {
+						font:{size: 1.2em;}
+						text:{transform:uppercase;}
+					}
+					table {
+						border-radius:0px !important;
+						tbody {
+							font:{size: 1em;}
+						}
+					}
+					.wc-proceed-to-checkout {
+						a {
+							width: 100% !important;
+							margin: 10px auto;
+							text:{align: center;transform: uppercase;}
+							padding: 13px 10px;
+							border-radius: 0;
+							background: $black_color;
+							border: 1px solid $black_color;
+							color: $white_color;
+							&:hover {
+								background: none;
+								border: 1px solid $black_color;
+								color: $black_color;
+							}	
+							@include media($notebook) {
+								width: 60% !important;
+								float: right;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	form {
+		table {
+			border-radius:0px !important;
+			thead {
+				font:{size: 1em;}
+				text:{transform:uppercase;}
+			}
+			tbody {
+				.cart_item {
+					font:{size: 0.9em;}
+					.product-thumbnail {
+						a {
+							img {
+								width: 65px;
+									display: block;
+								margin: 0 auto;
+							}
+						}
+					}
+					.product-remove {
+						a {
+							@include media($notebook) {
+								width: 20px;
+								display: block;
+								margin: 0 auto;	
+							}
+						}
+					} 
+				}
+				.coupon {
+					@include span-columns(12);
+					@include omega();
+					@include media($notebook) {
+						@include span-columns(5);
+					}
+					.input-text {
+						@include span-columns(6);
+						background: none;
+						border:1px solid $black_color !important;
+						padding: 13px 10px !important;
+					}
+				}
+				.button {
+					width: 100%;
+					margin: 10px 0;  
+					@include media($notebook) {
+						@include span-columns(3);
+						float: right;
+						margin: 15px 0; 
+					}
+				}		
+			}
+		}
+	}
+	.sidebar {
+		display: none;
+	}
+}
+.woocommerce-cart {
+	.button {
+		font:{size:1em !important;} 
+	}
+}  
