@@ -521,3 +521,21 @@ function my_text_strings( $translated_text, $text, $domain ) {
 add_filter( 'gettext', 'my_text_strings', 20, 3 );
 
 
+/**
+    VARS GLOBAL DETECT BLOGS
+**/
+function blogs_global_vars() {
+
+    global $detectBlogs;
+    $detectBlogs = array(
+        
+        'blogId'    => get_current_blog_id(),
+        'cosas'     => '1',
+        'casas'     => '4',
+        'repost'    => '5',
+        'lujo'      => '7',
+
+    );
+
+}
+?>
