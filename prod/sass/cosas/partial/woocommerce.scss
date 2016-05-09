@@ -1,4 +1,4 @@
-.woocommerce { 
+.woocommerce {
 	.title-susc {
 		@include span-columns(12);
 		text:{transform:uppercase;}
@@ -15,12 +15,33 @@
 		@include media($notebook) {
 			font:{size: 1.4em;}
 		}
-	} 
+	}
+	h2 {
+		font:{size: 1em;}
+		@include media($notebook) {
+			font:{size: 1.2em;}
+		}
+	}		 
 	p {
 		font:{size:1em;}
 		@include media($notebook) {
 			font:{size:1em;}
+		} 
+		&.stock {
+			&.in-stock {
+				color:#fa4b2a !important;
+			}
+		}	
+		&.myaccount_user {
+			font:{size: 0.9em;}
+    		line-height: 21px;
+			a {
+				color:#fa4b2a !important;
+			}
 		}
+	}
+	.sku_wrapper {
+		color: #ccc;
 	}
 	.post-edit-link {
 		display: none;
@@ -30,32 +51,37 @@
 		@include omega();
 		border:1px solid rgba(0,0,0,.1);
 		padding: 10px;
-		h3 {
+		.address {
 			@include span-columns(12);
-			@include omega();
-			font:{size: 1.2em !important;}
-			@include media($notebook) {
-				font:{size: 1.2em !important;} 
-				margin:{top:5px;bottom:5px;}
-			}
-		} 
-		header {
-			@include span-columns(12);
-			@include omega();
-			.button {
+			h3 {
 				@include span-columns(12);
+				@include omega();
+				font:{size: 1.2em !important;}
 				@include media($notebook) {
-					@include span-columns(2);
+					font:{size: 1.2em !important;} 
+					margin:{top:5px;bottom:5px;}
+				}
+			} 
+			header {
+				@include span-columns(12);
+				@include omega();
+				.button {
+					@include span-columns(12);
+					@include media($notebook) {
+						@include span-columns(2);
+						float:right;
+						font:{size:0.8}
+					}
 				}
 			}
-		}
-		.address-table {
-			@include span-columns(12);
-			@include omega(); 
-		}
-		address {
-			font:{size: 1em;}
-    		line-height: 23px;
+			.address-table {
+				@include span-columns(12);
+				@include omega(); 
+			}
+			address {
+				font:{size: 1em;}
+	    		line-height: 23px;
+			}	
 		}
 	}
 	.content-center-cosas {
@@ -63,18 +89,40 @@
 		margin: 0;
 		padding:10px; 
 		@include media($notebook) {
-			@include outer-container(75%);
-			float: none;
-			margin:0 auto !important;
-			padding: 40px; 
+			padding:{top:0;left:0;bottom:50px;right:0;} 
 		}
 		h3 {
 			@include span-columns(12);
 			@include omega();
 			text:{transform:uppercase;}
-			font:{size: 1.3em !important;}
+			font:{size: 1em !important;}
 			@include media($notebook) {
-				font:{size: 1.6em !important;} 
+				font:{size: 1.2em !important;} 
+			}
+		}
+		.form-row {
+			width: 100% !important;
+			font:{size:inherit;}
+			@include media($notebook) {
+				width: 100% !important;
+			}
+			label {
+				font:{size: 1em !important;weight:bold;}
+				color:$black_color;
+			}
+			.input-text  {
+				background: none;
+				border: 1px solid #ccc !important;  
+				color: $black_color;
+				padding: 10px;
+				clear: none !important;
+				font:{size: 1em;}
+			}
+			.clear {
+				display: none !important;
+			}
+			&.validate-phone {
+				float: left;
 			}
 		}
 	}
@@ -145,6 +193,8 @@
 		border: 1px solid $black_color;
 		border-radius: 0;
 		color: $black_color;
+		outline: none !important;
+		font:{size:0.9em !important;}
 		&:hover {
 			background: $black_color;
 			border: 1px solid $black_color;
@@ -157,6 +207,16 @@
 	}
 	.woocommerce-message {
 		font:{size:1em !important;}
+		border-top-color:#fa4b2a;
+		&:before {
+			color:#fa4b2a;
+		}
+		.button {
+			background: none;
+			border: 1px solid #000;
+			border-radius: 0;
+			font:{size:0.8em;}
+		}
 	}
 	.order-info {
 		mark {
@@ -224,5 +284,10 @@
 		float: none;
 		display: table-cell;
 		vertical-align: middle;
-	}	
+	}
+}
+.woocommerce p.stars a {
+	color:red !important;
+	font:{size: 20px;}
+    margin: 0 3px;
 }

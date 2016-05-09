@@ -1,33 +1,17 @@
 .woocommerce-page { 
 	main {
 		@include span-columns(12);
-		@include omega();
-		@include pad(10px);
-		font:{family:$primary_font;}
-		@include media($tablet) {
-			@include outer-container(85%);
-			float: none;
-			margin: 0 auto !important;
-			padding: 0;
-		}
-		@include media($tabletLand) {
-			@include outer-container(85%);
-			float: none;
-			margin: 0 auto !important;
-			padding: 0;
-		}
-		@include media($notebook) {
-			@include outer-container(95%);
-			float: none;
-			margin: 0 auto !important;
-			padding: 0; 
-		}
-		@include media($desktop) {
-			@include outer-container(85%);
-			float: none;
-			margin: 0 auto !important;
-			padding: 0;
-		}
+	    @include pad(10px);
+	    @include media($notebook) {
+	        @include span-columns(10);
+	        @include shift(1);
+	        padding:{top:0;left:0;right:0;bottom:50px;}
+	    }
+	    @include media($desktop) {
+	        max-width:1119px;
+	        margin:0 auto !important;
+	        float:none;
+	    }
 		.button {
 			@include span-columns(6); 
 			display: block;
@@ -117,7 +101,19 @@
 						border-radius:0px !important;
 						tbody {
 							font:{size: 1em;}
+							.shipping {
+								form {
+									p {
+										a {
+											color: red !important;
+											font{size:1em;weight:bold;}
+											text:{decoration:underline;}
+										}
+									}
+								}
+							}
 						}
+
 					}
 					.wc-proceed-to-checkout {
 						a {
@@ -129,6 +125,7 @@
 							background: $black_color;
 							border: 1px solid $black_color;
 							color: $white_color;
+							font:{size:0.9em !important;}
 							&:hover {
 								background: none;
 								border: 1px solid $black_color;

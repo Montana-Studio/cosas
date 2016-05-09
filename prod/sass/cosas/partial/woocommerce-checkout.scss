@@ -124,12 +124,12 @@
 	table {
 		border-radius:0px !important;
 		thead {
-			font:{size: 1.8em;}
+			font:{size: 1.2em;}
 			text:{transform:uppercase;}
 		}
 		tbody {
 			.cart_item {
-				font:{size: 1.4em;}
+				font:{size: 1.2em;}
 				.product-thumbnail {
 					a {
 						img {
@@ -157,7 +157,17 @@
 					float: right;
 					margin: 15px 0; 
 				}
-			}		
+			}
+			.order-number {
+				a {
+					color:#fa4b2a !important;
+				}	
+			}
+			.order-actions {
+				a { 
+					width: 100px;
+				}
+			}
 		}
 	}
 	.shop-table-cosas {
