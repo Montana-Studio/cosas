@@ -540,4 +540,24 @@ function blogs_global_vars() {
 
 }
 
+/**
+    SUSCRIBE 
+**/
+
+add_filter( 'woocommerce_product_add_to_cart_text', 'woo_archive_custom_cart_button_text' );    // 2.1 +
+ 
+function woo_archive_custom_cart_button_text() {
+ 
+        return __( 'Suscribir', 'woocommerce' );
+ 
+}
+function my_text_strings( $translated_text, $text, $domain ) {
+    switch ( $translated_text ) {
+        case 'View Cart' :
+            $translated_text = __( 'Ver Compra', 'woocommerce' );
+            break;
+    }
+    return $translated_text;
+} 
+
 ?>

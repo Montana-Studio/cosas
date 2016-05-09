@@ -132,6 +132,23 @@ jQuery(document).ready(function($){
         layoutMode: 'packery',
         percentPosition: true
     });
+
+    $('.inside-despacho').click(function(){
+        $('.info-sidebar.popups-despacho').toggleClass('show-popups');  
+    });
+
+    $('.close-popups.close-despacho').click(function(){
+        $('.info-sidebar.popups-despacho').toggleClass('show-popups');  
+    });
+
+    $('.inside-medios-pago').click(function(){
+        $('.info-sidebar.popups-medios-pago').toggleClass('show-popups');  
+    });
+
+    $('.close-popups.close-medios').click(function(){
+        $('.info-sidebar.popups-medios-pago').toggleClass('show-popups');  
+    });
+
 });
 
 
