@@ -306,7 +306,48 @@
                 <?php endwhile; ?>
                 
             </main>
+            <main id="main-9" class="site-main-9">
+                <h3>Horóscopo</h3>
+                <div class="conte-horoscopo">
+                   <ul>
+                    <?php
+                        // WP_Query arguments
+                        $args = array (
+                            'post_type'              => array( 'horoscopo' ),
+                            'post_status'            => array( 'publish' ),
+                            'order'                  => 'ASC',
+                            'orderby'                => 'title',
+                        );
 
+                        // The Query
+                        $horoscopo = new WP_Query( $args );
+
+                        // The Loop
+                        if ( $horoscopo->have_posts() ) {
+                            while ( $horoscopo->have_posts() ) {
+                                $horoscopo->the_post();
+                    ?>
+                    <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+                        <span class="date"><i class="fa fa-clock-o"></i> <?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
+                        <h2>
+                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+                        </h2>
+
+
+                    </li>
+                    <?php
+                            }
+                        } else {
+                            echo '<p>No hay horóscopo en este momento</p>';
+                        }
+
+                        // Restore original Post Data
+                        wp_reset_postdata();
+                    ?>
+                    </ul>
+                </div>
+            </main>
             <main id="main-5" class="site-main-5">
 
                 <h3 class="titus">videos</h3>

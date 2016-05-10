@@ -350,6 +350,7 @@ add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comment
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
+add_action('init', 'post_typeHoroscopo'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
@@ -428,6 +429,35 @@ function create_post_type_html5() { // Create 1 Custom Post type for a Demo, cal
                 )
         );
 }
+function post_typeHoroscopo() { // Create 1 Custom Post type for a Demo, called HTML5-Blank
+        register_taxonomy_for_object_type('category','secc-horoscopo'); // Register Taxonomies for Category
+        register_taxonomy_for_object_type('post_tag','horoscopo-secc');
+        register_post_type( 'horoscopo-post', // Register Custom Post Type
+                array(
+                        'labels' => array(
+                                'name' => __( 'Horóscopo' ), // Rename these to suit
+                                'singular_name' => __( 'Horóscopo' ),
+                                'add_new' => __( 'Agregar signo' ),
+                                'add_new_item' => __( 'Agregar nuevo signo' ),
+                                'edit' => __( 'Editar' ),
+                                'edit_item' => __( 'Editar horóscopo' ),
+                                'new_item' => __( 'Nuevo signo' ),
+                                'view' => __( 'Ver horóscopo' ),
+                                'view_item' => __( 'Ver horóscopo' ),
+                                'search_items' => __( 'Buscar signo' ),
+                                'not_found' => __( 'Signo no encontrado' ),
+                                'not_found_in_trash' => __( 'No  hay signos eliminados' ),
+                        ),
+                'public' => true,
+                'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+                'has_archive' => true,
+                'supports' => array( 'title', 'editor' ), // Go to Dashboard Custom HTML5 Blank post for supports
+                'can_export' => true, // Allows export in Tools > Export
+                'taxonomies' => array( 'post_tag', 'category'), // Add Category and Post Tags support
+                )
+        );
+}
+
 
 /*------------------------------------*\
 	ShortCode Functions
