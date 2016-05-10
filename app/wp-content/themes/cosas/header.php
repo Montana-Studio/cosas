@@ -14,8 +14,7 @@
 
         <?php
             wp_head();
-
-            blogs_global_vars();
+        
             if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){
         ?>
                 <style>
@@ -26,6 +25,7 @@
         <?php
             }
         ?>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
         <script type='text/javascript'>
           (function() {
             var useSSL = 'https:' == document.location.protocol;
@@ -271,13 +271,24 @@
                         <?php 
                             // WP_Query arguments
                             $lastspage = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                            $args = array (
-                                'cat'                    => '0',
-                                'posts_per_page'         => '6',
-                                'order'                  => 'DESC',
-                                'orderby'                => 'date',
-                                'paged'                  => $lastspage
-                            );
+    
+                            if($GLOBALS['detectBlogs']['suscripciones']==$GLOBALS['detectBlogs']['blogId']){
+                                 $args = array (
+                                    'post_type'              => 'product',
+                                    'posts_per_page'         => '6',
+                                    'order'                  => 'DESC',
+                                    'orderby'                => 'date',
+                                    'paged'                  => $lastspage
+                                );
+                            }else{
+                                $args = array (
+                                    'cat'                    => '0',
+                                    'posts_per_page'         => '6',
+                                    'order'                  => 'DESC',
+                                    'orderby'                => 'date',
+                                    'paged'                  => $lastspage
+                                );   
+                            }
 
                             // The Query
                             $lasts = new WP_Query( $args );

@@ -149,9 +149,15 @@ jQuery(document).ready(function($){
     $('.close-popups.close-medios').click(function(){
         $('.info-sidebar.popups-medios-pago').toggleClass('show-popups');  
     });
-
+    
 });
 
+var mySwiper = new Swiper ('.swiper-container', {
+    pagination: '.swiper-pagination',
+    slidesPerView: 4,
+    paginationClickable: true,
+    spaceBetween: 30
+});
 
 function fbShare(url, title, descr, image, winWidth, winHeight) {
     var winTop = (screen.height / 2) - (winHeight / 2);

@@ -16,7 +16,7 @@
                 <div class="footer-top">
 					
 					<div class="logo-cosas">
-						 <a href="<?php echo get_site_url(4); ?>">
+						 <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['cosas']); ?>">
 		                	<svg viewBox="0 0 792 268">
                             
 	                            <use xlink:href="#logo-cosas"/>
@@ -74,7 +74,6 @@
 
 		</div>
 		<!-- /#page -->
-
 		<?php wp_footer(); ?>
 
 		<!-- analytics -->

@@ -309,43 +309,48 @@
             <main id="main-9" class="site-main-9">
                 <h3>Horóscopo</h3>
                 <div class="conte-horoscopo">
-                   <ul>
-                    <?php
-                        // WP_Query arguments
-                        $args = array (
-                            'post_type'              => array( 'horoscopo' ),
-                            'post_status'            => array( 'publish' ),
-                            'order'                  => 'ASC',
-                            'orderby'                => 'title',
-                        );
+                  <div class="swiper-container">
+                      
+                       <div class="swiper-wrapper">
+                        <?php
+                            // WP_Query arguments
+                            $args = array (
+                                'post_type' => array( 'horoscopo' ),
+                                'posts_per_page'         => '12'
+                            );
 
-                        // The Query
-                        $horoscopo = new WP_Query( $args );
+                            // The Query
+                            $horoscopo = new WP_Query( $args );
 
-                        // The Loop
-                        if ( $horoscopo->have_posts() ) {
-                            while ( $horoscopo->have_posts() ) {
-                                $horoscopo->the_post();
-                    ?>
-                    <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                            // The Loop
+                            if ( $horoscopo->have_posts() ) {
+                                while ( $horoscopo->have_posts() ) {
+                                    $horoscopo->the_post();
+                        ?>
+                            <div id="post-<?php the_ID(); ?>" <?php post_class('slide-item swiper-slide'); ?>>
 
-                        <span class="date"><i class="fa fa-clock-o"></i> <?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-                        <h2>
-                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-                        </h2>
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 
+                                    <img src="<?php the_post_thumbnail_url();?>"/>
+                                    <?php
+                                        the_title(''.'<small>','</small>'); 
+                                    ?>
+                                </a>
 
-                    </li>
-                    <?php
+                            </div>
+                        <?php
+                                }
+                            } else {
+                                echo '<p>No hay horóscopo en este momento</p>';
                             }
-                        } else {
-                            echo '<p>No hay horóscopo en este momento</p>';
-                        }
 
-                        // Restore original Post Data
-                        wp_reset_postdata();
-                    ?>
-                    </ul>
+                            // Restore original Post Data
+                            wp_reset_postdata();
+                        ?>
+                        <div class="swiper-pagination"></div>
+                        </div>
+                        
+                  </div>
                 </div>
             </main>
             <main id="main-5" class="site-main-5">

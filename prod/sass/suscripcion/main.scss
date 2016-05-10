@@ -1,0 +1,12 @@
+@import '../../../bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import '../../../bower_components/neat/app/assets/stylesheets/neat';
+
+@import '../cosas/partial/vars';
+
+@import 'partial/woocommerce';  
+@import 'partial/woocommerce-shop';  
+@import 'partial/woocommerce-carro';   
+@import 'partial/woocommerce-checkout';   
+@import 'partial/woocommerce-login';   
+@import 'partial/woocommerce-sidebar';    
+@import 'partial/woocommerce-single';

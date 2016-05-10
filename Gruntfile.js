@@ -12,11 +12,13 @@ module.exports = function(grunt) {
         jsoutcasas:'js/casas.min.js',
         csscosas:'css/cosas.min.css',
         csscasas:'css/casas.min.css',
+        csssus:'css/suscripcion.min.css',
 
         jscosas:'js/cosas/**/*.js',
         jscasas:'js/casas/**/*.js',
         scsscosas:'sass/cosas/**/*.scss',
         scsscasas:'sass/casas/**/*.scss',
+        scsssus:'sass/suscripcion/**/*.scss',
 
         sass: {
           deve: {
@@ -25,7 +27,8 @@ module.exports = function(grunt) {
             },
             files: {
               '<%= www %>/<%= csscosas %>': '<%= dist %>/<%= scsscosas %>',
-              '<%= wwwcasas %>/<%= csscasas %>': '<%= dist %>/<%= scsscasas %>'
+              '<%= wwwcasas %>/<%= csscasas %>': '<%= dist %>/<%= scsscasas %>',
+              '<%= www %>/<%= csssus %>': '<%= dist %>/<%= scsssus %>'
             },
           },
           dist: {
@@ -34,7 +37,8 @@ module.exports = function(grunt) {
             },
             files: {
               '<%= www %>/<%= csscosas %>': '<%= dist %>/<%= scsscosas %>',
-              '<%= wwwcasas %>/<%= csscasas %>': '<%= dist %>/<%= scsscasas %>'
+              '<%= wwwcasas %>/<%= csscasas %>': '<%= dist %>/<%= scsscasas %>',
+              '<%= www %>/<%= csssus %>': '<%= dist %>/<%= scsssus %>'
             },
           },
         },
@@ -110,7 +114,7 @@ module.exports = function(grunt) {
 
         watch: {
           configFiles:{
-            files:['<%= dist %>/<%= scss %>','<%= dist %>/<%= js %>','<%= www %>/**/*.php','<%= dist %>/<%= scsscasas %>','<%= dist %>/<%= jscasas %>','<%= wwwcasas %>/**/*.php'],
+            files:['<%= dist %>/<%= scss %>','<%= dist %>/<%= js %>','<%= www %>/**/*.php','<%= dist %>/<%= scsscasas %>','<%= dist %>/<%= scsssus %>','<%= dist %>/<%= jscasas %>','<%= wwwcasas %>/**/*.php'],
             options:{
               livereload: true,
             },

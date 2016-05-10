@@ -86,7 +86,24 @@ function html5blank_nav()
 		)
 	);
 }
+/**
+    VARS GLOBAL DETECT BLOGS
+**/
+function blogs_global_vars() {
 
+    global $detectBlogs;
+    $detectBlogs = array(
+        
+        'blogId'    => get_current_blog_id(),
+        'cosas'     => '1',
+        'casas'     => '4',
+        'repost'    => '5',
+        'lujo'      => '7',
+        'suscripciones' => '6',
+
+    );
+
+}
 // Load HTML5 Blank scripts (header.php)
 function html5blank_header_scripts()
 {
@@ -94,6 +111,7 @@ function html5blank_header_scripts()
         
         wp_enqueue_script('jquery');
         
+        wp_enqueue_script( 'swiper', get_template_directory_uri() .'/js/swiper.jquery.min.js',array(),'20160510', true ); 
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/cosas.min.js', array('jquery'), '1.0.0', true); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
         
@@ -102,6 +120,7 @@ function html5blank_header_scripts()
         wp_enqueue_script( 'color-box', get_template_directory_uri() .'/js/jquery.colorbox-min.js',array(),'', true ); 
         wp_enqueue_script( 'isotope', get_template_directory_uri() .'/js/isotope-docs.min.js',array(),'20160505', true ); 
         wp_enqueue_script( 'packery', get_template_directory_uri() .'/js/packery-mode.pkgd.min.js',array(),'20160505', true ); 
+        
     }
 }
 
@@ -117,11 +136,24 @@ function html5blank_conditional_scripts()
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
+    wp_register_style('html5blank', get_template_directory_uri() . '/css/cosas.min.css', array(), '1.0', 'all');   
+    wp_enqueue_style('html5blank'); // Enqueue it!
     
     wp_enqueue_style( 'colorbox-style', get_template_directory_uri() .'/css/colorbox.css' ); 
     
-    wp_register_style('html5blank', get_template_directory_uri() . '/css/cosas.min.css', array(), '1.0', 'all');
-    wp_enqueue_style('html5blank'); // Enqueue it!
+    if($GLOBALS['detectBlogs']['suscripciones']==$GLOBALS['detectBlogs']['blogId']){
+        wp_enqueue_style('suscripciones', get_template_directory_uri() .'/css/suscripcion.min.css' );
+    }
+}
+
+//WOOCOMMERCE REMOVE
+// Remove each style one by one
+add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
+function jk_dequeue_styles( $enqueue_styles ) {
+	//unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
+	//unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
+	unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
+	return $enqueue_styles;
 }
 
 // Register HTML5 Blank Navigation
@@ -345,6 +377,7 @@ function html5blankcomments($comment, $args, $depth)
 
 // Add Actions
 add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_head
+add_action('init', 'blogs_global_vars'); // Add Custom Scripts to wp_head
 add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
@@ -432,7 +465,7 @@ function create_post_type_html5() { // Create 1 Custom Post type for a Demo, cal
 function post_typeHoroscopo() { // Create 1 Custom Post type for a Demo, called HTML5-Blank
         register_taxonomy_for_object_type('category','secc-horoscopo'); // Register Taxonomies for Category
         register_taxonomy_for_object_type('post_tag','horoscopo-secc');
-        register_post_type( 'horoscopo-post', // Register Custom Post Type
+        register_post_type( 'horoscopo', // Register Custom Post Type
                 array(
                         'labels' => array(
                                 'name' => __( 'Horóscopo' ), // Rename these to suit
@@ -451,7 +484,7 @@ function post_typeHoroscopo() { // Create 1 Custom Post type for a Demo, called 
                 'public' => true,
                 'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
                 'has_archive' => true,
-                'supports' => array( 'title', 'editor' ), // Go to Dashboard Custom HTML5 Blank post for supports
+                'supports' => array( 'title', 'editor', 'thumbnail' ), // Go to Dashboard Custom HTML5 Blank post for supports
                 'can_export' => true, // Allows export in Tools > Export
                 'taxonomies' => array( 'post_tag', 'category'), // Add Category and Post Tags support
                 )
@@ -551,25 +584,6 @@ function jgallery_sc() {
     return do_shortcode('[gallery link="file"]');
 }
 add_shortcode('jgallery','jgallery_sc'); 
-
-/**
-    VARS GLOBAL DETECT BLOGS
-**/
-function blogs_global_vars() {
-
-    global $detectBlogs;
-    $detectBlogs = array(
-        
-        'blogId'    => get_current_blog_id(),
-        'cosas'     => '1',
-        'casas'     => '4',
-        'repost'    => '5',
-        'lujo'      => '7',
-        'suscripciones' => '8',
-
-    );
-
-}
 
 /**
     SUSCRIBE 

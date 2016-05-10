@@ -265,6 +265,7 @@
             .img-lasts{
                 @include span-columns(3);
                 height:100px;
+                background:{repeat:no-repeat;size:cover;}
             }
             span{
                 @include span-columns(7);

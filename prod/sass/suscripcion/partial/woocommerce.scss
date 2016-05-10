@@ -1,8 +1,27 @@
 .woocommerce {
+    .woocommerce-info {
+        font:{size:1em !important;}
+        border-top-color:#fa4b2a ;
+        &:before {
+            color:#fa4b2a ;
+        }
+        .button {
+            background: none;
+            border: 1px solid #000;
+            border-radius: 0;
+            font:{size:0.8em;}
+        }
+        a {
+            color:#fa4b2a !important;
+            &:hover{
+                text:{decoration: underline !important;}
+            }
+        }
+    }
 	.title-susc {
 		@include span-columns(12);
 		text:{transform:uppercase;}
-		border-bottom:1px solid $black_color;  
+		border-bottom:1px solid $black;  
 		margin:{bottom:15px;}
 		@include media($notebook) {
 			margin:{bottom:30px;}
@@ -35,9 +54,6 @@
 		&.myaccount_user {
 			font:{size: 0.9em;}
     		line-height: 21px;
-			a {
-				color:#fa4b2a !important;
-			}
 		}
 	}
 	.sku_wrapper {
@@ -186,7 +202,6 @@
 	.button {
 		display: block;
 		margin: 0 auto;
-		width: 150px;
 		text:{align: center;transform: uppercase;}
 		padding: 13px 10px;
 		background: none;
