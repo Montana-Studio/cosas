@@ -6,12 +6,12 @@
 	}
 	.sidebar-seccion {
 		@include span-columns(12);
-		height: 350px;
+		height: 340px;
 		background: #000; 
 		background-position: center !important;
 		background-size: cover !important;
 		position: relative;
-		margin:{bottom:20px;}
+		margin:{bottom:20px;} 
 		@include media($tablet) {
 			@include span-columns(6);
 			@include omega();
@@ -21,11 +21,11 @@
 			@include omega();
 		}
 		@include media($notebook) {
-			height: 290px;
+			height: 240px;
 			
 		}
 		@include media($desktop) {
-			height: 350px;
+			height: 250px;
 		}
 		&.despacho-seccion {
 			@include media($tablet) {
@@ -37,33 +37,34 @@
 		}
 		.inside-despacho {
 			@include outer-container(92%);
-			height: 330px;
+			height: 320px;
 			position: absolute;
 			top:10px;
 			left:0;
 			right: 0;
 			border:1px solid #000; 
-			padding: {right:40%;}
+			padding: {right:30%;}
 			@include media($notebook) {
-				height: 270px;
+				height: 220px;
 			}
 			@include media($desktop) {
-				height: 330px;
-				padding: {right:50%;}
+				height:230px;
+				padding: {right:30%;}
 			}
 			.title-despacho {
-				@include span-columns(8);
+				@include span-columns(7);
 				position: absolute;
 				top:50%;
-				font:{size:1.5em;weight:bold;}
+				font:{size:1.2em;weight:bold;}
 				display: table-cell;
 				vertical-align: middle;
 				@include media($notebook) {
+					@include span-columns(8);
 					top:40%;
 				}
 				@include media($desktop) {
-					@include span-columns(6);
-					top:50%;
+					@include span-columns(8);
+					top:45%;
 				}
 				mark {
 					background: #000;
@@ -103,8 +104,7 @@
 			padding: 10px 20px;
 			@include media($notebook) {
 				@include outer-container(60%);
-				padding: 20px 30px;
-				height: 700px;  
+				padding: 20px;
 				top:5%; 
 			}
 			@include media($notebook) {
