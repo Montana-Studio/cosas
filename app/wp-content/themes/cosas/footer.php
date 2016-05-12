@@ -75,7 +75,24 @@
 		</div>
 		<!-- /#page -->
 		<?php wp_footer(); ?>
+        <script>
+            
+            var normSlider = new Swiper ('.swiper-container', {
+                pagination: '.swiper-pagination',
+                slidesPerView: 4,
+                paginationClickable: true,
+                spaceBetween: 30
+            });
+            var gallerySliders = new Swiper('.swiper-gallery', {
+                nextButton: '.next-gallery',
+                prevButton: '.prev-gallery',
+                pagination: '.swiper-pagination',
+                paginationType: 'progress',
+                slidesPerView: 3,
+                spaceBetween: 10,
+            });
 
+        </script>
 		<!-- analytics -->
 		<script>
 		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){

@@ -25,7 +25,6 @@
         <?php
             }
         ?>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
         <script type='text/javascript'>
           (function() {
             var useSSL = 'https:' == document.location.protocol;

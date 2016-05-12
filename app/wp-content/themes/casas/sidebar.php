@@ -11,7 +11,7 @@
 
 	<div class="facebook-widget">
 
-		<div class="fb-page" data-href="https://www.facebook.com/RevistaCASAS/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/RevistaCASAS/"><a href="https://www.facebook.com/RevistaCASAS/">Revista CASAS</a></blockquote></div></div>
+		<div class="fb-page" data-href="https://www.facebook.com/revista-casas-1450033931911211" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"></div>
 
 	</div>
 	

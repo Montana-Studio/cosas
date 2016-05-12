@@ -40,6 +40,20 @@ input, textarea{
         @include shift(0);
     }
 }
+.catposts{
+    color:$red;
+    font:{size:em(9);family:$openSans;}
+    text:{transform:uppercase;}
+}
+.titulosposts{
+    line-height: .5em;
+    margin:0 5px 5px;
+    @include pad(0);
+    a{
+        font:{size:em(8);family:$playFair}
+        color:#000;
+    }
+}
 .breadcrumbs{
     @include span-columns(12);
     font:{size:em(11);}

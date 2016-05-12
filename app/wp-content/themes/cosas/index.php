@@ -1,7 +1,14 @@
 <?php get_header(); ?>
 
 	<div id="primary" class="content-area">
-	    
+<div style="max-width:320px;margin:0 auto;">
+<ins data-revive-zoneid="7" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
+<script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+</div>
+<div style="max-width:728px;margin:0 auto;">
+<ins data-revive-zoneid="2" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
+<script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+</div>	    
 		<main id="main" class="site-main">
             
             <?php 
@@ -89,7 +96,10 @@
                 wp_reset_postdata(); 
             ?>
 		</main>
-          
+<div style="max-width:728px;margin:0 auto;">
+<ins data-revive-zoneid="9" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
+<script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+</div>          
         <?php
             
         //SI ES MOBILE
@@ -243,18 +253,23 @@
 
                     $post = $posts[0]; $c=0;
 
-                    query_posts( 'category_name=personaje-nacional,politica-nacional,espectaculos-nacional&posts_per_page=4&orderby=date&order=DESC' );
+                    query_posts( 'category_name=entrevista,politica&posts_per_page=4&orderby=date&order=DESC' );
                     
                     while ( have_posts() ) : the_post();
+                    
+            
+                    global $post, $posts;
+                    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+                    $first_img = $matches [1] [0];
 
-                    $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' );
+//                    $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' );
 
                     $c++;
                     if( $c == 1) :
 
                 ?>
 
-                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php echo $src[0]; ?>');">
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>');">
 
                         <a href="<?php echo get_permalink(); ?>" class="more-link">
                             <i class="fa fa-plus"></i>
@@ -288,7 +303,7 @@
                                 <a href="<?php echo esc_url( get_permalink() );?>" rel="bookmark">
                                 <?php 
                                     if (strlen($post->post_title) > 35) {
-                                        echo substr(the_title($before = '', $after = '', FALSE), 0, 35) . '...';
+                                        echo substr(the_title($before = '', $after = '', FALSE), 0, 50) . '...';
                                     } else {
                                         the_title();
                                     }
@@ -318,10 +333,8 @@
                                 'post_type' => array( 'horoscopo' ),
                                 'posts_per_page'         => '12'
                             );
-
                             // The Query
                             $horoscopo = new WP_Query( $args );
-
                             // The Loop
                             if ( $horoscopo->have_posts() ) {
                                 while ( $horoscopo->have_posts() ) {
@@ -343,7 +356,6 @@
                             } else {
                                 echo '<p>No hay horóscopo en este momento</p>';
                             }
-
                             // Restore original Post Data
                             wp_reset_postdata();
                         ?>
@@ -537,14 +549,18 @@
             <div id="main-4" class="site-main-4-mobile">
                 
         <?php 
-                query_posts( 'category_name=personaje-nacional,politica-nacional,espectaculos-nacionala&posts_per_page=5&orderby=date&order=DESC' );
+                query_posts( 'category_name=entrevista,politica&posts_per_page=5&orderby=date&order=DESC' );
 
                 while ( have_posts() ) : the_post();
-
-                $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' );
+                
+                global $post, $posts;
+                $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+                $first_img = $matches [1] [0];
+                
+                //$src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' );
         ?>
                 
-                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php echo $src[0]; ?>');">
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>');">
                             
         <?php 
                 //SI NO ES MOBILE
@@ -597,7 +613,7 @@
                             <a href="<?php echo esc_url( get_permalink() );?>" rel="bookmark">
                             <?php 
                                 if (strlen($post->post_title) > 35) {
-                                    echo substr(the_title($before = '', $after = '', FALSE), 0, 35) . '...';
+                                    echo substr(the_title($before = '', $after = '', FALSE), 0, 50) . '...';
                                 } else {
                                     the_title();
                                 }

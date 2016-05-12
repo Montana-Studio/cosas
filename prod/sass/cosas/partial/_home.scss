@@ -115,8 +115,9 @@
 						font:{size:em(11);}
 					}
 					h2{
+                        line-height: 1em;
 						a{
-							font:{size:em(18);family:$playFair}
+							font:{size:em(15);family:$playFair}
 							color:#000;
 						}
 					}
@@ -151,7 +152,7 @@
 				position:absolute;
 				bottom:0;
 				background:{color:$white;}
-				width: 80%;
+				width: 90%;
 				left: 0;
 				right: 0;
 				margin: 0 auto;
@@ -161,18 +162,10 @@
 					margin:{bottom:5px;}
 				}
 				span{
-					color:$red;
-					font:{size:em(9);family:$openSans;}
-					text:{transform:uppercase;}
+					@extend .catposts;
 				}
 				h2{
-					line:{height:1;}
-					margin:5px;
-					@include pad(0);
-					a{
-						font:{size:em(9);family:$playFair}
-						color:#000;
-					}
+                    @extend .titulosposts;
 				}
 			}
             @include media($notebook){
@@ -204,13 +197,14 @@
 				@include span-columns(6);
 				min-height: 167px;
 				.entry-footer{
-					span{
-						font:{size:em(9);}
-					}
 					h2{
-						a{
-							font:{size:em(9);}
-						}
+                        line-height: .5em;
+                        margin:0 5px 5px;
+                        @include pad(0);
+                        a{
+                            font:{size:em(8);family:$playFair}
+                            color:#000;
+                        }
 					}
 				}
 			}
@@ -242,19 +236,8 @@
 					font:{size:em(9);}
 					margin:{bottom:5px;}
 				}
-				span{
-					color:$red;
-					font:{size:em(9);family:$openSans;}
-					text:{transform:uppercase;}
-				}
 				h2{
-					line:{height:1;}
-					margin:5px;
-					@include pad(0);
-					a{
-						font:{size:em(9);family:$playFair}
-						color:#000;
-					}
+					@extend .titulosposts;
 				}
             }
             @include media($notebook){
@@ -395,7 +378,7 @@
 					position:absolute;
 					bottom:0;
 					background:{color:$white;}
-					width: 80%;
+					width: 90%;
 					left: 0;
 					right: 0;
 					margin: 0 auto;
@@ -409,10 +392,10 @@
 					}
 					h2{
 						line:{height:1;}
-						margin:5px;
+						margin:0 5px 5px;
 						@include pad(0);
 						a{
-							font:{size:em(18);family:$playFair}
+							font:{size:em(15);family:$playFair}
 							color:#000;
 						}
 					}
@@ -444,7 +427,7 @@
                 position:absolute;
                 bottom:0;
                 background:{color:$white;}
-                width: 80%;
+                width: 90%;
                 left: 0;
                 right: 0;
                 margin: 0 auto;
@@ -457,13 +440,7 @@
                     display: none;
                 }
                 h2{
-                    line:{height:1;}
-                    margin:5px;
-                    @include pad(0);
-                    a{
-                        font:{size:em(11);family:$playFair}
-                        color:#000;
-                    }
+                    @extend .titulosposts;
                 }
             }
             @include media($notebook){

@@ -1,6 +1,11 @@
-<?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' ); ?>
+<?php 
+    global $post, $posts;
+    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    $first_img = $matches [1] [0];
+?>
+<?php //$src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' ); ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php echo $src[0]; ?>');">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>');">
     
     <?php if(!wp_is_mobile()){ ?>
         <div class="hover-content">
@@ -40,7 +45,7 @@
 
 			if (strlen($post->post_title) > 35) {
 				
-				echo substr(the_title($before = '', $after = '', FALSE), 0, 35) . '...';
+				echo substr(the_title($before = '', $after = '', FALSE), 0, 50) . '...';
 
 			} else {
 				the_title();

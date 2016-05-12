@@ -8,21 +8,29 @@
         <?php the_breadcrumb(); ?>
         
     </div>
-    
+<div style="max-width:728px;margin:0 auto;">
+    <ins data-revive-zoneid="5" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
+    <script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+</div>
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 		<!-- article -->
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+           <?php 
+				global $post, $posts;
+				$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+				$first_img = $matches [1] [0];
+			?>
            
-            <?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' );?>
+            <?php// $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' );?>
 			
-			<div class="img-post-single" style="background-image:url('<?php echo $src[0]; ?>');">
+			<div class="img-post-single" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>');">
 			    
 			    <div class="data-post-single">
 			        
                     <h1><?php the_title(); ?></h1>
 			        <div class="times-post">
-                        <i class="fa fa-clock-o"></i> <?php the_time('l, F g A');?>
+                        <i class="fa fa-clock-o"></i> <?php the_time('l, j F Y'); ?>
                     </div>
                     <span class="author">
                         <i class="fa fa-user"></i> <?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?>

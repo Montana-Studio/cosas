@@ -7,7 +7,10 @@ get_header();
                 <?php the_breadcrumb(); ?>
 
             </div>
-
+<div style="max-width:728px;margin:0 auto;">
+<ins data-revive-zoneid="4" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
+<script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+</div>       
             <h1 class="titus"><?php the_title(); ?></h1>
             
             <div class="post-list">

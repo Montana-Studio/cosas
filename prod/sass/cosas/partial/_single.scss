@@ -112,7 +112,7 @@
             p{
                 clear:both;
                 font:{size:em(14);}
-                line:{height:16px;}
+                line:{height:20px;}
                 color:#999;
                 iframe{
                     width:100%;
@@ -122,8 +122,64 @@
                     }
                 }
             }
+            .wp-caption{
+                width:100% !important;
+                img{
+                    @extend .img-adapt;
+                }
+            }
             .fb-comments{
                 @include span-columns(12);
+            }
+            .swiper-gallery{
+                @include span-columns(12);
+                position: relative;
+                overflow: hidden;
+                .title-section{
+                    @extend .titulosh3;
+                    @include span-columns(12);
+                    @include shift(0);
+                }
+                .swiper-wrapper{
+                    .swiper-slide{
+                        @include textAlign(center);
+                        img{
+                            width:100%;
+                            height:auto;
+                        }
+                    }
+                }
+                .swiper-pagination{
+                    span{
+                        background:{color:$red;}
+                    }
+                }
+                .arrows{
+                    position: absolute;
+                    top:50%;
+                    z-index: 10;
+                    width:30px;
+                    i{
+                        color:$red;
+                        font:{size:em(25);}
+                    }
+                    &:hover{
+                        i{
+                            color:darksalmon;
+                        }
+                    }
+                    &.next-gallery{
+                        right:0;
+                    }
+                    &.prev-gallery{
+                        left:0;
+                    }
+                    &.swiper-button-disabled{
+                        i{
+                            color:darksalmon;
+                        }
+                    }
+                }
             }
             @include media($tabletLand){
                 @include span-columns(8);
@@ -131,9 +187,6 @@
             @include media($notebook){
                 clear:none;
                 @include span-columns(8);
-                p{
-                    font:{size:em(11);}
-                }
             }
         }
         .sidebar{

@@ -117,7 +117,7 @@ function html5blank_header_scripts()
         
         wp_enqueue_script( 'resp-slider', get_template_directory_uri() .'/js/responsiveslides.min.js',array(),'20160424', true );
         wp_enqueue_script( 'marquee', get_template_directory_uri() .'/js/jquery.marquee.min.js',array(),'20160502', true );
-        wp_enqueue_script( 'color-box', get_template_directory_uri() .'/js/jquery.colorbox-min.js',array(),'', true ); 
+        //wp_enqueue_script( 'color-box', get_template_directory_uri() .'/js/jquery.colorbox-min.js',array(),'', true ); 
         wp_enqueue_script( 'isotope', get_template_directory_uri() .'/js/isotope-docs.min.js',array(),'20160505', true ); 
         wp_enqueue_script( 'packery', get_template_directory_uri() .'/js/packery-mode.pkgd.min.js',array(),'20160505', true ); 
         
@@ -139,7 +139,8 @@ function html5blank_styles()
     wp_register_style('html5blank', get_template_directory_uri() . '/css/cosas.min.css', array(), '1.0', 'all');   
     wp_enqueue_style('html5blank'); // Enqueue it!
     
-    wp_enqueue_style( 'colorbox-style', get_template_directory_uri() .'/css/colorbox.css' ); 
+    //wp_enqueue_style( 'colorbox-style', get_template_directory_uri() .'/css/colorbox.css' ); 
+    wp_enqueue_style( 'swiper-style', get_template_directory_uri() .'/css/swiper.min.css' ); 
     
     if($GLOBALS['detectBlogs']['suscripciones']==$GLOBALS['detectBlogs']['blogId']){
         wp_enqueue_style('suscripciones', get_template_directory_uri() .'/css/suscripcion.min.css' );
@@ -568,24 +569,6 @@ function the_breadcrumb() {
 	}
 }
 /**
-GALLERY'S
-**/
-function rkv_imagelink_setup() {
-    $image_set = get_option( 'image_default_link_type' );
-    
-    if ($image_set !== 'none') {
-        update_option('image_default_link_type', 'none');
-    }
-}
-add_action('admin_init', 'rkv_imagelink_setup', 10); 
-function jgallery_sc() {
-    wp_enqueue_script('colorbox-js', get_template_directory_uri().'/colorbox/colorbox.min.js',array('jquery'));
-    wp_enqueue_style('colorbox-css', get_template_directory_uri().'/colorbox/colorbox.css');
-    return do_shortcode('[gallery link="file"]');
-}
-add_shortcode('jgallery','jgallery_sc'); 
-
-/**
     SUSCRIBE 
 **/
 
@@ -605,4 +588,96 @@ function my_text_strings( $translated_text, $text, $domain ) {
     return $translated_text;
 } 
 
+/**
+GALLERY'S
+**/
+
+function custom_gallery( $output, $attr ){
+    global $post, $wp_locale;
+
+    static $instance = 0;
+    $instance++;
+
+    // We're trusting author input, so let's at least make sure it looks like a valid orderby statement
+    if ( isset( $attr['orderby'] ) ) {
+        $attr['orderby'] = sanitize_sql_orderby( $attr['orderby'] );
+        if ( !$attr['orderby'] )
+            unset( $attr['orderby'] );
+    }
+
+    extract(shortcode_atts(array(
+        'order'      => 'ASC',
+        'orderby'    => 'menu_order ID',
+        'id'         => $post->ID,
+        'itemtag'    => 'div',
+        'icontag'    => '',
+        'captiontag' => '',
+        'columns'    => 3,
+        'size'       => 'full',
+        'include'    => '',
+        'exclude'    => ''
+    ), $attr));
+
+    $id = intval($id);
+    if ( 'RAND' == $order )
+        $orderby = 'none';
+
+    if ( !empty($include) ) {
+        $include = preg_replace( '/[^0-9,]+/', '', $include );
+        $_attachments = get_posts( array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+
+        $attachments = array();
+        foreach ( $_attachments as $key => $val ) {
+            $attachments[$val->ID] = $_attachments[$key];
+        }
+    } elseif ( !empty($exclude) ) {
+        $exclude = preg_replace( '/[^0-9,]+/', '', $exclude );
+        $attachments = get_children( array('post_parent' => $id, 'exclude' => $exclude, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+    } else {
+        $attachments = get_children( array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+    }
+
+    if ( empty($attachments) )
+        return '';
+
+    if ( is_feed() ) {
+        $output = "\n";
+        foreach ( $attachments as $att_id => $attachment )
+            $output .= wp_get_attachment_link($att_id, $size, true) . "\n";
+        return $output;
+    }
+
+    $itemtag = tag_escape($itemtag);
+    $captiontag = tag_escape($captiontag);
+    $columns = intval($columns);
+    $itemwidth = $columns > 0 ? floor(100/$columns) : 100;
+    $float = is_rtl() ? 'right' : 'left';
+
+    $selector = "gallery-{$instance}";
+
+    $gallery_div = '';
+    $size_class = sanitize_html_class( $size );
+    $gallery_div = "<div id=\"$selector\" class=\"gallery galleryid-{$id} swiper-gallery gallery-columns-{$columns} gallery-size-{$size_class}\"><div class='swiper-wrapper'>";
+    $output = apply_filters( 'gallery_style', $gallery_div );
+
+    $i = 0;
+    foreach ( $attachments as $id => $attachment ) {
+        $image = wp_get_attachment_image( $id, $size );
+
+        $output .= "<{$itemtag} class=\"gallery-item swiper-slide\"><a href='' class='group1'>";
+        $output .= $image;
+        if ( $captiontag && trim($attachment->post_excerpt) ) {
+            $output .= "
+                <{$captiontag} class=\"wp-caption-text gallery-caption\">
+                " . wptexturize($attachment->post_excerpt) . "
+                </{$captiontag}>";
+        }
+        $output .= "</a></{$itemtag}>";
+    }
+
+    $output .= "</div><div class='swiper-pagination'></div><div class='arrows next-gallery'><i class='fa fa-chevron-right'></i></div><div class='arrows prev-gallery'><i class='fa fa-chevron-left'></i></div></div>\n";
+
+    return $output;
+}
+add_filter('post_gallery', 'custom_gallery', 11, 2);
 ?>
