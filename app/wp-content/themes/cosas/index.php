@@ -321,6 +321,7 @@
                 <?php endwhile; ?>
                 
             </main>
+            <?php /*
             <main id="main-9" class="site-main-9">
                 <h3>Horóscopo</h3>
                 <div class="conte-horoscopo">
@@ -365,6 +366,7 @@
                   </div>
                 </div>
             </main>
+            */?>
             <main id="main-5" class="site-main-5">
 
                 <h3 class="titus">videos</h3>

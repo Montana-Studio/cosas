@@ -1,12 +1,13 @@
 jQuery(document).ready(function($){
     
-    $('#slider3, #slider5').responsiveSlides({
+    $('#slider3').responsiveSlides({
         auto:true,
         nav: true,
         prevText:'<i class="fa fa-angle-right"></i>',
         nextText:'<i class="fa fa-angle-left"></i>'
     });
     $('#slider4').responsiveSlides({
+        auto:false,
         pager:true,
         manualControls:''
     });

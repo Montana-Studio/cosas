@@ -501,13 +501,16 @@
             border:2px solid $white;
             #slider4{
                 li{
-                    @include span-columns(10);
-                    @include shift(1);
+                    @include span-columns(12);
                     margin:{bottom:-16px;top:20px;}
                     position: relative;
                     overflow: hidden;
                     iframe{
                         width: 100%;
+                        height: 220px;
+                        @include media($notebook){
+                            height:640px;
+                        }
                     }
                     .entry-footer{
                         @include textAlign(center);
@@ -524,9 +527,9 @@
                             margin:{bottom:5px;}
                         }
                         h2{
-                            line:{height:1;}
+                            line:{height:1em;}
                             @include pad(0);
-                            font:{size:em(27);family:$playFair}
+                            font:{size:em(18);family:$playFair}
                             color:#000;
                         }
                     }

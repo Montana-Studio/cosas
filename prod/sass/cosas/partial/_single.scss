@@ -121,6 +121,14 @@
                         max-height:640px;
                     }
                 }
+                a{
+                    img{
+                        @extend .img-adapt;
+                    }
+                }
+                img{
+                    @extend .img-adapt;
+                }
             }
             .wp-caption{
                 width:100% !important;

@@ -2,10 +2,16 @@
 <aside class="sidebar hide">
    
     <!-- /92947493/250x250_COSAS_ALL -->
-    <div id='div-gpt-ad-1462495429825-0' style='width:250px;margin:0 auto;'>
+    <div id='div-gpt-ad-1462495429825-0' style='width:250px;margin:0 auto 5px;'>
     <script type='text/javascript'>
     googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462495429825-0'); });
     </script>
+    </div>
+    
+    <div style="width:300px;margin:0 auto 5px;">
+
+        <iframe id='ab8a8aeb' name='ab8a8aeb' src='http://bloques.cosas.com/activos/www/delivery/afr.php?resize=1&amp;zoneid=10&amp;target=_blank&amp;cb={random}&amp;ct0={clickurl_enc}' frameborder='0' scrolling='no' width='300' height='250' allowtransparency='true'><a href='http://bloques.cosas.com/activos/www/delivery/ck.php?n=a7bdb1c6&amp;cb={random}' target='_blank'><img src='http://bloques.cosas.com/activos/www/delivery/avw.php?zoneid=10&amp;cb={random}&amp;n=a7bdb1c6&amp;ct0={clickurl_enc}' border='0' alt='' /></a></iframe>
+
     </div>
     
     <div style="width:300px;margin:0 auto 5px;">

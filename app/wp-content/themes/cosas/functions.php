@@ -457,7 +457,7 @@ function create_post_type_html5() { // Create 1 Custom Post type for a Demo, cal
                 'public' => true,
                 'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
                 'has_archive' => true,
-                'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ), // Go to Dashboard Custom HTML5 Blank post for supports
+                'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields' ), // Go to Dashboard Custom HTML5 Blank post for supports
                 'can_export' => true, // Allows export in Tools > Export
                 'taxonomies' => array( 'post_tag', 'category'), // Add Category and Post Tags support
                 )
@@ -680,4 +680,5 @@ function custom_gallery( $output, $attr ){
     return $output;
 }
 add_filter('post_gallery', 'custom_gallery', 11, 2);
+
 ?>

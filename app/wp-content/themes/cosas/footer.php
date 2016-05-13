@@ -74,7 +74,13 @@
 
 		</div>
 		<!-- /#page -->
-		<?php wp_footer(); ?>
+		
+		<div style="width:320px;margin:0 auto;position:fixed;left:0;right:0;z-index:99999;bottom:0;">
+		    <ins data-revive-zoneid="3" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
+            <script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+		</div>
+		
+       <?php wp_footer(); ?>
         <script>
             
             var normSlider = new Swiper ('.swiper-container', {
