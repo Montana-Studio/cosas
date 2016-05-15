@@ -114,7 +114,7 @@ get_header();
 
                         // Restore original Post Data
                         wp_reset_postdata();
-                    }elseif(is_page('entretenimiento')){
+                    }elseif(is_page('entretencion')){
                         // WP_Query arguments
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
