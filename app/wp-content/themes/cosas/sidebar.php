@@ -1,11 +1,11 @@
 <!-- sidebar -->
 <aside class="sidebar hide">
    
-    <!-- /92947493/250x250_COSAS_ALL -->
-    <div id='div-gpt-ad-1462495429825-0' style='width:250px;margin:0 auto 5px;'>
-    <script type='text/javascript'>
-    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1462495429825-0'); });
-    </script>
+    <div style='width:250px;margin:0 auto 5px;'>
+
+        <ins data-revive-zoneid="11" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
+        <script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+   
     </div>
     
     <div style="width:300px;margin:0 auto 5px;">

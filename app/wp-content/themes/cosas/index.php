@@ -12,8 +12,22 @@
 		<main id="main" class="site-main">
             
             <?php 
-                if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){
+                if($GLOBALS['detecBlogs']['couture']==$GLOBALS['detectBlogs']['blogId']){
                    // WP_Query arguments
+                    $args = array (
+                        'category_name'          => 'estilo',
+                        'posts_per_page'         => '3',
+                        'order'                  => 'DESC',
+                        'orderby'                => 'date',
+                    );
+                    $args1 = array (
+                        'category_name'          => 'disenadores',
+                        'posts_per_page'         => '4',
+                        'order'                  => 'DESC',
+                        'orderby'                => 'date',
+                    );
+                }elseif($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){
+                    // WP_Query arguments
                     $args = array (
                         'category_name'          => 'belleza-repost',
                         'posts_per_page'         => '3',
@@ -77,9 +91,8 @@
                                             $cosas1->the_post();
 
                                             get_template_part( 'loop-last'); }
-
                                     }else{
-                                        echo 'no hay post';
+                                        echo '';
                                     }
                                     wp_reset_postdata();
                                 ?>
@@ -177,6 +190,59 @@
             <main id="main-3" class="site-main-3">
 
                 <?php query_posts( 'category_name=de-coleccion&posts_per_page=3&orderby=date&order=DESC' );
+                    while ( have_posts() ) : the_post();
+                        get_template_part( 'loop-entrevista');
+                    endwhile;
+                ?>
+
+            </main>
+            
+            <main id="main-7" class="site-main-7">
+
+                <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['casas']); ?>">
+                
+                    <svg viewBox="0 0 792 268">
+                        <use xlink:href="#logo-casas" class="logo-casas"/>
+                    </svg>
+
+                </a>
+
+                <?php
+                    global $switched;
+                    
+                    switch_to_blog($GLOBALS['detectBlogs']['casas']);
+
+                    $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC');
+                    $cnt =0;
+                             
+                    foreach($latest_posts as $post) : setup_postdata($post);
+                        get_template_part( 'loop-casas');                               
+                    endforeach ;
+                    restore_current_blog();
+                
+                ?>
+
+            </main>
+            
+        <?php
+            }elseif($GLOBALS['detectBlogs']['couture']==$GLOBALS['detectBlogs']['blogId']){
+        ?>
+            <h3 class="titus">Estilo</h3>
+            
+            <main id="main-2" class="site-main-2">
+               
+                <?php query_posts( 'category_name=estilo&posts_per_page=6&orderby=date&order=DESC' );
+                        while ( have_posts() ) : the_post();
+                        get_template_part( 'loop-espectaculo');
+                    endwhile;
+                ?>
+            </main>
+            
+            <h3 class="titus">Moda nacional</h3>
+
+            <main id="main-3" class="site-main-3">
+
+                <?php query_posts( 'category_name=moda-nacional&posts_per_page=3&orderby=date&order=DESC' );
                     while ( have_posts() ) : the_post();
                         get_template_part( 'loop-entrevista');
                     endwhile;
@@ -513,6 +579,31 @@
                 
             </div>
         <?php
+            }elseif($GLOBALS['detectBlogs']['couture']==$GLOBALS['detectBlogs']['blogId']){
+        ?>
+        <h3 class="titus">Estilo</h3>
+            
+            <div id="main-2" class="site-main-2-mobile">
+                <?php query_posts( 'category_name=estilo&posts_per_page=9&orderby=date&order=DESC' );
+                        while ( have_posts() ) : the_post();
+                        get_template_part( 'loop-espectaculo');
+                    endwhile;
+                ?>
+            </div>
+            
+            <h3 class="titus">Moda Nacional</h3>
+            
+            <div id="main-3" class="site-main-3-mobile">
+                
+                <?php query_posts( 'category_name=moda-nacional&posts_per_page=2&orderby=date&order=DESC' );
+                    while ( have_posts() ) : the_post();
+                        get_template_part( 'loop-entrevistamobile');
+                    endwhile;
+                ?>
+                
+            </div>
+        <?php
+            
             }else{ 
         ?>
             <h3 class="titus">espectáculos</h3>
@@ -677,6 +768,36 @@
         
     <?php 
             }elseif($GLOBALS['detectBlogs']['lujo']==$GLOBALS['detectBlogs']['blogId']){
+    ?>
+        <main id="main-7" class="site-main-7-mobile">
+           
+            <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['casas']); ?>">
+                
+                <svg viewBox="0 0 792 268">
+                    <use xlink:href="#logo-casas" class="logo-casas"/>
+                </svg>
+                
+            </a>
+            
+            <div class="maxcasas">
+                <?php
+                    global $switched;
+                    
+                    switch_to_blog($GLOBALS['detectBlogs']['casas']);
+
+                    // Get latest Post
+                    $latest_posts = get_posts('cat=0&posts_per_page=4&orderby=date&order=DESC'); 
+                    $cnt =0;
+                    foreach($latest_posts as $post) : setup_postdata($post);
+                        get_template_part( 'loop-casas');                               
+                    endforeach ;
+                    restore_current_blog(); 
+                ?>  
+            </div>
+
+        </main>
+    <?php
+            }elseif($GLOBALS['detectBlogs']['couture']==$GLOBALS['detectBlogs']['blogId']){
     ?>
         <main id="main-7" class="site-main-7-mobile">
            

@@ -25,23 +25,6 @@
         <?php
             }
         ?>
-        <script type='text/javascript'>
-          (function() {
-            var useSSL = 'https:' == document.location.protocol;
-            var src = (useSSL ? 'https:' : 'http:') +
-                '//www.googletagservices.com/tag/js/gpt.js';
-            document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
-          })();
-        </script>
-
-        <script type='text/javascript'>
-          googletag.cmd.push(function() {
-            googletag.defineSlot('/92947493/250x250_COSAS_ALL', [250, 250], 'div-gpt-ad-1462495429825-0').addService(googletag.pubads());
-            googletag.pubads().collapseEmptyDivs();
-            googletag.pubads().enableSyncRendering();
-            googletag.enableServices();
-          });
-        </script>
 
 	</head>
         <body <?php body_class(); ?>>
@@ -70,6 +53,12 @@
                 ?>
                         <svg viewBox="0 0 792 268" class="lujo-bg">
                             <use xlink:href="#logo-lujo" class="logo-menu"/>
+                        </svg>
+                <?php
+                    }elseif($GLOBALS['detectBlogs']['couture']==$GLOBALS['detectBlogs']['blogId']){
+                ?>
+                        <svg viewBox="0 0 792 268" class="lujo-bg">
+                            <use xlink:href="#logo-couture" class="logo-menu"/>
                         </svg>
                 <?php }else{ ?>
                         <svg viewBox="0 0 759 232" class="menu-logo">
@@ -160,6 +149,12 @@
                     ?>
                         <svg viewBox="0 0 792 268" class="lujo-bg">
                             <use xlink:href="#logo-lujo" class="logo-menu"/>
+                        </svg>
+                    <?php
+                        }elseif($GLOBALS['detectBlogs']['couture']==$GLOBALS['detectBlogs']['blogId']){
+                    ?>
+                        <svg viewBox="0 0 792 268" class="lujo-bg">
+                            <use xlink:href="#logo-couture" class="logo-menu"/>
                         </svg>
                     <?php }else{ ?>
                         <svg  viewBox="0 0 759 262">

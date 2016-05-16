@@ -17,11 +17,45 @@
         @include shift(0);
     }
     .post-list{
-        .post{
+        .post-sticky-box{
+            @include row();
+            .post-sticky{
+                @include span-columns(12);
+                background: {size:cover;repeat:no-repeat;position: center 20%;}
+                margin:{bottom:10px;}
+                position: relative;
+                overflow: hidden;
+                min-height: 300px;
+                .cont-title-page{
+                    @include span-columns(10);
+                    @include shift(1);
+                    @include textAlign(center);
+                    position: absolute;
+                    bottom:0;
+                    background:{color: $white;}
+                    h2{
+                        @include span-columns(10);
+                        @include shift(1);
+                        @extend .no-margins;
+                        font:{family:$playFair;size:em(11);}
+                        a{
+                            color:#000;
+                        }
+                    }
+                    .times-post{
+                        @include span-columns(10);
+                        @include shift(1);
+                        color:#999;
+                        font:{size:em(9);}
+                        margin:{bottom:5px;}
+                    }
+                }
+            }
+        }
+        .post-pag{
             background: {size:cover;repeat:no-repeat;position: center 20%;}
             margin:{bottom:10px;}
             @include span-columns(6);
-            //@include omega(2n);
             min-height:167px;
             position: relative;
             overflow: hidden;
@@ -52,14 +86,14 @@
         }
         @include media($notebook){
             @include span-columns(12);
-            .post{
+            .post-pag{
                 @include span-columns(4);
                 @include omega(3n);
                 min-height:200px;
             }
         }
         @include media($mobileTomobileLand){
-            .post{
+            .post-pag{
                 @include omega(2n);
             }
         }
