@@ -111,16 +111,10 @@ function html5blank_header_scripts()
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
         
         wp_enqueue_script('jquery');
-        
-        wp_enqueue_script( 'swiper', get_template_directory_uri() .'/js/swiper.jquery.min.js',array(),'20160510', true ); 
+         
+        wp_enqueue_script( 'library', get_template_directory_uri() .'/js/library.min.js',array(),'20160424', true );
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/cosas.min.js', array('jquery'), '1.0.0', true); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
-        
-        wp_enqueue_script( 'resp-slider', get_template_directory_uri() .'/js/responsiveslides.min.js',array(),'20160424', true );
-        wp_enqueue_script( 'marquee', get_template_directory_uri() .'/js/jquery.marquee.min.js',array(),'20160502', true );
-        //wp_enqueue_script( 'color-box', get_template_directory_uri() .'/js/jquery.colorbox-min.js',array(),'', true ); 
-        wp_enqueue_script( 'isotope', get_template_directory_uri() .'/js/isotope-docs.min.js',array(),'20160505', true ); 
-        wp_enqueue_script( 'packery', get_template_directory_uri() .'/js/packery-mode.pkgd.min.js',array(),'20160505', true ); 
         
     }
 }
@@ -133,7 +127,6 @@ function html5blank_conditional_scripts()
         wp_enqueue_script('scriptname'); // Enqueue it!
     }
 }
-
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
@@ -458,7 +451,7 @@ function create_post_type_html5() { // Create 1 Custom Post type for a Demo, cal
                 'public' => true,
                 'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
                 'has_archive' => true,
-                'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields' ), // Go to Dashboard Custom HTML5 Blank post for supports
+                'supports' => array( 'title', 'editor', 'thumbnail','excerpt'), // Go to Dashboard Custom HTML5 Blank post for supports
                 'can_export' => true, // Allows export in Tools > Export
                 'taxonomies' => array( 'post_tag', 'category'), // Add Category and Post Tags support
                 )
@@ -681,5 +674,9 @@ function custom_gallery( $output, $attr ){
     return $output;
 }
 add_filter('post_gallery', 'custom_gallery', 11, 2);
+
+//*WEBPAY SHORCODE*//
+
+add_filter('widget_text','do_shortcode');
 
 ?>

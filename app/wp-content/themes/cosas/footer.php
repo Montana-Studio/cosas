@@ -97,6 +97,17 @@
                 slidesPerView: 3,
                 spaceBetween: 10,
             });
+            var videoSliders = new Swiper('.video-container',{
+                paginationClickable: true,
+                spaceBetween: 30,
+                pagination: '.swiper-pagination',
+            });
+            
+            var videoSliders2 = new Swiper('.video-container-v', {
+                pagination: '.swiper-pagination-v',
+                paginationClickable: true,
+                spaceBetween: 50
+            });
 
         </script>
 		<!-- analytics -->

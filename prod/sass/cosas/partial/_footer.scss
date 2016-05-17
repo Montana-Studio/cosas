@@ -1,5 +1,6 @@
 .site-footer{
     background:{color: #000;}
+    padding:{bottom:51px;}
     @include span-columns(12); 
     color:$white;
     @include media($notebook) {

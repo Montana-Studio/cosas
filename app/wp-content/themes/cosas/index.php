@@ -54,7 +54,7 @@
                         'order'                  => 'DESC',
                         'orderby'                => 'date',
                     );
-                }else{
+                }elseif($GLOBALS['detecBlogs']['cosas']==$GLOBALS['detectBlogs']['blogId']){
                     // WP_Query arguments
                     $args = array (
                         'cat'                    => '0',
@@ -68,7 +68,7 @@
                         'order'                  => 'DESC',
                         'orderby'                => 'date',
                     );
-                }
+                };
                 // The Query
                 $cosas = new WP_Query( $args );
                 $cosas1 = new WP_Query( $args1 );
@@ -109,10 +109,12 @@
                 wp_reset_postdata(); 
             ?>
 		</main>
-<div style="max-width:728px;margin:0 auto;">
-<ins data-revive-zoneid="9" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
-<script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
-</div>          
+
+        <div style="max-width:728px;margin:0 auto;">
+            <ins data-revive-zoneid="9" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
+            <script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+        </div>  
+                
         <?php
             
         //SI ES MOBILE
@@ -438,13 +440,61 @@
                 <h3 class="titus">videos</h3>
 
                 <div class="content-videos">
-                    <ul class="rslides" id="slider4">
-                        <?php query_posts( 'post_type=video-galeria&posts_per_page=3&orderby=date&order=DESC' );
-                            while ( have_posts() ) : the_post();
-                                get_template_part( 'loop-video');
-                            endwhile;
-                        ?>
-                    </ul>
+                    <div class="video-container">
+                       <div class="swiper-wrapper">   
+                            <?php 
+                                    $args = array (
+                                        'post_type'              => 'video-galeria',
+                                        'posts_per_page'         => '3',
+                                        'order'                  => 'DESC',
+                                        'orderby'                => 'date',
+                                    );
+
+                                    // The Query
+                                    $sociales = new WP_Query( $args );
+
+                                    // The Loop
+                                    if ( $sociales->have_posts() ) {
+                                        while ( $sociales->have_posts() ) {
+                                            $sociales->the_post();
+                                            get_template_part( 'loop-video');
+                                        }
+                                    } else {
+                                        // no posts found
+                                    }
+
+                                    // Restore original Post Data
+                                    wp_reset_postdata(); 
+                            ?>
+                            <script type="text/javascript">
+                                    function onYouTubePlayerAPIReady() {
+                                        var players = document.querySelectorAll('.swiper-slide .embeVideo');
+                                        for (var i = 0; i < players.length; i++) {
+                                            new YT.Player(players[i], {
+                                                playerVars: {'controls': 0,'rel':0,'showinfo':0},
+                                                events:{
+                                                    'onStateChange': onPlayerStateChange,
+                                                },
+                                                videoId: players[i].dataset.id
+                                            });
+                                        }
+                                    }
+
+                                    function onPlayerStateChange(event) {        
+                                        if(event.data === 1){          
+                                            jQuery(document).ready(function($){
+                                                $('footer.titYoutube').fadeOut('slow');
+                                            });
+                                        }else if(event.data === 2||event.data === 0 ){
+                                            jQuery(document).ready(function($){
+                                                $('footer.titYoutube').fadeIn('slow');
+                                            });
+                                        }
+                                    }
+                            </script>
+                       </div>
+                       <div class="swiper-pagination"></div>
+                    </div>
 
                 </div>
             </main>
@@ -496,7 +546,7 @@
             
             <main id="main-7" class="site-main-7">
 
-            <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['casas']); ?>">
+                <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['casas']); ?>">
                 
                     <svg viewBox="0 0 792 268">
                         <use xlink:href="#logo-casas" class="logo-casas"/>
@@ -737,7 +787,6 @@
             //SI ES Repost
             if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){ 
     ?>
-        
         <main id="main-7" class="site-main-7-mobile">
            
             <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['casas']); ?>">
@@ -765,7 +814,6 @@
             </div>
 
         </main>
-        
     <?php 
             }elseif($GLOBALS['detectBlogs']['lujo']==$GLOBALS['detectBlogs']['blogId']){
     ?>
@@ -830,23 +878,71 @@
             }else{ 
     ?>
        
-        <?php /*/<main id="main-5" class="site-main-5-mobile">
+        <main id="main-5" class="site-main-5-mobile">
 
             <h3 class="titus">videos</h3>
 
             <div class="content-videos">
-                <ul class="rslides">
-                    <?php query_posts( 'post_type=video-galeria&posts_per_page=4&orderby=date&order=DESC' );
-                        while ( have_posts() ) : the_post();
-                            get_template_part( 'loop-video');
-                        endwhile;
-                    ?>
-                </ul>
+                    <div class="video-container-v">
+                       <div class="swiper-wrapper">   
+                            <?php 
+                                    $args = array (
+                                        'post_type'              => 'video-galeria',
+                                        'posts_per_page'         => '4',
+                                        'order'                  => 'DESC',
+                                        'orderby'                => 'date',
+                                    );
 
-            </div>
+                                    // The Query
+                                    $videos = new WP_Query( $args );
+
+                                    // The Loop
+                                    if ( $videos->have_posts() ) {
+                                        while ( $videos->have_posts() ) {
+                                            $videos->the_post();
+                                            get_template_part( 'loop-video');
+                                        }
+                                    } else {
+                                        // no posts found
+                                    }
+
+                                    // Restore original Post Data
+                                    wp_reset_postdata(); 
+                            ?>
+                            <script type="text/javascript">
+                                    function onYouTubePlayerAPIReady() {
+                                        var players = document.querySelectorAll('.swiper-slide .embeVideo');
+                                        for (var i = 0; i < players.length; i++) {
+                                            new YT.Player(players[i], {
+                                                playerVars: {'controls': 0,'rel':0,'showinfo':0},
+                                                events:{
+                                                    'onStateChange': onPlayerStateChange,
+                                                },
+                                                videoId: players[i].dataset.id
+                                            });
+                                        }
+                                    }
+
+                                    function onPlayerStateChange(event) {        
+                                        if(event.data === 1){          
+                                            jQuery(document).ready(function($){
+                                                $('footer.titYoutube').fadeOut('slow');
+                                            });
+                                        }else if(event.data === 2||event.data === 0 ){
+                                            jQuery(document).ready(function($){
+                                                $('footer.titYoutube').fadeIn('slow');
+                                            });
+                                        }
+                                    }
+                            </script>
+                       </div>
+                       <div class="swiper-pagination-v"></div>
+                    </div>
+
+                </div>
         </main>
-        */
-        ?>
+        
+        
         <main id="main-6" class="site-main-6-mobile">
 
             <h3 class="titus">sociales</h3>
