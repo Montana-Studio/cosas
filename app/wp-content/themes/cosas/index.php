@@ -2,7 +2,7 @@
 
 	<div id="primary" class="content-area">
 <div style="max-width:320px;margin:0 auto;">
-<ins data-revive-zoneid="7" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
+<ins data-revive-zoneid="6" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
 <script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
 </div>
 <div style="max-width:728px;margin:0 auto;">
@@ -54,7 +54,7 @@
                         'order'                  => 'DESC',
                         'orderby'                => 'date',
                     );
-                }elseif($GLOBALS['detecBlogs']['cosas']==$GLOBALS['detectBlogs']['blogId']){
+                }else{
                     // WP_Query arguments
                     $args = array (
                         'cat'                    => '0',
@@ -330,8 +330,6 @@
                     $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
                     $first_img = $matches [1] [0];
 
-//                    $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' );
-
                     $c++;
                     if( $c == 1) :
 
@@ -347,7 +345,7 @@
 
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                        <div class="img-post" style="background-image: url('<?php echo $src[0]; ?>');">
+                        <div class="img-post" style="background-image: url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>');">
                             <a href="<?php echo get_permalink(); ?>" class="more-link">
                                 <i class="fa fa-plus"></i>
                             </a>
@@ -878,7 +876,7 @@
             }else{ 
     ?>
        
-        <main id="main-5" class="site-main-5-mobile">
+      <?php /*  <main id="main-5" class="site-main-5-mobile">
 
             <h3 class="titus">videos</h3>
 
@@ -942,7 +940,7 @@
                 </div>
         </main>
         
-        
+        */?>
         <main id="main-6" class="site-main-6-mobile">
 
             <h3 class="titus">sociales</h3>
