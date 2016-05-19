@@ -175,7 +175,7 @@
                 <div class="meta-info hide">
                     
                     <span>
-                        <?php $nommes = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"); $nomdia = array("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"); $dia = date("j"); $mes = date("n"); $diasemana = date("w"); $hoy = $nomdia[$diasemana]." ".$dia." de ".$nommes[$mes-1]." del ".date(Y); echo $hoy; ?>
+                        <?php $nommes = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"); $nomdia = array("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"); $dia = date("j"); $mes = date("n"); $diasemana = date("w"); $hoy = $nomdia[$diasemana]." ".$dia." de ".$nommes[$mes-1]." del ".date('Y'); echo $hoy; ?>
                     </span>
                     
                     <div class="redes">
@@ -299,7 +299,7 @@
 
                             // Restore original Post Data
                             wp_reset_postdata();
-                            global $lasts;
+                            global $lastspage;
 
                             $big = 999999999;
 
@@ -307,7 +307,7 @@
                                 'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
                                 'format' => '?paged=%#%',
                                 'current' => max( 1, get_query_var('paged') ),
-                                'total' => $lasts->max_num_pages,
+                                'total' => $lastspage->max_num_pages,
                                 'prev_text'    => '<i class="fa fa-angle-left"></i> anterior',
                                 'next_text'    => 'siguiente <i class="fa fa-angle-right"></i>'
                             ) );
