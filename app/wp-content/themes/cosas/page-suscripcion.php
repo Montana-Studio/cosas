@@ -4,30 +4,52 @@ get_header();
 ?>
 <section class="page-content">
             <div class="breadcrumbs">
-
+    
                 <?php the_breadcrumb(); ?>
 
             </div>
-            <h1 class="titus"><?php the_title(); ?></h1>
             
             <div class="post-list">
-            
-            <?php if(is_page('exito')){ ?>
-                       
-                <article id="post-<?php the_ID(); ?>" <?php post_class('post-pag'); ?>>
+            <main>
+                  <!-- section -->
+                <section>
 
-                <?php the_title(); the_content(); ?>
 
-                </article>
-            <?php }elseif(is_page('carro')){ ?>
-                <article id="post-<?php the_ID(); ?>" <?php post_class('post-pag'); ?>>
+                <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-                <?php the_content(); ?>
+                    <!-- article -->
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                </article>
-            <?php }else{ ?>
-               <p>no  hay nada para mostrar</p>
-            <?php } ?>
+                        <div id="post-<?php the_ID(); ?>" <?php post_class('empty-section'); ?>>
+
+                            <div class="inside-empty-section">
+                                <h2>¡Transacción realizada con éxito!</h2>
+                                <a class="button" href="<?php echo site_url(); ?>">volver al home</a>  
+                            </div>
+
+                        </div>
+
+                    </article>
+                    <!-- /article -->
+
+                <?php endwhile; ?>
+
+                <?php else: ?>
+
+                    <!-- article -->
+                    <article>
+
+                        <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+
+                    </article>
+                    <!-- /article -->
+
+                <?php endif; ?>
+
+                </section>
+                <!-- /section -->
+            </main>
+           
                 
             </div>
             
@@ -35,6 +57,6 @@ get_header();
                 <?php get_template_part('pagination-main'); ?>
             </div>
             
-		</section>
-		
+    </section>
+    
 <?php get_footer(); ?>
