@@ -86,9 +86,9 @@ function html5blank_nav()
 		)
 	);
 }
-/**
+/*
     VARS GLOBAL DETECT BLOGS
-**/
+*/
 function blogs_global_vars() {
 
     global $detectBlogs;
@@ -136,9 +136,9 @@ function html5blank_styles()
     //wp_enqueue_style( 'colorbox-style', get_template_directory_uri() .'/css/colorbox.css' ); 
     wp_enqueue_style( 'swiper-style', get_template_directory_uri() .'/css/swiper.min.css' ); 
     
-    if($GLOBALS['detectBlogs']['suscripciones']==$GLOBALS['detectBlogs']['blogId']){
+    //if($GLOBALS['detectBlogs']['suscripciones']==$GLOBALS['detectBlogs']['blogId']){
         wp_enqueue_style('suscripciones', get_template_directory_uri() .'/css/suscripcion.min.css' );
-    }
+    //}
 }
 
 //WOOCOMMERCE REMOVE

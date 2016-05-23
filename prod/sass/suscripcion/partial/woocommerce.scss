@@ -18,6 +18,13 @@
             }
         }
     }
+    .cart_totals  {
+		width: 100% !important;
+		@include media($notebook) {
+			@include span-columns(6);
+			@include omega();
+		}
+	}  
 	.title-susc {
 		@include span-columns(12);
 		text:{transform:uppercase;}

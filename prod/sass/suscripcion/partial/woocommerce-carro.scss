@@ -34,14 +34,21 @@
 		}
 		.carro-compra {
 			@include span-columns(12);
-			@include pad(0);
+			@include pad();
 			@include omega();
 			form {
 				table {
 					border-radius:0px !important;
+					font:{size:10px;}
+					@include media($notebook) {
+						font:{size: 1em;}
+					}
 					thead {
-						font:{size: 1.2em;}
-						text:{transform:uppercase;}
+						font:{size:10px;}
+						@include media($notebook) {
+							font:{size: 1.2em;}
+							text:{transform:uppercase;}	
+						}
 					}
 					tbody {
 						.cart_item {
@@ -113,7 +120,6 @@
 								}
 							}
 						}
-
 					}
 					.wc-proceed-to-checkout {
 						a {
@@ -137,7 +143,10 @@
 							}
 						}
 					}
-				}
+					&.calculated_shipping {
+						width: 100% !important;
+					}
+				}	
 			}
 		}
 	}
@@ -191,7 +200,7 @@
 						float: right;
 						margin: 15px 0; 
 					}
-				}		
+ 				}		
 			}
 		}
 	}
@@ -201,6 +210,6 @@
 }
 .woocommerce-cart {
 	.button {
-		font:{size:1em !important;} 
+		font:{size:1em !important;weight:bold;} 
 	}
 }  

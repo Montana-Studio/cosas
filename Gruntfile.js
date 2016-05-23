@@ -120,7 +120,7 @@ module.exports = function(grunt) {
             },
           },
           sass:{
-            files:['<%= dist %>/<%= scsscosas %>','<%= dist %>/<%= scsscasas %>'],
+            files:['<%= dist %>/<%= scsscosas %>','<%= dist %>/<%= scsscasas %>', '<%= dist %>/<%= scsssus %>'],
             tasks: ['sass:deve'],
             options:{
               livereload:true,
