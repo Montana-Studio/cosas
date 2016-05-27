@@ -96,7 +96,7 @@ function blogs_global_vars() {
         
         'blogId'    => get_current_blog_id(),
         'cosas'     => '1',
-        'casas'     => '4',
+        'casas'     => '9',
         'repost'    => '5',
         'lujo'      => '7',
         'couture'      => '8',

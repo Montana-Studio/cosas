@@ -56,12 +56,23 @@
                     );
                 }else{
                     // WP_Query arguments
-                    $args = array (
-                        'cat'                    => '0',
-                        'posts_per_page'         => '3',
-                        'order'                  => 'DESC',
-                        'orderby'                => 'date',
-                    );
+                    
+                    if(is_sticky()){ 
+                        $args = array (
+                            'cat'                    => '0',
+                            'posts_per_page'         => '2',
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date'
+                        );
+                    }else{
+                        $args = array (
+                            'cat'                    => '0',
+                            'posts_per_page'         => '3',
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                            'ignore_sticky_posts'    => true,
+                        );
+                    }
                     $args1 = array (
                         'category_name'          => 'cultura',
                         'posts_per_page'         => '4',
@@ -69,6 +80,7 @@
                         'orderby'                => 'date',
                     );
                 };
+            
                 // The Query
                 $cosas = new WP_Query( $args );
                 $cosas1 = new WP_Query( $args1 );
@@ -286,10 +298,31 @@
             <h3 class="titus">espectáculos</h3>
 
             <main id="main-2" class="site-main-2">
-                <?php query_posts( 'category_name=espectaculos&posts_per_page=6&orderby=date&order=DESC' );
-                        while ( have_posts() ) : the_post();
-                        get_template_part( 'loop-espectaculo');
-                    endwhile;
+                <?php 
+                    // WP_Query arguments
+                    $args = array (
+                        'category_name'          => 'espectaculos',
+                        'posts_per_page'         => '9',
+                        'ignore_sticky_posts'    => false,
+                        'order'                  => 'DESC',
+                        'orderby'                => 'date',
+                    );
+
+                    // The Query
+                    $espectaculos = new WP_Query( $args );
+
+                    // The Loop
+                    if ( $espectaculos->have_posts() ) {
+                        while ( $espectaculos->have_posts() ) {
+                            $espectaculos->the_post();
+                            get_template_part( 'loop-espectaculo');
+                        }
+                    } else {
+                        // no posts found
+                    }
+
+                    // Restore original Post Data
+                    wp_reset_postdata();
                 ?>
             </main>
 
@@ -307,12 +340,13 @@
             
             <main id="main-8" class="site-main-8">
                 
-                <h3>instagram</h3>
+                <h3>instagram <i class="fa fa-instagram"></i></h3>
                 <div class="contInstagram">
                   <?php get_template_part('instagram'); ?> 
                 </div>
                 
             </main>
+            
             <h3 class="titus">nacional</h3>
 
             <main id="main-4" class="site-main-4">
@@ -657,10 +691,31 @@
             <h3 class="titus">espectáculos</h3>
             
             <div id="main-2" class="site-main-2-mobile">
-                <?php query_posts( 'category_name=espectaculos&posts_per_page=9&orderby=date&order=DESC' );
-                        while ( have_posts() ) : the_post();
-                        get_template_part( 'loop-espectaculo');
-                    endwhile;
+                <?php 
+                    // WP_Query arguments
+                    $args = array (
+                        'category_name'          => 'espectaculos',
+                        'posts_per_page'         => '9',
+                        'ignore_sticky_posts'    => false,
+                        'order'                  => 'DESC',
+                        'orderby'                => 'date',
+                    );
+
+                    // The Query
+                    $espectaculos = new WP_Query( $args );
+
+                    // The Loop
+                    if ( $espectaculos->have_posts() ) {
+                        while ( $espectaculos->have_posts() ) {
+                            $espectaculos->the_post();
+                            get_template_part( 'loop-espectaculo');
+                        }
+                    } else {
+                        // no posts found
+                    }
+
+                    // Restore original Post Data
+                    wp_reset_postdata();
                 ?>
             </div>
             
@@ -678,7 +733,7 @@
             
             <main id="main-8" class="site-main-8">
                 
-                <h3>instagram</h3>
+                <h3>instagram <i class="fa fa-instagram"></i></h3>
                 <div class="contInstagram">
                   <?php get_template_part('instagram'); ?> 
                 </div>
