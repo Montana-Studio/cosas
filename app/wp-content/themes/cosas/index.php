@@ -1,14 +1,16 @@
 <?php get_header(); ?>
 
 	<div id="primary" class="content-area">
-<div style="max-width:320px;margin:0 auto;">
-<ins data-revive-zoneid="6" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
-<script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
-</div>
-<div style="max-width:728px;margin:0 auto;">
-<ins data-revive-zoneid="2" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
-<script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
-</div>	    
+        <div style="max-width:320px;margin:0 auto;">
+            <ins data-revive-zoneid="6" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
+            <script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+        </div>
+        
+        <div style="max-width:728px;margin:0 auto;">
+            <ins data-revive-zoneid="2" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
+            <script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+        </div>
+        
 		<main id="main" class="site-main">
             
             <?php 
@@ -94,7 +96,7 @@
 
                         get_template_part( 'loop-index');
 
-                        if($variable == 1&&!wp_is_mobile()){ ?>
+                        if($variable == 1){ ?>
                             <div class="destacados">
                                 <ul class="rslides" id="slider5">
                                 <?php 
@@ -302,7 +304,7 @@
                     // WP_Query arguments
                     $args = array (
                         'category_name'          => 'espectaculos',
-                        'posts_per_page'         => '9',
+                        'posts_per_page'         => '6',
                         'ignore_sticky_posts'    => false,
                         'order'                  => 'DESC',
                         'orderby'                => 'date',
@@ -421,7 +423,8 @@
                 <?php endwhile; ?>
                 
             </main>
-            <?php /*
+            <?php 
+                /*
             <main id="main-9" class="site-main-9">
                 <h3>Horóscopo</h3>
                 <div class="conte-horoscopo">
@@ -466,7 +469,8 @@
                   </div>
                 </div>
             </main>
-            */?>
+            */
+            ?>
             <main id="main-5" class="site-main-5">
 
                 <h3 class="titus">videos</h3>
@@ -608,7 +612,6 @@
         //SI NO ES MOBILE
         }else{ 
         ?>
-        <?php get_sidebar(); ?>
            
         <?php
             //SI ES REPOST
@@ -688,9 +691,13 @@
             
             }else{ 
         ?>
-            <h3 class="titus">espectáculos</h3>
+            
+            <?php get_sidebar(); ?>
             
             <div id="main-2" class="site-main-2-mobile">
+               
+            <h3 class="titus">espectáculos</h3>
+               <div style="display:block;">
                 <?php 
                     // WP_Query arguments
                     $args = array (
@@ -717,12 +724,12 @@
                     // Restore original Post Data
                     wp_reset_postdata();
                 ?>
+                </div>
             </div>
-            
-            <h3 class="titus">entrevistas</h3>
-            
+           
             <div id="main-3" class="site-main-3-mobile">
                 
+                <h3 class="titus">entrevistas</h3>
                 <?php query_posts( 'category_name=entrevista&posts_per_page=2&orderby=date&order=DESC' );
                     while ( have_posts() ) : the_post();
                         get_template_part( 'loop-entrevistamobile');
@@ -834,10 +841,10 @@
 	</div>
 	
 	<?php
-        //SI NO ES MOBILE
-        if ( !wp_is_mobile() ){ 
-            //SI ES Repost
-            if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){ 
+    //SI NO ES MOBILE
+    if ( !wp_is_mobile() ){ 
+        //SI ES Repost
+        if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){ 
     ?>
         <main id="main-7" class="site-main-7-mobile">
            
@@ -867,7 +874,7 @@
 
         </main>
     <?php 
-            }elseif($GLOBALS['detectBlogs']['lujo']==$GLOBALS['detectBlogs']['blogId']){
+        }elseif($GLOBALS['detectBlogs']['lujo']==$GLOBALS['detectBlogs']['blogId']){
     ?>
         <main id="main-7" class="site-main-7-mobile">
            
@@ -897,7 +904,7 @@
 
         </main>
     <?php
-            }elseif($GLOBALS['detectBlogs']['couture']==$GLOBALS['detectBlogs']['blogId']){
+        }elseif($GLOBALS['detectBlogs']['couture']==$GLOBALS['detectBlogs']['blogId']){
     ?>
         <main id="main-7" class="site-main-7-mobile">
            
@@ -927,10 +934,10 @@
 
         </main>
     <?php
-            }else{ 
+        }else{ 
     ?>
-       
-      <?php /*  <main id="main-5" class="site-main-5-mobile">
+    <?php 
+        /*  <main id="main-5" class="site-main-5-mobile">
 
             <h3 class="titus">videos</h3>
 
@@ -994,7 +1001,8 @@
                 </div>
         </main>
         
-        */?>
+        */
+    ?>
         <main id="main-6" class="site-main-6-mobile">
 
             <h3 class="titus">sociales</h3>

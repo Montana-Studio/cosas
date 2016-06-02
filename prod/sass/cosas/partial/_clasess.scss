@@ -26,19 +26,21 @@ input, textarea{
 	display:block;
 }
 .titulosh3{
-	@include span-columns(11.3);
-	@include shift(.3);
+	//@include span-columns(11.3);
+	//@include shift(.3);
+    @include row();
+    clear:both;
     margin:{top: 5px;bottom:5px;}
 	@include pad(10px);
 	border: {left:solid 2px $red;}
 	background:{color: #000;}
 	color:$white;
 	font:{size:em(12);family:$openSans;}
-	text:{transform:uppercase;}
-    @include media($notebook){
+	text:{transform:uppercase;align:left;}
+    /*@include media($notebook){
         @include span-columns(8.5);
         @include shift(0);
-    }
+    }*/
 }
 .catposts{
     color:$red;
@@ -68,7 +70,7 @@ input, textarea{
 }
 .titulosh3-large{
     @extend .titulosh3;
-    @include span-columns(12);
+    //@include span-columns(12);
 }
 .hide{
     display: none;
