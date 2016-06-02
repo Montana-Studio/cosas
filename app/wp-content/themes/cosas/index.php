@@ -696,7 +696,7 @@
             
             <div id="main-2" class="site-main-2-mobile">
                
-            <h3 class="titus">espectáculos</h3>
+                <h3 class="titus">espectáculos</h3>
                <div style="display:block;">
                 <?php 
                     // WP_Query arguments
@@ -751,7 +751,7 @@
             
             <div id="main-4" class="site-main-4-mobile">
                 
-        <?php 
+            <?php 
                 query_posts( 'category_name=entrevista,politica&posts_per_page=5&orderby=date&order=DESC' );
 
                 while ( have_posts() ) : the_post();
@@ -760,14 +760,14 @@
                 $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
                 $first_img = $matches [1] [0];
                 
-        ?>
+            ?>
                 
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>');">
                             
-        <?php 
+            <?php 
                 //SI NO ES MOBILE
                 if(!wp_is_mobile()){ 
-        ?>
+            ?>
                     <div class="hover-content">
                         <div class="shares-post">
                             <p>comparte en</p>
@@ -793,23 +793,23 @@
                             <a href="<?php echo get_permalink(); ?>">seguir leyendo</a>
                         </div>
                     </div>
-        <?php 
+            <?php 
                 } 
-        ?>
+            ?>
                             
                      <footer class="entry-footer">
-        <?php
+            <?php
                         if ( is_single() ) {
                             the_title( '<h1 class="entry-title">', '</h1>' );
                         } else {
 
                         $cats = get_the_category();
-        ?>
+            ?>
                         <span><?php echo $cats[0]->cat_name;?></span>
 
-        <?php 
+            <?php 
                         } 
-        ?>
+            ?>
 
                         <h2 class="entry-title">
                             <a href="<?php echo esc_url( get_permalink() );?>" rel="bookmark">
@@ -936,73 +936,107 @@
     <?php
         }else{ 
     ?>
-    <?php 
-        /*  <main id="main-5" class="site-main-5-mobile">
+        <main id="main-5" class="site-main-5-mobile">
 
             <h3 class="titus">videos</h3>
 
-            <div class="content-videos">
-                    <div class="video-container-v">
-                       <div class="swiper-wrapper">   
-                            <?php 
-                                    $args = array (
-                                        'post_type'              => 'video-galeria',
-                                        'posts_per_page'         => '4',
-                                        'order'                  => 'DESC',
-                                        'orderby'                => 'date',
-                                    );
+                <div class="content-video">
+                    <div class="list-videos">
 
-                                    // The Query
-                                    $videos = new WP_Query( $args );
+                        <?php 
+                                $args = array (
+                                    'post_type'              => 'video-galeria',
+                                    'order'                  => 'DESC',
+                                    'orderby'                => 'date',
+                                );
+                                $args2 = array (
+                                    'post_type'              => 'video-galeria',
+                                    'order'                  => 'DESC',
+                                    'orderby'                => 'date',
+                                );
 
-                                    // The Loop
-                                    if ( $videos->have_posts() ) {
-                                        while ( $videos->have_posts() ) {
-                                            $videos->the_post();
-                                            get_template_part( 'loop-video');
-                                        }
-                                    } else {
-                                        // no posts found
+                                // The Query
+                                $videos = new WP_Query( $args );
+                                $videos2 = new WP_Query( $args2 );
+
+                                // The Loop
+                                $var=0;
+                                if ( $videos->have_posts() ) {
+            
+                                    while ( $videos->have_posts() ) {
+                                        
+                                        if($var==0){
+                                            get_template_part( 'loop-video1');
+                                        }else{
+                                             $cantidad_posts= wp_count_posts();
+                                             if ( $videos2->have_posts() ) {?>
+
+                                            <?php while ( $videos2->have_posts() && $var<3) {
+                                                if($var==1){ ?>
+                                                <div class="video-player">
+                                                    <div class="swiper-container-video">
+                                                        <div class="btn-nav-video btn-prev">Ver videos anteriores</div>
+                                                            <div class="swiper-wrapper">
+                                                <?php } 
+                                                    get_template_part( 'loop-video2');
+                                                    $var++;
+                                                }?> 
+                                                <?php do{ ?>
+                                                            </div>
+                                                         
+                                                    </div>
+                                                </div>
+                                                <?php }while($var==0); ?>
+
+
+
+
+                                            <?php
+                                            } else {
+                                                // no posts found
+                                            }
+                                            $videos2->the_post();
+                                            // Restore original Post Data
+                                           // wp_reset_postdata(); 
+                                        }   
+                                        $videos->the_post();
+                                        $var++;
                                     }
-
-                                    // Restore original Post Data
-                                    wp_reset_postdata(); 
-                            ?>
-                            <script type="text/javascript">
-                                    function onYouTubePlayerAPIReady() {
-                                        var players = document.querySelectorAll('.swiper-slide .embeVideo');
-                                        for (var i = 0; i < players.length; i++) {
-                                            new YT.Player(players[i], {
-                                                playerVars: {'controls': 0,'rel':0,'showinfo':0},
-                                                events:{
-                                                    'onStateChange': onPlayerStateChange,
-                                                },
-                                                videoId: players[i].dataset.id
-                                            });
-                                        }
-                                    }
-
-                                    function onPlayerStateChange(event) {        
-                                        if(event.data === 1){          
-                                            jQuery(document).ready(function($){
-                                                $('footer.titYoutube').fadeOut('slow');
-                                            });
-                                        }else if(event.data === 2||event.data === 0 ){
-                                            jQuery(document).ready(function($){
-                                                $('footer.titYoutube').fadeIn('slow');
-                                            });
-                                        }
-                                    }
-                            </script>
-                       </div>
-                       <div class="swiper-pagination-v"></div>
-                    </div>
-
-                </div>
+                                } else {
+                                    // no posts found
+                                }
+                                // Restore original Post Data
+                                wp_reset_postdata(); 
+                        ?>
+                    </div> 
+                </div>     
+                <script type="text/javascript">
+                    function onYouTubePlayerAPIReady() {
+                        var players = document.querySelectorAll('.swiper-slide .embeVideo');
+                        for (var i = 0; i < players.length; i++) {
+                            new YT.Player(players[i], {
+                                playerVars: {'controls': 0,'rel':0,'showinfo':0},
+                                events:{
+                                    'onStateChange': onPlayerStateChange,
+                                },
+                                videoId: players[i].dataset.id
+                            });
+                        }
+                    }
+                    function onPlayerStateChange(event) {        
+                        if(event.data === 1){          
+                            jQuery(document).ready(function($){
+                                $('footer.titYoutube').fadeOut('slow');
+                            });
+                        }else if(event.data === 2||event.data === 0 ){
+                            jQuery(document).ready(function($){
+                                $('footer.titYoutube').fadeIn('slow');
+                            });
+                        }
+                    }
+                </script>
         </main>
-        
-        */
-    ?>
+    
         <main id="main-6" class="site-main-6-mobile">
 
             <h3 class="titus">sociales</h3>

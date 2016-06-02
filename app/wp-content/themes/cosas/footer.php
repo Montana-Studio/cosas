@@ -109,7 +109,18 @@
                 spaceBetween: 50
             });
 
+            var swiper = new Swiper('.swiper-video-desktop', {
+		        paginationClickable: true,
+		        direction: 'vertical',
+		        slidesPerView: 3,
+		        spaceBetween: 10,
+		        nextButton: '.btn-next',
+		        prevButton: '.btn-prev'
+		    });
+
         </script>
+    
+
 		<!-- analytics -->
 		<script>
 		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
