@@ -1,5 +1,8 @@
 .content-area{
 	@include span-columns(12);
+    @include media($mobileLandTotablet){
+        @include pad(10px);
+    }
     @include media($notebook){
         @include span-columns(10);
         @include shift(1);
@@ -17,81 +20,84 @@
             margin:{top:10px;}
         }
         .destacados{
-            min-height:91px;
-            @include span-columns(6.122);
-            @include omega();
-            background:{color: #363636;}
-            position: relative;
-            overflow: hidden;
-            .rslides {
+            display: none;
+            @include media($notebook){
+                min-height:91px;
+                @include span-columns(6.122);
+                @include omega();
+                background:{color: #363636;}
                 position: relative;
-                list-style: none;
                 overflow: hidden;
-                @include span-columns(10);
-                li {
-                    -webkit-backface-visibility: hidden;
+                .rslides {
+                    position: relative;
+                    list-style: none;
+                    overflow: hidden;
+                    @include span-columns(10);
+                    li {
+                        -webkit-backface-visibility: hidden;
+                        position: absolute;
+                        display: none;
+                        width: 100%;
+                        left: 0;
+                        top: 0;
+                        &:first-child {
+                            position: relative;
+                            display: block;
+                            float: left;
+                        }
+                        span{
+                            @include span-columns(12);
+                            color:$red;
+                            font:{size:em(12);}
+                            text:{transform:uppercase;}
+                            margin: {top:10px;left:10px;}
+                            @include media($notebook){
+                                @include span-columns(7);
+                            }
+                        }
+                        a{
+                            @include span-columns(12);
+                            color:$white;
+                            font: {size:em(12);}
+                            text:{decoration:none;transform:capitalize}
+                            margin: {left:10px}
+                            @include media($notebook){
+                                @include span-columns(7);
+                            }
+                        }
+                        @include media($notebook){
+                            .img-last{
+                                @include span-columns(3);
+                                min-height:91px;
+                                background:{size:cover;position:center;repeat:no-repeat;}
+                            }
+                        }
+                    }
+                }
+                .rslides_nav{
+                    @include textAlign(center);
                     position: absolute;
-                    display: none;
-                    width: 100%;
-                    left: 0;
                     top: 0;
-                    &:first-child {
-                        position: relative;
-                        display: block;
-                        float: left;
+                    right:0;
+                    z-index: 999;
+                    display: table;
+                    width: 45px;
+                    height: 45px;
+                    text-decoration: none;
+                    cursor: pointer;
+                    border:{left:1px solid #b3b3b3}
+                    color:#b3b3b3;
+                    i{
+                        display: table-cell;
+                        vertical-align: middle;
+                        font:{size:em(28);}
                     }
-                    span{
-                        @include span-columns(12);
-                        color:$red;
-                        font:{size:em(12);}
-                        text:{transform:uppercase;}
-                        margin: {top:10px;left:10px;}
-                        @include media($notebook){
-                            @include span-columns(7);
-                        }
+                    &.next{
+                        border:{bottom:1px solid #b3b3b3}
                     }
-                    a{
-                        @include span-columns(12);
-                        color:$white;
-                        font: {size:em(12);}
-                        text:{decoration:none;transform:capitalize}
-                        margin: {left:10px}
-                        @include media($notebook){
-                            @include span-columns(7);
-                        }
+                    &.prev{
+                        top:45px;
                     }
-                    @include media($notebook){
-                        .img-last{
-                            @include span-columns(3);
-                            min-height:91px;
-                            background:{size:cover;position:center;repeat:no-repeat;}
-                        }
-                    }
-                }
-            }
-            .rslides_nav{
-                @include textAlign(center);
-                position: absolute;
-                top: 0;
-                right:0;
-                z-index: 999;
-                display: table;
-                width: 45px;
-                height: 45px;
-                text-decoration: none;
-                cursor: pointer;
-                border:{left:1px solid #b3b3b3}
-                color:#b3b3b3;
-                i{
-                    display: table-cell;
-                    vertical-align: middle;
-                    font:{size:em(28);}
-                }
-                &.next{
-                    border:{bottom:1px solid #b3b3b3}
-                }
-                &.prev{
-                    top:45px;
                 }
             }
         }
@@ -213,6 +219,9 @@
     .site-main-2-mobile{
         @include span-columns(8.5);
         @include textAlign(center);
+        @include media($tabletLand){
+            @include omega();
+        }
         article{
             background:{size:cover;repeat:no-repeat;position:center 20%;}
             @include span-columns(4);
@@ -382,6 +391,7 @@
 					left: 0;
 					right: 0;
 					margin: 0 auto;
+                    min-height:50px;
 					.times-post{
 						color:#999;
 						font:{size:em(9);}
@@ -595,6 +605,29 @@
                     width:300px;
                     height:300px;
                     background:{position:top;size:cover;repeat:no-repeat;}
+                    position: relative;
+                    .share-sociales{
+                        position: absolute;
+                        bottom: 4px;
+                        left:4px;
+                        a{
+                            width:25px;
+                            height:25px;
+                            background:{color: #000;}
+                            @include borderRadius(50%);
+                            color:$white;
+                            display: table;
+                            @include pad(3px);
+                            @include textAlign(center);
+                            float:left;
+                            margin:{right:4px;}
+                            font:{size:14px;}
+                            i{
+                                display: table-cell;
+                                vertical-align: middle;
+                            }
+                        }
+                    }
                 }
                 .dataimage{
                     @include pad(10px);
@@ -961,6 +994,34 @@
                 width:600px;
                 height:600px;
                 background:{position:top;size:cover;repeat:no-repeat;}
+                position: relative;
+                overflow: hidden;
+                .share-sociales{
+                    position: absolute;
+                    bottom: 4px;
+                    left:4px;
+                    a{
+                        width:40px;
+                        height:40px;
+                        background:{color: #000;}
+                        @include borderRadius(50%);
+                        color:$white;
+                        display: table;
+                        @include pad(3px);
+                        @include textAlign(center);
+                        float:left;
+                        margin:{right:4px;}
+                        i{
+                            display: table-cell;
+                            vertical-align: middle;
+                        }
+                        &:hover{
+                            color: #000;
+                            background: $white;
+                            @include transition(color .2s ease-in-out, background .5s ease-in-out);
+                        }
+                    }
+                }
             }
             .dataimage{
                 @include pad(10px);
