@@ -835,6 +835,7 @@
     .site-main-9{
         @extend .site-main-8;
         @include pad(20px 0);
+        margin: {bottom:0;}
         background:{color:$greyTwo;}
         h3{
             background:{color:$greyTwo;}
@@ -845,9 +846,10 @@
             border:{left:none;right:0;}
             padding:{bottom:10px;}
             overflow: hidden;
-            .swiper-container{
+            .swiper-hososcopo{
                 @include span-columns(10);
                 @include shift(1);
+                overflow: hidden;
                 .swiper-wrapper{
                     .slide-item{
                         a{
@@ -870,7 +872,21 @@
                         }
                     }
                 }
+                .swiper-pagination{
+                    position: relative;
+                    margin:{top:15px;}
+                    .swiper-pagination-bullet{
+                        background: $white;
+                        &.swiper-pagination-bullet-active{
+                            background: #000;
+                        }
+                    }
+                }
             }
+        }
+        @include media($notebook){
+            @include span-columns(8.5);
+            margin:{top:10px;}
         }
     }
 }

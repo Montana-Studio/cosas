@@ -22,8 +22,8 @@
 				$first_img = $matches [1] [0];
 			?>
 			
-			<div class="img-post-single" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;} ?>');">
-			    
+               <div class="img-post-single" style="background-image:url('<?php if(is_singular("horoscopo")){ echo get_field("img_interior"); }else{ global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}} ?>');">
+            
 			    <div class="data-post-single">
 			        
                     <h1><?php the_title(); ?></h1>

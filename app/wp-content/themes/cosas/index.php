@@ -423,12 +423,11 @@
                 <?php endwhile; ?>
                 
             </main>
-            <?php 
-                /*
+            
             <main id="main-9" class="site-main-9">
                 <h3>Horóscopo</h3>
                 <div class="conte-horoscopo">
-                  <div class="swiper-container">
+                  <div class="swiper-hososcopo">
                       
                        <div class="swiper-wrapper">
                         <?php
@@ -463,14 +462,14 @@
                             // Restore original Post Data
                             wp_reset_postdata();
                         ?>
-                        <div class="swiper-pagination"></div>
                         </div>
+                        
+                        <div class="swiper-pagination"></div>
                         
                   </div>
                 </div>
             </main>
-            */
-            ?>
+
             <main id="main-5" class="site-main-5">
 
                 <h3 class="titus">videos</h3>
@@ -617,20 +616,34 @@
             //SI ES REPOST
             if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){ 
         ?>
-            <h3 class="titus">entretención</h3>
-            
+            <?php get_sidebar(); ?>
             <div id="main-2" class="site-main-2-mobile">
-                <?php query_posts( 'category_name=entretencion-repost&posts_per_page=9&orderby=date&order=DESC' );
-                        while ( have_posts() ) : the_post();
-                        get_template_part( 'loop-espectaculo');
-                    endwhile;
+               
+                <h3 class="titus">entretención</h3>
+                <div style="display:block;">
+                <?php
+                    $args = array(
+                        'category_name' => 'entretencion-repost',
+                        'posts_per_page' => 9,
+                        'orderby' => 'date',
+                        'order' => 'DESC'
+                    );
+                     $entretencion = new WP_Query($args);
+                    if($entretencion->have_posts()){
+                        while($entretencion->have_posts()){
+                            $entretencion->the_post();
+                            get_template_part('loop-espectaculo');
+                        }
+                    }else{
+                        
+                    }
+                    wp_reset_postdata();
                 ?>
+                </div>
             </div>
             
-            <h3 class="titus">moda</h3>
-            
             <div id="main-3" class="site-main-3-mobile">
-                
+                <h3 class="titus">moda</h3>
                 <?php query_posts( 'category_name=moda-repost&posts_per_page=2&orderby=date&order=DESC' );
                     while ( have_posts() ) : the_post();
                         get_template_part( 'loop-entrevistamobile');
@@ -642,20 +655,20 @@
         <?php
             }elseif($GLOBALS['detectBlogs']['lujo']==$GLOBALS['detectBlogs']['blogId']){
         ?>
-        <h3 class="titus">moda</h3>
-            
+            <?php get_sidebar(); ?>
             <div id="main-2" class="site-main-2-mobile">
+                <h3 class="titus">moda</h3>
+                <div style="display:block;">
                 <?php query_posts( 'category_name=moda&posts_per_page=9&orderby=date&order=DESC' );
                         while ( have_posts() ) : the_post();
                         get_template_part( 'loop-espectaculo');
                     endwhile;
                 ?>
+                </div>
             </div>
             
-            <h3 class="titus">De colección</h3>
-            
             <div id="main-3" class="site-main-3-mobile">
-                
+                <h3 class="titus">De colección</h3>
                 <?php query_posts( 'category_name=de-coleccion&posts_per_page=2&orderby=date&order=DESC' );
                     while ( have_posts() ) : the_post();
                         get_template_part( 'loop-entrevistamobile');
@@ -666,26 +679,28 @@
         <?php
             }elseif($GLOBALS['detectBlogs']['couture']==$GLOBALS['detectBlogs']['blogId']){
         ?>
-        <h3 class="titus">Estilo</h3>
-            
+            <?php get_sidebar(); ?>
             <div id="main-2" class="site-main-2-mobile">
+                <h3 class="titus">Estilo</h3>
+                <div style="display:block;">
                 <?php query_posts( 'category_name=estilo&posts_per_page=9&orderby=date&order=DESC' );
                         while ( have_posts() ) : the_post();
                         get_template_part( 'loop-espectaculo');
                     endwhile;
                 ?>
+                </div>
             </div>
-            
-            <h3 class="titus">Moda Nacional</h3>
             
             <div id="main-3" class="site-main-3-mobile">
                 
+                <h3 class="titus">Moda Nacional</h3>
+                <div style="display:block;">
                 <?php query_posts( 'category_name=moda-nacional&posts_per_page=2&orderby=date&order=DESC' );
                     while ( have_posts() ) : the_post();
                         get_template_part( 'loop-entrevistamobile');
                     endwhile;
                 ?>
-                
+                </div>
             </div>
         <?php
             
@@ -738,6 +753,50 @@
                 
             </div>
             
+            <main id="main-9" class="site-main-9">
+                <h3>Horóscopo</h3>
+                <div class="conte-horoscopo">
+                  <div class="swiper-hososcopo">
+
+                       <div class="swiper-wrapper">
+                        <?php
+                            // WP_Query arguments
+                            $args = array (
+                                'post_type' => array( 'horoscopo' ),
+                                'posts_per_page'         => '12'
+                            );
+                            // The Query
+                            $horoscopo = new WP_Query( $args );
+                            // The Loop
+                            if ( $horoscopo->have_posts() ) {
+                                while ( $horoscopo->have_posts() ) {
+                                    $horoscopo->the_post();
+                        ?>
+                            <div id="post-<?php the_ID(); ?>" <?php post_class('slide-item swiper-slide'); ?>>
+
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+
+                                    <img src="<?php the_post_thumbnail_url();?>"/>
+                                    <?php
+                                        the_title(''.'<small>','</small>'); 
+                                    ?>
+                                </a>
+
+                            </div>
+                        <?php
+                                }
+                            } else {
+                                echo '<p>No hay horóscopo en este momento</p>';
+                            }
+                            // Restore original Post Data
+                            wp_reset_postdata();
+                        ?>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                  </div>
+                </div>
+            </main>
+                
             <main id="main-8" class="site-main-8">
                 
                 <h3>instagram <i class="fa fa-instagram"></i></h3>
@@ -833,6 +892,7 @@
         ?>
                 
             </div>
+            
         <?php 
             }
         }
@@ -936,6 +996,7 @@
     <?php
         }else{ 
     ?>
+        
         <main id="main-5" class="site-main-5-mobile">
 
             <h3 class="titus">videos</h3>
@@ -1023,16 +1084,8 @@
                     }
                     function loadVideo(videoID) {
                         if(playerss) { 
-                            //playerss.loadVideoById(videoID); 
                             jQuery(document).ready(function($){
                                 $.ajaxSetup({cache:false});
-                                /*$(".title-video").click(function(){
-                                    var post_link = $(this).text();
-
-                                    $(".titulo-principal").html(post_link);
-                                    playerss.loadVideoById(videoID);
-                                    return false;
-                                });*/
                                 
                                 $(".video-post").click(function(){
                                     var fecha = $(this).find('.date-video').text();
@@ -1043,14 +1096,6 @@
                                     playerss.loadVideoById(videoID);
                                     return false;
                                 });
-                                
-                                /*$(".video_img").click(function(){
-                                    var video_date = $('.video-post').find('date-video');
-                                    var video_title = $(this).next('.info-section ul .title-video').attr('name');
-                                    $(".titulo-principal").html(video_date+video_title);
-                                    playerss.loadVideoById(videoID);
-                                    return false;
-                                }); */
                                 
                                 
                             });

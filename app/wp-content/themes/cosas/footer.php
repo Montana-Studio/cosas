@@ -89,6 +89,15 @@
                 paginationClickable: true,
                 spaceBetween: 30
             });
+            var normSlider = new Swiper ('.swiper-hososcopo', {
+                pagination: '.swiper-pagination',
+                slidesPerView: 4,
+                paginationClickable: true,
+                spaceBetween: 60,
+                breakpoints: {
+                    spaceBetween:30
+                }
+            });
             var gallerySliders = new Swiper('.swiper-gallery', {
                 nextButton: '.next-gallery',
                 prevButton: '.prev-gallery',
@@ -103,11 +112,6 @@
                 pagination: '.swiper-pagination',
             });
             
-            var videoSliders2 = new Swiper('.video-container-v', {
-                pagination: '.swiper-pagination-v',
-                paginationClickable: true,
-                spaceBetween: 50
-            });
 
             var swiper = new Swiper('.swiper-container-video', {
 		        paginationClickable: true,
