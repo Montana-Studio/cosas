@@ -36,7 +36,6 @@
 			height: 400px;
 			.video-play {
 				@include span-columns(12);
-				background: #999;
 				height: inherit;
 				position: relative;
 				.title-video-principal {
@@ -49,6 +48,7 @@
 					background: $white;
 					z-index: 99;
 					padding: 10px 20px;
+                    @include textAlign(center);
 					.titulo-principal {
 						@include row;
 						color:$black;
@@ -65,7 +65,11 @@
 							margin:{right:5px;}
 						} 
 					}
-				}	
+				}
+                iframe{
+                    width:100%;
+                    max-height:360px;
+                }
 			}
 		}
 		.video-player {
@@ -106,7 +110,7 @@
 							height: inherit;
 							display: inline-block;
 							margin:{bottom:10px;}
-							iframe {
+							img {
 								width:100%;
 								height: auto;
 							}

@@ -997,10 +997,11 @@
                     </div> 
                 </div>     
                 <script type="text/javascript">
+                    var playerss;
                     function onYouTubePlayerAPIReady() {
                         var players = document.querySelectorAll('.swiper-sliders .embeVideo');
                         for (var i = 0; i < players.length; i++) {
-                            new YT.Player(players[i], {
+                            playerss = new YT.Player(players[i], {
                                 playerVars: {'controls': 0,'rel':0,'showinfo':0},
                                 events:{
                                     'onStateChange': onPlayerStateChange,
@@ -1012,11 +1013,46 @@
                     function onPlayerStateChange(event) {        
                         if(event.data === 1){          
                             jQuery(document).ready(function($){
-                                $('footer.titYoutube').fadeOut('slow');
+                                $('.video-play .title-video-principal').fadeOut('slow');
                             });
                         }else if(event.data === 2||event.data === 0 ){
                             jQuery(document).ready(function($){
-                                $('footer.titYoutube').fadeIn('slow');
+                                $('.video-play .title-video-principal').fadeIn('slow');
+                            });
+                        }
+                    }
+                    function loadVideo(videoID) {
+                        if(playerss) { 
+                            //playerss.loadVideoById(videoID); 
+                            jQuery(document).ready(function($){
+                                $.ajaxSetup({cache:false});
+                                /*$(".title-video").click(function(){
+                                    var post_link = $(this).text();
+
+                                    $(".titulo-principal").html(post_link);
+                                    playerss.loadVideoById(videoID);
+                                    return false;
+                                });*/
+                                
+                                $(".video-post").click(function(){
+                                    var fecha = $(this).find('.date-video').text();
+                                    var titulo = $(this).find('.title-video').text();
+                                    
+                                    $(".titulo-principal").html(titulo);
+                                    $(".info-principal").html(fecha);
+                                    playerss.loadVideoById(videoID);
+                                    return false;
+                                });
+                                
+                                /*$(".video_img").click(function(){
+                                    var video_date = $('.video-post').find('date-video');
+                                    var video_title = $(this).next('.info-section ul .title-video').attr('name');
+                                    $(".titulo-principal").html(video_date+video_title);
+                                    playerss.loadVideoById(videoID);
+                                    return false;
+                                }); */
+                                
+                                
                             });
                         }
                     }
