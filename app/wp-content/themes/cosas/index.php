@@ -944,7 +944,7 @@
                     <div class="list-videos">
 
                         <?php 
-                                $args = array (
+                               $args = array (
                                     'post_type'              => 'video-galeria',
                                     'order'                  => 'DESC',
                                     'orderby'                => 'date',
@@ -954,65 +954,51 @@
                                     'order'                  => 'DESC',
                                     'orderby'                => 'date',
                                 );
-
                                 // The Query
                                 $videos = new WP_Query( $args );
                                 $videos2 = new WP_Query( $args2 );
 
                                 // The Loop
-                                $var=0;
                                 if ( $videos->have_posts() ) {
-            
+                                    $cantidad_videos =$videos->post_count;
+                                    $cantidad_videos_loop = $cantidad_videos - 1; 
+                                    $var=0;
                                     while ( $videos->have_posts() ) {
-                                        
+                                        $videos->the_post();
                                         if($var==0){
-                                            get_template_part( 'loop-video1');
+                                             get_template_part('loop-video1');
                                         }else{
-                                             $cantidad_posts= wp_count_posts();
-                                             if ( $videos2->have_posts() ) {?>
-
-                                            <?php while ( $videos2->have_posts() && $var<3) {
-                                                if($var==1){ ?>
-                                                <div class="video-player">
+                                            if($var==1){?>
+                                               <div class="video-player">
                                                     <div class="swiper-container-video">
                                                         <div class="btn-nav-video btn-prev">Ver videos anteriores</div>
                                                             <div class="swiper-wrapper">
-                                                <?php } 
-                                                    get_template_part( 'loop-video2');
-                                                    $var++;
-                                                }?> 
-                                                <?php do{ ?>
-                                                            </div>
-                                                         
-                                                    </div>
-                                                </div>
-                                                <?php }while($var==0); ?>
-
-
-
-
-                                            <?php
-                                            } else {
-                                                // no posts found
-                                            }
-                                            $videos2->the_post();
-                                            // Restore original Post Data
-                                           // wp_reset_postdata(); 
-                                        }   
-                                        $videos->the_post();
-                                        $var++;
+                                            <?  get_template_part('loop-video2');
+                                            }else if($var < $cantidad_videos_loop){
+                                                get_template_part('loop-video2');
+                                            }else if($var == $cantidad_videos_loop){
+                                                get_template_part('loop-video2'); ?>
+                                                        </div>
+                                                        <div class="btn-nav-video btn-next">Ver videos anteriores</div>
+                                                   </div>
+                                            </div>    
+                                        <?   } 
+                                        }
+                                       $var++;
+                                        
                                     }
                                 } else {
                                     // no posts found
                                 }
+
                                 // Restore original Post Data
-                                wp_reset_postdata(); 
+                                wp_reset_postdata();
                         ?>
                     </div> 
                 </div>     
                 <script type="text/javascript">
                     function onYouTubePlayerAPIReady() {
-                        var players = document.querySelectorAll('.swiper-slide .embeVideo');
+                        var players = document.querySelectorAll('.swiper-sliders .embeVideo');
                         for (var i = 0; i < players.length; i++) {
                             new YT.Player(players[i], {
                                 playerVars: {'controls': 0,'rel':0,'showinfo':0},

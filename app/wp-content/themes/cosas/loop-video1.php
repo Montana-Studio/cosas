@@ -1,6 +1,6 @@
-<div id="post-<?php the_ID(); ?>" <?php post_class('video-principal'); ?>>
+<div id="post-<?php the_ID(); ?>" <?php post_class('swiper-sliders video-principal'); ?>>
     <div class="video-play">
-        <!--div class="embeVideo" data-id="<?php the_excerpt(); ?>"></div-->
+        <div class="embeVideo" data-id="<?php the_excerpt(); ?>"></div>
         <div class="title-video-principal">
             <div class="titulo-principal">
                  <?php 

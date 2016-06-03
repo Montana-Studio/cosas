@@ -109,7 +109,7 @@
                 spaceBetween: 50
             });
 
-            var swiper = new Swiper('.swiper-video-desktop', {
+            var swiper = new Swiper('.swiper-container-video', {
 		        paginationClickable: true,
 		        direction: 'vertical',
 		        slidesPerView: 3,

@@ -1,5 +1,5 @@
-<div id="post-<?php the_ID(); ?>" <?php post_class('swiper-slide video-post'); ?>>
-    <div class="play-section embeVideo" data-id="<?php //the_excerpt(); ?>"></div>
+<div id="post-<?php the_ID(); ?>" <?php post_class('swiper-slide video-post swiper-sliders'); ?>>
+    <div class="play-section embeVideo" data-id="<?php the_excerpt(); ?>"></div>
     <div class="info-section">
         <ul>
             <li><i class="fa fa-clock-o"></i><?php the_time('l, j F Y'); ?></li> 
