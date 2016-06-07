@@ -23,16 +23,25 @@
 			max-width: 100% !important;
 			display: block;
 			@include media($tablet) {
-				width:32% !important;
-				margin:{right:8px !important;}
+				width:31.76157% !important;
+				margin:{right:2.35765% !important;}
+                &:nth-child(3n){
+                    margin:{right:0 !important;}
+                }
 			}
 			@include media($tabletLand) {
-				width:32% !important;
-				margin:{right:8px !important;}
+				width:31.76157% !important;
+				margin:{right:2.35765% !important;}
+                &:nth-child(3n){
+                    margin:{right:0 !important;}
+                }
 			}
 			@include media($notebook) {
-				width:32% !important;
-				margin:{right:10px !important;}
+				width:31.76157% !important;
+				margin:{right:2.35765% !important;}
+                &:nth-child(3n){
+                    margin:{right:0 !important;}
+                }
 			}
 			img {
 				margin:{bottom:0 !important;}

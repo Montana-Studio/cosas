@@ -224,6 +224,12 @@
                         
                     </div>
                     <?php } ?>
+                    
+                    <?php 
+                        if($GLOBALS['detectBlogs']['suscripciones']==$GLOBALS['detectBlogs']['BlogId']){
+                            echo '';
+                        }else{
+                    ?>
                     <div class="main-last">
 
                         <span>17</span>
@@ -257,7 +263,9 @@
                         </ul>
 
                     </div>
-
+                    <?php
+                        }
+                    ?>
                 </div>
                 <?php if(!wp_is_mobile()){ ?>
                     <div class="last-content-desk">
