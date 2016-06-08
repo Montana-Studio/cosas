@@ -28,7 +28,11 @@
 
 	</head>
         <body <?php body_class(); ?>>
-
+        
+         <?php if($GLOBALS['detectBlogs']['suscripciones']==$GLOBALS['detectBlogs']['blogId']){ ?>
+         
+         <?php }else{ ?>
+         
         <div id="fb-root"></div>
         <script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
@@ -37,7 +41,9 @@
           js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.6";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
-
+        
+        <?php } ?>
+        
         <?php get_template_part('content-svg'); ?>
 
         <div id="menu-content" class="menu-list">
@@ -97,14 +103,14 @@
                         </a>	
                     </li>
                     <li>
-                        <a target="_blank" href="http://www.cosas.com/couture/">
+                        <a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['couture']) ?>">
                             <svg viewBox="0 0 792 268">
                                 <use xlink:href="#logo-couture"/>
                             </svg>
                         </a>
                     </li>
                     <li>
-                        <a target="_blank" href="http://www.cosas.com/?post_type=lujo">
+                        <a target="_blank" href="<?php echo get_site_url($GLOBALS['detectBlogs']['lujo']) ?>">
                             <svg viewBox="0 0 792 268">
                                 <use xlink:href="#logo-lujo"/>
                             </svg>
@@ -199,19 +205,22 @@
 
             </header><!-- #masthead -->
             
-    
-                <div class="last-content">
-                    <?php if(!wp_is_mobile()){ ?>
-                    <div class="nav-deskt">
-                        
-                        <?php html5blank_nav('header-menu'); ?>
-                        
-                        <div class="tools">
+            <?php if($GLOBALS['detectBlogs']['suscripciones']==$GLOBALS['detectBlogs']['blogId']&&wp_is_mobile()){ ?>
+            <?php }else{ ?>
+            <div class="last-content">
+                <?php if(!wp_is_mobile()){ ?>
+                <div class="nav-deskt">
+
+                    <?php html5blank_nav('header-menu'); ?>
+
+                    <div class="tools">
+
+                        <div class="main-search main-search-open">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <?php if($GLOBALS['detectBlogs']['suscripciones']==$GLOBALS['detectBlogs']['blogId']){ ?>
                             
-                            <div class="main-search main-search-open">
-                                <i class="fa fa-search"></i>
-                            </div>
-                            
+                        <?php }else{ ?>
                             <div id="view-lasts" class="lasts">
 
                                 <span>06</span>
@@ -219,61 +228,55 @@
 
                                 <i class="fa fa-angle-down"></i>
                             </div>
-                            
-                        </div>
-                        
-                    </div>
-                    <?php } ?>
-                    
-                    <?php 
-                        if($GLOBALS['detectBlogs']['suscripciones']==$GLOBALS['detectBlogs']['BlogId']){
-                            echo '';
-                        }else{
-                    ?>
-                    <div class="main-last">
-
-                        <span>17</span>
-                        <p>nuevos articulos</p>
-
+                        <?php } ?>
                     </div>
 
-                    <div class="post-last">
-
-                        <ul class="rslides" id="slider3">
-                            <?php
-                                $args = array (
-                                    'post_type' => array( 'post' ),
-                                    'posts_per_page' => '17',
-                                    'order' => 'DESC',
-                                    'orderby' => 'date',
-                                );
-
-                                $query = new WP_Query( $args );
-
-                                if ( $query->have_posts() ) {
-                                    while ( $query->have_posts() ) {
-                                        $query->the_post();
-                                        get_template_part( 'loop-last');
-                                    }
-                                } else {
-                                    echo 'No hay nada para mostrar';
-                                }
-                                wp_reset_postdata();
-                            ?>
-                        </ul>
-
-                    </div>
-                    <?php
-                        }
-                    ?>
                 </div>
-                <?php if(!wp_is_mobile()){ ?>
-                    <div class="last-content-desk">
-                        <ul class="post-last-desk">
+                <?php } ?>
+
+                <div class="main-last">
+
+                    <span>17</span>
+                    <p>nuevos articulos</p>
+
+                </div>
+
+                <div class="post-last">
+
+                    <ul class="rslides" id="slider3">
+                        <?php
+                            $args = array (
+                                'post_type' => array( 'post' ),
+                                'posts_per_page' => '17',
+                                'order' => 'DESC',
+                                'orderby' => 'date',
+                            );
+
+                            $query = new WP_Query( $args );
+
+                            if ( $query->have_posts() ) {
+                                while ( $query->have_posts() ) {
+                                    $query->the_post();
+                                    get_template_part( 'loop-last');
+                                }
+                            } else {
+                                echo 'No hay nada para mostrar';
+                            }
+                            wp_reset_postdata();
+                        ?>
+                    </ul>
+
+                </div>
+            </div>
+            <?php } ?>
+            
+            <?php if(!wp_is_mobile()){ ?>
+                <div class="last-content-desk">
+                    <ul class="post-last-desk">
                         <?php 
                             // WP_Query arguments
                             $lastspage = (get_query_var('paged')) ? get_query_var('paged') : 1;
-    
+
                             if($GLOBALS['detectBlogs']['suscripciones']==$GLOBALS['detectBlogs']['blogId']){
                                  $args = array (
                                     'post_type'              => 'product',
@@ -320,8 +323,8 @@
                                 'next_text'    => 'siguiente <i class="fa fa-angle-right"></i>'
                             ) );
                         ?>
-                        </ul>
-                    </div>
-                <?php } ?>
+                    </ul>
+                </div>
+            <?php } ?>
             
            <div id="content" class="site-content">

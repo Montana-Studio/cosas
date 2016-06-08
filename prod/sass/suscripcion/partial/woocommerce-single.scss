@@ -73,6 +73,7 @@
 		}
 	}
 	.woocommerce-tabs {
+        @include span-columns(12);
 		.tabs {
 			margin:0;
 			border-bottom: 1px solid #ccc;
@@ -154,4 +155,11 @@
 			}
 		}
 	}
+    .images{
+        @include span-columns(6);
+    }
+    .summary{
+        @include span-columns(6);
+        @include omega();
+    }
 }

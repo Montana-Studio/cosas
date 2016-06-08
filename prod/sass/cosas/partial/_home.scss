@@ -366,6 +366,7 @@
             @include media($notebook){
                 position: relative;
                 overflow: hidden;
+                @include omega(3n);
                 &:hover{
                     .hover-content{
                         display: block;
@@ -883,10 +884,53 @@
                     }
                 }
             }
+            @include media($notebook){
+                min-height:240px;
+            }
         }
         @include media($notebook){
-            @include span-columns(8.5);
+            @include span-columns(6);
+            min-height:300px;
             margin:{top:10px;}
+        }
+    }
+    .site-main-10{
+        @include span-columns(12);
+        background:{color:$greyOne;image:url('../img/suscribe-bg.png');repeat:no-repeat;position:-40px top}
+        margin:{top:10px;}
+        @include pad(70px 40px 0 192px);
+        @include textAlign(center);
+        @include media($notebook){
+            @include span-columns(6);
+            min-height:300px;
+        }
+        .tit{
+            color:$red;
+            font:{size:em(30);family:$playFair;style:italic;}
+        }
+        .menu-logo{
+            use{
+                fill:$white;
+            }
+        }
+        .tit-bajada{
+            font:{size:em(10)}
+            color:$white;
+            text:{transform:uppercase;}
+        }
+        .btn-suscribe{
+            border:1px solid $white;
+            padding:10px;
+            margin:{top:10px;}
+            text:{transform:uppercase;}
+            @include textAlign(center);
+            a{
+                color:$white;
+                width: 100%;
+                height: 100%;
+                display: block;
+                
+            }
         }
     }
 }

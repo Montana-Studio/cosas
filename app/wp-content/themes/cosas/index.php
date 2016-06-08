@@ -424,6 +424,19 @@
                 
             </main>
             
+            <main class="site-main-10" id="site-10">
+                <span class="tit">Suscríbete a</span>
+                <svg viewBox="0 0 759 232" class="menu-logo" x="0" y="<0></0>">
+                    <use xlink:href="#logo-cosas" class="logo-menu"/>
+                </svg>
+                <span class="tit-bajada">
+                    espectaculo cultura moda
+                </span>
+                <div class="btn-suscribe">
+                    <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['suscripciones']) ?>">suscríbete</a>
+                </div>
+            </main>
+                
             <main id="main-9" class="site-main-9">
                 <h3>Horóscopo</h3>
                 <div class="conte-horoscopo">
@@ -751,9 +764,7 @@
                     endwhile;
                 ?>
                 
-            </div>
-            
-            <main id="main-9" class="site-main-9">
+                <main id="main-9" class="site-main-9">
                 <h3>Horóscopo</h3>
                 <div class="conte-horoscopo">
                   <div class="swiper-hososcopo">
@@ -796,6 +807,20 @@
                   </div>
                 </div>
             </main>
+               
+                <main class="site-main-10" id="site-10">
+                    <span class="tit">Suscríbete a</span>
+                    <svg viewBox="0 0 759 232" class="menu-logo" x="0" y="<0></0>">
+                        <use xlink:href="#logo-cosas" class="logo-menu"/>
+                    </svg>
+                    <span class="tit-bajada">
+                        espectaculo cultura moda
+                    </span>
+                    <div class="btn-suscribe">
+                        <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['suscripciones']) ?>">suscríbete</a>
+                    </div>
+                </main>
+            </div>
                 
             <main id="main-8" class="site-main-8">
                 

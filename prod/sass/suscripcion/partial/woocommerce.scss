@@ -90,11 +90,15 @@
 				@include omega();
 				.button {
 					@include span-columns(12);
+                    color:#000;
 					@include media($notebook) {
 						@include span-columns(2);
 						float:right;
-						font:{size:0.8}
+						font:{size:0.8em}
 					}
+                    &:hover{
+                        color:$white;
+                    }
 				}
 			}
 			.address-table {
@@ -124,11 +128,7 @@
 			}
 		}
 		.form-row {
-			width: 100% !important;
-			font:{size:inherit;}
-			@include media($notebook) {
-				width: 100% !important;
-			}
+			@include span-columns(12);
 			label {
 				font:{size: 1em !important;weight:bold;}
 				color:$black_color;
@@ -150,13 +150,12 @@
 		}
 	}
 	.form-row {
-		width: 100% !important;
-		font:{size:inherit;}
+		@include span-columns(12);
 		@include media($notebook) {
-			width: 50% !important;
+			@include span-columns(6);
 		}
 		label {
-			font:{size: 1.2em !important;weight:bold;}
+			font:{size: em(14) !important;weight:bold;}
 			color:$black_color;
 		}
 		.input-text  {

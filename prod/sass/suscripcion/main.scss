@@ -10,3 +10,22 @@
 @import 'partial/woocommerce-login';   
 @import 'partial/woocommerce-sidebar';    
 @import 'partial/woocommerce-single';
+
+.site-content{
+    a{
+        color:$red;
+    }
+}
+.last-content{ 
+    .nav-deskt{ 
+        .tools{ 
+            .main-search{
+                @include media($notebook){
+                    @include direction-context(right-to-left){
+                        @include span-columns(2);
+                    }
+                }
+            }
+        }
+    }
+}

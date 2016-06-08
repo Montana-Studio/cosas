@@ -91,7 +91,7 @@
             });
             var normSlider = new Swiper ('.swiper-hososcopo', {
                 pagination: '.swiper-pagination',
-                slidesPerView: 4,
+                slidesPerView: 2,
                 paginationClickable: true,
                 spaceBetween: 60,
                 breakpoints: {

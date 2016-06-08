@@ -136,9 +136,9 @@ function html5blank_styles()
     //wp_enqueue_style( 'colorbox-style', get_template_directory_uri() .'/css/colorbox.css' ); 
     wp_enqueue_style( 'swiper-style', get_template_directory_uri() .'/css/swiper.min.css' ); 
     
-    //if($GLOBALS['detectBlogs']['suscripciones']==$GLOBALS['detectBlogs']['blogId']){
+    if($GLOBALS['detectBlogs']['suscripciones']==$GLOBALS['detectBlogs']['blogId']){
         wp_enqueue_style('suscripciones', get_template_directory_uri() .'/css/suscripcion.min.css' );
-    //}
+    }
 }
 
 //WOOCOMMERCE REMOVE
@@ -146,7 +146,7 @@ function html5blank_styles()
 add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
 function jk_dequeue_styles( $enqueue_styles ) {
 	//unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
-	//unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
+	unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
 	unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
 	return $enqueue_styles;
 }

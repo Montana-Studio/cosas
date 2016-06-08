@@ -17,11 +17,7 @@
 		}
 	}
 	.form-row {
-		width: 100% !important;
-		font:{size:inherit;}
-		@include media($notebook) {
-			width: 50% !important;
-		}
+		@include span-columns(12);
 		label {
 			font:{size: 0.9em !important;weight:bold;}
 			color:$black_color;

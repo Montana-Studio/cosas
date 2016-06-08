@@ -86,29 +86,29 @@
                 @include span-columns(8);
             }
         }
-        h3{
-            @include span-columns(10);
-            @include shift(1);
-            text:{align:center;}
-            font:{size:em(12);weight:bold;}
-            color:#999;
-        }
-        h5{
-            @include span-columns(12);
-            color:#999;
-            font:{size:em(14);weight:bold;}
-            line:{height:16px;}
-            @include media($notebook){
-                font:{size:em(11);}
-            }
-        }
         blockquote{
             img{
                 width:100%;
                 height:auto;
             }
         }
-        .post-single{
+        .post-single{  
+            h3{
+                @include span-columns(10);
+                @include shift(1);
+                text:{align:center;}
+                font:{size:em(12);weight:bold;}
+                color:#999;
+            }
+            h5{
+                @include span-columns(12);
+                color:#999;
+                font:{size:em(14);weight:bold;}
+                line:{height:16px;}
+                @include media($notebook){
+                    font:{size:em(11);}
+                }
+            }
             p{
                 clear:both;
                 font:{size:em(14);}

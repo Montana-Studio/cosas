@@ -207,6 +207,15 @@
                             background:{color:$greyTwo;}
                         }
                     }
+                    &.current-menu-item{
+                        a{
+                            @include radial-gradient(circle at 50% 181%, $greyTwo 4%, #363636 58%, #363636);
+                            &:hover{
+                                @include transition(background .5s ease-in-out);
+                                background:{color:$greyTwo;image:none;}
+                            }
+                        }
+                    }
                 }
             }
             .tools{
