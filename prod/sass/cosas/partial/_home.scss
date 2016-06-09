@@ -884,9 +884,16 @@
                     }
                 }
             }
+            @include media($tabletLandTonotebook){
+                min-height:240px;
+            }
             @include media($notebook){
                 min-height:240px;
             }
+        }
+        @include media($tabletLandTonotebook){
+            @include span-columns(6);
+            min-height:300px;
         }
         @include media($notebook){
             @include span-columns(6);
@@ -896,13 +903,20 @@
     }
     .site-main-10{
         @include span-columns(12);
-        background:{color:$greyOne;image:url('../img/suscribe-bg.png');repeat:no-repeat;position:-40px top}
-        margin:{top:10px;}
-        @include pad(70px 40px 0 192px);
+        background:{color:$greyOne;image:url('../img/suscribe-bg.png');repeat:no-repeat;position:-40px top;size:contain;}
+        margin:{bottom:10px;}
+        @include pad(49px 40px 47px 177px);
         @include textAlign(center);
+        @include media($tabletLandTonotebook){
+            @include span-columns(6);
+            @include pad(70px 40px 0 145px);
+            min-height:300px;
+        }
         @include media($notebook){
             @include span-columns(6);
             min-height:300px;
+            @include pad(70px 40px 0 192px);
+            margin:{top:10px;bottom:0;}
         }
         .tit{
             color:$red;
@@ -931,6 +945,8 @@
                 display: block;
                 
             }
+        }
+        @include media($notebook){
         }
     }
 }
