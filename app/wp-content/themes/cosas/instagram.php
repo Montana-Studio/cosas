@@ -4,9 +4,9 @@ function actualiza($id,$url,$likes,$comments,$link,$mysqli){
 }
 
 function actualiza_fotos($mysqli){
-    $client_id = '174d0cb396b04980b74bda086403347f';
-    $json_user_url='https://api.instagram.com/v1/users/55672867/media/recent/?client_id='.$client_id;
-    $json_user= file_get_contents($json_user_url);
+    $client_id = '55672867.d9e010f.5413c2d00e404b2aa24e012d58f4c8fc';
+    $json_user_url='https://api.instagram.com/v1/users/55672867/media/recent/?access_token='.$client_id;
+    $json_user= @file_get_contents($json_user_url);
     $links_user_url= json_decode($json_user);
     $count_media_recent= count($links_user_url->data);
     $i=0;
@@ -24,7 +24,7 @@ function actualiza_fotos($mysqli){
 
 
 //Obtengo Conexión
-$mysqli = mysqli_connect('localhost','root','root','cosas_local') or die("Error " . mysqli_error($link)); 
+$mysqli = mysqli_connect('localhost','cosas_user','p6lt?w0t1r^w','cosas_content') or die("Error " . mysqli_error($link)); 
 $mysqli->set_charset('utf8_bin');
 
 //Actualizo en BD
@@ -46,7 +46,7 @@ if(date('H')>'8' && date('H')<'14'){
 }
 
 
-$result = $mysqli->query("SELECT * FROM instagram_fotos ORDER by likes DESC");
+$result = $mysqli->query("SELECT * FROM instagram_fotos ORDER by likes DESC ");
 $row= mysqli_fetch_array($result, MYSQLI_BOTH);
 
 //Muestro Datos
