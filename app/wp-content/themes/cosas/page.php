@@ -240,17 +240,17 @@ get_header();
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                     if(is_page('moda')){
                         $args = array (
-                            'category_name'          => 'tendencias',
+                            'category_name'          => 'moda',
                             'posts_per_page'         => '9',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
                         );
 
-                    } elseif(is_page('internacional')){
+                    }elseif(is_page('internacional')){
                         
                         $args = array (
-                            'category_name'          => 'realeza',
+                            'category_name'          => 'internacional',
                             'posts_per_page'         => '9',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
@@ -270,7 +270,7 @@ get_header();
                          
 
                         $args = array (
-                            'category_name'          => 'entrevista',
+                            'category_name'          => 'nacional',
                             'posts_per_page'         => '9',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
@@ -318,7 +318,7 @@ get_header();
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
                         );
-                    } 
+                    }
                     // The Query
                     $paginas = new WP_Query( $args );
 
@@ -332,12 +332,12 @@ get_header();
                         }
                     } else {
                 ?>
+                    
+                        <article>
 
-                    <article>
+                            <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
 
-                        <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-
-                    </article>
+                        </article>
 
                 <?php 
                     }
@@ -350,6 +350,6 @@ get_header();
                 <?php get_template_part('pagination-main'); ?>
             </div>
             
-		</section>
-		
+        </section>
+        
 <?php get_footer(); ?>
