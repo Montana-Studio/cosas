@@ -4,7 +4,8 @@ get_header();
 <section class="page-content">
             <div class="breadcrumbs">
 
-                <?php the_breadcrumb(); ?>
+                <?php if ( function_exists('yoast_breadcrumb') ) 
+{yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?>
 
             </div>
 

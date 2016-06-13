@@ -511,58 +511,6 @@ remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
 /**
-    BREADCRUMBS
-**/
-
-function the_breadcrumb() {
-	if (!is_home()) {
-		echo '<a href="';
-		echo get_option('home');
-		echo '">';
-		echo "Home</a> > ";
-		if (is_category() || is_single()) {
-			foreach((get_the_category()) as $category) { 
-			echo $category->cat_name . ' ';
-			}
-			if ($category->cat_name == "") {
-				$post_type = get_post_type_object( get_post_type($post) );
-				echo $post_type->labels->name ;
-				}
-			if (is_single()) {
-				echo " > ";
-				the_title();
-			}
-		} 
-		elseif (is_page()) {
-			echo the_title();
-		}
-		elseif (is_tag()) {
-			echo single_tag_title();
-		}
-		elseif (is_day()) {
-			echo "Archive for ";
-			the_time('F jS, Y');
-		}
-		elseif (is_month()) {
-			echo "Archive for ";
-			the_time('F, Y');
-		}
-		elseif (is_year()) {
-			echo "Archive for ";
-			the_time('Y');
-		}
-		elseif (is_author()) {
-			echo "Author Archive";
-		}
-		elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
-		echo "Blog Archives";
-		}
-		elseif (is_search()) {
-		echo "Search Results";
-		}
-	}
-}
-/**
     SUSCRIBE 
 **/
 

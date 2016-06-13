@@ -144,30 +144,32 @@
             <header id="masthead" class="site-header">
 
                 <div class="logo-medio">
-                    <a href="<?php echo site_url();?>">
-                    <?php if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){ ?>
-                        <svg  viewBox="0 0 759 262" class="repost-bg">
-                            <use xlink:href="#logo-repost" class="logo-head repost"/>
-                        </svg>
-                        
-                    <?php
-                        }elseif($GLOBALS['detectBlogs']['lujo']==$GLOBALS['detectBlogs']['blogId']){
-                    ?>
-                        <svg viewBox="0 0 792 268" class="lujo-bg">
-                            <use xlink:href="#logo-lujo" class="logo-menu"/>
-                        </svg>
-                    <?php
-                        }elseif($GLOBALS['detectBlogs']['couture']==$GLOBALS['detectBlogs']['blogId']){
-                    ?>
-                        <svg viewBox="0 0 792 268" class="lujo-bg">
-                            <use xlink:href="#logo-couture" class="logo-menu"/>
-                        </svg>
-                    <?php }else{ ?>
-                        <svg  viewBox="0 0 759 262">
-                            <use xlink:href="#logo-cosas" class="logo-head"/>
-                        </svg>
-                    <?php } ?>
-                    </a>
+                    <h1>
+                        <a href="<?php echo site_url();?>" title="Revista COSAS - Una revista internacional">
+                        <?php if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){ ?>
+                            <svg  viewBox="0 0 759 262" class="repost-bg">
+                                <use xlink:href="#logo-repost" class="logo-head repost"/>
+                            </svg>
+
+                        <?php
+                            }elseif($GLOBALS['detectBlogs']['lujo']==$GLOBALS['detectBlogs']['blogId']){
+                        ?>
+                            <svg viewBox="0 0 792 268" class="lujo-bg">
+                                <use xlink:href="#logo-lujo" class="logo-menu"/>
+                            </svg>
+                        <?php
+                            }elseif($GLOBALS['detectBlogs']['couture']==$GLOBALS['detectBlogs']['blogId']){
+                        ?>
+                            <svg viewBox="0 0 792 268" class="lujo-bg">
+                                <use xlink:href="#logo-couture" class="logo-menu"/>
+                            </svg>
+                        <?php }else{ ?>
+                            <svg  viewBox="0 0 759 262">
+                                <use xlink:href="#logo-cosas" class="logo-head"/>
+                            </svg>
+                        <?php } ?>
+                        </a>
+                    </h1>
                 </div>
 
                 <nav id="site-navigation" class="main-navigation">

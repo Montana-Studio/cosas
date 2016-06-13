@@ -1,11 +1,5 @@
 <?php get_header(); ?>
 <section class="page-content">
-           
-    <div class="breadcrumbs">
-
-        <?php the_breadcrumb(); ?>
-
-    </div>
 
     <h1 class="titus"><?php _e( 'Author Archives for ', 'html5blank' ); ?> <?php echo get_the_author(); ?></h1>
     <p><?php if ( get_the_author_meta('description')) : ?></p>

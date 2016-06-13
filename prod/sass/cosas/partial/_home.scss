@@ -111,6 +111,9 @@
 				@include span-columns(12);
 				min-height:216px;
 				margin:{bottom:10px;}
+                @include media(min-width 768px max-width 1024px){
+                    min-height:316px;
+                }
                 @include media($notebook){
                     @include span-columns(6.15);
                     @include omega();
@@ -372,6 +375,9 @@
                         display: block;
                     }
                 }
+            }
+            @include media(min-width 768px max-width 1024px){
+                @include omega(3n);
             }
         }
     }
@@ -892,12 +898,12 @@
             }
         }
         @include media($tabletLandTonotebook){
-            @include span-columns(6);
-            min-height:300px;
+            @include span-columns(12);
+            //min-height:300px;
         }
         @include media($notebook){
-            @include span-columns(6);
-            min-height:300px;
+            @include span-columns(12);
+            //min-height:300px;
             margin:{top:10px;}
         }
     }
@@ -1098,6 +1104,10 @@
                         }
                     }
                 }
+                @include media($notebookLand){
+                    width:500px;
+                    height:500px;
+                }
             }
             .dataimage{
                 @include pad(10px);
@@ -1111,6 +1121,9 @@
                     @include pad(0);
                     @extebd .no-margin;
                 }
+                @include media($notebookLand){
+                    width:500px;
+                }
             }
             .closeimage{
                 width: 600px;
@@ -1119,6 +1132,9 @@
                 color:$white;
                 font:{size:em(18)}
                 cursor:pointer;
+                @include media($tabletLand){
+                    width:500px;
+                }
             }
         }
         ul{

@@ -5,7 +5,8 @@
     
     <div class="breadcrumbs">
         
-        <?php the_breadcrumb(); ?>
+        <?php if ( function_exists('yoast_breadcrumb') ) 
+{yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?>
         
     </div>
 <div style="max-width:728px;margin:0 auto;">

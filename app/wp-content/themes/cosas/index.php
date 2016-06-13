@@ -61,22 +61,22 @@
                     
                     if(is_sticky()){ 
                         $args = array (
-                            'cat'                    => '0',
                             'posts_per_page'         => '2',
                             'order'                  => 'DESC',
-                            'orderby'                => 'date'
+                            'orderby'                => 'date',
+                            'post_status'            => 'publish'
                         );
                     }else{
                         $args = array (
-                            'cat'                    => '0',
                             'posts_per_page'         => '3',
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
                             'ignore_sticky_posts'    => true,
+                            'post_status'            => 'publish'
                         );
                     }
                     $args1 = array (
-                        'category_name'          => 'cultura',
+                        'category_name'          => 'recomendados',
                         'posts_per_page'         => '4',
                         'order'                  => 'DESC',
                         'orderby'                => 'date',
@@ -332,7 +332,7 @@
 
             <main id="main-3" class="site-main-3">
 
-                <?php query_posts( 'category_name=entrevista&posts_per_page=3&orderby=date&order=DESC' );
+                <?php query_posts( 'category_name=entrevistas&posts_per_page=3&orderby=date&order=DESC' );
                     while ( have_posts() ) : the_post();
                         get_template_part( 'loop-entrevista');
                     endwhile;
@@ -357,7 +357,7 @@
 
                     $post = $posts[0]; $c=0;
 
-                    query_posts( 'category_name=entrevista,politica&posts_per_page=4&orderby=date&order=DESC' );
+                    query_posts( 'category_name=nacional&posts_per_page=4&orderby=date&order=DESC' );
                     
                     while ( have_posts() ) : the_post();
                     
@@ -424,7 +424,7 @@
                 
             </main>
             
-            <main class="site-main-10" id="site-10">
+            <?php /* <main class="site-main-10" id="site-10">
                 <span class="tit">Suscríbete a</span>
                 <svg viewBox="0 0 759 232" class="menu-logo" x="0" y="<0></0>">
                     <use xlink:href="#logo-cosas" class="logo-menu"/>
@@ -436,7 +436,7 @@
                     <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['suscripciones']) ?>">suscríbete</a>
                 </div>
             </main>
-                
+            */ ?>
             <main id="main-9" class="site-main-9">
                 <h3>Horóscopo</h3>
                 <div class="conte-horoscopo">
@@ -556,7 +556,7 @@
                         <?php
                             // WP_Query arguments
                             $args = array (
-                                'category_name'          => 'vidasocial',
+                                'category_name'          => 'vida-social',
                                 'order'                  => 'DESC',
                                 'orderby'                => 'date',
                             );
@@ -758,7 +758,7 @@
             <div id="main-3" class="site-main-3-mobile">
                 
                 <h3 class="titus">entrevistas</h3>
-                <?php query_posts( 'category_name=entrevista&posts_per_page=2&orderby=date&order=DESC' );
+                <?php query_posts( 'category_name=entrevistas&posts_per_page=2&orderby=date&order=DESC' );
                     while ( have_posts() ) : the_post();
                         get_template_part( 'loop-entrevistamobile');
                     endwhile;
@@ -808,7 +808,7 @@
                 </div>
             </main>
                
-                <main class="site-main-10" id="site-10">
+                <?php /*<main class="site-main-10" id="site-10">
                     <span class="tit">Suscríbete a</span>
                     <svg viewBox="0 0 759 232" class="menu-logo" x="0" y="<0></0>">
                         <use xlink:href="#logo-cosas" class="logo-menu"/>
@@ -820,6 +820,7 @@
                         <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['suscripciones']) ?>">suscríbete</a>
                     </div>
                 </main>
+                */ ?>
             </div>
                 
             <main id="main-8" class="site-main-8">
@@ -836,7 +837,7 @@
             <div id="main-4" class="site-main-4-mobile">
                 
             <?php 
-                query_posts( 'category_name=entrevista,politica&posts_per_page=5&orderby=date&order=DESC' );
+                query_posts( 'category_name=nacional&posts_per_page=5&orderby=date&order=DESC' );
 
                 while ( have_posts() ) : the_post();
                 
@@ -1139,7 +1140,7 @@
                     <?php
                         // WP_Query arguments
                         $args = array (
-                            'category_name'          => 'vidasocial',
+                            'category_name'          => 'vida-social',
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
                         );

@@ -32,7 +32,7 @@
             });
             $('.closeimage').click(function(){
                 $('.loadimage').attr('style','');
-                $('.loadimage a').remove();
+                $('.loadimage .share-sociales').remove();
                 $('.dataimage h2').remove();
                 $('#loadOverlay').fadeOut();
             });
