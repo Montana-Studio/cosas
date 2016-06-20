@@ -1,7 +1,15 @@
             </div> <!--#content-->
 			<!-- footer -->
 			<footer id="colophon" class="site-footer">
-        
+                <?php if($GLOBALS['detectBlogs']['suscripciones']==$GLOBALS['detectBlogs']['blogId']){ ?>
+                
+                    <div class="suscrip-phone">
+                        
+                        <i class="fa fa-phone"></i> Suscripciones: 223645143 - 223645169 
+                        
+                    </div>
+                    
+                <?php } ?>
                 <div class="newsletter">
 
                     <h3 class="titus">suscríbete a nuestro newsletter</h3>
@@ -83,19 +91,16 @@
        <?php wp_footer(); ?>
         <script>
             
-            var normSlider = new Swiper ('.swiper-container', {
-                pagination: '.swiper-pagination',
-                slidesPerView: 4,
-                paginationClickable: true,
-                spaceBetween: 30
-            });
             var normSlider = new Swiper ('.swiper-hososcopo', {
                 pagination: '.swiper-pagination',
                 slidesPerView: 2,
                 paginationClickable: true,
                 spaceBetween: 60,
                 breakpoints: {
-                    spaceBetween:30
+                    768:{
+                        slidesPerView: 3,
+                        spaceBetween:30
+                    }
                 }
             });
             var gallerySliders = new Swiper('.swiper-gallery', {
@@ -106,12 +111,6 @@
                 slidesPerView: 3,
                 spaceBetween: 10,
             });
-            var videoSliders = new Swiper('.video-container',{
-                paginationClickable: true,
-                spaceBetween: 30,
-                pagination: '.swiper-pagination',
-            });
-            
 
             var swiper = new Swiper('.swiper-container-video', {
 		        paginationClickable: true,

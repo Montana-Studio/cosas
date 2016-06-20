@@ -521,9 +521,9 @@ function my_text_strings( $translated_text, $text, $domain ) {
 add_filter( 'gettext', 'my_text_strings', 20, 3 );
 
 
-/**
+/*
     VARS GLOBAL DETECT BLOGS
-**/
+*/
 function blogs_global_vars() {
 
     global $detectBlogs;
@@ -531,9 +531,11 @@ function blogs_global_vars() {
         
         'blogId'    => get_current_blog_id(),
         'cosas'     => '1',
-        'casas'     => '4',
+        'casas'     => '9',
         'repost'    => '5',
         'lujo'      => '7',
+        'couture'      => '8',
+        'suscripciones' => '6',
 
     );
 
@@ -543,13 +545,4 @@ function blogs_global_vars() {
 **/
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
-
-/**
-SVG ADD
-**/
-function cc_mime_types($mimes) {
-  $mimes['svg'] = 'image/svg+xml';
-  return $mimes;
-}
-add_filter('upload_mimes', 'cc_mime_types');
 ?>

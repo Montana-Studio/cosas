@@ -115,6 +115,58 @@ get_header( 'shop' ); ?>
 					<h3 class="title-susc">Cobertura de despacho</h3>
 					<div class="close-popups close-despacho"><i class="fa fa-close"></i></div>
 					<div class="cobertura">
+					
+					    <ul>
+                            <li>
+                                <mark>Provincia Santiago</mark>
+                                <ul>
+                                    <li>Santiago</li>
+                                    <li>Cerrillos</li>
+                                    <li>Cerro Navia</li>
+                                    <li>Conchalí</li>
+                                    <li>El Bosque</li>
+                                    <li>Estación Central </li>
+                                    <li>Huechuraba</li>
+                                    <li>Independencia</li>
+                                    <li>La Cisterna</li>
+                                    <li>La Florida</li>
+                                    <li>La Pintana</li>
+                                    <li>La Granja</li>
+                                    <li>La Reina</li>
+                                    <li>Las Condes</li>
+                                    <li>Lo Barnechea</li>
+                                    <li>Lo Espejo</li>
+                                    <li>Lo Prado</li>
+                                    <li>Macul</li>
+                                    <li>Maipú</li>
+                                    <li>Ñuñoa</li>
+                                    <li>Pedro A. Cerda</li>
+                                    <li>Peñalolén</li>
+                                    <li>Providencia</li>
+                                    <li>Pudahuel</li>
+                                    <li>Quilicura</li>
+                                    <li>Quinta Normal</li>
+                                    <li>Recoleta</li>
+                                    <li>Renca</li>
+                                    <li>San Joaquín</li>
+                                    <li>San Miguel</li>
+                                    <li>San Ramón</li>
+                                    <li>Vitacura</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <mark>Provincia Cordillera</mark>
+                                <ul>
+                                    <li>Puente Alto</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <mark>Provincia Maipo</mark>
+                                <ul>
+                                    <li>San Bernardo</li>
+                                </ul>
+                            </li>
+					    </ul>
 					</div>
 				</div>
 			</div>
@@ -133,7 +185,16 @@ get_header( 'shop' ); ?>
 				<div class="popups-info">
 					<h3 class="title-susc">Medios de pago</h3>
 					<div class="close-popups close-medios"><i class="fa fa-close"></i></div>
-					<div class="cobertura">
+					<div class="cobertura-2">
+                        <ul>
+                            <li>Cheque</li>
+                            <li>Tarjeta de Crédito</li>
+                            <li>Transferencia Electrónica</li>
+                            <li>Depósito bancario</li>
+                            <li>Efectivo</li>
+                            <li>WebPay</li>
+                            <li>PAT (Pago automático tarjeta de crédito) <small>*Debe firmar mandato</small></li>
+                        </ul>					
 					</div>
 				</div>
 			</div>

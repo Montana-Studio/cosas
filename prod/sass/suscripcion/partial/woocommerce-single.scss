@@ -156,10 +156,17 @@
 		}
 	}
     .images{
-        @include span-columns(6);
+        @include span-columns(12);
+        @include media($notebook){
+            @include span-columns(6);
+        }
     }
     .summary{
-        @include span-columns(6);
+        @include span-columns(12);
         @include omega();
+        @include media($notebook){
+            @include span-columns(6);
+            @include omega();
+        }
     }
 }

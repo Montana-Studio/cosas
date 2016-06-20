@@ -9,10 +9,12 @@
 {yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?>
         
     </div>
+    
 <div style="max-width:728px;margin:0 auto;">
     <ins data-revive-zoneid="5" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
     <script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
 </div>
+
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 		<!-- article -->

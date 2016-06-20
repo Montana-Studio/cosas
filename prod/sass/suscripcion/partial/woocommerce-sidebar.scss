@@ -130,6 +130,43 @@
 					right: 19px;
     			}
 			}
+            .cobertura{
+                @include row();
+                clear:both;
+                position: relative;
+                overflow: scroll;
+                max-height: 350px;
+                @include media(min-width 1024px max-width 1280px){
+                    overflow-y: scroll;
+                    max-height: 400px;
+                }
+                @include media($notebook){
+                    overflow: inherit;
+                    max-height: inherit;
+                }
+                ul{
+                    @include row();
+                    li{
+                        @include span-columns(12);
+                        margin:{top:20px;}
+                        @include media($notebook){
+                            @include span-columns(4);
+                            margin:{top:0;} 
+                        }
+                        mark{
+                            background: #000;
+                            color:#fff;
+                        }
+                        ul{
+                            margin:{left:5px;}
+                            li{
+                                @include span-columns(6);
+                                @include omega(2n);
+                            }
+                        }
+                    }
+                }
+            }
 		}
 		&.show-popups {
 			display: block;

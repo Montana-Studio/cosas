@@ -279,23 +279,13 @@
                             // WP_Query arguments
                             $lastspage = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-                            if($GLOBALS['detectBlogs']['suscripciones']==$GLOBALS['detectBlogs']['blogId']){
-                                 $args = array (
-                                    'post_type'              => 'product',
-                                    'posts_per_page'         => '6',
-                                    'order'                  => 'DESC',
-                                    'orderby'                => 'date',
-                                    'paged'                  => $lastspage
-                                );
-                            }else{
-                                $args = array (
-                                    'cat'                    => '0',
-                                    'posts_per_page'         => '6',
-                                    'order'                  => 'DESC',
-                                    'orderby'                => 'date',
-                                    'paged'                  => $lastspage
-                                );   
-                            }
+                            $args = array (
+                                'post_status'            => 'publish',
+                                'posts_per_page'         => '6',
+                                'order'                  => 'DESC',
+                                'orderby'                => 'date',
+                                'paged'                  => $lastspage
+                            );  
 
                             // The Query
                             $lasts = new WP_Query( $args );

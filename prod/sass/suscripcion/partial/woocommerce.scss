@@ -1,3 +1,11 @@
+.suscrip-phone{
+    @include row();
+    text:{align:center;}
+    clear:both;
+    @include pad(10px 0);
+    background: {color:$greyTwo;}
+    color:$white;
+}
 .woocommerce {
     .woocommerce-info {
         font:{size:1em !important;}

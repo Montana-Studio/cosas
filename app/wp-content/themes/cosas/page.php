@@ -239,7 +239,7 @@ get_header();
                 }else{
                     
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                    if(is_page('moda')){
+                    if(is_page('moda-2')){
                         $args = array (
                             'category_name'          => 'moda',
                             'posts_per_page'         => '9',

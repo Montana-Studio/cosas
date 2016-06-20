@@ -89,7 +89,8 @@ function html5blank_nav()
 /*
     VARS GLOBAL DETECT BLOGS
 */
-function blogs_global_vars() {
+function blogs_global_vars() 
+{
 
     global $detectBlogs;
     $detectBlogs = array(
