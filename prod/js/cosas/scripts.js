@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
     
-    $('#slider3').responsiveSlides({
+    $('#slider3, #slider5').responsiveSlides({
         auto:true,
         nav: true,
         prevText:'<i class="fa fa-angle-right"></i>',
@@ -73,7 +73,8 @@ jQuery(document).ready(function($){
         pauseOnHover:true,
         duplicated:true,
         startVisible:true,
-        duration:20000
+        duration:20000,
+        gap: 10
     });
     
     //FORMUBLARIO NEWSLETTER

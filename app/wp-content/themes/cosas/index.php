@@ -64,7 +64,7 @@
                             'posts_per_page'         => '2',
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
-                            'post_status'            => 'publish'
+                            'cat'                    => '-189'
                         );
                     }else{
                         $args = array (
@@ -72,7 +72,8 @@
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
                             'ignore_sticky_posts'    => true,
-                            'post_status'            => 'publish'
+                            'post_status'            => 'publish',
+                            'cat'                    => '-189'
                         );
                     }
                     $args1 = array (
@@ -80,6 +81,7 @@
                         'posts_per_page'         => '4',
                         'order'                  => 'DESC',
                         'orderby'                => 'date',
+                        'cat'                    => '-189'
                     );
                 };
             
@@ -426,7 +428,7 @@
             
             <main class="site-main-10" id="site-10">
                 <span class="tit">Suscríbete a</span>
-                <svg viewBox="0 0 759 232" class="menu-logo" x="0" y="<0></0>">
+                <svg viewBox="0 0 759 232" class="menu-logo" x="0" y="0">
                     <use xlink:href="#logo-cosas" class="logo-menu"/>
                 </svg>
                 <span class="tit-bajada">

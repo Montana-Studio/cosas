@@ -675,6 +675,11 @@
                         height:100%;
                     }
                 }
+                .js-marquee{
+                    &:first-child{
+                        margin-right:5px !important;
+                    }    
+                }
             }
         }
     }
@@ -1174,6 +1179,11 @@
                         }
                     }
                 }
+            }
+            .js-marquee{
+                &:first-child{
+                    margin-right:5px !important;
+                }    
             }
         }
     }

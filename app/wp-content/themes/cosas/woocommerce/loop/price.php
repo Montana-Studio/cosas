@@ -23,7 +23,8 @@ global $product;
 ?>
 
 <?php if ( $price_html = $product->get_price_html() ) : ?>
+    <?php $desde = substr($price_html,0,4); ?>
 
-	<div class="precio-menusal-box">Precio <span class="price"><?php echo $price_html; ?></span></div>  
+	<div class="precio-menusal-box">Desde <span class="price"><?php echo $desde; ?></span></div>  
 
 <?php endif; ?>

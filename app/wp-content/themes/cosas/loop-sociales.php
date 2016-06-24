@@ -13,7 +13,7 @@
     <script type="text/javascript" async>
         
         jQuery(document).ready(function($){
-            $('#post-<?php the_ID(); ?>').click(function(){
+            $('.post-<?php the_ID(); ?>').click(function(){
                 $('.loadimage').attr('style','background-image:url(<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>);');
                 $('.loadimage').append('<div class="share-sociales"></div>');
                 $('.loadimage .share-sociales')
