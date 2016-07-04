@@ -35,6 +35,10 @@
             svg{
                 height: 73px;
             }
+            h1{
+                @include pad(0);
+                margin:0;
+            }
         }
 	}
 	.main-navigation{
