@@ -4,11 +4,122 @@
         @include span-columns(3.5);
         @include omega();
     }
-    /*@include media($tabletLand){
-        @include direction-context(left-to-right){
-            @include span-columns(3.5);
+    .columnas{
+        @include row();
+        .headernegro{
+            @include span-columns(12);
+            height:30px;
+            border:{left:4px solid $red}
+            background:{color: $black;}
+            color:#fff;
+            font:{size:em(13px);family:$playFair;}
+            .subheadcolumnas {
+                @include span-columns(6);
+                display: table;
+                height:30px;
+                span{
+                    display: table-cell;
+                    vertical:{align:middle;}
+                    @include pad(0 0 0 5px);
+                }
+            }
+            .subheadtodos { 
+                @include direction-context(right-to-left){
+                    @include span-columns(3.5);
+                }
+                height:30px;
+                line-height: 2.5;
+                font-size:12px;
+            }
         }
-        @include omega();
-        margin:{left:.4%;}
-    }*/
+        .bodycolumnas {
+            border: 1px solid $gray1_color;
+            border-top:none;
+            @include span-columns(12);
+            .swiper-columnas{
+                height:491px;
+                position: relative;
+                overflow: hidden;
+                @include pad(40px 0);
+                .swiper-wrapper{
+                    .swiper-slide{
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: -webkit-flex;
+                        display: flex;
+                        -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                        -webkit-justify-content: center;
+                        justify-content: center;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        -webkit-align-items: center;
+                        align-items: center;
+                        height: 137px;
+                        .columnauno {
+                            border-bottom:1px solid $gray1_color;
+                            .fotocolumnauno {
+                                @include span-columns(4);
+                                @include pad(30px 0);
+                                .img-author{
+                                    @include borderRadius(50%);
+                                    width:70px;
+                                    height:70px;
+                                    background:{size:cover;repeat:no-repeat;}
+                                    margin:0 auto;
+                                }
+                            }
+                            .data-columnas{
+                                @include span-columns(8);
+                                background:{image:url('../img/comillasimg.jpg');size:contain;position: left bottom;repeat:no-repeat;}
+                                .titulocolumnauno {
+                                    @include row();
+                                    padding-top:5px;
+                                    padding-left:5px;
+                                    h3{
+                                        font:{size:em(13px);}
+                                        @extend .no-margins;
+                                    }
+                                    .tituloeditor {
+                                        font:{family:$openSans;size:em(9px);}
+                                        color:$greyTwo;
+                                        @include omega();
+                                    }
+                                }
+                                .textocolumnauno {
+                                    @include row();
+                                    padding-left:5px;
+                                    font:{size:em(12px);family:$playFair;}
+                                    @include omega();
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }	
+        .vermas {
+            font-size:10px;
+            @include row();
+            width:100%;
+            height:40px;
+            text-align:center;
+            line-height: 4;
+            font:{family:$playFair;}
+            color:$gray1_color;
+            position: absolute;
+            bottom: 0;
+            z-index: 9;
+            background:{color:$white;}
+        }
+        .vermenos{
+            @extend .vermas;
+            top:0;
+            border-bottom:1px solid $gray1_color;
+            &.swiper-button-disabled{
+                @extend .hide;
+            }
+        }
+    }
 }

@@ -120,6 +120,13 @@
 		        nextButton: '.btn-next',
 		        prevButton: '.btn-prev'
 		    });
+            var columnas = new Swiper('.swiper-columnas', {
+                nextButton: '.vermas',
+                prevButton: '.vermenos',
+                direction: 'vertical',
+                slidesPerView: 3,
+                paginationClickable: true,
+            }); 
 
         </script>
     
