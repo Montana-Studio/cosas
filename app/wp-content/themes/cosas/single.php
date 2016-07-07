@@ -9,12 +9,13 @@
 				<!-- article -->
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-					<div class="post-single">
 						
+						<div class="videoContent">	
+							<?php
+								the_field('video_principal');
+							?>
+						</div>
 						
-						<?php
-							the_field('video_principal');
-						?>
 						<div class="sharecontent">
 							<div class="shares-post">
 
@@ -30,27 +31,63 @@
 
 							<a target="_blank" href="https://plus.google.com/share?url=<?php echo the_permalink(); ?>" onclick="window.open('https://plus.google.com/share?url=<?php echo the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus-square"></i></a>
 
-							<a href="mailto:?subject=<?php the_title(); ?>&amp;body=<?php the_title(); ?> <?php $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) ); ?> - <?php echo the_permalink(); ?>" ><i class="fa fa-envelope-square"></i></a>
-
 						   </div>
 						</div>
-						<?php
-							the_title();
-							the_field('subtitulo');
-							the_time('l, j F Y'); 
-										 
-							the_excerpt();
-										 
+						
+						<h1><?php the_title(); ?></h1>
+						<h2><?php the_field('subtitulo'); ?></h2>
+						<small><?php the_time('l, j F Y'); ?></small>
+						<p><?php the_excerpt(); ?></p>
+						<?php				 
 							the_field('galleria_01'); 
 							the_content();
-										 
-							the_field('titulo_galeria');
-							the_field('galleria_02');
 						?>
 						
+						<h3><?php the_field('titulo_galeria'); ?></h3>
+						
+						<div class="swiper-gallery">
+							<div class="swiper-wrapper">
+						<?php 
+						
+						$post_objects = get_field('galleria_02');
+
+						if( $post_objects ): 
+							foreach( $post_objects as $post): 
+								setup_postdata($post); 
+						?>
+								
+								<div class="swiper-slide">
+									<?php the_title(); ?>
+									<?php get_the_post_thumbnail(); ?>
+									<?php the_field('link-branded'); ?>
+								</div>	
+						<?php
+							endforeach; 
+							wp_reset_postdata(); 
+						endif;
+						
+						?>
+
+							</div>
+							<div class="swiper-pagination"></div>
+							<div class="next-gallery"><i class="fa fa-angle-right"></i></div>
+							<div class="prev-gallery"><i class="fa fa-angle-left"></i></div>
+						</div>
+						
+						<div class="finalcontent">
+							
+							<?php 
+								the_field('video_final');
+							?>
+							<h4><?php the_field('titulo_final'); ?></h4>
+							<hr>
+							<?php
+								the_field('parrafo_final');
+							?>
+							
+						</div>
 						
 						<div class="fb-comments" data-href="<?php echo the_permalink(); ?>" data-numposts="3" data-width="100%" data-order-by="reverse_time"></div>
-					</div>
 
 				</article>
 				<!-- /article -->
@@ -68,8 +105,9 @@
 			<section class="single-content">
 				<div class="breadcrumbs">
 
-					<?php if ( function_exists('yoast_breadcrumb') ) 
-			{yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?>
+					<?php if ( function_exists('yoast_breadcrumb') ) {
+							yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+					} ?>
 
 				</div>
 
@@ -157,4 +195,36 @@
 	<?php } ?>
 	<!-- /section -->
 
-<?php get_footer(); ?>
+<?php 
+	get_footer(); 
+
+	if(is_singular('branded')){
+?>
+	<script>
+		var gallerySliders = new Swiper('.swiper-gallery', {
+			nextButton: '.next-gallery',
+			prevButton: '.prev-gallery',
+			slidesPerView: 3,
+			centeredSlides: true,
+			paginationClickable: true,
+			pagination: '.swiper-pagination',
+		});
+	</script>
+<?php 		
+	}else{
+?>	
+	<script>
+		var gallerySliders = new Swiper('.swiper-gallery', {
+			nextButton: '.next-gallery',
+			prevButton: '.prev-gallery',
+			pagination: '.swiper-pagination',
+			paginationType: 'progress',
+			slidesPerView: 3,
+			spaceBetween: 10,
+		});
+	</script>
+<?php		
+	}
+?>
+
+

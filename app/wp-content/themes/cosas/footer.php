@@ -103,14 +103,6 @@
                     }
                 }
             });
-            var gallerySliders = new Swiper('.swiper-gallery', {
-                nextButton: '.next-gallery',
-                prevButton: '.prev-gallery',
-                pagination: '.swiper-pagination',
-                paginationType: 'progress',
-                slidesPerView: 3,
-                spaceBetween: 10,
-            });
 
             var swiper = new Swiper('.swiper-container-video', {
 		        paginationClickable: true,
