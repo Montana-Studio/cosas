@@ -629,7 +629,7 @@ function custom_gallery( $output, $attr ){
 
     $gallery_div = '';
     $size_class = sanitize_html_class( $size );
-    $gallery_div = "<div id=\"$selector\" class=\"gallery galleryid-{$id} swiper-gallery gallery-columns-{$columns} gallery-size-{$size_class}\"><div class='swiper-wrapper'>";
+    $gallery_div = "<div id=\"$selector\" class=\"gallery galleryid-{$id} swiper-gallery gallery-columns-{$columns} gallery-size-{$size_class}\"><div class='shadow-opt'></div><div class='swiper-wrapper'>";
     $output = apply_filters( 'gallery_style', $gallery_div );
 
     $i = 0;

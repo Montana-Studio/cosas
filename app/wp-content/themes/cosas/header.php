@@ -208,69 +208,75 @@
             </header><!-- #masthead -->
             
             <?php if($GLOBALS['detectBlogs']['suscripciones']==$GLOBALS['detectBlogs']['blogId']&&wp_is_mobile()){ ?>
-            <?php }else{ ?>
-            <div class="last-content">
-                <?php if(!wp_is_mobile()){ ?>
-                <div class="nav-deskt">
+            
+            <?php }else{
+            	
+            	if(is_singular('branded')){
+					
+            	}else{ ?>
+					<div class="last-content">
+						<?php if(!wp_is_mobile()){ ?>
+						<div class="nav-deskt">
 
-                    <?php html5blank_nav('header-menu'); ?>
+							<?php html5blank_nav('header-menu'); ?>
 
-                    <div class="tools">
+							<div class="tools">
 
-                        <div class="main-search main-search-open">
-                            <i class="fa fa-search"></i>
-                        </div>
-                        <?php if($GLOBALS['detectBlogs']['suscripciones']==$GLOBALS['detectBlogs']['blogId']){ ?>
-                            
-                        <?php }else{ ?>
-                            <div id="view-lasts" class="lasts">
+								<div class="main-search main-search-open">
+									<i class="fa fa-search"></i>
+								</div>
+								<?php if($GLOBALS['detectBlogs']['suscripciones']==$GLOBALS['detectBlogs']['blogId']){ ?>
 
-                                <span>06</span>
-                                <p>nuevos articulos</p>
+								<?php }else{ ?>
+									<div id="view-lasts" class="lasts">
 
-                                <i class="fa fa-angle-down"></i>
-                            </div>
-                        <?php } ?>
-                    </div>
+										<span>06</span>
+										<p>nuevos articulos</p>
 
-                </div>
-                <?php } ?>
+										<i class="fa fa-angle-down"></i>
+									</div>
+								<?php } ?>
+							</div>
 
-                <div class="main-last">
+						</div>
+						<?php } ?>
 
-                    <span>17</span>
-                    <p>nuevos articulos</p>
+						<div class="main-last">
 
-                </div>
+							<span>17</span>
+							<p>nuevos articulos</p>
 
-                <div class="post-last">
+						</div>
 
-                    <ul class="rslides" id="slider3">
-                        <?php
-                            $args = array (
-                                'post_type' => array( 'post' ),
-                                'posts_per_page' => '17',
-                                'order' => 'DESC',
-                                'orderby' => 'date',
-                            );
+						<div class="post-last">
 
-                            $query = new WP_Query( $args );
+							<ul class="rslides" id="slider3">
+								<?php
+									$args = array (
+										'post_type' => array( 'post' ),
+										'posts_per_page' => '17',
+										'order' => 'DESC',
+										'orderby' => 'date',
+									);
 
-                            if ( $query->have_posts() ) {
-                                while ( $query->have_posts() ) {
-                                    $query->the_post();
-                                    get_template_part( 'loop-last');
-                                }
-                            } else {
-                                echo 'No hay nada para mostrar';
-                            }
-                            wp_reset_postdata();
-                        ?>
-                    </ul>
+									$query = new WP_Query( $args );
 
-                </div>
-            </div>
-            <?php } ?>
+									if ( $query->have_posts() ) {
+										while ( $query->have_posts() ) {
+											$query->the_post();
+											get_template_part( 'loop-last');
+										}
+									} else {
+										echo 'No hay nada para mostrar';
+									}
+									wp_reset_postdata();
+								?>
+							</ul>
+
+						</div>
+					</div>
+				<?php }
+            } ?>
             
             <?php if(!wp_is_mobile()){ ?>
                 <div class="last-content-desk">
@@ -318,5 +324,7 @@
                     </ul>
                 </div>
             <?php } ?>
+            
+            
             
            <div id="content" class="site-content">

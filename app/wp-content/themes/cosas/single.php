@@ -12,6 +12,7 @@
 						
 						<div class="videoContent">	
 							<?php
+								remove_filter ('acf_the_content', 'wpautop');
 								the_field('video_principal');
 							?>
 						</div>
@@ -76,14 +77,18 @@
 						
 						<div class="finalcontent">
 							
+							<div class="videoContent">
 							<?php 
 								the_field('video_final');
 							?>
+							</div>
 							<h4><?php the_field('titulo_final'); ?></h4>
 							<hr>
+							<p>
 							<?php
 								the_field('parrafo_final');
 							?>
+							</p>
 							
 						</div>
 						
@@ -205,9 +210,13 @@
 			nextButton: '.next-gallery',
 			prevButton: '.prev-gallery',
 			slidesPerView: 3,
-			centeredSlides: true,
 			paginationClickable: true,
 			pagination: '.swiper-pagination',
+			breakpoints:{
+				768:{
+					slidesPerView: 1,
+				}
+			}
 		});
 	</script>
 <?php 		
