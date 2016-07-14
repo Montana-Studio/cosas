@@ -6,11 +6,17 @@
 		@include textAlign(center);
 		font:{size:em(30px);family:$playFair;}
 		margin:{bottom:0;}
+		@include media($notebook){
+			font:{size:em(40px);}
+		}
 	}
 	h2{
 		@extend h1;
-		font:{size:em(20px);}
+		font:{size:em(25px);}
 		margin: {top:0;}
+		@include media($notebook){
+			font:{size:em(20px);}
+		}
 	}
 	h3{
 		@extend h1;
@@ -20,23 +26,27 @@
 	}
 	h4{
 		@extend h1;
-		font:{size:em(21px);}
+		font:{size:em(30px);}
+		margin:{bottom:5px;}
 		@include textAlign(left);
 	}
 	small{
 		@extend h1;
-		font:{size:em(8px);}
+		font:{size:em(12px);}
 		text:{transform:uppercase;}
 		color:$greyOne;
 		margin:20px auto;
 	}
 	p{
 		@include outer-container(800px);
-		font:{size:em(10px);family:$openSans;}
+		font:{size:em(11px);family:$openSans;}
 		@include textAlign(center);
 		color:$greyTwo;
 		line:{height:2.2;}
 		@include pad(10px 30px);
+		@include media($notebook){
+			font:{size:em(14px);}
+		}
 	}
 	hr{
 		border:4px solid $black;
@@ -44,8 +54,15 @@
 		max-width:46px;
 	}
 	.videoContent{
+		@include outer-container(1440px);
 		@include row();
+		clear:both;
 		height:auto;
+		img{
+			width:100%;
+			height: auto;
+			display: block;
+		}
 		iframe{
 			@include row();
 			width:100%;
@@ -71,9 +88,16 @@
 				border:1px solid $black;
 				color:$black;
 				display:table;
+				margin:{right:20px;}
 				@include textAlign(center);
 				&:first-child{
-					@include shift(2);
+					@include shift(1);
+					@include media($notebook){
+						@include shift(4.3);	
+					}
+					@include media(width 1024px){
+						@include shift(4.3);
+					}
 				}
 				i{
 					display: table-cell;
@@ -86,6 +110,7 @@
 	.swiper-gallery{
 		position: relative;
   		overflow: hidden;
+		@include outer-container(1440px);
 		.shadow-opt{
 			position: absolute;
 			width: 100%;
@@ -149,14 +174,39 @@
 		}
 	}
 	.finalcontent{
+		@include outer-container(800px);
 		clear:both;
 		@include row();
-		p{
-			@include textAlign(left);
-			@include pad(0);
+		.content-final{
+			@include span-columns(12);
+			@include pad();
+			p{
+				@include textAlign(left);
+				@include pad(0);
+			}
+			hr{
+				margin:0;
+			}
+			@include media($notebook){
+				@include span-columns(4);
+				@include pad(0);
+			}
 		}
-		hr{
-			margin:0;
+		.videoContent{
+			@include span-columns(12);
+			iframe{
+				max-height:250px;
+			}
+			@include media($notebook){
+				@include span-columns(8);
+				iframe{
+					min-height:250px;
+					max-height:290px;
+				}	
+			}
 		}
+	}
+	.facecomm-cont{
+		@include outer-container(800px);	
 	}
 }

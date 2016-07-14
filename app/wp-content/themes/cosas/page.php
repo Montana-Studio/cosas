@@ -319,7 +319,16 @@ get_header();
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
                         );
-                    }
+                    }elseif(is_page('inmobiliarios')){
+						
+						$args = array (
+                            'posts_per_page'         => '10',
+                            'paged'                  => $paged,
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+							'post_type' 			 => 'branded'
+                        );
+					}
                     // The Query
                     $paginas = new WP_Query( $args );
 

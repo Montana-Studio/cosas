@@ -121,7 +121,39 @@
             }); 
 
         </script>
-    
+		<?php 
+		if(is_singular('branded')){
+		?>
+			<script>
+				var gallerySliders = new Swiper('.swiper-gallery', {
+					nextButton: '.next-gallery',
+					prevButton: '.prev-gallery',
+					slidesPerView: 3,
+					paginationClickable: true,
+					pagination: '.swiper-pagination',
+					breakpoints:{
+						768:{
+							slidesPerView: 1,
+						}
+					}
+				});
+			</script>
+		<?php		
+			}elseif(is_single){
+		?>	
+			<script>
+				var gallerySliders = new Swiper('.swiper-gallery', {
+					nextButton: '.next-gallery',
+					prevButton: '.prev-gallery',
+					pagination: '.swiper-pagination',
+					paginationType: 'progress',
+					slidesPerView: 3,
+					spaceBetween: 10,
+				});
+			</script>
+		<?php		
+			}
+		?>
 
 		<!-- analytics -->
 		<script>

@@ -509,7 +509,7 @@ function post_typeBranded() { // Create 1 Custom Post type for a Demo, called HT
 			'public' => true,
 			'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
 			'has_archive' => true,
-			'supports' => array( 'title', 'editor', 'excerpt' ), // Go to Dashboard Custom HTML5 Blank post for supports
+			'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ), // Go to Dashboard Custom HTML5 Blank post for supports
 			'can_export' => true, // Allows export in Tools > Export
 			'taxonomies' => array( 'post_tag'), // Add Category and Post Tags support
 			)

@@ -211,7 +211,7 @@
             
             <?php }else{
             	
-            	if(is_singular('branded')){
+            	if(is_singular('branded')&&wp_is_mobile()){
 					
             	}else{ ?>
 					<div class="last-content">

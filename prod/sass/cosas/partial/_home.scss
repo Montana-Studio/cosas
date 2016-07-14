@@ -12,6 +12,10 @@
         @include outer-container(1119px);
         float:none;
     }
+	@include media(width 1024px){
+		@include span-columns(12);
+		@include shift(0);
+	}
 	.site-main{
 		@include span-columns(12);
 	    @include pad(10px);

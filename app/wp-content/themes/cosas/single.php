@@ -43,7 +43,7 @@
 							the_field('galleria_01'); 
 							the_content();
 						?>
-						
+						<?php /*
 						<h3><?php the_field('titulo_galeria'); ?></h3>
 						
 						<div class="swiper-gallery">
@@ -74,7 +74,7 @@
 							<div class="next-gallery"><i class="fa fa-angle-right"></i></div>
 							<div class="prev-gallery"><i class="fa fa-angle-left"></i></div>
 						</div>
-						
+						*/?>
 						<div class="finalcontent">
 							
 							<div class="videoContent">
@@ -82,17 +82,23 @@
 								the_field('video_final');
 							?>
 							</div>
-							<h4><?php the_field('titulo_final'); ?></h4>
-							<hr>
-							<p>
-							<?php
-								the_field('parrafo_final');
-							?>
-							</p>
+							<div class="content-final">
+								<h4><?php the_field('titulo_final'); ?></h4>
+								<hr>
+								<p>
+								<?php
+									the_field('parrafo_final');
+								?>
+								</p>
+							</div>
 							
 						</div>
-						
+						<div class="facecomm-cont">
+							
+							
 						<div class="fb-comments" data-href="<?php echo the_permalink(); ?>" data-numposts="3" data-width="100%" data-order-by="reverse_time"></div>
+							
+						</div>
 
 				</article>
 				<!-- /article -->
@@ -169,7 +175,7 @@
 					<div class="post-single">
 
 						<?php the_content(); ?>
-
+						
 						<div class="fb-comments" data-href="<?php echo the_permalink(); ?>" data-numposts="3" data-width="100%" data-order-by="reverse_time"></div>
 					</div>
 
@@ -199,41 +205,10 @@
 			</section>
 	<?php } ?>
 	<!-- /section -->
-
+	
 <?php 
 	get_footer(); 
-
-	if(is_singular('branded')){
 ?>
-	<script>
-		var gallerySliders = new Swiper('.swiper-gallery', {
-			nextButton: '.next-gallery',
-			prevButton: '.prev-gallery',
-			slidesPerView: 3,
-			paginationClickable: true,
-			pagination: '.swiper-pagination',
-			breakpoints:{
-				768:{
-					slidesPerView: 1,
-				}
-			}
-		});
-	</script>
-<?php 		
-	}else{
-?>	
-	<script>
-		var gallerySliders = new Swiper('.swiper-gallery', {
-			nextButton: '.next-gallery',
-			prevButton: '.prev-gallery',
-			pagination: '.swiper-pagination',
-			paginationType: 'progress',
-			slidesPerView: 3,
-			spaceBetween: 10,
-		});
-	</script>
-<?php		
-	}
-?>
+	
 
 
