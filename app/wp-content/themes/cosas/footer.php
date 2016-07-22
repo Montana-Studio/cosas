@@ -131,6 +131,7 @@
 					slidesPerView: 3,
 					paginationClickable: true,
 					pagination: '.swiper-pagination',
+					loop:true,
 					breakpoints:{
 						768:{
 							slidesPerView: 1,

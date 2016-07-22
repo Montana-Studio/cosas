@@ -35,6 +35,7 @@
 						   </div>
 						</div>
 						
+						
 						<h1><?php the_title(); ?></h1>
 						<h2><?php the_field('subtitulo'); ?></h2>
 						<small><?php the_time('l, j F Y'); ?></small>
