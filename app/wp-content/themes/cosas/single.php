@@ -83,7 +83,7 @@
 								the_field('video_final');
 							?>
 							</div>
-							<div class="content-final">
+							<!--div class="content-final">
 								<h4><?php the_field('titulo_final'); ?></h4>
 								<hr>
 								<p>
@@ -91,7 +91,7 @@
 									the_field('parrafo_final');
 								?>
 								</p>
-							</div>
+							</div-->
 							
 						</div>
 						<div class="facecomm-cont">
@@ -103,7 +103,23 @@
 
 				</article>
 				<!-- /article -->
-
+				
+				<div class="btn-back">
+					<div class="btn-block" onclick="historyBtn()">
+						<i class="fa fa-angle-left"></i>
+						<span>Volver</span>
+					</div>
+				</div>
+				
+				<script>
+					
+					function historyBtn(){
+						window.history.back();
+						console.log('back');
+					}
+					
+				</script>
+				
 			<?php endwhile; ?>
 
 			<?php else: ?>

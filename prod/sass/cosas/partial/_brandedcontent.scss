@@ -91,12 +91,15 @@
 				margin:{right:20px;}
 				@include textAlign(center);
 				&:first-child{
-					@include shift(1);
+					@include shift(1.6);
 					@include media($notebook){
 						@include shift(4.3);	
 					}
+					@include media($tablet){
+						@include shift(3.8);
+					}
 					@include media(width 1024px){
-						@include shift(4.3);
+						@include shift(4.2);
 					}
 				}
 				i{
@@ -208,5 +211,38 @@
 	}
 	.facecomm-cont{
 		@include outer-container(800px);	
+	}
+	.btn-back{
+		@include outer-container(1119px);
+		position: fixed;
+		bottom: 0;
+		left:0;
+		right:0;
+		z-index: 999999;
+		.btn-block{
+			@include textAlign(center);
+			@include direction-context(right-to-left){
+				@include span-columns(3);
+			}
+			cursor:pointer;
+			color:$white;
+			background:{color:$red;}
+			@include pad(5px 0);
+			text:{transform:uppercase;}
+			font:{size:em(13px)}
+			i{
+				font:{size:em(17px)}
+			}
+			&:hover{
+				background:{color:$black;}
+				border:1px solid $white;
+				border:{bottom:none;}
+			}
+			@include media($notebook){
+				@include direction-context(right-to-left){
+					@include span-columns(1.5);
+				}
+			}
+		}
 	}
 }

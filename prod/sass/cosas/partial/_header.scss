@@ -239,10 +239,17 @@
                     background:{color: $red;}
                     color:$white;
                     cursor:pointer;
+					@include media(width 1024px){
+						padding: {top:3px;}
+					}
                     span{
                         @include span-columns(4);
                         @include textAlign(center);
                         font:{size:em(36)}
+						@include media(width 1024px){
+							font:{size:em(26px);}
+							padding: {top:5px;}
+						}
                     }
                     p{
                         @include span-columns(6.5);
@@ -251,6 +258,10 @@
                         line:{height:1;}
                         font:{size:em(11);}
                         text:{transform:uppercase;}
+						@include media(width 1024px){
+							font:{size:em(10px);}
+							padding: {top:13px;}
+						}
                     }
                     i{
                         @include pad(15px 0);
