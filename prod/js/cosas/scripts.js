@@ -83,7 +83,7 @@ jQuery(document).ready(function($){
         var correo = $('#correo_newsletter').val();
         $.ajax({
             type: 'POST',  
-            url: 'wp-content/themes/cosas/js/procesar_correo.php',  
+            url: 'wp-content/themes/cosas/js/procesar_correo.php',   
             data: 'nombre='+nombre+'&correo='+correo,
             success: function(data){
                 if (data==='exito'){
@@ -91,9 +91,16 @@ jQuery(document).ready(function($){
                     $('.form-send').show();
                     $('.form-send').text('Suscripción enviada con éxito.');
                 } else {
-                    $('.newsletter_form').hide();
-                    $('.form-send').show();
-                    $('.form-send').text('No hemos podido enviar tu suscripción. Inténtalo nuevamente.');
+                    if(data==='existe'){
+                        $('.newsletter_form').hide();
+                        $('.form-send').show();
+                        $('.form-send').text('Lo sentimos, este correo ya está registrado.');
+                        
+                    }else{
+                        $('.newsletter_form').hide();
+                        $('.form-send').show();
+                        $('.form-send').text('No hemos podido enviar tu suscripción. Inténtalo nuevamente.');
+                    }
                 }
             }
         });

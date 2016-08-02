@@ -279,8 +279,8 @@
 						<div class="bajada-news">Recibe lo último de nuestra revista casas</div>
 						
 						<form class="newsletter_form">
-                            <input class="class-input" type="text" placeholder="Nombre" id="nombre_newsletter" requierd>
-                            <input class="class-input" type="email" placeholder="Correo Electrónico" id="correo_newsletter" requierd>
+                            <input class="class-input" type="text" placeholder="Nombre" id="nombre_newsletter" required>
+                            <input class="class-input" type="email" placeholder="Correo Electrónico" id="correo_newsletter" required>
                             <input class="btn-subs" type="submit" name="enviar" value="Suscríbete" placeholder="Suscríbete"/>
                         </form>
 					</div>

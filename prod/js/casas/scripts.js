@@ -91,14 +91,21 @@ jQuery(document).ready(function($){
             url: 'wp-content/themes/casas/js/procesar_correo.php',  
             data: 'nombre='+nombre+'&correo='+correo,
             success: function(data){
-                if (data==='exito'){
+            	console.log(data);
+               if (data==='exito'){
                     $('.newsletter_form').hide();
                     $('.form-send').show();
                     $('.form-send').text('Suscripción enviada con éxito.');
                 } else {
-                    $('.newsletter_form').hide();
-                    $('.form-send').show();
-                    $('.form-send').text('No hemos podido enviar tu suscripción. Inténtalo nuevamente.');
+                    if(data==='existe'){
+                        $('.newsletter_form').hide();
+                        $('.form-send').show();
+                        $('.form-send').text('Lo sentimos, este correo ya está registrado.');
+                    }else{
+                        $('.newsletter_form').hide();
+                        $('.form-send').show();
+                        $('.form-send').text('No hemos podido enviar tu suscripción. Inténtalo nuevamente.');
+                    }
                 }
             }
         });
