@@ -22,23 +22,56 @@
 
                 </div>
                 <div class="footer-top">
-					
-					<div class="logo-cosas">
-						 <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['cosas']); ?>">
-		                	<svg viewBox="0 0 792 268">
-                            
-	                            <use xlink:href="#logo-cosas"/>
-	                            
-	                        </svg>
-			            </a>
-					</div>
+					<div class="access-content">
+						
+						<div class="logo-cosas">
+							 <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['cosas']); ?>">
+								<svg viewBox="0 0 792 268">
 
-					<ul class="redes">
-			            <li><a target="_blank" href="https://www.facebook.com/revistacosas"><i class="fa fa-facebook"></i></a></li>
-			            <li><a target="_blank" href="https://twitter.com/RevistaCosas"><i class="fa fa-twitter"></i></a></li>
-			            <li><a target="_blank" href="https://www.instagram.com/revistacosas"><i class="fa fa-instagram"></i></a></li>
-			            <li><a target="_blank" href="https://www.youtube.com/user/CosasChile"><i class="fa fa-youtube-play"></i></a></li>
-			        </ul> 
+									<use xlink:href="#logo-cosas"/>
+
+								</svg>
+							</a>
+						</div>
+
+						<ul class="redes">
+							<li><a target="_blank" href="https://www.facebook.com/revistacosas"><i class="fa fa-facebook"></i></a></li>
+							<li><a target="_blank" href="https://twitter.com/RevistaCosas"><i class="fa fa-twitter"></i></a></li>
+							<li><a target="_blank" href="https://www.instagram.com/revistacosas"><i class="fa fa-instagram"></i></a></li>
+							<li><a target="_blank" href="https://www.youtube.com/user/CosasChile"><i class="fa fa-youtube-play"></i></a></li>
+						</ul> 
+						
+					</div>
+					
+			        <div class="contacto-footer">
+			        	
+			        	<div class="contac-mails">
+			        		
+			        		<span>contacto</span>
+			        		<div class="tel">
+			        			<i class="fa fa-phone"></i>
+			        			<a href="tel:&#43;56984678596" target="_blank">+569 84678596</a>
+			        		</div>
+			        		<div class="mails">
+			        			<i class="fa fa-lightbulb-o"></i>
+			        			<a href="mailto:oscarse&#64;cosas.com">Contacto editorial</a>
+			        			
+			        			<i class="fa fa-building-o"></i>
+			        			<a href="mailto:publicidad&#64;cosas.com">Contacto comercial</a>
+			        		</div>
+			        		
+			        	</div>
+			        	<div class="ubicacion">
+			        		
+			        		<span>ubicación</span>
+			        		<div class="direcct">
+			        			<i class="fa fa-map-marker"></i>
+			        			<a href="https://www.google.cl/maps/place/Almirante+Pastene+333,+Providencia,+Regi%C3%B3n+Metropolitana/@-33.4262397,-70.6237255,17z/data=!3m1!4b1!4m5!3m4!1s0x9662cf620aead381:0x3da58cba8f00ee25!8m2!3d-33.4262397!4d-70.6215368" target="_blank">Almirante Pastene #333, Piso 2.<br>Providencia, Santiago Chile.</a>
+			        		</div>
+			        		
+			        	</div>
+			        	
+			        </div>
 		        </div>
 		        <ul class="network">
 					<li>

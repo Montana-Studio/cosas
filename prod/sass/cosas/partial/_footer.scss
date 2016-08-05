@@ -76,106 +76,212 @@
             display: block;
             margin:{top:0;bottom:10px;left:auto;right:auto;}
         }
-        .logo-cosas{
-            @include span-columns(5);
-            @include pad(16px 0);
-            @include media($mobileLand) {
-                @include span-columns(3);
-            }   
-            @include media($tablet) {
-                @include span-columns(3);
-            }
-           @include media($tabletLand) {
-                @include span-columns(3);
-            }
-            @include media($notebook) {
-                @include span-columns(2);
-                @include pad(15px 0);
-            }   
-            a {
-                @include transition(all 0.3s ease-in-out);
-                svg {
-                    display: block;
-                    width: 100%;
-                    height: auto;
-                    fill:$white;
-                    path {
-                        fill:$white;
-                    }
-                }
-            &:hover {
-                color:$white;
-                svg {
-                    fill:$white;
-                }
-            }
-            }
-        }
-        .redes{
-            @include span-columns(5.5);
-            float: right;
-            margin:{right:10px !important;}
-            padding: 0; 
-            @include media($mobileLand) {
-                @include span-columns(4);
-                float: right;
-            }
-            @include media($tablet) {
-                @include span-columns(4);
-                 @include omega();
-                float: right;
-            }
-            @include media($tabletLand) {
-                @include span-columns(4);
-                 @include omega();
-                float: right;
-            }
-            @include media($notebook) {
-                @include span-columns(3);
-                 @include omega();
-                float: right;
-            }
-            li{
-                @include span-columns(3);
-                @include pad(23px 0);
-                text:{align:center;}
-                font:{size:1.5em;}
-                @include transition(all 0.3s ease-in-out);
-                @include media($tabletLand) {
-                    font:{size:1.8em;}
-                    padding: 36px 0;
-                }
-                @include media($notebook) {
-                    font:{size:1.7em;}
-                } 
-                @include media($desktop) {
-                     @include pad(33px 0);
-                    font:{size:2em;}
-                }   
-                a{
-                    width: 100%;
-                    height: 100%;
-                    display: block;
-                    color:$gray1_color;
-                    @include transition(all 0.3s ease-in-out);
-                    &:hover {
-                        color:$white;
-                        svg {
-                            fill:$white;
-                        }
-                    }
-                    svg {
-                        display: block;
-                        width: 100%;
-                        height: auto;
-                        fill:$gray1_color;
-                        path {
-                            fill:$white;
-                        }
-                    }
-                }
-            } 
-        }
+		.access-content{
+			@include row();
+			.logo-cosas{
+				@include span-columns(5);
+				@include pad(16px 0);
+				@include media($mobileLand) {
+					@include span-columns(3);
+				}   
+				@include media($tablet) {
+					@include span-columns(3);
+				}
+			   @include media($tabletLand) {
+					@include span-columns(3);
+				}
+				@include media($notebook) {
+					@include span-columns(2);
+					@include pad(15px 0);
+				}   
+				a {
+					@include transition(all 0.3s ease-in-out);
+					svg {
+						display: block;
+						width: 100%;
+						height: auto;
+						fill:$white;
+						path {
+							fill:$white;
+						}
+					}
+				&:hover {
+					color:$white;
+					svg {
+						fill:$white;
+					}
+				}
+				}
+			}
+			.redes{
+				@include span-columns(5.5);
+				float: right;
+				margin:{right:10px !important;}
+				padding: 0; 
+				@include media($mobileLand) {
+					@include span-columns(4);
+					float: right;
+				}
+				@include media($tablet) {
+					@include span-columns(4);
+					 @include omega();
+					float: right;
+				}
+				@include media($tabletLand) {
+					@include span-columns(4);
+					 @include omega();
+					float: right;
+				}
+				@include media($notebook) {
+					@include span-columns(3);
+					 @include omega();
+					float: right;
+				}
+				li{
+					@include span-columns(3);
+					@include pad(23px 0);
+					text:{align:center;}
+					font:{size:1.5em;}
+					@include transition(all 0.3s ease-in-out);
+					@include media($tabletLand) {
+						font:{size:1.8em;}
+						padding: 36px 0;
+					}
+					@include media($notebook) {
+						font:{size:1.7em;}
+					} 
+					@include media($desktop) {
+						 @include pad(33px 0);
+						font:{size:2em;}
+					}   
+					a{
+						width: 100%;
+						height: 100%;
+						display: block;
+						color:$gray1_color;
+						@include transition(all 0.3s ease-in-out);
+						&:hover {
+							color:$white;
+							svg {
+								fill:$white;
+							}
+						}
+						svg {
+							display: block;
+							width: 100%;
+							height: auto;
+							fill:$gray1_color;
+							path {
+								fill:$white;
+							}
+						}
+					}
+				} 
+			}
+		}
+		.contacto-footer{
+			@include row();
+			@include pad(0 20px);
+			.contac-mails{
+				@include span-columns(12);
+				background:{color:$white;}
+				color:$black;
+				@include pad(5px 0);
+				@include omega();
+				span{
+					@include span-columns(5);
+					@include pad(5px 0 35px);
+					border:{right:1px solid $black}
+					@include textAlign(center);
+					text:{transform:uppercase;}
+					font:{size:em(18px)}
+					@include media($notebook){
+						@include span-columns(3.5);
+					}
+					@include media(width 1024px){
+						font:{size:em(15px);}
+					}
+				}
+				.tel{
+					@include span-columns(7);
+					@include omega();
+					@include pad(20px 0);
+					@include textAlign(center);
+					font:{size:em(14px)}
+					a{
+						color:$black;
+						&:hover{
+							color:$red;
+						}
+					}
+					@include media($notebook){
+						@include span-columns(4);
+					}
+				}
+				.mails{
+					@extend .tel;
+					@include span-columns(12);
+					@include pad(10px 0);
+					@include textAlign(left);
+					i{
+						@include span-columns(2);
+						@include textAlign(center);
+					}
+					a{
+						@include span-columns(10);
+						@include omega();
+					}
+					@include media($notebook){
+						@include span-columns(4);
+					}
+				}
+				@include media($notebook){
+					@include span-columns(7);
+					@include omega();
+					@include pad(20px 0);
+				}
+			}
+			.ubicacion{
+				@extend .contac-mails;
+				@include pad(5px 0);
+				background:$black;
+				color:$white;
+				background:{image:url('../img/map-cosas.png');position:center;repeat:no-repeat;}
+				span{
+					border:{color:$white;}
+				}
+				.direcct{
+					@include span-columns(7);
+					@include pad(10px 0);
+					font:{size:em(14px)}
+					a{
+						color:$white;
+						&:hover{
+							color:$red;
+						}
+					}
+					@include media($notebook){
+						@include span-columns(8);
+					}
+				}
+				@include media($notebook){
+					@include span-columns(5);
+					@include pad(20px 0);
+				}
+				@include media(width 1024px){
+					@include pad(20px 0 20px 10px);
+					span{
+						font:{size:em(15px);}
+					}
+				}
+			}
+			@include media($notebook){
+				@include pad(0 20px 0 45px);
+			}
+			@include media(width 1024px){
+				@include pad(0 0 0 20px);
+			}
+		}
     }   
     .network {
         @include span-columns(12);

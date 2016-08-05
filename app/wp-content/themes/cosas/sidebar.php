@@ -28,15 +28,21 @@
         <script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
         
     </div>
-
-    <div class="sidebar-widget">
-            <?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-1')) ?>
-    </div>
-
-    <div class="sidebar-widget">
-            <?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-2')) ?>
-    </div>
+	
+   	<?php if(is_single('87601')){ ?>
+  	    
+   	    <div class="sidebar-widget">
+			<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-2')) ?>
+		</div>
+		
+	<?php }else{ ?>
     
+		<div class="sidebar-widget">
+			<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-1')) ?>
+		</div>
+   
+    <?php } ?>
+    <?php /*
     <div class="columnas">
         
         <div class="headernegro">
@@ -125,6 +131,6 @@
         </div>
         
     </div>
-    
+    */ ?>
 </aside>
 <!-- /sidebar -->
