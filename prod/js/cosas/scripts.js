@@ -7,7 +7,6 @@ jQuery(document).ready(function($){
         nextText:'<i class="fa fa-angle-left"></i>'
     });
     $('#slider4').responsiveSlides({
-        auto:false,
         pager:true,
         manualControls:''
     });
@@ -73,9 +72,38 @@ jQuery(document).ready(function($){
         pauseOnHover:true,
         duplicated:true,
         startVisible:true,
-        duration:20000,
-        gap: 10
+        duration:20000
     });
+    
+    //GALLERIES
+    $('.gallery-icon a').colorbox({
+        rel:'gallery',
+        width: '95%',
+        height: 'auto',
+        maxWidth: '760',
+        maxHeight: '700',
+        previous:'<i class="fa fa-angle-left"></i>',
+        next:'<i class="fa fa-angle-right"></i>',
+        close: '<i class="fa fa-close"></i>',
+        current:'Imagen {current} de {total}',
+        title: function() { return $(this).find('img').attr('alt'); },
+        transition:'fade',
+        scalePhotos: true,
+        preloading: false,
+        className: true,
+        fadeOut: 600,
+        slideshowAuto: true,
+        scrolling: 'false'
+
+    });  
+    $('.gallery').prepend('<div class="title-section">Galería de imágenes</div>');
+
+    $(document).bind('cbox_open', function() {
+        $('html').css({ overflow: 'hidden' });
+    }).bind('cbox_closed', function() {
+        $('html').css({ overflow: '' });
+    });
+    
     
     //FORMUBLARIO NEWSLETTER
     $('.newsletter_form').on('submit', function(){
@@ -83,7 +111,7 @@ jQuery(document).ready(function($){
         var correo = $('#correo_newsletter').val();
         $.ajax({
             type: 'POST',  
-            url: 'wp-content/themes/cosas/js/procesar_correo.php',   
+            url: 'wp-content/themes/cosas/js/procesar_correo.php',  
             data: 'nombre='+nombre+'&correo='+correo,
             success: function(data){
                 if (data==='exito'){
@@ -91,16 +119,9 @@ jQuery(document).ready(function($){
                     $('.form-send').show();
                     $('.form-send').text('Suscripción enviada con éxito.');
                 } else {
-                    if(data==='existe'){
-                        $('.newsletter_form').hide();
-                        $('.form-send').show();
-                        $('.form-send').text('Lo sentimos, este correo ya está registrado.');
-                        
-                    }else{
-                        $('.newsletter_form').hide();
-                        $('.form-send').show();
-                        $('.form-send').text('No hemos podido enviar tu suscripción. Inténtalo nuevamente.');
-                    }
+                    $('.newsletter_form').hide();
+                    $('.form-send').show();
+                    $('.form-send').text('No hemos podido enviar tu suscripción. Inténtalo nuevamente.');
                 }
             }
         });
@@ -111,25 +132,8 @@ jQuery(document).ready(function($){
         layoutMode: 'packery',
         percentPosition: true
     });
-
-    //WOOCOMMERCE
-    $('.inside-despacho').click(function(){
-        $('.info-sidebar.popups-despacho').toggleClass('show-popups');  
-    });
-
-    $('.close-popups.close-despacho').click(function(){
-        $('.info-sidebar.popups-despacho').toggleClass('show-popups');  
-    });
-
-    $('.inside-medios-pago').click(function(){
-        $('.info-sidebar.popups-medios-pago').toggleClass('show-popups');  
-    });
-
-    $('.close-popups.close-medios').click(function(){
-        $('.info-sidebar.popups-medios-pago').toggleClass('show-popups');  
-    });
-    
 });
+
 
 function fbShare(url, title, descr, image, winWidth, winHeight) {
     var winTop = (screen.height / 2) - (winHeight / 2);

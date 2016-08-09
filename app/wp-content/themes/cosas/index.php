@@ -346,7 +346,7 @@
                 
                 <h3>instagram <i class="fa fa-instagram"></i></h3>
                 <div class="contInstagram">
-                  <?php //get_template_part('instagram'); ?> 
+                  <?php get_template_part('instagram'); ?> 
                 </div>
                 
             </main>
@@ -373,7 +373,7 @@
 
                 ?>
 
-                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>');">
+                    <article id="post-<?php the_ID(); ?>" <?php post_class('lazy'); ?> data-original="<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>">
 
                         <a href="<?php echo get_permalink(); ?>" class="more-link">
                             <i class="fa fa-plus"></i>
@@ -383,7 +383,7 @@
 
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                        <div class="img-post" style="background-image: url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>');">
+                        <div class="img-post lazy" data-original="<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>">
                             <a href="<?php echo get_permalink(); ?>" class="more-link">
                                 <i class="fa fa-plus"></i>
                             </a>
@@ -462,7 +462,7 @@
 
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 
-                                    <img src="<?php the_post_thumbnail_url();?>"/>
+                                    <img data-original="<?php the_post_thumbnail_url();?>" class="lazy"/>
                                     <?php
                                         the_title(''.'<small>','</small>'); 
                                     ?>
@@ -551,7 +551,13 @@
             
             <main id="main-6" class="site-main-6">
 
-                <h3 class="titus">sociales</h3>
+                <h3 class="titus">
+					<span>sociales</span>
+					<span class="ver-mas">
+						<i class="fa fa-plus-circle"></i>
+						<a href="<?php echo get_site_url(); ?>/category/vida-social" target="_self">ver mas</a>
+					</span>
+                </h3>
 
                 <div class="content-sociales">
                     <ul class="marquee social-content">
@@ -789,7 +795,7 @@
 
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 
-                                    <img src="<?php the_post_thumbnail_url();?>"/>
+                                    <img data-original="<?php the_post_thumbnail_url();?>" class="lazy"/>
                                     <?php
                                         the_title(''.'<small>','</small>'); 
                                     ?>
@@ -829,7 +835,7 @@
                 
                 <h3>instagram <i class="fa fa-instagram"></i></h3>
                 <div class="contInstagram">
-                  <?php //get_template_part('instagram'); ?> 
+                  <?php get_template_part('instagram'); ?> 
                 </div>
                 
             </main>
@@ -849,7 +855,7 @@
                 
             ?>
                 
-                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>');">
+                <article id="post-<?php the_ID(); ?>" <?php post_class('lazy'); ?> data-original="<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>">
                             
             <?php 
                 //SI NO ES MOBILE
@@ -859,7 +865,11 @@
                         <div class="shares-post">
                             <p>comparte en</p>
                                
-                            <a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)">
+                            <!--a href="javascript:fbShare('<?php //echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php //echo the_permalink(); ?>', 520, 350)">
+                                <i class="fa fa-facebook"></i>
+                            </a-->
+
+                           <a class='facebook_share' id='<?php echo the_permalink(); ?>' name='<?php the_title(); ?>' href="#">
                                 <i class="fa fa-facebook"></i>
                             </a>
 
@@ -1134,7 +1144,13 @@
     
         <main id="main-6" class="site-main-6-mobile">
 
-            <h3 class="titus">sociales</h3>
+            <h3 class="titus">
+            	<span>sociales</span>
+            	<span class="ver-mas">
+            		<i class="fa fa-plus-circle"></i>
+            		<a href="<?php echo get_site_url(); ?>/category/vida-social" target="_self">ver mas</a>
+            	</span>
+            </h3>
 
             <div class="content-sociales">
                 

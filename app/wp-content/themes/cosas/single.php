@@ -20,7 +20,9 @@
 						<div class="sharecontent">
 							<div class="shares-post">
 
-							<a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-facebook-square"></i></a>
+							<!--a href="javascript:fbShare('<?php //echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php //echo the_permalink(); ?>', 520, 350)"><i class="fa fa-facebook-square"></i></a-->
+
+							<a class='facebook_share' id='<?php echo the_permalink(); ?>' name='<?php the_title(); ?>' href="#"><i class="fa fa-facebook-square"></i></a>
 
 							<a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', '', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-twitter-square"></i></a>
 
@@ -83,7 +85,7 @@
 								the_field('video_final');
 							?>
 							</div>
-							<!--div class="content-final">
+							<div class="content-final">
 								<h4><?php the_field('titulo_final'); ?></h4>
 								<hr>
 								<p>
@@ -91,7 +93,7 @@
 									the_field('parrafo_final');
 								?>
 								</p>
-							</div-->
+							</div>
 							
 						</div>
 						<div class="facecomm-cont">
@@ -172,7 +174,9 @@
 					<div class="sharecontent">
 						<div class="shares-post">
 
-						<a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-facebook-square"></i></a>
+						<!--a href="javascript:fbShare('<?php //echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php //echo the_permalink(); ?>', 520, 350)"><i class="fa fa-facebook-square"></i></a-->
+
+						<a class='facebook_share' id='<?php echo the_permalink(); ?>' name='<?php the_title(); ?>' href="#"><i class="fa fa-facebook-square"></i></a></div>
 
 						<a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', '', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-twitter-square"></i></a>
 

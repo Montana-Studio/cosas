@@ -279,8 +279,8 @@
 						<div class="bajada-news">Recibe lo último de nuestra revista casas</div>
 						
 						<form class="newsletter_form">
-                            <input class="class-input" type="text" placeholder="Nombre" id="nombre_newsletter" required>
-                            <input class="class-input" type="email" placeholder="Correo Electrónico" id="correo_newsletter" required>
+                            <input class="class-input" type="text" placeholder="Nombre" id="nombre_newsletter">
+                            <input class="class-input" type="email" placeholder="Correo Electrónico" id="correo_newsletter">
                             <input class="btn-subs" type="submit" name="enviar" value="Suscríbete" placeholder="Suscríbete"/>
                         </form>
 					</div>
@@ -293,7 +293,7 @@
 			<section class="subscribe-rev" > 
 				<div class="subscribe-content" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/cover_magazine.jpg?>')">
 					<h4>Suscríbete a la revista</h4>
-					<a class="btn-subs" href="<?php echo get_site_url($GLOBALS['detectBlogs']['suscripciones']) ?>">Suscribir</a>
+					<a class="btn-subs" href="#">Suscribir</a>
 					<div class="line-gold"></div>
 				</div>
 			</section>

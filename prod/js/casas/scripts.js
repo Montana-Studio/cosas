@@ -128,15 +128,37 @@ jQuery(document).ready(function($){
     	$('.info-sidebar.popups-medios-pago').toggleClass('show-popups');  
     });
 
+    
+    $(".facebook_share").on('click', function(event) {
+	    event.preventDefault();
+	    var url = $(this).attr('id');
+	    var title = $(this).attr('name');
+	    console.log(url+title);
+	    $.ajaxSetup({ cache: true });
+	        $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
+	        FB.init({
+	          appId: '1772804452976983',
+	          version: 'v2.6'
+	        });
+	        FB.ui({
+	            method: 'share',
+	            title: title,
+	            description: title,
+	            href: url,
+	          },
+	          function(response) {
+	            if (response && !response.error_code) {
+	              //console.log('Posting completed.');
+	            } else {
+	              //console.log('Error while posting.');
+	            }
+	        });
+	  });
+	});
+
 });  
 
 
-
-function fbShare(url, title, descr, image, winWidth, winHeight) {
-    var winTop = (screen.height / 2) - (winHeight / 2);
-    var winLeft = (screen.width / 2) - (winWidth / 2); 
-    window.open('http://www.facebook.com/sharer.php?s=100&p[title]='+title+'&p[summary]='+title+'&p[url]='+url+'&p[images][0]='+image,'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight+'');
-}
 function twShare(url, title, winWidth, winHeight) {
     var winTop = (screen.height / 2) - (winHeight / 2);
     var winLeft = (screen.width / 2) - (winWidth / 2);
