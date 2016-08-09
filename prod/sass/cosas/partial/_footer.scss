@@ -246,7 +246,7 @@
 				@include pad(5px 0);
 				background:$black;
 				color:$white;
-				background:{image:url('../img/map-cosas.png');position:center;repeat:no-repeat;}
+				background:{image:url('../img/map-cosas.png');position:center;repeat:no-repeat;size:cover;}
 				span{
 					border:{color:$white;}
 				}

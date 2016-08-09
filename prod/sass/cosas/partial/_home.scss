@@ -108,7 +108,7 @@
 		article{
 			@include span-columns(6);
 			@include textAlign(center);
-			background:{size:cover;repeat:no-repeat;position:center 20%;}
+			background:{size:cover;repeat:no-repeat;position:center 20%;image:url('../img/grey.gif');}
 			position:relative;
 			min-height:167px;
 			&:first-child{
@@ -275,6 +275,7 @@
 			min-height:97px;
 			margin:{bottom:10px;}
 			border:solid 1px #ededed;
+			background: {image:none;}
 			@include textAlign(left);
 			&:first-child{
 				@include span-columns(12);
@@ -388,6 +389,7 @@
 	.site-main-4{
 		@extend .site-main-3;
 		article{
+			background: {image:none;}
 			&:first-child{
 				@include span-columns(12);
 				min-height:216px;
@@ -597,6 +599,18 @@
         .titus{
             @extend .titulosh3;
             background:{color: #2c2c2c;}
+			.ver-mas{
+				@include direction-context(right-to-left){
+					@include span-columns(3);				
+				}
+				@include textAlign(center);
+				i{
+					margin:{left:10px;}
+				}
+				a{
+					color:$white;
+				}
+			}
         }
         .content-sociales{
             @include span-columns(12);
@@ -652,6 +666,11 @@
                         @include pad(0);
                         @extebd .no-margin;
                     }
+					.link-post{
+						color:$white;
+						text:{transform:uppercase;}
+						font:{size:em(12px);weight:bold;}
+					}
                 }
                 .closeimage{
                     width: 300px;
@@ -1066,6 +1085,18 @@
     .titus{
         @extend .titulosh3;
         background:{color: #2c2c2c;}
+		.ver-mas{
+			@include direction-context(right-to-left){
+				@include span-columns(1.5);				
+			}
+			@include textAlign(center);
+			i{
+				margin:{left:10px;}
+			}
+			a{
+				color:$white;
+			}
+		}
     }
     .content-sociales{
         @include span-columns(12);
@@ -1125,11 +1156,21 @@
                 margin:{top:5px;left:auto;right:auto;}
                 background:{color: #000;}
                 color:$white;
+				min-height:35px;
                 h2{
                     font:{size:em(12);weight:bold;}
                     @include pad(0);
-                    @extebd .no-margin;
+					@extend .no-margins;
+                    @include span-columns(9);
                 }
+				.link-post{
+					color:$white;
+					@include span-columns(3);
+					@incldue omega();
+					@include textAlign(center);
+					text:{transform:uppercase;}
+					font:{size:em(12px);weight:bold;}
+				}
                 @include media($notebookLand){
                     width:500px;
                 }

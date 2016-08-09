@@ -322,11 +322,19 @@ get_header();
                     }elseif(is_page('inmobiliarios')){
 						
 						$args = array (
-                            'posts_per_page'         => '10',
+                            'posts_per_page'         => '9',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
 							'post_type' 			 => 'branded'
+                        );
+					}elseif(is_page('automovilismo')){
+						$args = array (
+                            'posts_per_page'         => '9',
+                            'paged'                  => $paged,
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+							'post_type' 			 => 'automovilismo'
                         );
 					}
                     // The Query

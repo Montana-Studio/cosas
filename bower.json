@@ -21,6 +21,7 @@
   ],
   "devDependencies": {
     "neat": "^1.7.4",
-    "font-awesome": "fontawesome#^4.6.1"
+    "font-awesome": "fontawesome#^4.6.1",
+    "lazy-load": "^1.0.0"
   }
 }

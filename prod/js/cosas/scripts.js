@@ -132,6 +132,32 @@ jQuery(document).ready(function($){
         layoutMode: 'packery',
         percentPosition: true
     });
+<<<<<<< HEAD
+=======
+
+    //WOOCOMMERCE
+    $('.inside-despacho').click(function(){
+        $('.info-sidebar.popups-despacho').toggleClass('show-popups');  
+    });
+
+    $('.close-popups.close-despacho').click(function(){
+        $('.info-sidebar.popups-despacho').toggleClass('show-popups');  
+    });
+
+    $('.inside-medios-pago').click(function(){
+        $('.info-sidebar.popups-medios-pago').toggleClass('show-popups');  
+    });
+
+    $('.close-popups.close-medios').click(function(){
+        $('.info-sidebar.popups-medios-pago').toggleClass('show-popups');  
+    });
+
+	 $('.lazy').lazyload({
+		 effect : 'fadeIn',
+		 failure_limit : 5,
+		 threshold : 200
+     });
+>>>>>>> 6c99ed7e6e9a06faf7b37b9de5608e74081e7bb4
 });
 
 
