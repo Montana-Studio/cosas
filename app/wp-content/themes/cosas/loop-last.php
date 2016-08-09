@@ -9,7 +9,7 @@
         $first_img = $matches [1] [0];
     ?>
    
-    <div class="img-last" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>');"></div>
+    <div class="img-last lazy" data-original="<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>"></div>
     <?php    
     }   
     ?>

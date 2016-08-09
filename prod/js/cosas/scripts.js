@@ -128,7 +128,12 @@ jQuery(document).ready(function($){
     $('.close-popups.close-medios').click(function(){
         $('.info-sidebar.popups-medios-pago').toggleClass('show-popups');  
     });
-    
+
+	 $('.lazy').lazyload({
+		 effect : 'fadeIn',
+		 failure_limit : 5,
+		 threshold : 200
+     });
 });
 
 function fbShare(url, title, descr, image, winWidth, winHeight) {

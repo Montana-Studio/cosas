@@ -4,7 +4,7 @@
     $first_img = $matches [1] [0];
 ?>
         
-<li id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>');">
+<li id="post-<?php the_ID(); ?>" <?php post_class('lazy'); ?> data-original="<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>">
     <span class="hoverzoom hide">
         
         <i class="fa fa-search-plus"></i>
@@ -27,13 +27,14 @@
                 $('#sh-soc-pi').attr("href","javascript:piShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_post_thumbnail_url(); ?>', '', 520, 350)");
                 $('#sh-soc-go').attr("href","https://plus.google.com/share?url=<?php echo the_permalink(); ?>").attr('onclick','window.open("https://plus.google.com/share?url=<?php echo the_permalink(); ?>","gplusshare","width=600,height=400,left="'+(screen.availWidth/2-225)+'",top="'+(screen.availHeight/2-150)+'");return false;');
                 
+				$('.dataimage').prepend('<a href="<?php echo the_permalink(); ?>" target="_self" class="link-post"><i class="fa fa-plus"></i> Ver más</a>');
                 $('.dataimage').prepend('<h2><?php the_title(); ?></h2>');
                 $('#loadOverlay').fadeIn();
             });
             $('.closeimage').click(function(){
                 $('.loadimage').attr('style','');
                 $('.loadimage .share-sociales').remove();
-                $('.dataimage h2').remove();
+                $('.dataimage h2, .dataimage a').remove();
                 $('#loadOverlay').fadeOut();
             });
         });

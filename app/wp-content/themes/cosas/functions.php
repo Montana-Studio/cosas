@@ -381,6 +381,7 @@ add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('init', 'post_typeHoroscopo'); // Add our HTML5 Blank Custom Post Type
 add_action('init', 'post_typeBranded'); // Add our HTML5 Blank Custom Post Type
+add_action('init', 'post_typeAutomoviles'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
@@ -493,18 +494,18 @@ function post_typeBranded() { // Create 1 Custom Post type for a Demo, called HT
 	register_post_type( 'branded', // Register Custom Post Type
 			array(
 					'labels' => array(
-							'name' => __( 'Branded content' ), // Rename these to suit
-							'singular_name' => __( 'Branded content' ),
-							'add_new' => __( 'Agregar branded content' ),
-							'add_new_item' => __( 'Agregar branded content' ),
+							'name' => __( 'Inmobiliarios content' ), // Rename these to suit
+							'singular_name' => __( 'Inmobiliarios content' ),
+							'add_new' => __( 'Agregar inmobiliarios content' ),
+							'add_new_item' => __( 'Agregar inmobiliarios content' ),
 							'edit' => __( 'Editar' ),
-							'edit_item' => __( 'Editar branded content' ),
-							'new_item' => __( 'Nuevo branded content' ),
-							'view' => __( 'Ver branded content' ),
-							'view_item' => __( 'Ver branded content' ),
-							'search_items' => __( 'Buscar branded content' ),
-							'not_found' => __( 'branded content no encontrado' ),
-							'not_found_in_trash' => __( 'No hay branded content eliminados' ),
+							'edit_item' => __( 'Editar inmobiliarios content' ),
+							'new_item' => __( 'Nuevo inmobiliarios content' ),
+							'view' => __( 'Ver inmobiliarios content' ),
+							'view_item' => __( 'Ver inmobiliarios content' ),
+							'search_items' => __( 'Buscar inmobiliarios content' ),
+							'not_found' => __( 'Inmobiliarios content no encontrado' ),
+							'not_found_in_trash' => __( 'No hay inmobiliarios content eliminados' ),
 					),
 			'public' => true,
 			'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
@@ -512,6 +513,36 @@ function post_typeBranded() { // Create 1 Custom Post type for a Demo, called HT
 			'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ), // Go to Dashboard Custom HTML5 Blank post for supports
 			'can_export' => true, // Allows export in Tools > Export
 			'taxonomies' => array( 'post_tag'), // Add Category and Post Tags support
+			'menu_icon' => 'dashicons-building',
+			)
+	);
+}
+function post_typeAutomoviles() { // Create 1 Custom Post type for a Demo, called HTML5-Blank
+	register_taxonomy_for_object_type('category','secc-auto'); // Register Taxonomies for Category
+	register_taxonomy_for_object_type('post_tag','auto-secc');
+	register_post_type( 'automovilismo', // Register Custom Post Type
+			array(
+					'labels' => array(
+							'name' => __( 'Automoviles content' ), // Rename these to suit
+							'singular_name' => __( 'Automoviles content' ),
+							'add_new' => __( 'Agregar automoviles content' ),
+							'add_new_item' => __( 'Agregar automoviles content' ),
+							'edit' => __( 'Editar' ),
+							'edit_item' => __( 'Editar automoviles content' ),
+							'new_item' => __( 'Nuevo automoviles content' ),
+							'view' => __( 'Ver automoviles content' ),
+							'view_item' => __( 'Ver automoviles content' ),
+							'search_items' => __( 'Buscar automoviles content' ),
+							'not_found' => __( 'Automoviles content no encontrado' ),
+							'not_found_in_trash' => __( 'No hay automoviles content eliminados' ),
+					),
+			'public' => true,
+			'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+			'has_archive' => true,
+			'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ), // Go to Dashboard Custom HTML5 Blank post for supports
+			'can_export' => true, // Allows export in Tools > Export
+			'taxonomies' => array( 'post_tag'), // Add Category and Post Tags support
+			'menu_icon' => 'dashicons-performance',
 			)
 	);
 }
