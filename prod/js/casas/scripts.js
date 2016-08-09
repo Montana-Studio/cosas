@@ -131,7 +131,7 @@ jQuery(document).ready(function($){
     
     $(".facebook_share").on('click', function(event) {
 	    event.preventDefault();
-	    var url = $(this).attr('id');
+	    var url = $(this).attr('title');
 	    var title = $(this).attr('name');
 	    console.log(url+title);
 	    $.ajaxSetup({ cache: true });

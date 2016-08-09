@@ -129,11 +129,39 @@ jQuery(document).ready(function($){
         $('.info-sidebar.popups-medios-pago').toggleClass('show-popups');  
     });
 
-     $('.lazy').lazyload({
-         effect : 'fadeIn',
-         failure_limit : 5,
-         threshold : 200
-     });
+    /*Load images*/
+    $('.lazy').lazyload({
+        effect : 'fadeIn',
+        failure_limit : 5,
+        threshold : 200
+    });
+
+    /*Facebook Share*/
+    $(".facebook_share").on('click', function(event) {
+        event.preventDefault();
+        var url = $(this).attr('title');
+        var title = $(this).attr('name');
+       // console.log(url+title);
+        $.ajaxSetup({ cache: true });
+            $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
+            FB.init({
+              appId: '259189257792642',
+              version: 'v2.6'
+            });
+            FB.ui({
+                method: 'share',
+                title: title,
+                href: url,
+              },
+              function(response) {
+                if (response && !response.error_code) {
+                  //console.log('Posting completed.');
+                } else {
+                  //console.log('Error while posting.');
+                }
+            });
+      });
+    });
 });
 
 function fbShare(url, title, descr, image, winWidth, winHeight) {
