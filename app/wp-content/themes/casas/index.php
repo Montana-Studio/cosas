@@ -293,7 +293,8 @@
 			<section class="subscribe-rev" > 
 				<div class="subscribe-content" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/cover_magazine.jpg?>')">
 					<h4>Suscríbete a la revista</h4>
-					<a class="btn-subs" href="#">Suscribir</a>
+					 
+					<a class="btn-subs" href="<?php echo get_site_url($GLOBALS['detectBlogs']['suscripciones']); ?>">Suscribir</a>
 					<div class="line-gold"></div>
 				</div>
 			</section>

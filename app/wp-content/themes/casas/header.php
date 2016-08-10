@@ -12,17 +12,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<?php 
-            wp_head(); 
-            blogs_global_vars();
+            wp_head();
         ?>
-		<script>
-        // conditionizr.com
-        // configure environment tests
-        conditionizr.config({
-            assets: '<?php echo get_template_directory_uri(); ?>',
-            tests: {}
-        });
-        </script>
 
 	</head>
 	<body <?php body_class(); ?>>

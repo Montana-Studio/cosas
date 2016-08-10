@@ -337,6 +337,25 @@ function html5blankcomments($comment, $args, $depth)
 	<?php endif; ?>
 <?php }
 
+/*
+    VARS GLOBAL DETECT BLOGS
+*/
+function blogs_global_vars() {
+
+    global $detectBlogs;
+    $detectBlogs = array(
+        
+        'blogId'    => get_current_blog_id(),
+        'cosas'     => '1',
+        'casas'     => '9',
+        'repost'    => '5',
+        'lujo'      => '7',
+        'couture'      => '8',
+        'suscripciones' => '6',
+
+    );
+
+}
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
 \*------------------------------------*/
@@ -350,6 +369,7 @@ add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
+add_action('init', 'blogs_global_vars'); // Add Custom Scripts to wp_head
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
@@ -520,26 +540,6 @@ function my_text_strings( $translated_text, $text, $domain ) {
 }
 add_filter( 'gettext', 'my_text_strings', 20, 3 );
 
-
-/*
-    VARS GLOBAL DETECT BLOGS
-*/
-function blogs_global_vars() {
-
-    global $detectBlogs;
-    $detectBlogs = array(
-        
-        'blogId'    => get_current_blog_id(),
-        'cosas'     => '1',
-        'casas'     => '9',
-        'repost'    => '5',
-        'lujo'      => '7',
-        'couture'      => '8',
-        'suscripciones' => '6',
-
-    );
-
-}
 /**
 	Remove Emoji
 **/
