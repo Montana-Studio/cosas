@@ -85,7 +85,7 @@
 								the_field('video_final');
 							?>
 							</div>
-							<!--div class="content-final">
+							<div class="content-final">
 								<h4><?php the_field('titulo_final'); ?></h4>
 								<hr>
 								<p>
@@ -93,7 +93,7 @@
 									the_field('parrafo_final');
 								?>
 								</p>
-							</div-->
+							</div>
 							
 						</div>
 						<div class="facecomm-cont">
