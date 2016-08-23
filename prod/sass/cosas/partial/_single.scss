@@ -10,6 +10,9 @@
         margin: 0 auto !important;
         float:none;
     }
+	.branded-content{
+		@include pad(10px 0)
+	}
     article{
         .img-post-single{
             @include span-columns(12);

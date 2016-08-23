@@ -8,12 +8,23 @@
         
         <!-- BRANDED BANNERS -->
         
-        <div class="branded-content">
-        	<div class="branded-box">
-        		
-        		
-        	</div>
-        </div>
+        <?php if(wp_is_mobile()){ ?>
+        	<div class="branded-content">
+        		<div class="branded-box">
+        			
+					<ins data-revive-zoneid="13" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
+					<script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+       		
+        		</div>
+				
+				<div class="branded-box">
+					
+					<ins data-revive-zoneid="14" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
+					<script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+					
+				</div>
+			</div>
+        <?php } ?>
         
         <div style="max-width:728px;margin:0 auto;">
             <ins data-revive-zoneid="2" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
@@ -355,7 +366,7 @@
                 
                 <h3>instagram <i class="fa fa-instagram"></i></h3>
                 <div class="contInstagram">
-                  <?php //get_template_part('instagram'); ?> 
+                  <?php get_template_part('instagram'); ?> 
                 </div>
                 
             </main>
@@ -838,7 +849,7 @@
                 
                 <h3>instagram <i class="fa fa-instagram"></i></h3>
                 <div class="contInstagram">
-                  <?php //get_template_part('instagram'); ?> 
+                  <?php get_template_part('instagram'); ?> 
                 </div>
                 
             </main>

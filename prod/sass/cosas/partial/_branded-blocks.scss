@@ -1,0 +1,109 @@
+$color_inmobi:#f7ca17;
+$color_automo:#039ae9;
+
+.branded-content{
+	@include span-columns(12);
+	@include pad(10px 10px 0);
+	.branded-box{
+		@include span-columns(6);
+		.branded-ad{
+			display: block;
+			width: 100%;
+			min-height:126px;
+			position: relative;
+			overflow: hidden;
+			background: {repeat:no-repeat;position: center;size:cover;}
+			.vertical-name{
+				@include span-columns(6);
+				@include pad(3px 0 3px 6px);
+				text:{transform:uppercase;}
+				color:$white;
+				font:{size:em(10);}
+				@include media($mobile){
+					font:{size:em(9);}
+				}
+				@include media($notebook){
+					@include span-columns(4);
+				}
+			}
+			.presented-name{
+				@include span-columns(9);
+				@include omega(1n);
+				@include pad(3px 0 3px 6px);
+				background: {color:$white;}
+				color:$greyOne;
+				font:{style:italic;size:em(9)}
+				text:{transform:uppercase;}
+				margin:{top:5px;}
+				span{
+					@include span-columns(7.1);
+					@include omega();
+					&.brand-content{
+						@include span-columns(4);
+						position: relative;
+						overflow: visible;
+						svg{
+							position: absolute;
+							width: 100%;
+							height: auto;
+							.brand-logo{
+								fill:$greyOne;
+							}
+						}	
+					}
+				}
+				@include media($mobile){
+					@include span-columns(10);
+					font:{size:em(8)}
+				}
+				@include media($notebook){
+					@include span-columns(6);
+				}
+			}
+			.branded-title{
+				@include span-columns(10);
+				@include pad(3px 5px);
+				position: absolute;
+				bottom: 0;
+				background:{color:$white;}
+				color:$black;
+				font:{size:em(9);family:$playFair}
+				text:{transform:uppercase;align:center;}
+				left: 0;
+				right:0;
+				margin: 0 auto !important;
+				h4{
+					margin: 0;
+					padding: 0;
+				}
+				@include media($notebook){
+					font:{size:em(12);}
+				}
+			}
+			&.inmobiliaria{
+				border:{top:solid 2px $color_inmobi;}
+				.vertical-name{
+					background:{color:$color_inmobi;}
+				}
+			}
+			&.automoviles{
+				border:{top:solid 2px $color_automo;}
+				.vertical-name{
+					background:{color:$color_automo;}
+				}
+			}
+			@include media($notebook){
+				min-height: 160px;
+			}
+		}
+		@include media($notebook){
+			@include span-columns(12);
+			@include omega();
+			margin:{bottom:10px;}
+		}
+	}
+	@include media($notebook){
+		@include pad(0);
+		@include omega();
+	}
+}

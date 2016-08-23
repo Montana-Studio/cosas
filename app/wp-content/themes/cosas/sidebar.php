@@ -8,6 +8,24 @@
    
     </div>
     
+    <div class="branded-content">
+		
+		<div class="branded-box">
+			
+		<ins data-revive-zoneid="13" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
+		<script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+			
+		</div>
+		
+		<div class="branded-box">
+		
+		<ins data-revive-zoneid="14" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
+		<script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+		
+		</div>
+
+	</div>
+    
     <div style='width:250px;margin:0 auto 5px;'>
 
         <ins data-revive-zoneid="11" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>

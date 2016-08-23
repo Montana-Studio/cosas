@@ -137,13 +137,14 @@ jQuery(document).ready(function($){
     });
 
     /*Facebook Share*/
-    $(".facebook_share").on('click', function(event) {
+    $('.facebook_share').on('click', function(event) {
         event.preventDefault();
         var url = $(this).attr('title');
         var title = $(this).attr('name');
        // console.log(url+title);
         $.ajaxSetup({ cache: true });
             $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
+			/* jshint ignore:start */
             FB.init({
               appId: '259189257792642',
               version: 'v2.6'
@@ -160,6 +161,7 @@ jQuery(document).ready(function($){
                   //console.log('Error while posting.');
                 }
             });
+			/* jshint ignore:end */
       });
     });
 });
