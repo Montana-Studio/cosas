@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
    	
-    	<?php if(is_singular('branded')){ ?>
+    	<?php if(is_singular('branded')||is_singular('automovilismo')){ ?>
     		<div class="single-brandedcontent">
     			
     			<?php if (have_posts()): while (have_posts()) : the_post(); ?>

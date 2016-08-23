@@ -68,7 +68,7 @@ jQuery(document).ready(function($){
 		scrolling: 'false'
 
 	});  
-	$('.gallery').prepend('<div class="title-section">Galería de imágenes</div>');
+	//$('.gallery').prepend('<div class="title-section">Galería de imágenes</div>');
 
 	$(document).bind('cbox_open', function() {
 	    $('html').css({ overflow: 'hidden' });

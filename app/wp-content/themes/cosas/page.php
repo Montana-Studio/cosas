@@ -328,7 +328,7 @@ get_header();
                             'orderby'                => 'date',
 							'post_type' 			 => 'branded'
                         );
-					}elseif(is_page('automovilismo')){
+					}elseif(is_page('automoviles')){
 						$args = array (
                             'posts_per_page'         => '9',
                             'paged'                  => $paged,
