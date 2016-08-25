@@ -366,7 +366,7 @@
                 
                 <h3>instagram <i class="fa fa-instagram"></i></h3>
                 <div class="contInstagram">
-                  <?php get_template_part('instagram'); ?> 
+                  <?php //get_template_part('instagram'); ?> 
                 </div>
                 
             </main>
@@ -849,7 +849,7 @@
                 
                 <h3>instagram <i class="fa fa-instagram"></i></h3>
                 <div class="contInstagram">
-                  <?php get_template_part('instagram'); ?> 
+                  <?php //get_template_part('instagram'); ?> 
                 </div>
                 
             </main>

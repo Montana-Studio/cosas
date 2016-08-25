@@ -106,7 +106,43 @@ jQuery(document).ready(function($){
         });
         return false;   
     });
+	
+	$('.susc-news .newsletter a').on('click',function(event){
+		event.preventDefault();
+		$('.overlays-suscnews .susContent').slideToggle(function(){
+			
+			if ($('.overlays-suscnews .susContent').is(':hidden')){
+				$('.newsletter a').addClass('bgClose');
+				$('.newsletter a').removeClass('bgOpen');
+			}else{
+				$('.newsletter a').addClass('bgOpen');
+				$('.newsletter a').removeClass('bgClose');
+			}
+		});
+	});
+	
+	$('.susc-news .suscripciones a').on('click',function(event){
+		event.preventDefault();
+		$('.overlays-suscnews .newsContent').slideToggle(function(){
+			
+			if ($('.overlays-suscnews .newsContent').is(':hidden')){
+				$('.suscripciones a').addClass('bgClose');
+				$('.suscripciones a').removeClass('bgOpen');
+			}else{
+				$('.suscripciones a').addClass('bgOpen');
+				$('.suscripciones a').removeClass('bgClose');
+			}
+		});
+	});
+	
+	$('.susc-news2 .newsletter').on('click',function(){
+		$('.susc-news2 .newsletter .floatNews').slideToggle();
+	});
+	$('.susc-news2 .suscripciones').on('click',function(){
+		$('.susc-news2 .suscripciones .floatSusc').slideToggle();
+	});
     
+	//Instagram oroder
     $('.contInstagram').isotope({
         layoutMode: 'packery',
         percentPosition: true

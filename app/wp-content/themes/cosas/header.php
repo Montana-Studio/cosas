@@ -144,32 +144,36 @@
             <header id="masthead" class="site-header">
 
                 <div class="logo-medio">
-                    <h1>
-                        <a href="<?php echo site_url();?>" title="Revista COSAS - Una revista internacional">
-                        <?php if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){ ?>
-                            <svg  viewBox="0 0 759 262" class="repost-bg">
-                                <use xlink:href="#logo-repost" class="logo-head repost"/>
-                            </svg>
+					<a href="<?php echo site_url();?>" title="Revista COSAS - Una revista internacional">
+					<?php if($GLOBALS['detectBlogs']['repost']==$GLOBALS['detectBlogs']['blogId']){ ?>
+						<svg  viewBox="0 0 759 262" class="repost-bg">
+							<use xlink:href="#logo-repost" class="logo-head repost"/>
+						</svg>
 
-                        <?php
-                            }elseif($GLOBALS['detectBlogs']['lujo']==$GLOBALS['detectBlogs']['blogId']){
-                        ?>
-                            <svg viewBox="0 0 792 268" class="lujo-bg">
-                                <use xlink:href="#logo-lujo" class="logo-menu"/>
-                            </svg>
-                        <?php
-                            }elseif($GLOBALS['detectBlogs']['couture']==$GLOBALS['detectBlogs']['blogId']){
-                        ?>
-                            <svg viewBox="0 0 792 268" class="lujo-bg">
-                                <use xlink:href="#logo-couture" class="logo-menu"/>
-                            </svg>
-                        <?php }else{ ?>
-                            <svg  viewBox="0 0 759 262">
-                                <use xlink:href="#logo-cosas" class="logo-head"/>
-                            </svg>
-                        <?php } ?>
-                        </a>
-                    </h1>
+					<?php
+						}elseif($GLOBALS['detectBlogs']['lujo']==$GLOBALS['detectBlogs']['blogId']){
+					?>
+						<svg viewBox="0 0 792 268" class="lujo-bg">
+							<use xlink:href="#logo-lujo" class="logo-menu"/>
+						</svg>
+					<?php
+						}elseif($GLOBALS['detectBlogs']['couture']==$GLOBALS['detectBlogs']['blogId']){
+					?>
+						<svg viewBox="0 0 792 268" class="lujo-bg">
+							<use xlink:href="#logo-couture" class="logo-menu"/>
+						</svg>
+					<?php }else{ ?>
+						<svg  viewBox="0 0 759 262">
+							<use xlink:href="#logo-cosas" class="logo-head"/>
+						</svg>
+					<?php } ?>
+					</a>
+
+					<div class="date hide">
+						<span>
+							<?php $nommes = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"); $nomdia = array("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"); $dia = date("j"); $mes = date("n"); $diasemana = date("w"); $hoy = $nomdia[$diasemana]." ".$dia." de ".$nommes[$mes-1]." del ".date('Y'); echo $hoy; ?>
+						</span>
+					</div>
                 </div>
 
                 <nav id="site-navigation" class="main-navigation">
@@ -181,10 +185,6 @@
                 </div>
                 
                 <div class="meta-info hide">
-                    
-                    <span>
-                        <?php $nommes = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"); $nomdia = array("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"); $dia = date("j"); $mes = date("n"); $diasemana = date("w"); $hoy = $nomdia[$diasemana]." ".$dia." de ".$nommes[$mes-1]." del ".date('Y'); echo $hoy; ?>
-                    </span>
                     
                     <div class="redes">
                         <ul>
@@ -203,9 +203,104 @@
                         </ul>
                     </div>
                     
+                    <div class="susc-news2">
+                    	
+                    	<div class="newsletter">
+                    		
+                    		<div class="btnNews">
+								Regístrate a nuestro <br>
+								<strong>NEWSLETTER</strong>
+							</div>
+                    		
+                    		<div class="floatNews hide">
+                    			
+                    			hola esto es el newsletter
+                    			
+                    		</div>
+                    		
+                    	</div>
+                    	<div class="suscripciones">
+                    		
+                    		<div class="btnSusc">
+								Suscríbete a <br>
+								<svg viewBox="0 0 759 232">
+									<use xlink:href="#logo-cosas" class="logo-susc"/>
+								</svg>
+							</div>
+                    		
+                    		<div class="floatSusc hide">
+                    			
+                    			hola esto es el newsletter
+                    			
+                    		</div>
+                    	</div>
+                    	
+                    </div>
+                    
                 </div>
 
             </header><!-- #masthead -->
+            
+            <?php if(wp_is_mobile()){ ?>
+            <div class="susc-news">
+            	<div class="newsletter">
+            		<a href="#" target="_self">
+            			<span>
+							registrate en el
+							<strong>newsletter</strong>
+						</span>
+            		</a>
+            	</div>
+            	<div class="suscripciones">
+            		<a href="#" target="_self">
+						<span>
+							suscribete a
+												
+							<svg viewBox="0 0 759 232">
+								<use xlink:href="#logo-cosas" class="logo-susc"/>
+							</svg>
+						</span>	
+					</a>
+            	</div>
+            </div>
+			<div class="overlays-suscnews">
+				<div class="susContent">
+					
+					<div class="titSus">
+						<span>Regístrate a nuestro</span>
+					</div>
+					<div class="subSus">
+						<span>NEWSLETTER</span>
+					</div>
+					<p>suscríbete a nuestro newsletter y recibe todas nuestras noticias en tu <span>correo electronico</span></p>
+					<form class="formSus newsletter_form">
+
+						<input type="text" placeholder="Nombre*" id="nombre_newsletter" required>
+						<input type="email" placeholder="Email*" id="correo_newsletter" required>
+						<input type="submit" name="enviar" value="Suscríbete" placeholder="Suscríbete"/>
+						<small>*campos requeridos</small>
+						
+						<h3 class="form-send" style="color:#000;"></h3>
+
+					</form>
+					
+				</div>
+				<div class="newsContent">
+					
+					<div class="titNews">
+						Suscríbete a
+					</div>
+					<div class="subNews">
+						<svg viewBox="0 0 759 232">
+							<use xlink:href="#logo-cosas" class="logo-susc"/>
+						</svg>
+					</div>
+					
+					<div class="btnNews"><a href="<?php echo get_site_url($GLOBALS['detectBlogs']['suscripciones']); ?>">¡QUIERO RECIBIR LA REVISTA!</a></div>
+					
+				</div>
+			</div>
+            <?php } ?>
             
             <?php if($GLOBALS['detectBlogs']['suscripciones']==$GLOBALS['detectBlogs']['blogId']&&wp_is_mobile()){ ?>
             

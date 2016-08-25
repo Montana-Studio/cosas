@@ -9,10 +9,9 @@
         position: relative;
         overflow: hidden;
         @include span-columns(6);
-        h1{
-            @include pad(0);
-            margin:0;
-        }
+		a{
+			@include span-columns(4.5)
+		}
         .logo-head{
             fill:$white;
             &.repost{
@@ -29,15 +28,27 @@
                 background:{color: #fff;}
             }
         }
+		@include media(width 1024px){
+			a{
+				@include span-columns(6);
+			}
+		}
         @include media($notebook){
             @include span-columns(6);
             max-height: 73px;
+			.date{
+				@include span-columns(6);
+				color:$greyTwo;
+				font:{size:10px;family:$openSans}
+				height: 73px;
+				display: table;
+				span{
+					display: table-cell;
+					vertical-align: middle;
+				}
+			}
             svg{
                 height: 73px;
-            }
-            h1{
-                @include pad(0);
-                margin:0;
             }
         }
 	}
@@ -63,34 +74,283 @@
     @include media($notebook){
         max-height: 73px;
         .meta-info{
-            color:#b5b5b5;
+            color:$greyTwo;
             font:{size:10px;family:$openSans}
-            @include pad(25px 0);
             @include direction-context(right-to-left){
-                @include span-columns(3.5);
-            }
-            span{
                 @include span-columns(6);
             }
             .redes{
-                @include span-columns(6);
+                @include span-columns(4);
+                @include shift(2);
                 ul{
                     li{
-                        @include span-columns(3);
+                        @include span-columns(2.5);
                         @include textAlign(center);
                         a{
-                            color:#b5b5b5;
+							width:100%;
+                            color:$greyTwo;
+							height: 73px;
+							display: table;
                             i{
+								display: table-cell;
+								vertical-align: middle;
                                 font:{size:em(25);}
                             }
                         }
                     }
                 }
             }
+			.susc-news2{
+				@include span-columns(6);
+				height: 73px;
+				background:{color:$greyOne;}
+				.newsletter{
+					@include span-columns(7);
+					@include textAlign(center);
+					height:73px;
+					display:table;
+					text:{transform:uppercase;}
+					cursor:pointer;
+					overflow: visible;
+					position:relative;
+					.btnNews{
+						display: table-cell;
+						vertical-align: middle;
+						strong{
+							font:{size:em(29)}
+						}
+					}
+					.floatNews{
+						position: absolute;
+						right: 0;
+						top: 72px;
+						width:924px;
+						background:{color:$black;}
+					}
+				}
+				.suscripciones{
+					@include span-columns(5);
+					@include textAlign(center);
+					height:73px;
+					display:table;
+					text:{transform:uppercase;}
+					overflow: visible;
+					position:relative;
+					cursor:pointer;
+					.btnSusc{
+						display: table-cell;
+						vertical-align: middle;
+						svg{
+							width:84px;
+							.logo-susc{
+								fill:$white;
+							}
+						}
+					}
+					.floatSusc{
+						position: absolute;
+						right: 0;
+						top: 72px;
+						width:300px;
+						background:{color:$black;}
+					}
+				}
+			}
         }
     }
 	.main-search{
 		@extend .main-navigation;
+	}
+}
+.susc-news{
+	@include row();
+	@include omega();
+	position: relative;
+	overflow: visible;
+	clear:both;
+	background: {color:$greyOne;}
+	height: 60px;
+	.newsletter{
+		@include span-columns(6);
+		@include textAlign(center);
+		a{
+			display: table;
+			width: 100%;
+			height: 10%;
+			color:$greyTwo;
+			background:{color:transparent;}
+			span{
+				font:{family:$openSans;weight:lighter;size:em(13)}
+				text:{transform:uppercase;}
+				display: table-cell;
+				vertical-align: middle;
+				height: 60px;
+			}
+			&.bgOpen{
+				@include transition(background .5s ease-in 0s, color .5s ease-in 0s);
+				background:{color:$red;}
+				color:$white;
+			}
+			&.bgClose{
+				@include transition(background .5s ease-in 0s, color .5s ease-in 0s);
+				background:{color:transparent;}
+				color:$greyTwo;
+			}
+		}
+	}
+	.suscripciones{
+		@extend .newsletter;
+		a{
+			span{
+				svg{
+					position: relative;
+					overflow: hidden;
+					//height: 14px;
+					width: 47px;
+					.logo-susc{
+						fill:$greyTwo;
+					}
+				}
+			}
+			&.bgOpen{
+				span{
+					svg{
+						.logo-susc{
+							fill:$white;
+						}
+					}
+				}
+			}
+			&.bgClose{
+				span{
+					svg{
+						.logo-susc{
+							fill:$greyTwo;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.overlays-suscnews{
+	@include row();
+	width:100%;
+	position: absolute;
+	z-index: 9999;
+	top: 113px;
+	background: {color:$black;}
+	.susContent{
+		@include row();
+		display: none;
+		.titSus{
+			@include span-columns(5);
+			@include shift(1);
+			@include textAlign(right);
+			color:$white;
+			font:{family:$playFair;size:em(20);style:italic;}
+			border:{right:1px solid $white;}
+			padding:{right:20px;}
+			margin:{top:5px;bottom:5px;}
+			line:{height:1;}
+			display: table;
+			min-height: 54px;
+			span{
+				display: table-cell;
+				vertical-align: middle;
+			}
+		}
+		.subSus{
+			@include span-columns(6);
+			display: table;
+			min-height: 54px;
+			@include omega();
+			@include textAlign(left);
+			color:$red;
+			font:{size:em(20);family:$openSans;}
+			text:{transform:uppercase;}
+			padding:{left:10px;}
+			margin:{top:5px;bottom:5px;}
+			span{
+				display: table-cell;
+				vertical-align: middle;
+			}
+		}
+		p{
+			@include row();
+			clear:both;
+			width: 65%;
+			margin:0 auto;
+			color:$greyTwo;
+			font:{family:$openSans;size:em(11)}
+			text:{transform:uppercase;align:center;}
+			span{
+				color:$white;
+			}
+		}
+		.formSus{
+			@include row();
+			clear:both;
+			margin:{top:10px;}
+			input{
+				@include span-columns(10);
+				@include shift(1);
+				border:none;
+				background:{color:$white;}
+				font:{family:$openSans;size:10px;}
+				text:{transform:uppercase;}
+				padding:5px;
+				margin:{bottom:5px;}
+				&[type="submit"]{
+					background:{color:$red;}
+					color:$white;
+					padding:10px;
+				}
+			}
+			small{
+				@include span-columns(10);
+				@include shift(1);
+				@include textAlign(right);
+				color:$greyTwo;
+				font:{family:$openSans;size:em(11)}
+				text:{transform:uppercase;}
+				padding:3px 0 5px;
+			}
+		}
+	}
+	.newsContent{
+		@extend .susContent;
+		@include textAlign(center);
+		.titNews{
+			color:$white;
+			font:{family:$playFair;size:em(25);style:italic;}
+		}
+		.subNews{
+			@include span-columns(7.8);
+			@include shift(2);
+			svg{
+				position: relative;
+				overflow: hidden;
+				width: 100%;
+				.logo-susc{
+					fill:$white;
+				}
+			}
+		}
+		.btnNews{
+			@include row();
+			clear:both;
+			a{
+				@include span-columns(8);
+				@include shift(2);
+				background:{color:$red;}
+				color:$white;
+				text:{transform:uppercase;}
+				font:{size:em(14);weight:bold;}
+				@include pad(10px 5px);
+				margin:{bottom:10px;top:10px;}
+			}
+		}
 	}
 }
 .last-content{
