@@ -8,6 +8,7 @@
 	.logo-medio{
         position: relative;
         overflow: hidden;
+		z-index: 999;
         @include span-columns(6);
 		a{
 			@include span-columns(4.5)
@@ -110,12 +111,12 @@
 					height:73px;
 					display:table;
 					text:{transform:uppercase;}
-					cursor:pointer;
 					overflow: visible;
 					position:relative;
 					.btnNews{
 						display: table-cell;
 						vertical-align: middle;
+						cursor:pointer;
 						strong{
 							font:{size:em(29)}
 						}
@@ -126,6 +127,82 @@
 						top: 72px;
 						width:924px;
 						background:{color:$black;}
+						@include pad(40px 0);
+						.titNews{
+							@include span-columns(4);
+							@include omega();
+							@include textAlign(right);
+							@include pad(10px 10px 10px 0);
+							border:{right:1px solid $greyTwo;}
+							span{
+								&:first-child{
+									font:{family:$playFair;size:em(30);style:italic;}
+									color:$white;
+									text:{transform:none;}
+								}
+								&:last-child{
+									color:$red;
+									font:{family:$openSans;size:em(40);}
+								}
+							}
+						}
+						.formNews{
+							@include span-columns(8);
+							p{
+								@include row();
+								clear:both;
+								span{
+									color:$white;
+								}
+							}
+							.newsletter_form{
+								@include row();
+								clear:both;
+								max-width:82%;
+								margin:0 auto;
+								input{
+									@include span-columns(6);
+									@include omega(2n);
+									border:none;
+									background:{color:$white;}
+									font:{family:$openSans;size:10px;}
+									text:{transform:uppercase;}
+									padding:5px;
+									&[type="submit"]{
+										@include direction-context(right-to-left){
+											@include span-columns(4);
+										}
+										@include omega();
+										background:{color:$red;}
+										color:$white;
+										padding:10px;
+										margin:{top:10px;}
+									}
+								}
+								small{
+									@include span-columns(8);
+									@include omega();
+									@include textAlign(right);
+									display: table;
+									height: 34px;
+									margin:{top:10px;}
+									span{
+										display: table-cell;
+										vertical-align:middle;
+									}
+								}
+							}
+							.form-send{
+								@include span-columns(10);
+								@include shift(1);
+								color:$white;
+								font:{family:$playFair;size:em(25);}
+								text:{transform:none;}
+							}
+						}
+						@include media(width 1024px){
+							width:900px;
+						}
 					}
 				}
 				.suscripciones{
@@ -136,10 +213,10 @@
 					text:{transform:uppercase;}
 					overflow: visible;
 					position:relative;
-					cursor:pointer;
 					.btnSusc{
 						display: table-cell;
 						vertical-align: middle;
+						cursor:pointer;
 						svg{
 							width:84px;
 							.logo-susc{
@@ -148,11 +225,41 @@
 						}
 					}
 					.floatSusc{
+						@include pad(40px 5px);
 						position: absolute;
 						right: 0;
 						top: 72px;
-						width:300px;
+						width:400px;
 						background:{color:$black;}
+						.titNews{
+							@include row();
+							clear:both;
+							color:$white;
+							font:{family:$playFair;size:em(40);style:italic;}
+							text:{transform:none;}
+						}
+						.subNews{
+							@include row();
+							clear:both;
+							svg{
+								max-width: 65%;
+								.logo-susc{
+									fill:$white;
+								}
+							}
+						}
+						.btnNews{
+							@include row();
+							clear:both;
+							max-width: 50%;
+							margin:0 auto;
+							background:{color:$red;}
+							margin:{top:20px;}
+							@include pad(10px 20px);
+							a{
+								color:$white;
+							}
+						}
 					}
 				}
 			}
@@ -317,6 +424,15 @@
 				padding:3px 0 5px;
 			}
 		}
+		.form-send{
+			@include span-columns(10);
+			@include shift(1);
+			@include pad(20px 0);
+			@include textAlign(center);
+			color:$white;
+			font:{family:$playFair;size:em(15);}
+			text:{transform:none;}
+		}
 	}
 	.newsContent{
 		@extend .susContent;
@@ -346,7 +462,7 @@
 				background:{color:$red;}
 				color:$white;
 				text:{transform:uppercase;}
-				font:{size:em(14);weight:bold;}
+				font:{size:em(13);weight:bold;}
 				@include pad(10px 5px);
 				margin:{bottom:10px;top:10px;}
 			}

@@ -135,11 +135,23 @@ jQuery(document).ready(function($){
 		});
 	});
 	
-	$('.susc-news2 .newsletter').on('click',function(){
-		$('.susc-news2 .newsletter .floatNews').slideToggle();
+	$('.susc-news2 .newsletter .btnNews').on('click',function(){
+		if($('.susc-news2 .suscripciones .floatSusc').is(':hidden')){
+			$('.susc-news2 .newsletter .floatNews').slideToggle();	
+		}else{
+			$('.susc-news2 .suscripciones .floatSusc').slideToggle(function(){
+				$('.susc-news2 .newsletter .floatNews').slideToggle();
+			});
+		}
 	});
-	$('.susc-news2 .suscripciones').on('click',function(){
-		$('.susc-news2 .suscripciones .floatSusc').slideToggle();
+	$('.susc-news2 .suscripciones .btnSusc').on('click',function(){
+		if($('.susc-news2 .newsletter .floatNews').is(':hidden')){
+			$('.susc-news2 .suscripciones .floatSusc').slideToggle();	
+		}else{
+			$('.susc-news2 .newsletter .floatNews').slideToggle(function(){
+				$('.susc-news2 .suscripciones .floatSusc').slideToggle();
+			});
+		}
 	});
     
 	//Instagram oroder

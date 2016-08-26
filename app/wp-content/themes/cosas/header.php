@@ -214,7 +214,27 @@
                     		
                     		<div class="floatNews hide">
                     			
-                    			hola esto es el newsletter
+                    			<div class="titNews">
+									<span>Regístrate a nuestro</span>
+									<br>
+									<span>NEWSLETTER</span>
+								</div>
+								
+								<div class="formNews">
+									<p>suscríbete a nuestro newsletter y recibe todas nuestras noticias en tu <span>correo electronico</span></p>
+									<form class="newsletter_form">
+
+										<input type="text" placeholder="Nombre*" id="nombre_newsletter" required>
+										<input type="email" placeholder="Email*" id="correo_newsletter" required>
+										
+										<input type="submit" name="enviar" value="Suscríbete" placeholder="Suscríbete"/>
+										<small>
+											<span>*campos requeridos</span>
+										</small>
+
+									</form>
+                  					<div class="form-send hide"></div>
+                   				</div>
                     			
                     		</div>
                     		
@@ -230,7 +250,16 @@
                     		
                     		<div class="floatSusc hide">
                     			
-                    			hola esto es el newsletter
+                    			<div class="titNews">
+									Suscríbete a
+								</div>
+								<div class="subNews">
+									<svg viewBox="0 0 759 232">
+										<use xlink:href="#logo-cosas" class="logo-susc"/>
+									</svg>
+								</div>
+
+								<div class="btnNews"><a href="<?php echo get_site_url($GLOBALS['detectBlogs']['suscripciones']); ?>">¡QUIERO RECIBIR LA REVISTA!</a></div>
                     			
                     		</div>
                     	</div>
@@ -279,10 +308,10 @@
 						<input type="email" placeholder="Email*" id="correo_newsletter" required>
 						<input type="submit" name="enviar" value="Suscríbete" placeholder="Suscríbete"/>
 						<small>*campos requeridos</small>
-						
-						<h3 class="form-send" style="color:#000;"></h3>
 
 					</form>
+						
+					<div class="form-send"></div>
 					
 				</div>
 				<div class="newsContent">
