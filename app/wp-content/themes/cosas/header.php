@@ -224,10 +224,10 @@
 									<p>suscríbete a nuestro newsletter y recibe todas nuestras noticias en tu <span>correo electronico</span></p>
 									<form class="newsletter_form">
 
-										<input type="text" placeholder="Nombre*" id="nombre_newsletter" required>
-										<input type="email" placeholder="Email*" id="correo_newsletter" required>
+										<input type="text" placeholder="Nombre*" class="nombre_newsletter" required>
+										<input type="email" placeholder="Email*" class="correo_newsletter" required>
 										
-										<input type="submit" name="enviar" value="Suscríbete" placeholder="Suscríbete"/>
+										<input type="submit" name="enviar" value="Suscríbete" placeholder="Suscríbete" class="submit_news"/>
 										<small>
 											<span>*campos requeridos</span>
 										</small>
@@ -304,9 +304,9 @@
 					<p>suscríbete a nuestro newsletter y recibe todas nuestras noticias en tu <span>correo electronico</span></p>
 					<form class="formSus newsletter_form">
 
-						<input type="text" placeholder="Nombre*" id="nombre_newsletter" required>
-						<input type="email" placeholder="Email*" id="correo_newsletter" required>
-						<input type="submit" name="enviar" value="Suscríbete" placeholder="Suscríbete"/>
+						<input type="text" placeholder="Nombre*" class="nombre_newsletter" required>
+						<input type="email" placeholder="Email*" class="correo_newsletter" required>
+						<input type="submit" name="enviar" value="Suscríbete" placeholder="Suscríbete" class="submit_news"/>
 						<small>*campos requeridos</small>
 
 					</form>

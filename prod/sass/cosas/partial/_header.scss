@@ -437,6 +437,7 @@
 	.newsContent{
 		@extend .susContent;
 		@include textAlign(center);
+		@include pad(20px 0);
 		.titNews{
 			color:$white;
 			font:{family:$playFair;size:em(25);style:italic;}

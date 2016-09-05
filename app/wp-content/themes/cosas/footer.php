@@ -14,11 +14,11 @@
 
                     <h3 class="titus">suscríbete a nuestro newsletter</h3>
                     <form class="newsletter_form">
-                        <input type="text" placeholder="Nombre" id="nombre_newsletter" required>
-                        <input type="email" placeholder="Email" id="correo_newsletter" required>
-                        <input type="submit" name="enviar" value="Suscríbete" placeholder="Suscríbete"/>
+                        <input type="text" placeholder="Nombre" class="nombre_newsletter" required>
+                        <input type="email" placeholder="Email" class="correo_newsletter" required>
+                        <input class="submit_news" type="submit" name="enviar" value="Suscríbete" placeholder="Suscríbete"/>
                     </form>
-                    <h3 class="form-send" style="color:#000;"></h3>
+                    <h3 class="form-send" style="color:#000;display:none"></h3>
 
                 </div>
                 <div class="footer-top">
@@ -152,7 +152,42 @@
                 slidesPerView: 3,
                 paginationClickable: true,
             }); 
+			
+			jQuery(document).ready(function($){
+				
+				
+				
+				
+				$('.submit_news').on('click', function(){
+					
+					var nombre = $(this).siblings('.nombre_newsletter').val();
+					var correo = $(this).siblings('.correo_newsletter').val();
+					$(this).parent().hide();
+					var send = $(this).parent().siblings('.form-send');
+					$.ajax({
+						type: 'POST',  
+						url: '<?php echo get_template_directory_uri(); ?>/js/procesar_correo.php',   
+						data: 'nombre='+nombre+'&correo='+correo+'&send='+send,
+						success: function(data){
 
+							if (data==='exito'){
+								send.show().text('Suscripción enviada con éxito.');
+
+							} else if(data==='existe') {
+								send.show().text('Lo sentimos, este correo ya está registrado.');
+
+							}else{
+								send.show().text('No hemos podido enviar tu suscripción. Inténtalo nuevamente.');
+							}
+
+						}
+					});
+					
+					return false;
+					
+				});
+
+			});
         </script>
 		<?php 
 		if(is_singular('branded')){
