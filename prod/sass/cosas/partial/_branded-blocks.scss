@@ -3,7 +3,7 @@ $color_automo:#039ae9;
 
 .branded-content{
 	@include span-columns(12);
-	@include pad(10px 10px 0);
+	@include pad(0 10px 10px);
 	.branded-box{
 		@include span-columns(6);
 		.branded-ad{

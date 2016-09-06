@@ -15,6 +15,10 @@ get_header();
 <ins data-revive-zoneid="7" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
 <script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
 </div>
+<div style="max-width:970px;margin:0 auto;">
+	<ins data-revive-zoneid="15" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
+	<script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+</div> 
 
 <!-- BRANDED BANNERS -->
         
