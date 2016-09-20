@@ -41,7 +41,7 @@
 						<h1><?php the_title(); ?></h1>
 						<h2><?php the_field('subtitulo'); ?></h2>
 						<small><?php the_time('l, j F Y'); ?></small>
-						<p><?php the_excerpt(); ?></p>
+						<p><?php html5wp_excerpt('html5wp_custom_post'); ?></p>
 						<?php				 
 							the_field('galleria_01'); 
 							the_content();

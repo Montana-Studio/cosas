@@ -50,7 +50,7 @@
 			        		<span>contacto</span>
 			        		<div class="tel">
 			        			<i class="fa fa-phone"></i>
-			        			<a href="tel:&#43;56984678596" target="_blank">+569 84678596</a>
+			        			<a href="tel:&#43;56223645100" target="_blank">+562 2364 51 00</a>
 			        		</div>
 			        		<div class="mails">
 			        			<i class="fa fa-lightbulb-o"></i>
