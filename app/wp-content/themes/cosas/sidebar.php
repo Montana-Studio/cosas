@@ -3,24 +3,54 @@
    
     <div style='width:300px;margin:0 auto 5px;'>
 
-        <ins data-revive-zoneid="12" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
-        <script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+		<ins data-revive-zoneid="12" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+		<script>
+		(function () {
+		  var d = document, s = d.createElement('script'), p = d.location.protocol,
+			  i = d.getElementsByTagName('ins'), j = i[i.length-1];
+		  try {
+			s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+			  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+			s.async = true; j.appendChild(s);
+		  } catch (e) {}
+		})();
+		</script>
    
     </div>
     
     <div class="branded-content">
 		
 		<div class="branded-box">
-			
-		<ins data-revive-zoneid="13" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
-		<script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+
+			<ins data-revive-zoneid="13" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+			<script>
+			(function () {
+			  var d = document, s = d.createElement('script'), p = d.location.protocol,
+				  i = d.getElementsByTagName('ins'), j = i[i.length-1];
+			  try {
+				s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+				  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+				s.async = true; j.appendChild(s);
+			  } catch (e) {}
+			})();
+			</script>
 			
 		</div>
 		
 		<div class="branded-box">
 		
-		<ins data-revive-zoneid="14" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
-		<script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+			<ins data-revive-zoneid="14" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+			<script>
+			(function () {
+			  var d = document, s = d.createElement('script'), p = d.location.protocol,
+				  i = d.getElementsByTagName('ins'), j = i[i.length-1];
+			  try {
+				s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+				  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+				s.async = true; j.appendChild(s);
+			  } catch (e) {}
+			})();
+			</script>
 		
 		</div>
 
@@ -28,22 +58,52 @@
     
     <div style='width:250px;margin:0 auto 5px;'>
 
-        <ins data-revive-zoneid="11" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
-        <script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+		<ins data-revive-zoneid="11" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+		<script>
+		(function () {
+		  var d = document, s = d.createElement('script'), p = d.location.protocol,
+			  i = d.getElementsByTagName('ins'), j = i[i.length-1];
+		  try {
+			s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+			  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+			s.async = true; j.appendChild(s);
+		  } catch (e) {}
+		})();
+		</script>
    
     </div>
     
     <div style="width:300px;margin:0 auto 5px;">
-       
-        <ins data-revive-zoneid="10" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
-        <script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
-        
+
+		<ins data-revive-zoneid="1" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+		<script>
+		(function () {
+		  var d = document, s = d.createElement('script'), p = d.location.protocol,
+			  i = d.getElementsByTagName('ins'), j = i[i.length-1];
+		  try {
+			s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+			  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+			s.async = true; j.appendChild(s);
+		  } catch (e) {}
+		})();
+		</script>
+
     </div>
     
     <div style="width:300px;margin:0 auto 5px;">
-       
-        <ins data-revive-zoneid="1" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
-        <script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+
+		<ins data-revive-zoneid="10" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+		<script>
+		(function () {
+		  var d = document, s = d.createElement('script'), p = d.location.protocol,
+			  i = d.getElementsByTagName('ins'), j = i[i.length-1];
+		  try {
+			s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+			  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+			s.async = true; j.appendChild(s);
+		  } catch (e) {}
+		})();
+		</script>
         
     </div>
 	

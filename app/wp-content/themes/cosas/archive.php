@@ -11,12 +11,36 @@
 
 			</div>
 			<div style="max-width:320px;margin:0 auto;">
-			<ins data-revive-zoneid="7" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
-			<script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+
+				<ins data-revive-zoneid="7" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+				<script>
+				(function () {
+				  var d = document, s = d.createElement('script'), p = d.location.protocol,
+					  i = d.getElementsByTagName('ins'), j = i[i.length-1];
+				  try {
+					s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+					  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+					s.async = true; j.appendChild(s);
+				  } catch (e) {}
+				})();
+				</script>
+				
 			</div>
 			<div style="max-width:728px;margin:0 auto;">
-			<ins data-revive-zoneid="4" data-revive-id="57a6b4ea911480853c3dc7a69f930632"></ins>
-			<script async src="//bloques.cosas.com/activos/www/delivery/asyncjs.php"></script>
+
+				<ins data-revive-zoneid="4" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+				<script>
+				(function () {
+				  var d = document, s = d.createElement('script'), p = d.location.protocol,
+					  i = d.getElementsByTagName('ins'), j = i[i.length-1];
+				  try {
+					s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+					  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+					s.async = true; j.appendChild(s);
+				  } catch (e) {}
+				})();
+				</script>
+				
 			</div>       
             <h1 class="titus"><?php _e( 'Archives', 'html5blank' ); ?></h1>
             

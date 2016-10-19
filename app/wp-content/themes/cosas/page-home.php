@@ -1,9 +1,11 @@
-<?php get_header(); ?>
+<?php
+	/* Template Name: Home */
+	get_header(); 
+?>
 
     <div id="primary" class="content-area">
         <div style="max-width:320px;margin:0 auto;">
-
-			<ins data-revive-zoneid="6" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+           <ins data-revive-zoneid="6" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
 			<script>
 			(function () {
 			  var d = document, s = d.createElement('script'), p = d.location.protocol,
@@ -15,12 +17,10 @@
 			  } catch (e) {}
 			})();
 			</script>
-       
         </div>
         
         <div style="max-width:728px;margin:0 auto;">
-
-			<ins data-revive-zoneid="2" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+            <ins data-revive-zoneid="2" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
 			<script>
 			(function () {
 			  var d = document, s = d.createElement('script'), p = d.location.protocol,
@@ -32,7 +32,6 @@
 			  } catch (e) {}
 			})();
 			</script>
-       
         </div>
         
         <main id="main" class="site-main">
@@ -155,7 +154,7 @@
         <?php if(wp_is_mobile()){ ?>
         	<div class="branded-content">
         		<div class="branded-box">
-
+        			
 					<ins data-revive-zoneid="13" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
 					<script>
 					(function () {
@@ -172,7 +171,7 @@
         		</div>
 				
 				<div class="branded-box">
-
+					
 					<ins data-revive-zoneid="14" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
 					<script>
 					(function () {
@@ -191,8 +190,7 @@
         <?php } ?>
         
         <div style="max-width:728px;margin:0 auto;">
-
-			<ins data-revive-zoneid="9" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+            <ins data-revive-zoneid="9" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
 			<script>
 			(function () {
 			  var d = document, s = d.createElement('script'), p = d.location.protocol,
@@ -204,11 +202,9 @@
 			  } catch (e) {}
 			})();
 			</script>
-       
         </div>
         
 		<div style="max-width:970px;margin:0 auto;">
-
 			<ins data-revive-zoneid="15" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
 			<script>
 			(function () {
@@ -221,7 +217,6 @@
 			  } catch (e) {}
 			})();
 			</script>
-	
 		</div>  
         <?php
             
