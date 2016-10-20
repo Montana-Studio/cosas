@@ -202,7 +202,7 @@
 			});
         </script>
 		<?php 
-		if(is_singular('branded')){
+		if(is_singular('branded')||is_single('deslumbra-se-una-inspiracion')){
 		?>
 			<script>
 				var gallerySliders = new Swiper('.swiper-gallery', {
