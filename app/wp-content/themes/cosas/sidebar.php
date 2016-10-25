@@ -120,7 +120,7 @@
 		</div>
    
     <?php } ?>
-    <?php /*
+    
     <div class="columnas">
         
         <div class="headernegro">
@@ -130,8 +130,13 @@
             </div>
 
             <div class="subheadtodos">
-
-                <i class="fa fa-plus"></i> ver todos
+				<?php
+					$category_id = get_cat_ID( 'columnas' );
+					$category_link = get_category_link( $category_id );
+				?>
+				<a href="<?php echo esc_url( $category_link ); ?>">
+					<i class="fa fa-plus"></i> Ver todas
+				</a>
             </div>
         </div>
 
@@ -141,7 +146,7 @@
                 <?php
                 // WP_Query arguments
                 $args = array (
-                    'category_name'          => 'espectaculos',
+                    'category_name'          => 'columnas',
                     'posts_per_page'         => '9',
                     'order'                  => 'DESC',
                     'orderby'                => 'date',
@@ -156,14 +161,9 @@
                         $columnas->the_post(); 
                     ?>
                     <div class="swiper-slide">
-                        <div id="post-<?php the_ID(); ?>" <?php post_class('columnauno'); ?>>
+                        <a id="post-<?php the_ID(); ?>" <?php post_class('columnauno'); ?> href="<?php echo the_permalink(); ?>">
                             <div class="fotocolumnauno">
-                               <?php 
-                                    global $post, $posts;
-                                    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-                                    $first_img = $matches [1] [0];
-                                ?>
-                                <div class="img-author" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;} ?> ');"></div>
+                               <div class="img-author" style="background-image:url('<?php echo the_field('img-columnista'); ?>');"></div>
                             </div>
                             <div class="data-columnas">
                                 <div class="titulocolumnauno">
@@ -179,14 +179,14 @@
                                         ?>
                                     </h3>
                                     <small class="tituloeditor" >
-                                        <?php the_author(); ?>
+                                        <?php echo the_field('nombre_columnista'); ?>
                                     </small>  
                                 </div> 
                                 <div class="textocolumnauno">
                                     <?php echo substr(get_the_excerpt(), 0,100); ?>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                    </div> 
                     <?php 
                     }
@@ -209,6 +209,5 @@
         </div>
         
     </div>
-    */ ?>
 </aside>
 <!-- /sidebar -->

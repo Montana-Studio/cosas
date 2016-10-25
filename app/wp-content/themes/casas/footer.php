@@ -65,7 +65,40 @@
 		<!-- /wrapper -->
 
 		<?php wp_footer(); ?> 
-        		<!-- analytics -->
+       
+       	<script>
+			jQuery(document).ready(function($){
+				$('.newsletter_form').on('submit', function(){
+					var nombre = $('#nombre_newsletter').val();
+					var correo = $('#correo_newsletter').val();
+					$.ajax({
+						type: 'POST',  
+						url: '<?php echo get_template_directory_uri(); ?>/js/procesar_correo.php',  
+						data: 'nombre='+nombre+'&correo='+correo,
+						success: function(data){
+							console.log(data);
+						   if (data==='exito'){
+								$('.newsletter_form').hide();
+								$('.form-send').show();
+								$('.form-send').text('Suscripción enviada con éxito.');
+							} else {
+								if(data==='existe'){
+									$('.newsletter_form').hide();
+									$('.form-send').show();
+									$('.form-send').text('Lo sentimos, este correo ya está registrado.');
+								}else{
+									$('.newsletter_form').hide();
+									$('.form-send').show();
+									$('.form-send').text('No hemos podido enviar tu suscripción. Inténtalo nuevamente.');
+								}
+							}
+						}
+					});
+					return false;   
+				});				  
+			});
+		</script>
+        <!-- analytics -->
 		<script>
 		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
 		(f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),

@@ -77,13 +77,13 @@ msgstr "Galerías"
 msgid "More links"
 msgstr "Más enlaces"
 
-#: inc/widgets.php:88
-msgid "More quotes"
-msgstr "Más citas"
-
 #: inc/widgets.php:91 taxonomy-post_format.php:45
 msgid "Links"
 msgstr "Enlaces"
+
+#: inc/widgets.php:88
+msgid "More quotes"
+msgstr "Más citas"
 
 #: inc/widgets.php:87 taxonomy-post_format.php:42
 msgid "Quotes"
@@ -205,13 +205,13 @@ msgstr "Usa una <a href=\"%1$s\">etiqueta</a> para destacar tus entradas. Si nin
 msgid "Featured Content"
 msgstr "Contenido destacado"
 
-#: inc/customizer.php:44 inc/customizer.php:45
-msgid "May only be visible on wide screens."
-msgstr "Puede que sólo sea visible en pantallas anchas."
-
 #: inc/customizer.php:47 inc/customizer.php:48
 msgid "Background may only be visible on wide screens."
 msgstr "El fondo solo será visible en pantallas anchas."
+
+#: inc/customizer.php:44 inc/customizer.php:45
+msgid "May only be visible on wide screens."
+msgstr "Puede que sólo sea visible en pantallas anchas."
 
 #: inc/customizer.php:40
 msgid "Display Site Title &amp; Tagline"

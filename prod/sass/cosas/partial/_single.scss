@@ -95,7 +95,7 @@
                 height:auto;
             }
         }
-        .post-single{  
+        .post-single{ 
             h3{
                 @include span-columns(10);
                 @include shift(1);
@@ -192,6 +192,36 @@
                     }
                 }
             }
+			.columnasData{
+				@include span-columns(12);
+				display: table;
+				height: 100px;
+				.contentColumnista{
+					display: table-cell;
+					vertical-align: middle;
+					.imgColumnista{
+						@include borderRadius(50%);
+						float:left;
+						width: 80px;
+						height: 80px;
+						background: {
+							color:$red;
+						}
+					}
+					.nameColumnista{
+						display: table;
+						height: 80px;
+						h4{
+							padding:{
+								left:10px;
+							}
+							@extend .no-margins;
+							display: table-cell;
+							vertical-align: middle;
+						}
+					}
+				}
+			}
             @include media($tabletLand){
                 @include span-columns(8);
             }

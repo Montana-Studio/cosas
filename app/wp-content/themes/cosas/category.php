@@ -10,7 +10,7 @@ get_header();
 
             </div>
 
-            <h1 class="titus"><?php _e( 'Categories for ', 'html5blank' ); single_cat_title(); ?></h1>
+            <h1 class="titus"><?php single_cat_title(); ?></h1>
             
             <div class="post-list">
               	<?php if (have_posts()): while (have_posts()) : the_post(); ?>

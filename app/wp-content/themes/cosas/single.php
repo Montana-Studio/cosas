@@ -278,6 +278,17 @@
 					</div>
 
 					<div class="post-single">
+						
+						<?php if(in_category('columnas')){ ?>
+							<div class="columnasData">
+								<div class="contentColumnista">
+									<div class="imgColumnista" style="background-image:url('<?php the_field('img-columnista'); ?>);"></div>
+									<div class="nameColumnista">
+										<h4><?php echo the_field('nombre_columnista'); ?></h4>
+									</div>
+								</div>
+							</div>
+						<?php } ?>
 
 						<?php the_content(); ?>
 						

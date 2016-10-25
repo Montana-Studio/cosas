@@ -39,11 +39,12 @@ jQuery(document).ready(function($){
 		$(this).siblings('div').toggleClass('show-options-share');
 		$(this).closest('div').toggleClass('options-open');
 	});
-	$('.buscar-home').click(function(){
+	
+	$('.buscar-home').on('click',function(){
 		$('.buscador-open').toggleClass('show-search');
 		$('.buscar-home').hide();
 	});
-	$('.close-search').click(function(){
+	$('.close-search').on('click',function(){
 		$('.buscador-open').toggleClass('show-search');
 		$('.buscar-home').show();
 	});
@@ -81,36 +82,6 @@ jQuery(document).ready(function($){
 		autoplay	: true,
 		interval	: 5000  
 	}); 
-
-    //FORMUBLARIO NEWSLETTER
-    $('.newsletter_form').on('submit', function(){
-        var nombre = $('#nombre_newsletter').val();
-        var correo = $('#correo_newsletter').val();
-        $.ajax({
-            type: 'POST',  
-            url: 'wp-content/themes/casas/js/procesar_correo.php',  
-            data: 'nombre='+nombre+'&correo='+correo,
-            success: function(data){
-            	console.log(data);
-               if (data==='exito'){
-                    $('.newsletter_form').hide();
-                    $('.form-send').show();
-                    $('.form-send').text('Suscripción enviada con éxito.');
-                } else {
-                    if(data==='existe'){
-                        $('.newsletter_form').hide();
-                        $('.form-send').show();
-                        $('.form-send').text('Lo sentimos, este correo ya está registrado.');
-                    }else{
-                        $('.newsletter_form').hide();
-                        $('.form-send').show();
-                        $('.form-send').text('No hemos podido enviar tu suscripción. Inténtalo nuevamente.');
-                    }
-                }
-            }
-        });
-        return false;   
-    });
 
     $('.inside-despacho').click(function(){
     	$('.info-sidebar.popups-despacho').toggleClass('show-popups');  

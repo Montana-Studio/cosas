@@ -4,6 +4,10 @@
         @include span-columns(3.5);
         @include omega();
     }
+	@include media(max-width 728px){
+		@include span-columns(12);
+		@include omega();
+	}
     .columnas{
         @include row();
         .headernegro{
@@ -30,6 +34,9 @@
                 height:30px;
                 line-height: 2.5;
                 font-size:12px;
+				a{
+					color:$white;
+				}
             }
         }
         .bodycolumnas {
@@ -79,6 +86,7 @@
                                     h3{
                                         font:{size:em(13px);}
                                         @extend .no-margins;
+										color:$black;
                                     }
                                     .tituloeditor {
                                         font:{family:$openSans;size:em(9px);}
@@ -91,6 +99,7 @@
                                     padding-left:5px;
                                     font:{size:em(12px);family:$playFair;}
                                     @include omega();
+									color:$black;
                                 }
                             }
                         }
