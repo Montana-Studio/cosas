@@ -183,7 +183,7 @@
                                     </small>  
                                 </div> 
                                 <div class="textocolumnauno">
-                                    <?php echo substr(get_the_excerpt(), 0,100); ?>
+                                    Seguir leyendo <i class="fa fa-angle-right"></i>
                                 </div>
                             </div>
                         </a>

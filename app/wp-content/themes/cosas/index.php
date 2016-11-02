@@ -582,7 +582,7 @@
 												</small>  
 											</div> 
 											<div class="textocolumnauno">
-												<?php echo substr(get_the_excerpt(), 0,100); ?>
+												Seguir leyendo ->
 											</div>
 										</div>
 									</a>
@@ -610,7 +610,7 @@
 				</div>
 			   </aside>
             <?php } ?>
-            <main class="site-main-10" id="site-10">
+            <?php/* <main class="site-main-10" id="site-10">
                 <span class="tit">Suscríbete a</span>
                 <svg viewBox="0 0 759 232" class="menu-logo" x="0" y="0">
                     <use xlink:href="#logo-cosas" class="logo-menu"/>
@@ -622,18 +622,16 @@
                     <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['suscripciones']) ?>">suscríbete</a>
                 </div>
             </main>
+			*/?>
             
             <main id="main-9" class="site-main-9">
-                <h3>Horóscopo</h3>
+                <h3 class="titus">Horóscopo</h3>
                 <div class="conte-horoscopo">
-                  <div class="swiper-hososcopo">
-                      
-                       <div class="swiper-wrapper">
                         <?php
                             // WP_Query arguments
                             $args = array (
                                 'post_type' => array( 'horoscopo' ),
-                                'posts_per_page'         => '12'
+                                'posts_per_page' => '12'
                             );
                             // The Query
                             $horoscopo = new WP_Query( $args );
@@ -642,15 +640,38 @@
                                 while ( $horoscopo->have_posts() ) {
                                     $horoscopo->the_post();
                         ?>
-                            <div id="post-<?php the_ID(); ?>" <?php post_class('slide-item swiper-slide'); ?>>
+                            <div id="post-<?php the_ID(); ?>" <?php post_class('zodiac-sign'); ?>>
 
-                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                <div class="iconAccess">
 
                                     <img src="<?php the_post_thumbnail_url();?>"/>
                                     <?php
                                         the_title(''.'<small>','</small>'); 
                                     ?>
-                                </a>
+                                    
+                                    
+									<div class="contentSign">
+										<h3><?php the_title(); ?></h3>
+										<img />
+										<?php //$nommes = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"); $nomdia = array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado"); $dia = date("j"); $mes = date("n"); $diasemana = date("w"); $hoy = $nomdia[$diasemana]." ".$dia." de ".$nommes[$mes-1]." del ".date('Y'); echo $hoy; ?>
+									</div>
+                                </div>
+                                <script>
+									(function ($, root, undefined) {
+										$(function () {
+
+											'use strict';
+											
+											$('.iconAccess').on('click', function(){
+												var urlImg = $(this).find('img').attr('src');
+												$(this).find('.contentSign').fadeIn(100,function(){
+													$(this).find('img').attr('src',urlImg);
+												});	
+											});
+
+										});
+									})(jQuery, this);
+								</script>
 
                             </div>
                         <?php
@@ -661,11 +682,6 @@
                             // Restore original Post Data
                             wp_reset_postdata();
                         ?>
-                        </div>
-                        
-                        <div class="swiper-pagination"></div>
-                        
-                  </div>
                 </div>
             </main>
 
@@ -910,7 +926,7 @@
             
             <div id="main-2" class="site-main-2-mobile">
                
-                <h3 class="titus">espectáculos</h3>
+               <h3 class="titus">espectáculos</h3>
                <div style="display:block;">
                 <?php 
                     // WP_Query arguments
@@ -951,50 +967,50 @@
                 ?>
                 
                 <main id="main-9" class="site-main-9">
-                <h3>Horóscopo</h3>
-                <div class="conte-horoscopo">
-                  <div class="swiper-hososcopo">
+					<h3 class="titus">Horóscopo</h3>
+					<div class="conte-horoscopo">
+					  <div class="swiper-hososcopo">
 
-                       <div class="swiper-wrapper">
-                        <?php
-                            // WP_Query arguments
-                            $args = array (
-                                'post_type' => array( 'horoscopo' ),
-                                'posts_per_page'         => '12'
-                            );
-                            // The Query
-                            $horoscopo = new WP_Query( $args );
-                            // The Loop
-                            if ( $horoscopo->have_posts() ) {
-                                while ( $horoscopo->have_posts() ) {
-                                    $horoscopo->the_post();
-                        ?>
-                            <div id="post-<?php the_ID(); ?>" <?php post_class('slide-item swiper-slide'); ?>>
+						   <div class="swiper-wrapper">
+							<?php
+								// WP_Query arguments
+								$args = array (
+									'post_type' => array( 'horoscopo' ),
+									'posts_per_page'         => '12'
+								);
+								// The Query
+								$horoscopo = new WP_Query( $args );
+								// The Loop
+								if ( $horoscopo->have_posts() ) {
+									while ( $horoscopo->have_posts() ) {
+										$horoscopo->the_post();
+							?>
+								<div id="post-<?php the_ID(); ?>" <?php post_class('slide-item swiper-slide'); ?>>
 
-                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 
-                                    <img src="<?php the_post_thumbnail_url();?>"/>
-                                    <?php
-                                        the_title(''.'<small>','</small>'); 
-                                    ?>
-                                </a>
+										<img src="<?php the_post_thumbnail_url();?>"/>
+										<?php
+											the_title(''.'<small>','</small>'); 
+										?>
+									</a>
 
-                            </div>
-                        <?php
-                                }
-                            } else {
-                                echo '<p>No hay horóscopo en este momento</p>';
-                            }
-                            // Restore original Post Data
-                            wp_reset_postdata();
-                        ?>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                  </div>
-                </div>
-            </main>
+								</div>
+							<?php
+									}
+								} else {
+									echo '<p>No hay horóscopo en este momento</p>';
+								}
+								// Restore original Post Data
+								wp_reset_postdata();
+							?>
+							</div>
+							<div class="swiper-pagination"></div>
+					  </div>
+					</div>
+				</main>
                
-                <main class="site-main-10" id="site-10">
+                <?php /*<main class="site-main-10" id="site-10">
                     <span class="tit">Suscríbete a</span>
                     <svg viewBox="0 0 759 232" class="menu-logo" x="0" y="0">
                         <use xlink:href="#logo-cosas" class="logo-menu"/>
@@ -1006,6 +1022,7 @@
                         <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['suscripciones']) ?>">suscríbete</a>
                     </div>
                 </main>
+				*/?>
                  
             </div>
                 

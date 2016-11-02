@@ -21,72 +21,8 @@
             margin:{top:5px;}
             background: {size:cover;repeat:no-repeat;position: center 20%;}
             min-height: 216px;
-            .data-post-single{
-                @include span-columns(10);
-                @include shift(1);
-                @include textAlign(center);
-                position: absolute;
-                bottom:0;
-                background:{color: $white;}
-                h1{
-                    @include span-columns(10);
-                    @include shift(1);
-                    @extend .no-margins;
-                    font:{family:$playFair;size:em(18);}
-                }
-                .times-post{
-                    @include span-columns(10);
-                    @include shift(1);
-                    color:#999;
-					font:{size:em(9);}
-					margin:{bottom:5px;}
-                }
-                .author{
-                    @extend .times-post;
-                    a{
-                        color:#999;
-                        font:{weight:bold;}
-                    }
-                }
-                @include media($notebook){
-                    @include span-columns(8);
-                    @include shift(2);
-                }
-            }
             @include media($notebook){
                 min-height:416px;
-            }
-        }
-        .sharecontent{
-            @include span-columns(12);
-            @include textAlign(center);
-            a{
-                display: inline-block;
-                font:{size:em(30);}
-                @include pad(10px 5px);
-                i{
-                    &.fa-facebook-square{
-                        color:#3b5998;    
-                    }
-                    &.fa-twitter-square{
-                        color:#00aced;
-                    }
-                    &.fa-pinterest-square{
-                        color:#cb2027;
-                    }
-                    &.fa-google-plus-square{
-                        color:#db3236;
-                    }
-                    &.fa-envelope-square{
-                        color:#c0c0c0;
-                    }
-                    &.fa-whatsapp{
-                        color:#43d854;
-                    }
-                }
-            }
-            @include media($tabletLand){
-                @include span-columns(8);
             }
         }
         blockquote{
@@ -95,7 +31,68 @@
                 height:auto;
             }
         }
-        .post-single{ 
+        .post-single{
+			.data-post-single{
+				@include span-columns(12);
+				h1{
+					@include row();
+					width: 100%;
+					clear:both;
+					@extend .no-margins;
+					font:{family:$playFair;size:em(18);}
+					@include media($notebook){
+						font:{
+							size:em(24);
+						}
+					}
+				}
+				.times-post{
+					@include span-columns(6);
+					color:#999;
+					font:{size:em(9);}
+					margin:{bottom:5px;top:10px;}
+				}
+				.author{
+					@extend .times-post;
+					@include omega();
+					a{
+						color:#999;
+						font:{weight:bold;}
+					}
+				}
+			}
+			.sharecontent{
+				@include span-columns(12);
+				margin:10px 0;
+				a{
+					display:table;
+					width:30px;
+					height: 30px;
+					color:$black;
+					border:1px solid $black;
+					@include borderRadius(50%);
+					@include textAlign(center);
+					float:left;
+					margin:{
+						right: .5%;
+					}
+					i{
+						display: table-cell;
+						vertical-align: middle;
+						font:{
+							size:em(12);
+						}
+						@include media($notebook){
+							font:{
+								size:em(18);
+							}
+						}
+					}
+				}
+				@include media($tabletLand){
+					@include span-columns(8);
+				}
+			}
             h3{
                 @include span-columns(10);
                 @include shift(1);
@@ -206,6 +203,8 @@
 						height: 80px;
 						background: {
 							color:$red;
+							position: center;
+							size:cover;
 						}
 					}
 					.nameColumnista{
