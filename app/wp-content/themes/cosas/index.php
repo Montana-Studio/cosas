@@ -626,6 +626,7 @@
             
             <main id="main-9" class="site-main-9">
                 <h3 class="titus">Horóscopo</h3>
+       
                 <div class="conte-horoscopo">
                         <?php
                             // WP_Query arguments
@@ -643,35 +644,33 @@
                             <div id="post-<?php the_ID(); ?>" <?php post_class('zodiac-sign'); ?>>
 
                                 <div class="iconAccess">
-
-                                    <img src="<?php the_post_thumbnail_url();?>"/>
-                                    <?php
-                                        the_title(''.'<small>','</small>'); 
-                                    ?>
+									<div class="hor">
+										<img src="<?php the_post_thumbnail_url();?>"/>
+										<?php
+											the_title(''.'<small>','</small>'); 
+										?>
+									</div>
                                     
                                     
 									<div class="contentSign">
 										<h3><?php the_title(); ?></h3>
 										<img />
 										<?php //$nommes = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"); $nomdia = array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado"); $dia = date("j"); $mes = date("n"); $diasemana = date("w"); $hoy = $nomdia[$diasemana]." ".$dia." de ".$nommes[$mes-1]." del ".date('Y'); echo $hoy; ?>
+										<small><?php the_content();?></small>
+										<small><?php the_weekday().', '?></small>
+										<small><?php substr(get_the_date(),0,2)?></small>
+										<small><?php the_time('F Y'); ?></small>
+										
+										
+										<button class="close">close</button>
+										<?php $photo='url.jpg' ?>
+										<div class="facebook_share_1" style="background-color:white">FACEBOOK SHARE</button></div>
+										<div class="twitter_share_1" style="background-color:white">TWITTER SHARE</button></div>
+										<div class="pinterest_share_1" style="background-color:white">PINTEREST SHARE</button></div>
+										
 									</div>
                                 </div>
-                                <script>
-									(function ($, root, undefined) {
-										$(function () {
-
-											'use strict';
-											
-											$('.iconAccess').on('click', function(){
-												var urlImg = $(this).find('img').attr('src');
-												$(this).find('.contentSign').fadeIn(100,function(){
-													$(this).find('img').attr('src',urlImg);
-												});	
-											});
-
-										});
-									})(jQuery, this);
-								</script>
+                                
 
                             </div>
                         <?php
@@ -684,6 +683,55 @@
                         ?>
                 </div>
             </main>
+            <script>
+				(function ($, root, undefined) {
+					$(function () {
+
+						'use strict';
+
+						$('.hor').on('click', function(){
+							var urlImg = $(this).find('img').attr('src');
+							$(this).next('.contentSign').fadeIn(100,function(){
+								$(this).find('img').attr('src',urlImg);
+							});	
+							console.log(urlImg);
+						});
+						$('.close').click(function(){
+							var parentId = $(this).parent().hide();
+							//console.log(parentId);
+						});
+						
+						$('.facebook_share_1').click(function(){
+							var signo = $(this).siblings("h3").text();							
+							var texto = $(this).siblings("small").text();
+							
+							window.location.href="https://www.facebook.com/dialog/feed?app_id=259189257792642&link=http%3A%2F%2Fcosas.com&picture=http%3A%2F%2Fcosas.com&name=Horoscopo%20-%20"+signo+"&caption=%20&description="+texto+"&redirect_uri=http%3A%2F%2Fcosas.com%2F";
+						});
+						
+						$('.twitter_share_1').click(function(){
+							var signo = $(this).siblings("h3").text();							
+							var texto = $(this).siblings("small").text().substring(0,109);
+							texto= texto + '...';
+							//var res = str.substring(4, 1);
+							window.location.href="http://twitter.com/intent/tweet?text=El%20Tarot%20para%20"+signo+"%20indica:%20"+texto;
+						});
+						
+						$('.pinterest_share_1').click(function(){
+							var url = 'http://cosas.com/wp-content/uploads/2016/06/img-cosas-defalut.png';
+							var signo = $(this).siblings("h3").text();							
+							var texto = $(this).siblings("small").text();
+							window.location.href="https://pinterest.com/pin/create/button/?url="+url+"&media="+url+"&description=El%20Tarot%20para%20"+signo+"%20indica:%20"+texto;
+						});
+						
+						
+						
+						
+						
+
+					});
+				})(jQuery, this);
+				
+			</script>
 
             <main id="main-5" class="site-main-5">
 
