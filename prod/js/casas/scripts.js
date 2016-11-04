@@ -40,14 +40,16 @@ jQuery(document).ready(function($){
 		$(this).closest('div').toggleClass('options-open');
 	});
 	
-	$('.buscar-home').on('click',function(){
+	/*$('.buscar-home').on('click',function(){
 		$('.buscador-open').toggleClass('show-search');
 		$('.buscar-home').hide();
 	});
 	$('.close-search').on('click',function(){
 		$('.buscador-open').toggleClass('show-search');
 		$('.buscar-home').show();
-	});
+	});*/
+	
+	
 
 	$('.gallery-icon a').colorbox({
 		rel:'gallery',
