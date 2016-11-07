@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
    	
-    	<?php if(is_singular('branded')||is_singular('automovilismo')||is_single('deslumbra-se-una-inspiracion')){ ?>
+    	<?php if(is_singular('branded')||is_singular('automovilismo')||is_single(array('deslumbra-se-una-inspiracion','nueva-mascarilla-nocturna-advanced-night-repair-estee-lauder'))){ ?>
     		<div class="single-brandedcontent">
     			
     			<?php if (have_posts()): while (have_posts()) : the_post(); ?>

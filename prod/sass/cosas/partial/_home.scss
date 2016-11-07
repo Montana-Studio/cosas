@@ -913,6 +913,7 @@
 					}
 				}
 				.contentSign{
+					@include pad(25px);
 					display: none;
 					position: fixed;
 					z-index: 999;
@@ -921,9 +922,128 @@
 					width:100%;
 					height: 100%;
 					background: {
-						color:rgba($black, .5);
+						color:rgba($black, .85);
 					}
 					color:$white;
+					.zodiacContent{
+						.zodiacName{
+							@include span-columns(12);
+							border:{
+								bottom:1px solid $red;
+							}
+							h3{
+								@include span-columns(6);
+								@extend .no-margins;
+								text:{
+									align:left;
+								}
+								font:{
+									weight:normal;
+								}
+							}
+							.closeZodiac{
+								@include span-columns(6);
+								@include omega();
+								span{
+									float:right;
+									display: table;
+									border:1px solid $white;
+									@include borderRadius(50%);
+									width: 20px;
+									height:20px;
+									text:{
+										align:center;
+									}
+									font:{
+										weight: normal;
+										size:em(10);
+									}
+									i{
+										display: table-cell;
+										vertical-align: middle;
+									}
+								}
+							}
+						}
+						.imgZodiac{
+							max-width: 290px;
+							height: auto;
+							display: block;
+							margin: 0 auto;
+						}
+						.dateZociac{
+							text:{
+								align:left;
+							}
+							font:{
+								weight: bold;
+								style:italic;
+							}
+						}
+						p{
+							line-height: 20px;
+							font:{
+								size:em(14);
+								style:italic;
+								weight:normal;
+								family:$openSans;
+							}
+							text:{
+								align:left;
+							}
+						}
+						.shareZodiac{
+							@include direction-context(right-to-left){
+								@include span-columns(8);
+							}
+							text:{
+								transform:uppercase;
+								align:right;
+							}
+							span{
+								display: inline-block;
+								font:{
+									size:em(12);
+									weight:normal;
+								}
+							}
+							ul{
+								@extend .no-margins;
+								display: inline-block;
+								li{
+									border:1px solid $white;
+									@include borderRadius(50%);
+									width: 30px;
+									height:30px;
+									margin:{
+										right:5px;
+									}
+									float: left;
+									display: table;
+									font:{
+										size:em(13);
+									}
+									text:{
+										align:center;
+									}
+									i{
+										display: table-cell;
+										vertical-align: middle;
+									}
+								}
+							}
+						}
+						@include media($notebook){
+							max-width:700px;
+							margin:10% auto 0;
+						}
+					}
+				}
+				@include media($notebook){
+					margin:{
+						left:1.4%;
+						right:2.4%;
+					}
 				}
 			}
             @include media($tabletLandTonotebook){
@@ -934,11 +1054,11 @@
             }
         }
         @include media($tabletLandTonotebook){
-            @include span-columns(6);
+            @include span-columns(12);
             min-height:300px;
         }
         @include media($notebook){
-            @include span-columns(6);
+            @include span-columns(12);
             min-height:300px;
             margin:{top:10px;}
         }

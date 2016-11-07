@@ -8,6 +8,10 @@
 		@include span-columns(12);
 		@include omega();
 	}
+	@include media(width 768px){
+		@include span-columns(12);
+		@include omega();
+	}
     .columnas{
         @include row();
         .headernegro{
@@ -97,6 +101,9 @@
                                         color:$greyTwo;
                                         @include omega();
                                     }
+									@include media(width 768px){
+										padding-top:9%;
+									}
                                 }
 								.textocolumnauno {
 									@include row();

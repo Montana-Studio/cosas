@@ -136,38 +136,7 @@
        <?php wp_footer(); ?>
         <script>
             
-            var normSlider = new Swiper ('.swiper-hososcopo', {
-                pagination: '.swiper-pagination',
-                slidesPerView: 2,
-                paginationClickable: true,
-                spaceBetween: 60,
-                breakpoints: {
-                    768:{
-                        slidesPerView: 3,
-                        spaceBetween:30
-                    }
-                }
-            });
-
-            var swiper = new Swiper('.swiper-container-video', {
-		        paginationClickable: true,
-		        direction: 'vertical',
-		        slidesPerView: 3,
-		        spaceBetween: 10,
-		        nextButton: '.btn-next',
-		        prevButton: '.btn-prev'
-		    });
-            var columnas = new Swiper('.swiper-columnas', {
-                nextButton: '.vermas',
-                prevButton: '.vermenos',
-                direction: 'vertical',
-                slidesPerView: 3,
-                paginationClickable: true,
-            }); 
-			
 			jQuery(document).ready(function($){
-				
-				
 				
 				
 				$('.submit_news').on('click', function(){
@@ -202,7 +171,7 @@
 			});
         </script>
 		<?php 
-		if(is_singular('branded')||is_single('deslumbra-se-una-inspiracion')){
+		if(is_singular('branded')||is_single(array('deslumbra-se-una-inspiracion','nueva-mascarilla-nocturna-advanced-night-repair-estee-lauder'))){
 		?>
 			<script>
 				var gallerySliders = new Swiper('.swiper-gallery', {

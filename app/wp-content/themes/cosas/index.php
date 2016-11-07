@@ -438,7 +438,7 @@
                 
                 <h3>instagram <i class="fa fa-instagram"></i></h3>
                 <div class="contInstagram">
-                  <?php //get_template_part('instagram'); ?> 
+                  <?php get_template_part('instagram'); ?> 
                 </div>
                 
             </main>
@@ -610,80 +610,74 @@
 				</div>
 			   </aside>
             <?php } ?>
-            <?php/* <main class="site-main-10" id="site-10">
-                <span class="tit">Suscríbete a</span>
-                <svg viewBox="0 0 759 232" class="menu-logo" x="0" y="0">
-                    <use xlink:href="#logo-cosas" class="logo-menu"/>
-                </svg>
-                <span class="tit-bajada">
-                    espectaculo cultura moda
-                </span>
-                <div class="btn-suscribe">
-                    <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['suscripciones']) ?>">suscríbete</a>
-                </div>
-            </main>
-			*/?>
-            
             <main id="main-9" class="site-main-9">
-                <h3 class="titus">Horóscopo</h3>
-       
-                <div class="conte-horoscopo">
-                        <?php
-                            // WP_Query arguments
-                            $args = array (
-                                'post_type' => array( 'horoscopo' ),
-                                'posts_per_page' => '12'
-                            );
-                            // The Query
-                            $horoscopo = new WP_Query( $args );
-                            // The Loop
-                            if ( $horoscopo->have_posts() ) {
-                                while ( $horoscopo->have_posts() ) {
-                                    $horoscopo->the_post();
-                        ?>
-                            <div id="post-<?php the_ID(); ?>" <?php post_class('zodiac-sign'); ?>>
+				<h3 class="titus">Horóscopo</h3>
 
-                                <div class="iconAccess">
+				<div class="conte-horoscopo">
+						<?php
+							// WP_Query arguments
+							$args = array (
+								'post_type' => array( 'horoscopo' ),
+								'posts_per_page' => '12'
+							);
+							// The Query
+							$horoscopo = new WP_Query( $args );
+							// The Loop
+							if ( $horoscopo->have_posts() ) {
+								while ( $horoscopo->have_posts() ) {
+									$horoscopo->the_post();
+						?>
+							<div id="post-<?php the_ID(); ?>" <?php post_class('zodiac-sign'); ?>>
+
+								<div class="iconAccess">
 									<div class="hor">
 										<img src="<?php the_post_thumbnail_url();?>"/>
 										<?php
 											the_title(''.'<small>','</small>'); 
 										?>
 									</div>
-                                    
-                                    
-									<div class="contentSign">
-										<h3><?php the_title(); ?></h3>
-										<img />
-										<?php //$nommes = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"); $nomdia = array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado"); $dia = date("j"); $mes = date("n"); $diasemana = date("w"); $hoy = $nomdia[$diasemana]." ".$dia." de ".$nommes[$mes-1]." del ".date('Y'); echo $hoy; ?>
-										<small><?php the_content();?></small>
-										<small><?php the_weekday().', '?></small>
-										<small><?php substr(get_the_date(),0,2)?></small>
-										<small><?php the_time('F Y'); ?></small>
-										
-										
-										<button class="close">close</button>
-										<?php $photo='url.jpg' ?>
-										<div class="facebook_share_1" style="background-color:white">FACEBOOK SHARE</button></div>
-										<div class="twitter_share_1" style="background-color:white">TWITTER SHARE</button></div>
-										<div class="pinterest_share_1" style="background-color:white">PINTEREST SHARE</button></div>
-										
-									</div>
-                                </div>
-                                
 
-                            </div>
-                        <?php
-                                }
-                            } else {
-                                echo '<p>No hay horóscopo en este momento</p>';
-                            }
-                            // Restore original Post Data
-                            wp_reset_postdata();
-                        ?>
-                </div>
-            </main>
-            <script>
+
+									<div class="contentSign">
+										<div class="zodiacContent">
+											<div class="zodiacName">
+												<h3><?php the_title(); ?></h3>
+												<div class="closeZodiac"><span><i class="fa fa-close"></i></span></div>
+											</div>
+											<img class="imgZodiac" />
+											<div class="dateZociac">
+												<i class="fa fa-clock-o"></i>
+												<small><?php the_weekday(); ?>,</small>
+												<small><?php echo substr(get_the_date(),0,2); ?></small>
+												<small><?php the_time('F Y'); ?></small>
+											</div>
+											<?php the_content();?>
+
+											<div class="shareZodiac">
+												<span>compartir</span>
+												<ul>
+													<li class="facebook_share_1"><i class="fa fa-facebook"></i></li>
+													<li class="twitter_share_1"><i class="fa fa-twitter"></i></li>
+													<li class="pinterest_share_1"><i class="fa fa-pinterest-p"></i></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+						<?php
+								}
+							} else {
+								echo '<p>No hay horóscopo en este momento</p>';
+							}
+							// Restore original Post Data
+							wp_reset_postdata();
+						?>
+				</div>
+			</main>
+			<script>
 				(function ($, root, undefined) {
 					$(function () {
 
@@ -694,45 +688,36 @@
 							$(this).next('.contentSign').fadeIn(100,function(){
 								$(this).find('img').attr('src',urlImg);
 							});	
-							console.log(urlImg);
 						});
-						$('.close').click(function(){
-							var parentId = $(this).parent().hide();
-							//console.log(parentId);
+						$('.closeZodiac').click(function(){
+							var parentId = $('.contentSign').hide();
 						});
+
+						$('.facebook_share_1').click(function(){						
+							var signo = $(this).parent().parent().siblings('.zodiacName').children('h3').text();
+							var texto = $(this).parent().parent().siblings('p').text();
 						
-						$('.facebook_share_1').click(function(){
-							var signo = $(this).siblings("h3").text();							
-							var texto = $(this).siblings("small").text();
-							
+
 							window.location.href="https://www.facebook.com/dialog/feed?app_id=259189257792642&link=http%3A%2F%2Fcosas.com&picture=http%3A%2F%2Fcosas.com&name=Horoscopo%20-%20"+signo+"&caption=%20&description="+texto+"&redirect_uri=http%3A%2F%2Fcosas.com%2F";
 						});
-						
+
 						$('.twitter_share_1').click(function(){
-							var signo = $(this).siblings("h3").text();							
-							var texto = $(this).siblings("small").text().substring(0,109);
+							var signo = $(this).parent().parent().siblings('.zodiacName').children('h3').text();
+							var texto = $(this).parent().parent().siblings('p').text().substring(0,109);	
 							texto= texto + '...';
-							//var res = str.substring(4, 1);
 							window.location.href="http://twitter.com/intent/tweet?text=El%20Tarot%20para%20"+signo+"%20indica:%20"+texto;
 						});
-						
+
 						$('.pinterest_share_1').click(function(){
 							var url = 'http://cosas.com/wp-content/uploads/2016/06/img-cosas-defalut.png';
-							var signo = $(this).siblings("h3").text();							
-							var texto = $(this).siblings("small").text();
+							var signo = $(this).parent().parent().siblings('.zodiacName').children('h3').text();
+							var texto = $(this).parent().parent().siblings('p').text().substring(0,109);
 							window.location.href="https://pinterest.com/pin/create/button/?url="+url+"&media="+url+"&description=El%20Tarot%20para%20"+signo+"%20indica:%20"+texto;
 						});
-						
-						
-						
-						
-						
 
 					});
 				})(jQuery, this);
-				
 			</script>
-
             <main id="main-5" class="site-main-5">
 
                 <h3 class="titus">videos</h3>
@@ -1013,18 +998,15 @@
                         get_template_part( 'loop-entrevistamobile');
                     endwhile;
                 ?>
-                
                 <main id="main-9" class="site-main-9">
 					<h3 class="titus">Horóscopo</h3>
-					<div class="conte-horoscopo">
-					  <div class="swiper-hososcopo">
 
-						   <div class="swiper-wrapper">
+					<div class="conte-horoscopo">
 							<?php
 								// WP_Query arguments
 								$args = array (
 									'post_type' => array( 'horoscopo' ),
-									'posts_per_page'         => '12'
+									'posts_per_page' => '12'
 								);
 								// The Query
 								$horoscopo = new WP_Query( $args );
@@ -1033,15 +1015,46 @@
 									while ( $horoscopo->have_posts() ) {
 										$horoscopo->the_post();
 							?>
-								<div id="post-<?php the_ID(); ?>" <?php post_class('slide-item swiper-slide'); ?>>
+								<div id="post-<?php the_ID(); ?>" <?php post_class('zodiac-sign'); ?>>
 
-									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+									<div class="iconAccess">
+										<div class="hor">
+											<img src="<?php the_post_thumbnail_url();?>"/>
+											<?php
+												the_title(''.'<small>','</small>'); 
+											?>
+										</div>
 
-										<img src="<?php the_post_thumbnail_url();?>"/>
-										<?php
-											the_title(''.'<small>','</small>'); 
-										?>
-									</a>
+
+										<div class="contentSign">
+										
+											<div class="zodiacContent">
+												<div class="zodiacName">
+													<h3><?php the_title(); ?></h3>
+													<div class="closeZodiac"><span><i class="fa fa-close"></i></span></div>
+												</div>
+												<img class="imgZodiac" />
+												<div class="dateZociac">
+													<i class="fa fa-clock-o"></i>
+													<small><?php the_weekday(); ?>,</small>
+													<small><?php echo substr(get_the_date(),0,2); ?></small>
+													<small><?php the_time('F Y'); ?></small>
+												</div>
+												<?php the_content();?>
+
+												<div class="shareZodiac">
+													<span>compartir</span>
+													<ul>
+														<li class="facebook_share_1"><i class="fa fa-facebook"></i></li>
+														<li class="twitter_share_1"><i class="fa fa-twitter"></i></li>
+														<li class="pinterest_share_1"><i class="fa fa-pinterest-p"></i></li>
+													</ul>
+												</div>
+											</div>
+
+										</div>
+									</div>
+
 
 								</div>
 							<?php
@@ -1052,25 +1065,51 @@
 								// Restore original Post Data
 								wp_reset_postdata();
 							?>
-							</div>
-							<div class="swiper-pagination"></div>
-					  </div>
 					</div>
 				</main>
-               
-                <?php /*<main class="site-main-10" id="site-10">
-                    <span class="tit">Suscríbete a</span>
-                    <svg viewBox="0 0 759 232" class="menu-logo" x="0" y="0">
-                        <use xlink:href="#logo-cosas" class="logo-menu"/>
-                    </svg>
-                    <span class="tit-bajada">
-                        espectaculo cultura moda
-                    </span>
-                    <div class="btn-suscribe">
-                        <a href="<?php echo get_site_url($GLOBALS['detectBlogs']['suscripciones']) ?>">suscríbete</a>
-                    </div>
-                </main>
-				*/?>
+				<script>
+					(function ($, root, undefined) {
+						$(function () {
+
+							'use strict';
+
+							$('.hor').on('click', function(){
+								var urlImg = $(this).find('img').attr('src');
+								$(this).next('.contentSign').fadeIn(100,function(){
+									$(this).find('img').attr('src',urlImg);
+								});	
+								console.log(urlImg);
+							});
+							$('.closeZodiac').click(function(){
+								var parentId = $('.contentSign').hide();
+							});
+
+							$('.facebook_share_1').click(function(){
+								var signo = $(this).siblings("h3").text();							
+								var texto = $(this).siblings("small").text();
+
+								window.location.href="https://www.facebook.com/dialog/feed?app_id=259189257792642&link=http%3A%2F%2Fcosas.com&picture=http%3A%2F%2Fcosas.com&name=Horoscopo%20-%20"+signo+"&caption=%20&description="+texto+"&redirect_uri=http%3A%2F%2Fcosas.com%2F";
+							});
+
+							$('.twitter_share_1').click(function(){
+								var signo = $(this).siblings("h3").text();							
+								var texto = $(this).siblings("small").text().substring(0,109);
+								texto= texto + '...';
+								//var res = str.substring(4, 1);
+								window.location.href="http://twitter.com/intent/tweet?text=El%20Tarot%20para%20"+signo+"%20indica:%20"+texto;
+							});
+
+							$('.pinterest_share_1').click(function(){
+								var url = 'http://cosas.com/wp-content/uploads/2016/06/img-cosas-defalut.png';
+								var signo = $(this).siblings("h3").text();							
+								var texto = $(this).siblings("small").text();
+								window.location.href="https://pinterest.com/pin/create/button/?url="+url+"&media="+url+"&description=El%20Tarot%20para%20"+signo+"%20indica:%20"+texto;
+							});
+
+						});
+					})(jQuery, this);
+
+				</script>
                  
             </div>
                 
@@ -1078,7 +1117,7 @@
                 
                 <h3>instagram <i class="fa fa-instagram"></i></h3>
                 <div class="contInstagram">
-                  <?php //get_template_part('instagram'); ?> 
+                  <?php get_template_part('instagram'); ?> 
                 </div>
                 
             </main>

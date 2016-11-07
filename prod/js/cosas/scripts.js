@@ -183,6 +183,25 @@ jQuery(document).ready(function($){
 			/* jshint ignore:end */
       });
     });
+	
+	/* jshint ignore:start */
+
+		var swiper = new Swiper('.swiper-container-video', {
+			paginationClickable: true,
+			direction: 'vertical',
+			slidesPerView: 3,
+			spaceBetween: 10,
+			nextButton: '.btn-next',
+			prevButton: '.btn-prev'
+		});
+		var columnas = new Swiper('.swiper-columnas', {
+			nextButton: '.vermas',
+			prevButton: '.vermenos',
+			direction: 'vertical',
+			slidesPerView: 3,
+			paginationClickable: true,
+		}); 
+	/* jshint ignore:end */
 });
 
 function fbShare(url, title, descr, image, winWidth, winHeight) {
