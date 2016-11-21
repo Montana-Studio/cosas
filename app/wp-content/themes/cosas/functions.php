@@ -399,6 +399,18 @@ remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 remove_action('wp_head', 'rel_canonical');
 remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 
+
+
+//Problema de comillas en titulos de posts
+remove_filter( 'the_title' , 'wptexturize'  );
+remove_filter( 'the_content' , 'wptexturize' );
+remove_filter( 'the_excerpt' , 'wptexturize' );
+remove_filter( 'comment_text' , 'wptexturize' );
+remove_filter( 'list_cats' , 'wptexturize' );
+
+
+
+
 // Add Filters
 add_filter('avatar_defaults', 'html5blankgravatar'); // Custom Gravatar in Settings > Discussion
 add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
