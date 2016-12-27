@@ -9,7 +9,36 @@ get_header();
 {yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?>
 
             </div>
-            
+            <div style="margin:0 auto;clear:both;display:block;max-width:300px;">
+				<ins data-revive-zoneid="31" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+				<script>
+				(function () {
+				  var d = document, s = d.createElement('script'), p = d.location.protocol,
+					  i = d.getElementsByTagName('ins'), j = i[i.length-1];
+				  try {
+					s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+					  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+					s.async = true; j.appendChild(s);
+				  } catch (e) {}
+				})();
+				</script>
+			</div>
+            <div style="max-width:970px;margin:0 auto;clear:both;display:block;">
+           
+				<ins data-revive-zoneid="22" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+				<script>
+				(function () {
+				  var d = document, s = d.createElement('script'), p = d.location.protocol,
+					  i = d.getElementsByTagName('ins'), j = i[i.length-1];
+				  try {
+					s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+					  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+					s.async = true; j.appendChild(s);
+				  } catch (e) {}
+				})();
+				</script>
+           	
+           </div>
             
 			<div style="max-width:320px;margin:0 auto;">
 

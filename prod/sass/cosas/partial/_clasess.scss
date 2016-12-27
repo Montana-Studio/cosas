@@ -17,6 +17,9 @@ input, textarea{
         @include appearance(none);
     }
 }
+.gutter-fix{
+	width:2%;
+}
 .no-margins{
 	margin:0;
 }

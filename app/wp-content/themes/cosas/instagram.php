@@ -24,7 +24,7 @@ function actualiza_fotos($mysqli){
 
 
 //Obtengo Conexión
-$mysqli = mysqli_connect('localhost','cosas_user','p6lt?w0t1r^w','cosas_content') or die("Error " . mysqli_error($link)); 
+$mysqli = mysqli_connect('localhost','root','root','cosas_23082016') or die("Error " . mysqli_error($link)); 
 $mysqli->set_charset('utf8_bin');
 
 //Actualizo en BD

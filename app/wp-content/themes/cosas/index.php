@@ -1,6 +1,20 @@
 <?php get_header(); ?>
 
     <div id="primary" class="content-area">
+        <div style="margin:0 auto;clear:both;display:block;max-width:300px;">
+			<ins data-revive-zoneid="30" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+			<script>
+			(function () {
+			  var d = document, s = d.createElement('script'), p = d.location.protocol,
+				  i = d.getElementsByTagName('ins'), j = i[i.length-1];
+			  try {
+				s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+				  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+				s.async = true; j.appendChild(s);
+			  } catch (e) {}
+			})();
+			</script>
+		</div>
         <div style="max-width:320px;margin:0 auto;">
 
 			<ins data-revive-zoneid="6" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
@@ -189,6 +203,23 @@
 				</div>
 			</div>
         <?php } ?>
+        
+        
+        <div style="max-width:970px;margin:0 auto;display:block;clear:both;">
+
+			<ins data-revive-zoneid="23" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+			<script>
+			(function () {
+			  var d = document, s = d.createElement('script'), p = d.location.protocol,
+				  i = d.getElementsByTagName('ins'), j = i[i.length-1];
+			  try {
+				s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+				  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+				s.async = true; j.appendChild(s);
+			  } catch (e) {}
+			})();
+			</script>
+        </div>
         
         <div style="max-width:728px;margin:0 auto;">
 
@@ -958,42 +989,76 @@
             <?php get_sidebar(); ?>
             
             <div id="main-2" class="site-main-2-mobile">
-               
+				
+				<script type='text/javascript'><!--//<![CDATA[
+				   document.MAX_ct0 = unescape('{clickurl_enc}');
+
+				   var m3_u = (location.protocol=='https:'?'https://bloques.cosas.com/activos4.0/www/delivery/ajs.php':'http://bloques.cosas.com/activos4.0/www/innerdev/ajs.php');
+				   var m3_r = Math.floor(Math.random()*99999999999);
+				   if (!document.MAX_used) document.MAX_used = ',';
+				   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+				   document.write ("?zoneid=33");
+				   document.write ('&amp;cb=' + m3_r);
+				   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+				   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+				   document.write ("&amp;loc=" + escape(window.location));
+				   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+				   if (document.context) document.write ("&context=" + escape(document.context));
+				   if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+					   document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+				   }
+				   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+				   document.write ("'><\/scr"+"ipt>");
+				//]]>--></script><noscript><a href='http://bloques.cosas.com/activos4.0/www/innerdev/ck.php?n=a9735427&amp;cb={random}' target='_blank'><img src='http://bloques.cosas.com/activos4.0/www/innerdev/avw.php?zoneid=33&amp;cb={random}&amp;n=a9735427&amp;ct0={clickurl_enc}' border='0' alt='' /></a></noscript>
+
                <h3 class="titus">espectáculos</h3>
                <div style="display:block;">
-                <?php 
-                    // WP_Query arguments
-                    $args = array (
-                        'category_name'          => 'espectaculos',
-                        'posts_per_page'         => '9',
-                        'ignore_sticky_posts'    => false,
-                        'order'                  => 'DESC',
-                        'orderby'                => 'date',
-                    );
+					<?php 
+					// WP_Query arguments
+					$latest_cpt = get_posts("numberposts=3");
+					$args = array (
+						'category_name'          => 'espectaculos',
+						'posts_per_page'         => '6',
+						'ignore_sticky_posts'    => false,
+						'order'                  => 'DESC',
+						'orderby'                => 'date',
+						'post__not_in' => array( $latest_cpt[0]->ID, $latest_cpt[1]->ID, $latest_cpt[2]->ID )
 
-                    // The Query
-                    $espectaculos = new WP_Query( $args );
+					);
 
-                    // The Loop
-                    if ( $espectaculos->have_posts() ) {
-                        while ( $espectaculos->have_posts() ) {
-                            $espectaculos->the_post();
-                            get_template_part( 'loop-espectaculo');
-                        }
-                    } else {
-                        // no posts found
-                    }
+					// The Query
+					$espectaculos = new WP_Query( $args );
 
-                    // Restore original Post Data
-                    wp_reset_postdata();
-                ?>
+					// The Loop
+					if ( $espectaculos->have_posts() ) {
+						while ( $espectaculos->have_posts() ) {
+							$espectaculos->the_post();
+							get_template_part( 'loop-espectaculo');
+						}
+					} else {
+						// no posts found
+					}
+
+					// Restore original Post Data
+					wp_reset_postdata();
+					?>
                 </div>
             </div>
            
             <div id="main-3" class="site-main-3-mobile">
                 
                 <h3 class="titus">entrevistas</h3>
-                <?php query_posts( 'category_name=entrevistas&posts_per_page=2&orderby=date&order=DESC' );
+                <?php
+                $latest_cpt = get_posts("numberposts=3");
+                $args = array (
+                    'category_name'          => 'entrevistas',
+                    'posts_per_page'         => '2',
+                    'order'                  => 'DESC',
+                    'orderby'                => 'date',
+                    'post__not_in' => array( $latest_cpt[0]->ID, $latest_cpt[1]->ID, $latest_cpt[2]->ID )
+                );
+
+                query_posts( $args );
                     while ( have_posts() ) : the_post();
                         get_template_part( 'loop-entrevistamobile');
                     endwhile;
@@ -1127,17 +1192,27 @@
             <div id="main-4" class="site-main-4-mobile">
                 
             <?php 
-                query_posts( 'category_name=nacional&posts_per_page=5&orderby=date&order=DESC' );
+
+
+                $latest_cpt = get_posts("numberposts=3");
+                $args = array(
+                    'category_name'=> 'nacional',
+                    'posts_per_page'    => 5,
+                    'orderby'    => 'date',
+                    'order' => 'DESC',
+                    'post__not_in' => array( $latest_cpt[0]->ID, $latest_cpt[1]->ID, $latest_cpt[2]->ID )
+
+                );
+                query_posts( $args );
 
                 while ( have_posts() ) : the_post();
                 
                 global $post, $posts;
                 $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
                 $first_img = $matches [1] [0];
-                
             ?>
                 
-                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>');">
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-image: url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>');" data-extra="<?php echo $test ?>">
                             
             <?php 
                 //SI NO ES MOBILE
@@ -1168,9 +1243,6 @@
                             <a href="<?php echo get_permalink(); ?>">seguir leyendo</a>
                         </div>
                     </div>
-            <?php 
-                } 
-            ?>
                             
                      <footer class="entry-footer">
             <?php
@@ -1204,6 +1276,7 @@
                        
                 </article>
         <?php 
+        }
                 endwhile;
         ?>
                 

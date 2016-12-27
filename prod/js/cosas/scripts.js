@@ -128,7 +128,7 @@ jQuery(document).ready(function($){
 	//Instagram oroder
     $('.contInstagram').isotope({
         layoutMode: 'packery',
-        percentPosition: true
+        percentPosition: true,
     });
 
     //WOOCOMMERCE

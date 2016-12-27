@@ -93,6 +93,15 @@
 					@include span-columns(8);
 				}
 			}
+			ul{
+				@include pad(0 0 0 3%);
+				list:{
+					style: initial;
+				}
+				li{
+					color:#999;
+				}
+			}
             h3{
                 @include span-columns(10);
                 @include shift(1);

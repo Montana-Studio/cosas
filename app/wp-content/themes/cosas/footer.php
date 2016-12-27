@@ -116,22 +116,6 @@
 		</div>
 		<!-- /#page -->
 		
-		<div style="width:320px;margin:0 auto;position:fixed;left:0;right:0;z-index:99999;bottom:0;">
-		
-			<ins data-revive-zoneid="3" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
-			<script>
-			(function () {
-			  var d = document, s = d.createElement('script'), p = d.location.protocol,
-				  i = d.getElementsByTagName('ins'), j = i[i.length-1];
-			  try {
-				s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
-				  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
-				s.async = true; j.appendChild(s);
-			  } catch (e) {}
-			})();
-			</script>
-			
-		</div>
 		
        <?php wp_footer(); ?>
         <script>
@@ -171,7 +155,7 @@
 			});
         </script>
 		<?php 
-		if(is_singular('branded')||is_single(array('deslumbra-se-una-inspiracion','nueva-mascarilla-nocturna-advanced-night-repair-estee-lauder'))){
+		if(is_singular('branded')||is_singular('automovilismo')||in_category(1343)){
 		?>
 			<script>
 				var gallerySliders = new Swiper('.swiper-gallery', {
@@ -214,6 +198,45 @@
 		ga('create', 'UA-51156134-9', 'cosas.com');
 		ga('send', 'pageview');
 		</script>
+
+
+		<script type='text/javascript'><!--//<![CDATA[
+		   document.MAX_ct0 = unescape('{clickurl_enc}');
+
+		   var m3_u = (location.protocol=='https:'?'https://bloques.cosas.com/activos4.0/www/delivery/ajs.php':'http://bloques.cosas.com/activos4.0/www/innerdev/ajs.php');
+		   var m3_r = Math.floor(Math.random()*99999999999);
+		   if (!document.MAX_used) document.MAX_used = ',';
+		   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+		   document.write ("?zoneid=20");
+		   document.write ('&amp;cb=' + m3_r);
+		   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+		   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+		   document.write ("&amp;loc=" + escape(window.location));
+		   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+		   if (document.context) document.write ("&context=" + escape(document.context));
+		   if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+			   document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+		   }
+		   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+		   document.write ("'><\/scr"+"ipt>");
+		//]]>--></script><noscript><a href='http://bloques.cosas.com/activos4.0/www/innerdev/ck.php?n=aa9ae0ab&amp;cb={random}' target='_blank'><img src='http://bloques.cosas.com/activos4.0/www/innerdev/avw.php?zoneid=20&amp;cb={random}&amp;n=aa9ae0ab&amp;ct0={clickurl_enc}' border='0' alt='' /></a></noscript>
+		
+		<div style="width:320px;margin:0 auto;position:fixed;left:0;right:0;z-index:99999;bottom:0;">
+		
+			<ins data-revive-zoneid="3" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+			<script>
+			(function () {
+			  var d = document, s = d.createElement('script'), p = d.location.protocol,
+				  i = d.getElementsByTagName('ins'), j = i[i.length-1];
+			  try {
+				s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+				  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+				s.async = true; j.appendChild(s);
+			  } catch (e) {}
+			})();
+			</script>
+			
+		</div>
 
 	</body>
 </html>
