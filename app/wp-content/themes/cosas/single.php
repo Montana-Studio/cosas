@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
    	
-    	<?php if(is_singular('branded')||is_singular('automovilismo')||in_category(1343)){ ?>
+    	<?php if(is_singular('branded')||is_singular('automovilismo')||in_category(1343)||is_singular('blogi')){ ?>
     		<div class="single-brandedcontent">
     			
     			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
@@ -333,14 +333,22 @@
 						<?php the_content(); ?>
 						
 						<div class="fb-comments" data-href="<?php echo the_permalink(); ?>" data-numposts="3" data-width="100%" data-order-by="reverse_time"></div>
-					</div>
+						
+						<div class="degradeload">
+						
+							<div class="btn-readcontiniuos" id="readMorebtn" onClick="ga('send', 'event', 'Botón', 'click');">Leer articulo completo</div>
 
+						</div>
+						
+						
+					</div>
+					
 					<?php 
 						if(!wp_is_mobile()){
 							get_sidebar(); 
 						}
 					?>
-
+					
 				</article>
 				<!-- /article -->
 

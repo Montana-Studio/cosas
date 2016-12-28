@@ -155,7 +155,7 @@
 			});
         </script>
 		<?php 
-		if(is_singular('branded')||is_singular('automovilismo')||in_category(1343)){
+		if(is_singular('branded')||is_singular('automovilismo')||in_category(1343)||is_singular('blogi')){
 		?>
 			<script>
 				var gallerySliders = new Swiper('.swiper-gallery', {
@@ -198,7 +198,6 @@
 		ga('create', 'UA-51156134-9', 'cosas.com');
 		ga('send', 'pageview');
 		</script>
-
 
 		<script type='text/javascript'><!--//<![CDATA[
 		   document.MAX_ct0 = unescape('{clickurl_enc}');

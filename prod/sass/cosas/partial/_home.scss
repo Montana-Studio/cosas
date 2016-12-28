@@ -794,28 +794,29 @@
         }
         .contInstagram{
             @include span-columns(12);
-            @include pad(30px 0 0 7px);
+			@include clearfix;
+            @include pad(30px 0 0 3.5%);
             @include omega();
             border:solid 2px $greyTwo;
             margin:{top:-13px;}
             position: relative;
             z-index: 1;
             .gridInst{
-                @include span-columns(2.25);
+                @include span-columns(2.3);
                 @include omega();
-                height:70px;
+                height:52px;
                 overflow: hidden;
                 background:{size:cover;position: center;repeat:no-repeat;}
-				@include borderRadius(20px);
+				@include borderRadius(10px);
 				margin:{
-					right:10px;
-					bottom:10px;
+					right:2%;
+					bottom:2%;
 				}
                 .instaHover{
                     @extend .hide;
                     @include textAlign(center);
                     position: absolute;
-                    width: 100%;
+                    width: 101%;
                     height: 100%;
                     background: {color:rgba(0,0,0,.6);}
                     span{
@@ -832,12 +833,12 @@
                     }
                 }
                 &.insBig{
-                    @include span-columns(4.4);
+                    @include span-columns(4.55);
                     @include omega();
-                    height:140px;
+                    height:110px;
 					margin:{
-						right:10px;
-						bottom:10px;
+						right:2%;
+						bottom:2%;
 					}
                     .instaHover{
                         span{
@@ -854,14 +855,25 @@
                     }
                 }
                 @include media($notebook){
+					@include span-columns(2.38);
+					@include borderRadius(20px);
                     height:120px;
+						margin:{
+						right:10px;
+						bottom:10px;
+					}
                     .instaHover{
                         span{
                             margin:{top:35%;}
                         }
                     }
                     &.insBig{
-                        height:240px;
+						@include span-columns(4.7);
+                        height:250px;
+						margin:{
+							right:10px;
+							bottom:10px;
+						}
                         span{
                             margin:{top:20%;}
                         }
@@ -869,7 +881,7 @@
                 }
             }
             @include media($notebook){
-                padding:{left:8px;}
+                padding:{left:2.4%;}
             }
         }
         @include media($notebook){

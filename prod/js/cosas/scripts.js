@@ -183,6 +183,14 @@ jQuery(document).ready(function($){
 			/* jshint ignore:end */
       });
     });
+	$('#readMorebtn').on('click', function(){
+		
+		$('.post-single').css({
+			'max-height':'inherit',
+			'overflow':'inherit'
+		});
+		$('.post-single .degradeload').hide();
+	});
 	
 	/* jshint ignore:start */
 

@@ -145,9 +145,6 @@
                     @extend .img-adapt;
                 }
             }
-            .fb-comments{
-                @include span-columns(12);
-            }
             .swiper-gallery{
                 @include span-columns(12);
                 position: relative;
@@ -229,6 +226,41 @@
 						}
 					}
 				}
+			}
+			.degradeload{
+				position: absolute;
+				width: 100%;
+				min-height:300px;
+				bottom: 0;
+				left:0;
+				right:0;
+				@include linear-gradient(transparent, $white);
+				.btn-readcontiniuos{
+					background:{color:$red;}
+					color:$white;
+					@include pad(5px 10px);
+					position: absolute;
+					bottom: 10px;
+					left:0;
+					right:0;
+					margin: 0 auto;
+					font:{size:em(12px);}
+					text:{transform:uppercase;}
+					width:60%;
+				}
+				@include media($notebook){
+					display: none;
+				}
+			}
+			.fb-comments{
+				@include span-columns(12);
+			}
+			@include media(max-width 640px){
+				width:100%;
+				position: relative;
+				overflow: hidden;
+				max-height: 300px;
+				clear: both;
 			}
             @include media($tabletLand){
                 @include span-columns(8);

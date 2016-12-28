@@ -421,7 +421,26 @@
             //SI NO ES UN SUBDOMAIN
             }else{ 
         ?>
-            
+            <script type='text/javascript'><!--//<![CDATA[
+			   document.MAX_ct0 = unescape('{clickurl_enc}');
+
+			   var m3_u = (location.protocol=='https:'?'https://bloques.cosas.com/activos4.0/www/delivery/ajs.php':'http://bloques.cosas.com/activos4.0/www/innerdev/ajs.php');
+			   var m3_r = Math.floor(Math.random()*99999999999);
+			   if (!document.MAX_used) document.MAX_used = ',';
+			   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+			   document.write ("?zoneid=33");
+			   document.write ('&amp;cb=' + m3_r);
+			   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+			   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+			   document.write ("&amp;loc=" + escape(window.location));
+			   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+			   if (document.context) document.write ("&context=" + escape(document.context));
+			   if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+				   document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+			   }
+			   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+			   document.write ("'><\/scr"+"ipt>");
+			//]]>--></script><noscript><a href='http://bloques.cosas.com/activos4.0/www/innerdev/ck.php?n=a9735427&amp;cb={random}' target='_blank'><img src='http://bloques.cosas.com/activos4.0/www/innerdev/avw.php?zoneid=33&amp;cb={random}&amp;n=a9735427&amp;ct0={clickurl_enc}' border='0' alt='' /></a></noscript>
             <h3 class="titus">espectáculos</h3>
 
             <main id="main-2" class="site-main-2">
