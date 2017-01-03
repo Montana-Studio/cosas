@@ -41,7 +41,14 @@
 
 			if (strlen($post->post_title) > 35) {
 				
-				echo substr(the_title($before = '', $after = '', FALSE), 0, 50) . '...';
+				$condicion1 = htmlspecialchars(substr(the_title($before = null, $after = null, FALSE), 49,1) . '...', ENT_QUOTES, 'UTF-8');
+				$condicion2 = htmlspecialchars(substr(the_title($before = null, $after = null, FALSE), 48,1) . '...', ENT_QUOTES, 'UTF-8');
+
+				if(strlen($condicion1) == 0 ||strlen($condicion2) == 0){
+					echo substr(the_title($before = '', $after = '', FALSE), 0, 45) . '...';
+				}else{
+					echo substr(the_title($before = '', $after = '', FALSE), 0, 50) . '...';
+				}
 
 			} else {
 				the_title();
