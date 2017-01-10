@@ -1,5 +1,7 @@
 <?php get_header(); ?>
-
+    <script src="<?php echo  get_template_directory_uri() ?>/js/vimeo.player.js"></script>
+    <script src="<?php echo  get_template_directory_uri() ?>/js/youtube.api.js"></script>
+    <script src="<?php echo  get_template_directory_uri() ?>/js/videos.js"></script>
     <div id="primary" class="content-area">
         <div style="margin:0 auto;clear:both;display:block;max-width:300px;">
 			<ins data-revive-zoneid="30" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
@@ -807,32 +809,7 @@
                                     // Restore original Post Data
                                     wp_reset_postdata(); 
                             ?>
-                            <script type="text/javascript">
-                                    function onYouTubePlayerAPIReady() {
-                                        var players = document.querySelectorAll('.swiper-slide .embeVideo');
-                                        for (var i = 0; i < players.length; i++) {
-                                            new YT.Player(players[i], {
-                                                playerVars: {'controls': 0,'rel':0,'showinfo':0},
-                                                events:{
-                                                    'onStateChange': onPlayerStateChange,
-                                                },
-                                                videoId: players[i].dataset.id
-                                            });
-                                        }
-                                    }
-
-                                    function onPlayerStateChange(event) {        
-                                        if(event.data === 1){          
-                                            jQuery(document).ready(function($){
-                                                $('footer.titYoutube').fadeOut('slow');
-                                            });
-                                        }else if(event.data === 2||event.data === 0 ){
-                                            jQuery(document).ready(function($){
-                                                $('footer.titYoutube').fadeIn('slow');
-                                            });
-                                        }
-                                    }
-                            </script>
+                         
                        </div>
                        <div class="swiper-pagination"></div>
                     </div>
@@ -1473,61 +1450,7 @@
                         ?>
                     </div> 
                 </div>     
-                <script type="text/javascript">
-                    var playerss;
-                    function onYouTubePlayerAPIReady() {
-                        var players = document.querySelectorAll('.swiper-sliders .embeVideo');
-                        for (var i = 0; i < players.length; i++) {
-                            playerss = new YT.Player(players[i], {
-                                playerVars: {'controls': 0,'rel':0,'showinfo':0},
-                                events:{
-                                    'onStateChange': onPlayerStateChange,
-                                },
-                                videoId: players[i].dataset.id
-                            });
-                        }
-                    }
-                    function onPlayerStateChange(event) {        
-                        if(event.data === 1){          
-                            jQuery(document).ready(function($){
-                                $('.video-play .title-video-principal').fadeOut('slow');
-                            });
-                        }else if(event.data === 2||event.data === 0 ){
-                            jQuery(document).ready(function($){
-                                $('.video-play .title-video-principal').fadeIn('slow');
-                            });
-                        }
-                    }
-                    function loadVideo(videoID, origen) {
-                        if(origen == 'youtube'){
-                            $('.embeVideoYoutube').show();
-                            $('.embeVideoVimeo').hide();
 
-                            if(playerss) { 
-                                jQuery(document).ready(function($){
-                                    $.ajaxSetup({cache:false});
-                                    
-                                    $(".video-post").click(function(){
-                                        var fecha = $(this).find('.date-video').text();
-                                        var titulo = $(this).find('.title-video').text();
-                                        
-                                        $(".titulo-principal").html(titulo);
-                                        $(".info-principal").html(fecha);
-                                        playerss.loadVideoById(videoID);
-                                        return false;
-                                    });
-                                    
-                                    
-                                });
-                            }
-                        }
-                        if(origen == 'vimeo'){
-                            $('.embeVideoVimeo').show();
-                            $('.embeVideoYoutube').hide();
-                        }
-                        
-                    }
-                </script>
         </main>
     
         <main id="main-6" class="site-main-6-mobile">
