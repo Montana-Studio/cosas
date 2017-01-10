@@ -15,8 +15,9 @@ jQuery(document).ready(function($){
         }else{
             $('#embed1').hide()
             $('#embed1').attr('src','https://www.youtube.com/embed/'+videoID_Youtube+'?enablejsapi=1')
+            loadVideoYoutube(videoID,1)
             $('#embed2').show()
-            loadVideoVimeo(videoID)
+            loadVideoVimeo2(videoID)
         }
         
     })
@@ -34,6 +35,7 @@ jQuery(document).ready(function($){
             loadVideoYoutube(videoID)
             $('#embed1').attr('src','https://www.youtube.com/embed/'+videoID+'?enablejsapi=1')
         }
+        $('#embed1').show()
         $('.video-play .title-video-principal').fadeIn('slow')           
     })
 
@@ -51,7 +53,7 @@ jQuery(document).ready(function($){
 
     function loadVideoYoutube(videoID, vimeo=0){
         var player;
-
+        console.log(vimeo)
         player = new YT.Player('embed1', {
             height: '360',
             width: '640',
@@ -61,11 +63,15 @@ jQuery(document).ready(function($){
             'onStateChange': onPlayerStateChange
             }
         });
-        $('#embed1').show()
+        //$('#embed1').show()
 
-        function onPlayerReady(event) {
-            //event.target.playVideo();
-        }
+        function onPlayerReady(event,vimeo) {
+            if(vimeo==0){
+                event.target.playVideo();
+            }
+        }  
+
+        
 
         var done = false;
         function onPlayerStateChange(event) {        
@@ -96,10 +102,10 @@ jQuery(document).ready(function($){
         };
         var player = new Vimeo.Player('embed2', options);
 
+
         if(youtube==1){
-            player.setCurrentTime(0).then(function(seconds) {
+            player.loadVideo(videoID).then(function(id) {
                 player.pause().then(function() {
-                   //$('.title-video-principal').fadeIn('slow');
                 }).catch(function(error) {
                     switch (error.name) {
                         default:
@@ -110,14 +116,12 @@ jQuery(document).ready(function($){
             }).catch(function(error) {
                 switch (error.name) {
                     default:
-                       console.log(error.name)
-                     break;
+                        console.log(error.name)
+                        break;
                 }
             });
         }else{
-            player.setCurrentTime(0).then(function(seconds) {
                 player.pause().then(function() {
-                   //$('.title-video-principal').fadeIn('slow');
                 }).catch(function(error) {
                     switch (error.name) {
                         default:
@@ -125,13 +129,6 @@ jQuery(document).ready(function($){
                             break;
                     }
                 });
-            }).catch(function(error) {
-                switch (error.name) {
-                    default:
-                       console.log(error.name)
-                     break;
-                }
-            });
 
             player.on('play', function() {
                 $('.video-play .title-video-principal').fadeOut('slow');
