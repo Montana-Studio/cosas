@@ -19,6 +19,45 @@
         @include span-columns(12);
         @include shift(0);
     }
+	.headerBlogis{
+		width:100%;
+		min-height:100px;
+		background:{
+			image:url('http://cosas.com/ads_html/bg.jpg');
+			size:cover;
+			position: center;
+		}
+		position: relative;
+		overflow: hidden;
+		@include display(flex);
+		@include align-items(flex-end);
+		h2{
+			@include outer-container(90%);
+			@include pad(3px 15px);
+			text:{
+				align:center;
+			}
+			background: {
+				color:#FFAC39;
+			}
+			color:$white;
+			font:{
+				family:$playFair;
+				size:em(12);
+				weight:normal;
+			}
+			max-height: 40px;
+		}
+		@include media($notebook){
+			min-height:200px;
+			h2{
+				@include outer-container(70%);
+				font:{
+					size:em(24);
+				}
+			}
+		}
+	}
     .post-list{
         .post-sticky-box{
             @include row();

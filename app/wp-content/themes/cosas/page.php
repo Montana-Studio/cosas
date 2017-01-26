@@ -127,7 +127,15 @@ get_header();
 				})();
 				</script>
 
-			</div>       
+			</div>
+           
+           	<?php if(is_page('blogis')){ ?>
+            <div class="headerBlogis">
+            	
+            	<h2>ALIANZA BLOGI, COQUINARIA, AML, COSAS Y CASAS</h2>
+            	
+            </div>
+            <?php } ?>
             <h1 class="titus"><?php the_title(); ?></h1>
             
             <div class="post-list">
@@ -447,7 +455,7 @@ get_header();
                             'orderby'                => 'date',
 							'post_type' 			 => 'automovilismo'
                         );
-					}elseif(is_page('blogi')){
+					}elseif(is_page('blogis')){
 						$args = array (
                             'posts_per_page'         => '9',
                             'paged'                  => $paged,
