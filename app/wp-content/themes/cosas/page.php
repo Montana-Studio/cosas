@@ -447,6 +447,14 @@ get_header();
                             'orderby'                => 'date',
 							'post_type' 			 => 'automovilismo'
                         );
+					}elseif(is_page('blogi')){
+						$args = array (
+                            'posts_per_page'         => '9',
+                            'paged'                  => $paged,
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+							'post_type' 			 => 'blogi'
+                        );
 					}
                     // The Query
                     $paginas = new WP_Query( $args );

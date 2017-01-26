@@ -1,7 +1,9 @@
 <!-- sidebar -->
 
 <aside class="sidebar" role="complementary">
-
+	<div class="sidebar-widget">
+            <?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-2')) ?>
+    </div>
 	<div class="agenda-sidebar">
 		<h3 class="title-section">Agenda</h3>
 		<ul>
@@ -92,5 +94,6 @@
 		</div>
 	</div> 
 */?>
+
 </aside>
 <!-- /sidebar -->
