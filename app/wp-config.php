@@ -3,7 +3,7 @@
 
 // ** MySQL settings ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'cosas_23082016');
+define('DB_NAME', 'cosas');
 
 /** MySQL database username */
 define('DB_USER', 'root');
@@ -42,6 +42,7 @@ define('DOMAIN_CURRENT_SITE', 'cosas.localhost');
 define('PATH_CURRENT_SITE', '/');
 define('SITE_ID_CURRENT_SITE', 1);
 define('BLOG_ID_CURRENT_SITE', 1);/* That's all, stop editing! Happy blogging. */
+
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )

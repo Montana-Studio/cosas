@@ -1,5 +1,7 @@
 <?php get_header(); ?>
-
+    <script src="<?php echo  get_template_directory_uri() ?>/js/vimeo.player.js"></script>
+    <script src="<?php echo  get_template_directory_uri() ?>/js/youtube.api.js"></script>
+    <script src="<?php echo  get_template_directory_uri() ?>/js/videos.js"></script>
     <div id="primary" class="content-area">
         <div style="margin:0 auto;clear:both;display:block;max-width:300px;">
 			<ins data-revive-zoneid="30" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
@@ -421,7 +423,7 @@
             //SI NO ES UN SUBDOMAIN
             }else{ 
         ?>
-            <script type='text/javascript'><!--//<![CDATA[
+            <script type='text/javascript'>//<![CDATA[
 			   document.MAX_ct0 = unescape('{clickurl_enc}');
 
 			   var m3_u = (location.protocol=='https:'?'https://bloques.cosas.com/activos4.0/www/delivery/ajs.php':'http://bloques.cosas.com/activos4.0/www/innerdev/ajs.php');
@@ -440,7 +442,8 @@
 			   }
 			   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
 			   document.write ("'><\/scr"+"ipt>");
-			//]]>--></script><noscript><a href='http://bloques.cosas.com/activos4.0/www/innerdev/ck.php?n=a9735427&amp;cb={random}' target='_blank'><img src='http://bloques.cosas.com/activos4.0/www/innerdev/avw.php?zoneid=33&amp;cb={random}&amp;n=a9735427&amp;ct0={clickurl_enc}' border='0' alt='' /></a></noscript>
+			//]]>
+            </script><noscript><a href='http://bloques.cosas.com/activos4.0/www/innerdev/ck.php?n=a9735427&amp;cb={random}' target='_blank'><img src='http://bloques.cosas.com/activos4.0/www/innerdev/avw.php?zoneid=33&amp;cb={random}&amp;n=a9735427&amp;ct0={clickurl_enc}' border='0' alt='' /></a></noscript>
             <h3 class="titus">espectáculos</h3>
 
             <main id="main-2" class="site-main-2">
@@ -488,7 +491,7 @@
                 
                 <h3>instagram <i class="fa fa-instagram"></i></h3>
                 <div class="contInstagram">
-                  <?php get_template_part('instagram'); ?> 
+                  <?php //get_template_part('instagram'); ?> 
                 </div>
                 
             </main>
@@ -549,7 +552,14 @@
                                 <a href="<?php echo esc_url( get_permalink() );?>" rel="bookmark">
                                 <?php 
                                     if (strlen($post->post_title) > 35) {
-                                        echo substr(the_title($before = '', $after = '', FALSE), 0, 50) . '...';
+                                        $condicion1 = htmlspecialchars(substr(the_title($before = null, $after = null, FALSE), 49,1) . '...', ENT_QUOTES, 'UTF-8');
+                                        $condicion2 = htmlspecialchars(substr(the_title($before = null, $after = null, FALSE), 48,1) . '...', ENT_QUOTES, 'UTF-8');
+
+                                        if(strlen($condicion1) == 0 ||strlen($condicion2) == 0){
+                                            echo substr(the_title($before = '', $after = '', FALSE), 0, 45) . '...';
+                                        }else{
+                                            echo substr(the_title($before = '', $after = '', FALSE), 0, 50) . '...';
+                                        }
                                     } else {
                                         the_title();
                                     }
@@ -799,32 +809,7 @@
                                     // Restore original Post Data
                                     wp_reset_postdata(); 
                             ?>
-                            <script type="text/javascript">
-                                    function onYouTubePlayerAPIReady() {
-                                        var players = document.querySelectorAll('.swiper-slide .embeVideo');
-                                        for (var i = 0; i < players.length; i++) {
-                                            new YT.Player(players[i], {
-                                                playerVars: {'controls': 0,'rel':0,'showinfo':0},
-                                                events:{
-                                                    'onStateChange': onPlayerStateChange,
-                                                },
-                                                videoId: players[i].dataset.id
-                                            });
-                                        }
-                                    }
-
-                                    function onPlayerStateChange(event) {        
-                                        if(event.data === 1){          
-                                            jQuery(document).ready(function($){
-                                                $('footer.titYoutube').fadeOut('slow');
-                                            });
-                                        }else if(event.data === 2||event.data === 0 ){
-                                            jQuery(document).ready(function($){
-                                                $('footer.titYoutube').fadeIn('slow');
-                                            });
-                                        }
-                                    }
-                            </script>
+                         
                        </div>
                        <div class="swiper-pagination"></div>
                     </div>
@@ -1201,7 +1186,7 @@
                 
                 <h3>instagram <i class="fa fa-instagram"></i></h3>
                 <div class="contInstagram">
-                  <?php get_template_part('instagram'); ?> 
+                  <?php //get_template_part('instagram'); ?> 
                 </div>
                 
             </main>
@@ -1465,51 +1450,7 @@
                         ?>
                     </div> 
                 </div>     
-                <script type="text/javascript">
-                    var playerss;
-                    function onYouTubePlayerAPIReady() {
-                        var players = document.querySelectorAll('.swiper-sliders .embeVideo');
-                        for (var i = 0; i < players.length; i++) {
-                            playerss = new YT.Player(players[i], {
-                                playerVars: {'controls': 0,'rel':0,'showinfo':0},
-                                events:{
-                                    'onStateChange': onPlayerStateChange,
-                                },
-                                videoId: players[i].dataset.id
-                            });
-                        }
-                    }
-                    function onPlayerStateChange(event) {        
-                        if(event.data === 1){          
-                            jQuery(document).ready(function($){
-                                $('.video-play .title-video-principal').fadeOut('slow');
-                            });
-                        }else if(event.data === 2||event.data === 0 ){
-                            jQuery(document).ready(function($){
-                                $('.video-play .title-video-principal').fadeIn('slow');
-                            });
-                        }
-                    }
-                    function loadVideo(videoID) {
-                        if(playerss) { 
-                            jQuery(document).ready(function($){
-                                $.ajaxSetup({cache:false});
-                                
-                                $(".video-post").click(function(){
-                                    var fecha = $(this).find('.date-video').text();
-                                    var titulo = $(this).find('.title-video').text();
-                                    
-                                    $(".titulo-principal").html(titulo);
-                                    $(".info-principal").html(fecha);
-                                    playerss.loadVideoById(videoID);
-                                    return false;
-                                });
-                                
-                                
-                            });
-                        }
-                    }
-                </script>
+
         </main>
     
         <main id="main-6" class="site-main-6-mobile">
