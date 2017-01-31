@@ -1,0 +1,213 @@
+.vidaSocial{
+	$heightVS:220px;
+	@include row();
+	@include clearfix();
+	position: relative;
+	overflow: hidden;
+	min-height:$heightVS;
+	.swiper-vSocial{
+		.swiper-wrapper{
+			.swiper-slide{
+				img{
+					position: absolute;
+					left:0;
+					top: 0;
+					width:100%;
+				}
+				.metaContent{
+					width:100%;
+					position: absolute;
+					bottom:-$heightVS;
+					height:50px;
+					.metaVsocial{
+						@include row();
+						width:100%;
+						@include pad(0 0 0 3%);
+						@include display(flex);
+						@include align-items(center);
+						color:$white;
+						height: 100%;
+						background:{
+							color:rgba(54,54,54,.8);
+						}
+					}	
+				}
+			}
+		}
+		.btnVsocial{
+			@include span-columns(2.625);
+			@include omega();
+			text:{
+				align:center;
+				transform: uppercase;
+			}
+			height: 50px;
+			color:$white;
+			@include display(flex);
+			@include flex-direction(column);
+			@include justify-content(center);
+			background: {
+				color:$red;
+			}
+			font:{
+				weight:normal;
+				size:em(12);
+			}
+			position: absolute;
+			bottom: 0px;
+			right: 0;
+			z-index: 1;
+		}
+		.swiper-pagination{
+			top:4px;
+			bottom: inherit;
+			text:{
+				align:right;
+			}
+			.swiper-pagination-bullet{
+				border: 1px solid $white;
+				opacity: 1;
+				background: none;
+				width:12px;
+				height: 12px;
+				&.swiper-pagination-bullet-active{
+					opacity: 1;
+					background:{
+						color:$white;
+					}
+				}
+			}
+		}
+	}
+}
+.eventosContainer{
+	.post{
+		@include span-columns(4.01);
+		margin:{
+			bottom:20px;
+			right:15px;
+		}
+		height:362px;
+		overflow: hidden;
+		position: relative;
+		a{
+			display: block;
+			width: 100%;
+			height: 100%;
+			.cont-title-page{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				z-index: 0;
+				@include filter(grayscale(100%));
+				background: {
+					repeat:no-repeat;
+					size:cover;
+					position: center;
+				}
+			}
+			h2{
+				@extend .no-margins;
+				@include pad(0 5px);
+				@include display(flex);
+				@include align-items(center);
+				position: absolute;
+				z-index: 1;
+				left: 0;
+				bottom: 0;
+				min-height: 50px;
+				background: {
+					color:$red;
+				}
+				color:$white;
+				font: {
+					size:em(12);
+					weight:normal;
+				}
+			}
+			&:hover{
+				.cont-title-page{
+					@include transition(all .5s ease-in-out);
+					@include filter(grayscale(0%));
+				}
+				h2{
+					@include transition(all .4s ease-in-out);
+					background: {
+						color:$white;
+					}
+					color:$black;
+				}
+			}
+		}
+		.moreContent{
+			position: absolute;
+			width:100%;
+			height: 50%;
+			bottom:-200px;
+			background:{
+				color:rgba(255,255,255,.8);
+			}
+			color:$black;
+			text:{
+				align:center;
+			}
+			.shares-post{
+				max-width:60%;
+				margin: 20px auto;
+				a{
+					display: inline-block;
+					color:$black;
+					width:25px;
+					font:{
+						size:em(20);
+					}
+				}
+			}
+			.btn_more{
+				clear:both;
+				max-width:50%;
+				margin: 0 auto;
+				@include pad(10px 20px);
+				border:2px solid $black;
+				text:{
+					transform:uppercase;
+				}
+				a{
+					color:$black;
+				}
+			}
+		}
+		&:hover{
+			.moreContent{
+				@include transition(all .5s ease-in-out);
+				bottom:0;
+			}
+		}
+		&.tag-pequeno{
+			height: 743px;
+			.moreContent{
+				bottom:-380px;
+				height: 30%;
+			}
+			&:hover{
+				.moreContent{
+					@include transition(all .5s ease-in-out);
+					bottom:0;
+				}
+			}
+		}
+		&.tag-mediana{
+			@include span-columns(7.9);
+			margin:{
+				bottom:20px;
+				right:0
+			}
+		}
+	}
+}
+.postWidth{
+	width:30%;
+}
+.gridGutter{
+	width:2%;
+}

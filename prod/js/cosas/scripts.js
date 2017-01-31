@@ -130,6 +130,13 @@ jQuery(document).ready(function($){
         layoutMode: 'packery',
         percentPosition: true,
     });
+	
+	//VidaSocial
+	$('.eventosContainer').isotope({
+		layoutMode: 'packery',
+		itemSelector: '.eventosContainer',
+		percentPosition: true
+	});
 
     //WOOCOMMERCE
     $('.inside-despacho').click(function(){
@@ -207,6 +214,11 @@ jQuery(document).ready(function($){
 			prevButton: '.vermenos',
 			direction: 'vertical',
 			slidesPerView: 3,
+			paginationClickable: true,
+		}); 
+		var vsocial = new Swiper('.swiper-vSocial', {
+			slidesPerView: 1,
+			pagination: '.swiper-pagination',
 			paginationClickable: true,
 		}); 
 	/* jshint ignore:end */
