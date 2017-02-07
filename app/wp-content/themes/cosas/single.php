@@ -2,7 +2,7 @@
 
    	
     	<?php if(is_singular('branded')||is_singular('automovilismo')||in_category(1343)||is_singular('blogi')){ ?>
-    		<div class="single-brandedcontent">
+			<div class="single-brandedcontent">
     			
     			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
@@ -98,8 +98,7 @@
 						</div>
 						<div class="facecomm-cont">
 							
-							
-						<div class="fb-comments" data-href="<?php echo the_permalink(); ?>" data-numposts="3" data-width="100%" data-order-by="reverse_time"></div>
+							<div class="fb-comments" data-href="<?php echo the_permalink(); ?>" data-numposts="3" data-width="100%" data-order-by="reverse_time"></div>
 							
 						</div>
 
@@ -129,6 +128,60 @@
 			<?php endif; ?>
     			
     		</div>
+		<?php }elseif(in_category('vida-social')){ ?>
+			<section class="vSocial-content">
+				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+					
+					<div class="galleryvSocial">
+						<?php the_field('galleryvSocial'); ?>
+					</div>
+					
+					<h2><?php the_title(); ?></h2>
+					
+					<div class="sharecontent">
+						<div class="shares-post">
+
+							<a class='facebook_share' title='<?php echo the_permalink(); ?>' name='<?php the_title(); ?>' href="#">
+								<i class="fa fa-facebook"></i>
+							</a>
+
+							<a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', '', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-twitter"></i></a>
+
+							<?php if(wp_is_mobile()){ ?>
+								<a href="whatsapp://send?text=<?php the_title(); ?> – <?php urlencode(the_permalink()); ?>" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+							<?php } ?>
+
+							<a href="javascript:piShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_post_thumbnail_url(); ?>', '', 520, 350)"><i class="fa fa-pinterest"></i></a>
+
+							<a target="_blank" href="https://plus.google.com/share?url=<?php echo the_permalink(); ?>" onclick="window.open('https://plus.google.com/share?url=<?php echo the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i></a>
+
+					   </div>
+					</div>
+					
+					<?php the_content(); ?>
+					
+					<div class="fb-comments" data-href="<?php echo the_permalink(); ?>" data-numposts="3" data-width="100%" data-order-by="reverse_time"></div>
+				
+				<?php endwhile; ?>
+
+				<?php else: ?>
+
+				<?php endif; ?>
+			</section>	
+			<script>
+				var gallerySliders = new Swiper('.swiper-gallery', {
+					nextButton: '.next-gallery',
+					prevButton: '.prev-gallery',
+					slidesPerView: 1,
+					paginationClickable: true,
+					pagination: '.swiper-pagination',
+					breakpoints:{
+						768:{
+							slidesPerView: 1,
+						}
+					}
+				});
+			</script>
 		<?php }else{ ?>
 		
 			<!-- section -->

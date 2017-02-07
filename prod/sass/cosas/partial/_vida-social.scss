@@ -205,9 +205,55 @@
 		}
 	}
 }
-.postWidth{
-	width:30%;
-}
-.gridGutter{
-	width:2%;
+.vSocial-content{
+	@include outer-container(75%);
+	h2{
+		@include row();
+		width:100%;
+		text:{
+			align:center;
+		}
+		font:{
+			family:$playFair;
+			size:em(25);
+			weight:normal;
+		}
+	}
+	.sharecontent{
+		@include outer-container(50%);
+		.shares-post{
+			@include row();
+			width:100%;
+			text:{
+				align:center;
+			}
+			@include display(flex);
+			@include flex-direction(row);
+			@include justify-content(center);
+			@include align-items(center);
+			a{
+				@include borderRadius(50%);
+				display: table;
+				color:$black;
+				width:30px;
+				height:30px;
+				border:1px solid $black;
+				text:{
+					align:center;
+				}
+				i{
+					display: table-cell;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+	p{
+		@include outer-container(80%);
+		img{
+			width:100%;
+			height: auto;
+			display: block;
+		}
+	}
 }

@@ -715,37 +715,71 @@ function custom_gallery( $output, $attr ){
         return $output;
     }
 
-    $itemtag = tag_escape($itemtag);
-    $captiontag = tag_escape($captiontag);
-    $columns = intval($columns);
-    $itemwidth = $columns > 0 ? floor(100/$columns) : 100;
-    $float = is_rtl() ? 'right' : 'left';
+    if(in_category(189)){
+		$itemtag = tag_escape($itemtag);
+		$captiontag = tag_escape($captiontag);
+		$columns = intval($columns);
+		$itemwidth = $columns > 0 ? floor(100/$columns) : 100;
+		$float = is_rtl() ? 'right' : 'left';
 
-    $selector = "gallery-{$instance}";
+		$selector = "gallery-{$instance}";
 
-    $gallery_div = '';
-    $size_class = sanitize_html_class( $size );
-    $gallery_div = "<div id=\"$selector\" class=\"gallery galleryid-{$id} swiper-gallery gallery-columns-{$columns} gallery-size-{$size_class}\"><div class='shadow-opt'></div><div class='swiper-wrapper'>";
-    $output = apply_filters( 'gallery_style', $gallery_div );
+		$gallery_div = '';
+		$size_class = sanitize_html_class( $size );
+		$gallery_div = "<div id=\"$selector\" class=\"gallery galleryid-{$id} swiper-gallery gallery-columns-{$columns} gallery-size-{$size_class}\"><div class='shadow-opt'></div><div class='swiper-wrapper'>";
+		$output = apply_filters( 'gallery_style', $gallery_div );
 
-    $i = 0;
-    foreach ( $attachments as $id => $attachment ) {
-        $image = wp_get_attachment_image( $id, $size );
+		$i = 0;
+		foreach ( $attachments as $id => $attachment ) {
+			$image = wp_get_attachment_image( $id, $size );
 
-        $output .= "<{$itemtag} class=\"gallery-item swiper-slide\"><a href='' class='group1'>";
-        $output .= $image;
-        if ( $captiontag && trim($attachment->post_excerpt) ) {
-            $output .= "
-                <{$captiontag} class=\"wp-caption-text gallery-caption\">
-                " . wptexturize($attachment->post_excerpt) . "
-                </{$captiontag}>";
-        }
-        $output .= "</a></{$itemtag}>";
-    }
+			$output .= "<{$itemtag} class=\"gallery-item swiper-slide\"><a href='' class='group1'>";
+			$output .= $image;
+			if ( $captiontag && trim($attachment->post_excerpt) ) {
+				$output .= "
+					<{$captiontag} class=\"wp-caption-text gallery-caption\">
+					" . wptexturize($attachment->post_excerpt) . "
+					</{$captiontag}>";
+			}
+			$output .= "</a></{$itemtag}>";
+		}
 
-    $output .= "</div><div class='swiper-pagination'></div><div class='arrows next-gallery'><i class='fa fa-chevron-right'></i></div><div class='arrows prev-gallery'><i class='fa fa-chevron-left'></i></div></div>\n";
+		$output .= "</div><div class='swiper-pagination'></div><div class='arrows next-gallery'><i class='fa fa-chevron-right'></i></div><div class='arrows prev-gallery'><i class='fa fa-chevron-left'></i></div></div><div class='swipre-galley swiper-gallery2'></div><div class='swiper-gallery gallery2'><div class='swiper-wrapper'></div></div>\n";
 
-    return $output;
+		return $output;
+	}else{
+		$itemtag = tag_escape($itemtag);
+		$captiontag = tag_escape($captiontag);
+		$columns = intval($columns);
+		$itemwidth = $columns > 0 ? floor(100/$columns) : 100;
+		$float = is_rtl() ? 'right' : 'left';
+
+		$selector = "gallery-{$instance}";
+
+		$gallery_div = '';
+		$size_class = sanitize_html_class( $size );
+		$gallery_div = "<div id=\"$selector\" class=\"gallery galleryid-{$id} swiper-gallery gallery-columns-{$columns} gallery-size-{$size_class}\"><div class='shadow-opt'></div><div class='swiper-wrapper'>";
+		$output = apply_filters( 'gallery_style', $gallery_div );
+
+		$i = 0;
+		foreach ( $attachments as $id => $attachment ) {
+			$image = wp_get_attachment_image( $id, $size );
+
+			$output .= "<{$itemtag} class=\"gallery-item swiper-slide\"><a href='' class='group1'>";
+			$output .= $image;
+			if ( $captiontag && trim($attachment->post_excerpt) ) {
+				$output .= "
+					<{$captiontag} class=\"wp-caption-text gallery-caption\">
+					" . wptexturize($attachment->post_excerpt) . "
+					</{$captiontag}>";
+			}
+			$output .= "</a></{$itemtag}>";
+		}
+
+		$output .= "</div><div class='swiper-pagination'></div><div class='arrows next-gallery'><i class='fa fa-chevron-right'></i></div><div class='arrows prev-gallery'><i class='fa fa-chevron-left'></i></div></div><div class='swipre-galley swiper-gallery2'></div>\n";
+
+		return $output;
+	}
 }
 add_filter('post_gallery', 'custom_gallery', 11, 2);
 
