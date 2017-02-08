@@ -58,6 +58,18 @@
 			}
 		}
 	}
+	.headerNyfw{
+		@extend .headerBlogis;
+		background:{
+			image:url('../img/300x100-seccion.gif');
+		}
+		@include media($notebook){
+			min-height: 400px;
+			background:{
+				image:url('../img/1119x400-seccion.gif');
+			}
+		}
+	}
     .post-list{
         .post-sticky-box{
             @include row();

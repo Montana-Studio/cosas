@@ -135,7 +135,9 @@ get_header();
             	<h2>ALIANZA BLOGI, COQUINARIA, AML, COSAS Y CASAS</h2>
             	
             </div>
-            <?php } ?>
+            <?php }elseif(is_page('especial-nyfw')){ ?>
+				<div class="headerNyfw"></div>
+			<?php } ?>
             <h1 class="titus"><?php the_title(); ?></h1>
             
             <div class="post-list">

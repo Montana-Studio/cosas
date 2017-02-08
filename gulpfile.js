@@ -25,21 +25,37 @@ var baseDir = {
 };
 
 //SCSS compiler
-gulp.task('scss', function(){
+gulp.task('scss-dev', function(){
 	return gulp.src(baseDir.src+baseDir.scss)
-		.pipe(scss.sync({outputStyle:'compressed'}).on('error', scss.logError))
+		.pipe(scss.sync({outputStyle:'nested'}).on('error', scss.logError))
 		.pipe(rename(baseDir.cssName))
 		.pipe(gulp.dest(baseDir.dest+baseDir.css))
 		.pipe(browserSync.stream());
 });
+gulp.task('scss-prod', function(){
+	return gulp.src(baseDir.src+baseDir.scss)
+		.pipe(scss.sync({outputStyle:'compressed'}).on('error', scss.logError))
+		.pipe(rename(baseDir.cssName))
+		.pipe(gulp.dest(baseDir.dest+baseDir.css))
+});
 
 //JS compiler
-gulp.task('uglify', function() {
+gulp.task('uglify-dev', function() {
+  gulp.src(baseDir.src+baseDir.jsIn)
+    .pipe(uglify({
+		output:{
+			beautify:true
+		}  
+  	}))
+  	.pipe(rename(baseDir.jsName))
+    .pipe(gulp.dest(baseDir.dest+baseDir.jsOut))
+	.pipe(browserSync.stream());
+});
+gulp.task('uglify-prod', function() {
   gulp.src(baseDir.src+baseDir.jsIn)
     .pipe(uglify())
   	.pipe(rename(baseDir.jsName))
     .pipe(gulp.dest(baseDir.dest+baseDir.jsOut))
-	.pipe(browserSync.stream());
 });
 
 //IMG compress
@@ -56,11 +72,11 @@ gulp.task('browser-sync', function() {
     });
 
     gulp.watch('**/*{.html,.php}').on('change', reload);
-	gulp.watch([baseDir.src+baseDir.scss],['scss']);
-	gulp.watch([baseDir.src+baseDir.jsIn],['uglify']);
+	gulp.watch([baseDir.src+baseDir.scss],['scss-dev']);
+	gulp.watch([baseDir.src+baseDir.jsIn],['uglify-dev']);
 });
 
 //TASK
 gulp.task('dev', ['browser-sync']);
 
-gulp.task('upload',['scss','uglify','imagemin']);
+gulp.task('prod',['scss-prod','uglify-prod','imagemin']);
