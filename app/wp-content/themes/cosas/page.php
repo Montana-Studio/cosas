@@ -72,10 +72,12 @@ get_header();
 
 			</div> 
 
-<!-- BRANDED BANNERS -->
+<!-- BRANDED BANNERS 2 -->
         
-        <?php if(wp_is_mobile()){ ?>
-        	<div class="branded-content">
+        <?php if(wp_is_mobile()&&is_page('especial-nyfw')){ ?>
+        	
+        <?php }elseif(wp_is_mobile()&&is_page()){ ?>
+			<div class="branded-content">
         		<div class="branded-box">
 
 					<ins data-revive-zoneid="13" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
@@ -110,7 +112,7 @@ get_header();
 					
 				</div>
 			</div>
-        <?php } ?>
+		<?php } ?>
 
 			<div style="max-width:728px;margin:0 auto;">
 

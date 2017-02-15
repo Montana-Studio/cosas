@@ -30,12 +30,20 @@
 						background:{
 							color:rgba(54,54,54,.8);
 						}
+						font:{
+							size:em(12);
+						}
+						@include media($notebook){
+							font:{
+								size:em(14);
+							}
+						}
 					}	
 				}
 			}
 		}
 		.btnVsocial{
-			@include span-columns(2.625);
+			@include span-columns(4.5);
 			@include omega();
 			text:{
 				align:center;
@@ -57,6 +65,9 @@
 			bottom: 0px;
 			right: 0;
 			z-index: 1;
+			@include media($notebook){
+				@incldue span-columns(2.625);
+			}
 		}
 		.swiper-pagination{
 			top:4px;
