@@ -128,46 +128,147 @@
 			<?php endif; ?>
     			
     		</div>
-		<?php }elseif(in_category('vida-social')){ ?>
-			<section class="vSocial-content">
+		<?php }elseif(in_category('vida-social')){ 
+			$top_slider = '';
+			$down_slider='';
+			?>
+			<!--section class="vSocial-content"-->
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.css" />
+				 <style>
+				    html, body {
+				        position: relative;
+				        height: 100%;
+				    }
+				    body {
+				        background: #000;
+				        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+				        font-size: 14px;
+				        color:#000;
+				        margin: 0;
+				        padding: 0;
+				    }
+				    .swiper-container {
+				        width: 100%;
+				        height: 500px !important;
+				        margin-left: auto;
+				        margin-right: auto;
+				    }
+				    .swiper-slide {
+				        background-size: cover;
+				        background-position: center;
+				    }
+				    .gallery-top {
+				        height: 80%;
+				        width: 100%;
+				    }
+				    .gallery-thumbs {
+				        height: 20%;
+				        box-sizing: border-box;
+				        padding: 10px 0;
+				    }
+				    .gallery-thumbs .swiper-slide {
+				        width: 25%;
+				        height: 100%;
+				        opacity: 0.4;
+				    }
+				    .gallery-thumbs .swiper-slide-active {
+				        opacity: 1;
+				    }
+				    .swiper-slide-img{
+				    	max-height: 450px;
+				    	width: 100%;
+				    }
+				    h2{
+				    	background-color: white;
+				    }
+				    .footer_slide, .title_slide{
+				    	color: white;
+				    }
+				    .content_sociales{
+				    	background-color: white;
+				    }
+				    
+				</style>
+
+				<?php 
+				$content_without_images = get_the_content();
+				$content_without_images = preg_replace("/<img[^>]+\>/i", " ", $content_without_images);          
+				$content_without_images = apply_filters('the_content', $content_without_images);
+				$content_without_images = str_replace(']]>', ']]>', $content_without_images);
+				?>
+				
 				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 					
-					<div class="galleryvSocial">
-						<?php the_field('galleryvSocial'); ?>
-					</div>
+					<!--div class="galleryvSocial">
+						<?php //the_field('galleryvSocial'); ?>
+					</div-->
 					
-					<h2><?php the_title(); ?></h2>
-					
-					<div class="sharecontent">
-						<div class="shares-post">
-
-							<a class='facebook_share' title='<?php echo the_permalink(); ?>' name='<?php the_title(); ?>' href="#">
-								<i class="fa fa-facebook"></i>
-							</a>
-
-							<a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', '', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-twitter"></i></a>
-
-							<?php if(wp_is_mobile()){ ?>
-								<a href="whatsapp://send?text=<?php the_title(); ?> – <?php urlencode(the_permalink()); ?>" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
-							<?php } ?>
-
-							<a href="javascript:piShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_post_thumbnail_url(); ?>', '', 520, 350)"><i class="fa fa-pinterest"></i></a>
-
-							<a target="_blank" href="https://plus.google.com/share?url=<?php echo the_permalink(); ?>" onclick="window.open('https://plus.google.com/share?url=<?php echo the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i></a>
-
-					   </div>
-					</div>
-					
-					<?php the_content(); ?>
-					
-					<div class="fb-comments" data-href="<?php echo the_permalink(); ?>" data-numposts="3" data-width="100%" data-order-by="reverse_time"></div>
+					<?php $attachments = get_children(array('post_parent' => $post->ID,
+					                        'post_status' => 'inherit',
+					                        'post_type' => 'attachment',
+					                        'post_mime_type' => 'image',
+					                        'order' => 'ASC',
+					                        'orderby' => 'menu_order ID'));
+					foreach($attachments as $att_id => $attachment) {
+					    $full_img_url = wp_get_attachment_url($attachment->ID);
+					    $full_img_url = str_replace('localhost', 'com', $full_img_url);
+					    $pinterest_url_img = str_replace('%2F', '/', $full_img_url);
+					    $pinterest_url_img = str_replace('%3A', ':', $pinterest_url_img);
+					    $top_slider .='<div class="swiper-slide"><img class="swiper-slide-img" src="'.$full_img_url.'"><div class="title_slide">'.$post->post_title.'</div><div class="footer_slide">'.$attachment->post_title.'</div><a href="http://www.facebook.com/sharer.php?u='.$full_img_url.'" target="_blank">Facebook</a><a href="https://pinterest.com/pin/create/button/?url=&media='.$pinterest_url_img.'&description='.$attachment->post_title.'">Pinterest</a><a href="https://plus.google.com/share?url='.$full_img_url.'">Google+</a><a href="">Twitter</a></div>';
+						$down_slider .='<div class="swiper-slide" style="background-image:url('.$full_img_url.')"></div>';
+					}?>
+										
+					<!--div class="fb-comments" data-href="<?php// echo the_permalink(); ?>" data-numposts="3" data-width="100%" data-order-by="reverse_time"></div-->
 				
 				<?php endwhile; ?>
+				<div class="swiper-container gallery-top">
+					<div class="swiper-wrapper">
+					<?php echo $top_slider;?>
+					</div>
+			        <!-- Add Arrows -->
+			        <div class="swiper-button-next swiper-button-white"></div>
+			        <div class="swiper-button-prev swiper-button-white"></div>
+			    </div>
+			    <div class="swiper-container gallery-thumbs">
+        			<div class="swiper-wrapper">
+        			<?php echo $down_slider;?>
+        			</div>
+        		</div>
+        		<div class="content_sociales">
+        		<?php $link = get_the_permalink();
+        				$link = str_replace('localhost', 'com', $link);
+        				$pinterest_url = str_replace('%2F', '/', $link);
+					    $pinterest_url = str_replace('%3A', ':', $link);
+        				?>
+        			<a href="http://www.facebook.com/sharer.php?u=<?php echo $link ?>" target="_blank">Facebook</a>
+        			<a href="<?php echo 'https://pinterest.com/pin/create/button/?url='.$pinterest_url ?>">Pinterest</a>
+        			<a href="https://plus.google.com/share?url=<?php echo $link ?>">Google+</a>
+        			<a href="">Twitter</a>
+        			<?php echo $content_without_images; ?>
+        		</div>
+			    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+			    <script>
+				    var galleryTop = new Swiper('.gallery-top', {
+				        nextButton: '.swiper-button-next',
+				        prevButton: '.swiper-button-prev',
+				        spaceBetween: 10,
+				    });
+				    var galleryThumbs = new Swiper('.gallery-thumbs', {
+				        spaceBetween: 10,
+				        centeredSlides: true,
+				        slidesPerView: 'auto',
+				        touchRatio: 0.2,
+				        slideToClickedSlide: true
+				    });
+				    galleryTop.params.control = galleryThumbs;
+				    galleryThumbs.params.control = galleryTop;
+				    
+				</script>
 
 				<?php else: ?>
 
 				<?php endif; ?>
-			</section>	
+			<!--/section-->	
 			<script>
 				var gallerySliders = new Swiper('.swiper-gallery', {
 					nextButton: '.next-gallery',
