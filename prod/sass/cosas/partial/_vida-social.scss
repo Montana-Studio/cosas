@@ -194,8 +194,22 @@
 				bottom:0;
 			}
 		}
-		&.tag-pequeno{
+		&.tag-pequeno-izquierda{
 			height: 743px;
+			.moreContent{
+				bottom:-380px;
+				height: 30%;
+			}
+			&:hover{
+				.moreContent{
+					@include transition(all .5s ease-in-out);
+					bottom:0;
+				}
+			}
+		}
+		&.tag-pequeno-derecha{
+			height: 743px;
+			float: right;
 			.moreContent{
 				bottom:-380px;
 				height: 30%;
@@ -211,7 +225,14 @@
 			@include span-columns(7.9);
 			margin:{
 				bottom:20px;
-				right:0
+				right:15px;
+			}
+		}
+		&.tag-cuadrado{
+			@include span-columns(3.95);
+			margin:{
+				bottom:20px;
+				right:15px;
 			}
 		}
 	}

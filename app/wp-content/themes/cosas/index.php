@@ -811,6 +811,7 @@
 						$('.facebook_share_1').click(function(){						
 							var signo = $(this).parent().parent().siblings('.zodiacName').children('h3').text();
 							var texto = $(this).parent().parent().siblings('p').text();
+                            console.log(signo + texto)
 						
 
 							window.location.href="https://www.facebook.com/dialog/feed?app_id=259189257792642&link=http%3A%2F%2Fcosas.com&picture=http%3A%2F%2Fcosas.com&name=Horoscopo%20-%20"+signo+"&caption=%20&description="+texto+"&redirect_uri=http%3A%2F%2Fcosas.com%2F";
