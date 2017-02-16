@@ -214,10 +214,12 @@
 					    $full_img_url = str_replace('localhost', 'com', $full_img_url);
 					    $pinterest_url_img = str_replace('%2F', '/', $full_img_url);
 					    $pinterest_url_img = str_replace('%3A', ':', $pinterest_url_img);
-					    $title = str_replace('"', '', $post->post_title);
-					    $top_slider .='<div class="swiper-slide"><img class="swiper-slide-img" src="'.$full_img_url.'"><div class="title_slide">'.$post->post_title.'</div><div class="footer_slide">'.$attachment->post_title.'</div><a href="http://www.facebook.com/sharer.php?u='.$full_img_url.'" target="_blank">Facebook</a><a href="https://pinterest.com/pin/create/button/?url=&media='.$pinterest_url_img.'&description='.$attachment->post_title.'">Pinterest</a><a href="https://plus.google.com/share?url='.$full_img_url.'">Google+</a><a href="https://twitter.com/home?status='.$title.' - '.get_the_permalink().'@revistacosas">Twitter</a></div>';
+					    $top_slider .='<div class="swiper-slide"><img class="swiper-slide-img" src="'.$full_img_url.'"><div class="title_slide">'.$post->post_title.'</div><div class="footer_slide">'.$attachment->post_title.'</div><a href="http://www.facebook.com/sharer.php?u='.$full_img_url.'" target="_blank">Facebook</a><a href="https://pinterest.com/pin/create/button/?url=&media='.$pinterest_url_img.'&description='.$attachment->post_title.'">Pinterest</a><a href="https://plus.google.com/share?url='.$full_img_url.'">Google+</a><a href="">Twitter</a></div>';
 						$down_slider .='<div class="swiper-slide" style="background-image:url('.$full_img_url.')"></div>';
 					}?>
+										
+					<!--div class="fb-comments" data-href="<?php// echo the_permalink(); ?>" data-numposts="3" data-width="100%" data-order-by="reverse_time"></div-->
+				
 				<?php endwhile; ?>
 				<div class="swiper-container gallery-top">
 					<div class="swiper-wrapper">
@@ -233,16 +235,15 @@
         			</div>
         		</div>
         		<div class="content_sociales">
-	        		<?php $link = get_the_permalink();
-	        				$link = str_replace('localhost', 'com', $link);
-	        				$pinterest_url = str_replace('%2F', '/', $link);
-						    $pinterest_url = str_replace('%3A', ':', $link);
-						    $title = str_replace('"', '', $post->post_title);
-	        		?>
+        		<?php $link = get_the_permalink();
+        				$link = str_replace('localhost', 'com', $link);
+        				$pinterest_url = str_replace('%2F', '/', $link);
+					    $pinterest_url = str_replace('%3A', ':', $link);
+        				?>
         			<a href="http://www.facebook.com/sharer.php?u=<?php echo $link ?>" target="_blank">Facebook</a>
         			<a href="<?php echo 'https://pinterest.com/pin/create/button/?url='.$pinterest_url ?>">Pinterest</a>
         			<a href="https://plus.google.com/share?url=<?php echo $link ?>">Google+</a>
-        			<a href="https://twitter.com/home?status=<?php echo $title ?>  - <?php echo get_the_permalink();?> @revistacosas">Twitter</a>
+        			<a href="">Twitter</a>
         			<?php echo $content_without_images; ?>
         		</div>
 			    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
