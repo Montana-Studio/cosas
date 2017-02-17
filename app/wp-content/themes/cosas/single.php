@@ -164,24 +164,24 @@
 										<div class="swiper-slide">
 											<img class="swiper-slide-img" src="'.$full_img_url.'">
 											<div class="metaVidaSocial">
-												<div class="title_slide">
-													'.$post->post_title.'
+												<h1>'.$post->post_title.'</h1>
+												<p>'.$attachment->post_title.'</p>
+												<div class="sharecontent">
+													<div class="shares-post">
+														<a href="http://www.facebook.com/sharer.php?u='.$full_img_url.'" target="_blank">
+															<i class="fa fa-facebook"></i>
+														</a>
+														<a href="https://pinterest.com/pin/create/button/?url=&media='.$pinterest_url_img.'&description='.$attachment->post_title.'">
+															<i class="fa fa-pinterest"></i>
+														</a>
+														<a href="https://plus.google.com/share?url='.$full_img_url.'">
+															<i class="fa fa-google-plus"></i>
+														</a>
+														<a href="https://twitter.com/home?status='.$title.' - '.get_the_permalink().' @revistacosas">
+														<i class="fa fa-twitter"></i>
+														</a>
+													</div>
 												</div>
-												<div class="footer_slide">
-													'.$attachment->post_title.'
-												</div>
-												<a href="http://www.facebook.com/sharer.php?u='.$full_img_url.'" target="_blank">
-													Facebook
-												</a>
-												<a href="https://pinterest.com/pin/create/button/?url=&media='.$pinterest_url_img.'&description='.$attachment->post_title.'">
-													Pinterest
-												</a>
-												<a href="https://plus.google.com/share?url='.$full_img_url.'">
-													Google+
-												</a>
-												<a href="https://twitter.com/home?status='.$title.' - '.get_the_permalink().' @revistacosas">
-												Twitter
-												</a>
 											</div>
 										</div>';
 						$down_slider .='
@@ -237,6 +237,8 @@
 						</div>
 						
 						<?php echo $content_without_images; ?>
+						
+						<div class="fb-comments" data-href="<?php echo the_permalink(); ?>" data-numposts="3" data-width="100%" data-order-by="reverse_time"></div>
 					</div>
 
 				<?php else: ?>

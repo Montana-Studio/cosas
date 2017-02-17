@@ -291,17 +291,19 @@
 	.swipers{
 		@include row();
 		width:100%;
-		max-height:500px;
 		background:{
 			color:$black;
 		}
 		.gallery-top{
 			width:100%;
-			height:500px;
+			height:300px;
+			position: relative;
+			overflow: hidden;
 			.swiper-slide{
 				overflow: hidden;
 				max-height:500px;
 				.metaVidaSocial{
+					@include pad(10px 0);
 					position: absolute;
 					bottom:0;
 					width:100%;
@@ -311,6 +313,33 @@
 					text:{
 						align:center;
 					}
+					h1{
+						@extend .no-margins;
+						//@include pad(0 30px);
+						display: table;
+						margin:0 auto;
+						border:{
+							bottom:3px solid $black;
+						}
+						font:{
+							size:em(18);
+							family:$playFair;
+						}
+						@include media($notebook){
+							font:{
+								size:(28);
+							}
+						}
+					}
+					p{
+						margin:5px auto;
+					}
+					@include media($notebook){
+						padding:{
+							top:30px;
+							bottom:30px;
+						}
+					}
 				}
 				img{
 					width: auto;
@@ -319,13 +348,31 @@
 					margin: 0 auto;
 				}
 			}
+			@include media($notebook){
+				height: 500px;
+			}
 		}
 		.gallery-thumbs{
+			@extend .gallery-top;
 			width:100%;
-			height: 200px;
+			height: 100px;
+			img{
+				opacity:.4;
+			}
+			@include media($notebook){
+				height: 200px;
+			}
 		}
 	}
-	.content-sociales{
-		@include outer-container(75%);
+	.content_sociales{
+		@include outer-container(95%);
+		@include media($notebook){
+			@include outer-container(75%);
+		}
+		.sharecontent{
+			margin:{
+				top:40px;
+			}
+		}
 	}
 }
