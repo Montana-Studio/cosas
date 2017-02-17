@@ -132,63 +132,7 @@
 			$top_slider = '';
 			$down_slider='';
 			?>
-			<!--section class="vSocial-content"-->
-				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.css" />
-				 <style>
-				    html, body {
-				        position: relative;
-				        height: 100%;
-				    }
-				    body {
-				        background: #000;
-				        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-				        font-size: 14px;
-				        color:#000;
-				        margin: 0;
-				        padding: 0;
-				    }
-				    .swiper-container {
-				        width: 100%;
-				        height: 500px !important;
-				        margin-left: auto;
-				        margin-right: auto;
-				    }
-				    .swiper-slide {
-				        background-size: cover;
-				        background-position: center;
-				    }
-				    .gallery-top {
-				        height: 80%;
-				        width: 100%;
-				    }
-				    .gallery-thumbs {
-				        height: 20%;
-				        box-sizing: border-box;
-				        padding: 10px 0;
-				    }
-				    .gallery-thumbs .swiper-slide {
-				        width: 25%;
-				        height: 100%;
-				        opacity: 0.4;
-				    }
-				    .gallery-thumbs .swiper-slide-active {
-				        opacity: 1;
-				    }
-				    .swiper-slide-img{
-				    	max-height: 450px;
-				    	width: 100%;
-				    }
-				    h2{
-				    	background-color: white;
-				    }
-				    .footer_slide, .title_slide{
-				    	color: white;
-				    }
-				    .content_sociales{
-				    	background-color: white;
-				    }
-				    
-				</style>
+			<section class="vSocial-content">
 
 				<?php 
 				$content_without_images = get_the_content();
@@ -199,92 +143,106 @@
 				
 				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 					
-					<!--div class="galleryvSocial">
-						<?php //the_field('galleryvSocial'); ?>
-					</div-->
-					
-					<?php $attachments = get_children(array('post_parent' => $post->ID,
-					                        'post_status' => 'inherit',
-					                        'post_type' => 'attachment',
-					                        'post_mime_type' => 'image',
-					                        'order' => 'ASC',
-					                        'orderby' => 'menu_order ID'));
+					<?php 
+						$attachments = get_children(
+												array(
+													'post_parent' => $post->ID,
+													'post_status' => 'inherit',
+													'post_type' => 'attachment',
+													'post_mime_type' => 'image',
+													'order' => 'ASC',
+													'orderby' => 'menu_order ID'
+												)
+										);
 					foreach($attachments as $att_id => $attachment) {
 					    $full_img_url = wp_get_attachment_url($attachment->ID);
 					    $full_img_url = str_replace('localhost', 'com', $full_img_url);
 					    $pinterest_url_img = str_replace('%2F', '/', $full_img_url);
 					    $pinterest_url_img = str_replace('%3A', ':', $pinterest_url_img);
 					    $title = str_replace('"', '', $post->post_title);
-					    $top_slider .='<div class="swiper-slide"><img class="swiper-slide-img" src="'.$full_img_url.'"><div class="title_slide">'.$post->post_title.'</div><div class="footer_slide">'.$attachment->post_title.'</div><a href="http://www.facebook.com/sharer.php?u='.$full_img_url.'" target="_blank">Facebook</a><a href="https://pinterest.com/pin/create/button/?url=&media='.$pinterest_url_img.'&description='.$attachment->post_title.'">Pinterest</a><a href="https://plus.google.com/share?url='.$full_img_url.'">Google+</a><a href="https://twitter.com/home?status='.$title.' - '.get_the_permalink().' @revistacosas">Twitter</a></div>';
-						$down_slider .='<div class="swiper-slide" style="background-image:url('.$full_img_url.')"></div>';
-					}?>
-										
-					<!--div class="fb-comments" data-href="<?php// echo the_permalink(); ?>" data-numposts="3" data-width="100%" data-order-by="reverse_time"></div-->
+					    $top_slider .='
+										<div class="swiper-slide">
+											<img class="swiper-slide-img" src="'.$full_img_url.'">
+											<div class="metaVidaSocial">
+												<div class="title_slide">
+													'.$post->post_title.'
+												</div>
+												<div class="footer_slide">
+													'.$attachment->post_title.'
+												</div>
+												<a href="http://www.facebook.com/sharer.php?u='.$full_img_url.'" target="_blank">
+													Facebook
+												</a>
+												<a href="https://pinterest.com/pin/create/button/?url=&media='.$pinterest_url_img.'&description='.$attachment->post_title.'">
+													Pinterest
+												</a>
+												<a href="https://plus.google.com/share?url='.$full_img_url.'">
+													Google+
+												</a>
+												<a href="https://twitter.com/home?status='.$title.' - '.get_the_permalink().' @revistacosas">
+												Twitter
+												</a>
+											</div>
+										</div>';
+						$down_slider .='
+										<div class="swiper-slide">
+											<img src="'.$full_img_url.'"/>
+										</div>';
+					} ?>
 				
 				<?php endwhile; ?>
-				<div class="swiper-container gallery-top">
-					<div class="swiper-wrapper">
-					<?php echo $top_slider;?>
+					<div class="swipers">
+						<div class="gallery-top">
+							<div class="swiper-wrapper">
+								<?php echo $top_slider;?>
+							</div>
+							<!-- Add Arrows -->
+							<div class="swiper-button-next swiper-button-white"></div>
+							<div class="swiper-button-prev swiper-button-white"></div>
+						</div>
+						<div class="gallery-thumbs">
+							<div class="swiper-wrapper">
+								<?php echo $down_slider;?>
+							</div>
+						</div>
 					</div>
-			        <!-- Add Arrows -->
-			        <div class="swiper-button-next swiper-button-white"></div>
-			        <div class="swiper-button-prev swiper-button-white"></div>
-			    </div>
-			    <div class="swiper-container gallery-thumbs">
-        			<div class="swiper-wrapper">
-        			<?php echo $down_slider;?>
-        			</div>
-        		</div>
-        		<div class="content_sociales">
-        		<?php $link = get_the_permalink();
-        				$link = str_replace('localhost', 'com', $link);
-        				$pinterest_url = str_replace('%2F', '/', $link);
-					    $pinterest_url = str_replace('%3A', ':', $link);
-					    $title = str_replace('"', '', $post->post_title);
-        				?>
-        			<a href="http://www.facebook.com/sharer.php?u=<?php echo $link ?>" target="_blank">Facebook</a>
-        			<a href="<?php echo 'https://pinterest.com/pin/create/button/?url='.$pinterest_url ?>">Pinterest</a>
-        			<a href="https://plus.google.com/share?url=<?php echo $link ?>">Google+</a>
-        			<a href="https://twitter.com/home?status=<?php echo $title ?>  - <?php echo get_the_permalink();?> @revistacosas">Twitter</a>
-        			<?php echo $content_without_images; ?>
-        		</div>
-			    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
-			    <script>
-				    var galleryTop = new Swiper('.gallery-top', {
-				        nextButton: '.swiper-button-next',
-				        prevButton: '.swiper-button-prev',
-				        spaceBetween: 10,
-				    });
-				    var galleryThumbs = new Swiper('.gallery-thumbs', {
-				        spaceBetween: 10,
-				        centeredSlides: true,
-				        slidesPerView: 'auto',
-				        touchRatio: 0.2,
-				        slideToClickedSlide: true
-				    });
-				    galleryTop.params.control = galleryThumbs;
-				    galleryThumbs.params.control = galleryTop;
-				    
-				</script>
+					<div class="content_sociales">
+						<?php 	
+								$link = get_the_permalink();
+								$link = str_replace('localhost', 'com', $link);
+								$pinterest_url = str_replace('%2F', '/', $link);
+								$pinterest_url = str_replace('%3A', ':', $link);
+								$title = str_replace('"', '', $post->post_title);
+						?>
+						
+						<div class="sharecontent">
+							<div class="shares-post">
+							
+								<a class='facebook_share' href="http://www.facebook.com/sharer.php?u=<?php echo $link ?>" target="_blank">
+									<i class="fa fa-facebook"></i>
+								</a>
+								<?php if(wp_is_mobile()){ ?>
+									<a href="whatsapp://send?text=<?php the_title(); ?> – <?php urlencode(the_permalink()); ?>" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>
+								<?php } ?>
+								<a href="<?php echo 'https://pinterest.com/pin/create/button/?url='.$pinterest_url ?>">
+									<i class="fa fa-pinterest"></i>
+								</a>
+								<a href="https://plus.google.com/share?url=<?php echo $link ?>">
+									<i class="fa fa-google-plus"></i>
+								</a>
+								<a href="https://twitter.com/home?status=<?php echo $title ?>  - <?php echo get_the_permalink();?> @revistacosas">
+									<i class="fa fa-twitter"></i>
+								</a>
+							</div>
+						</div>
+						
+						<?php echo $content_without_images; ?>
+					</div>
 
 				<?php else: ?>
 
 				<?php endif; ?>
-			<!--/section-->	
-			<script>
-				var gallerySliders = new Swiper('.swiper-gallery', {
-					nextButton: '.next-gallery',
-					prevButton: '.prev-gallery',
-					slidesPerView: 1,
-					paginationClickable: true,
-					pagination: '.swiper-pagination',
-					breakpoints:{
-						768:{
-							slidesPerView: 1,
-						}
-					}
-				});
-			</script>
+			</section>
 		<?php }else{ ?>
 		
 			<!-- section -->

@@ -172,7 +172,7 @@
 				});
 			</script>
 		<?php		
-			}elseif(is_single){
+			}elseif(is_single&&!in_category('vida-social')){
 		?>	
 			<script>
 				var gallerySliders = new Swiper('.swiper-gallery', {
@@ -185,8 +185,27 @@
 				});
 			</script>
 		<?php		
-			}
+			}elseif(in_category('vida-social')){
 		?>
+			<script>
+				var galleryTop = new Swiper('.gallery-top', {
+					nextButton: '.swiper-button-next',
+					prevButton: '.swiper-button-prev',
+					spaceBetween: 10,
+				});
+				var galleryThumbs = new Swiper('.gallery-thumbs', {
+					spaceBetween: 10,
+					centeredSlides: true,
+					slidesPerView: 'auto',
+					touchRatio: 0.2,
+					slideToClickedSlide: true
+				});
+
+				galleryTop.params.control = galleryThumbs;
+				galleryThumbs.params.control = galleryTop;
+
+			</script>
+		<?php } ?>
 
 		<!-- analytics -->
 		<script>
@@ -201,7 +220,7 @@
 		
 		<?php if(!is_page('especial-nyfw')){ ?>
 			<!--ITT Desktop & Mobile-->
-			<script type='text/javascript'>//<![CDATA[
+			<!--script type='text/javascript'>//<![CDATA[
 			   document.MAX_ct0 = unescape('{clickurl_enc}');
 
 			   var m3_u = (location.protocol=='https:'?'https://bloques.cosas.com/activos4.0/www/delivery/ajs.php':'http://bloques.cosas.com/activos4.0/www/innerdev/ajs.php');
@@ -221,7 +240,7 @@
 			   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
 			   document.write ("'><\/scr"+"ipt>");
 			//]]>
-			</script><noscript><a href='http://bloques.cosas.com/activos4.0/www/innerdev/ck.php?n=a9735427&amp;cb={random}' target='_blank'><img src='http://bloques.cosas.com/activos4.0/www/innerdev/avw.php?zoneid=20&amp;cb={random}&amp;n=a9735427&amp;ct0={clickurl_enc}' border='0' alt='' /></a></noscript>
+			</script--><!--noscript><a href='http://bloques.cosas.com/activos4.0/www/innerdev/ck.php?n=a9735427&amp;cb={random}' target='_blank'><img src='http://bloques.cosas.com/activos4.0/www/innerdev/avw.php?zoneid=20&amp;cb={random}&amp;n=a9735427&amp;ct0={clickurl_enc}' border='0' alt='' /></a></noscript-->
 		<?php } ?>
 		
 		<div style="width:320px;margin:0 auto;position:fixed;left:0;right:0;z-index:99999;bottom:0;">

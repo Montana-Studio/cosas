@@ -216,7 +216,7 @@ jQuery(document).ready(function($){
 			slidesPerView: 3,
 			paginationClickable: true,
 		}); 
-		var vsocial = new Swiper('.swiper-vSocial', {
+		var vsocial = new Swiper('.swiper-vSocial', { 
 			slidesPerView: 1,
 			pagination: '.swiper-pagination',
 			paginationClickable: true,

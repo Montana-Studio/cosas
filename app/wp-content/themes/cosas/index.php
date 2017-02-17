@@ -1,56 +1,53 @@
 <?php get_header(); ?>
-
     <script src="<?php echo  get_template_directory_uri() ?>/js/vimeo.player.js"></script>
     <script src="<?php echo  get_template_directory_uri() ?>/js/youtube.api.js"></script>
     <script src="<?php echo  get_template_directory_uri() ?>/js/videos.js"></script>
-    
     <div id="primary" class="content-area">
-       
         <div style="margin:0 auto;clear:both;display:block;max-width:300px;">
-			<ins data-revive-zoneid="30" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
-			<script>
-			(function () {
-			  var d = document, s = d.createElement('script'), p = d.location.protocol,
-				  i = d.getElementsByTagName('ins'), j = i[i.length-1];
-			  try {
-				s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
-				  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
-				s.async = true; j.appendChild(s);
-			  } catch (e) {}
-			})();
-			</script>
-		</div>
+            <ins data-revive-zoneid="30" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+            <script>
+            (function () {
+              var d = document, s = d.createElement('script'), p = d.location.protocol,
+                  i = d.getElementsByTagName('ins'), j = i[i.length-1];
+              try {
+                s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+                  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+                s.async = true; j.appendChild(s);
+              } catch (e) {}
+            })();
+            </script>
+        </div>
         <div style="max-width:320px;margin:0 auto;">
 
-			<ins data-revive-zoneid="6" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
-			<script>
-			(function () {
-			  var d = document, s = d.createElement('script'), p = d.location.protocol,
-				  i = d.getElementsByTagName('ins'), j = i[i.length-1];
-			  try {
-				s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
-				  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
-				s.async = true; j.appendChild(s);
-			  } catch (e) {}
-			})();
-			</script>
+            <ins data-revive-zoneid="6" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+            <script>
+            (function () {
+              var d = document, s = d.createElement('script'), p = d.location.protocol,
+                  i = d.getElementsByTagName('ins'), j = i[i.length-1];
+              try {
+                s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+                  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+                s.async = true; j.appendChild(s);
+              } catch (e) {}
+            })();
+            </script>
        
         </div>
         
         <div style="max-width:728px;margin:0 auto;">
 
-			<ins data-revive-zoneid="2" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
-			<script>
-			(function () {
-			  var d = document, s = d.createElement('script'), p = d.location.protocol,
-				  i = d.getElementsByTagName('ins'), j = i[i.length-1];
-			  try {
-				s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
-				  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
-				s.async = true; j.appendChild(s);
-			  } catch (e) {}
-			})();
-			</script>
+            <ins data-revive-zoneid="2" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+            <script>
+            (function () {
+              var d = document, s = d.createElement('script'), p = d.location.protocol,
+                  i = d.getElementsByTagName('ins'), j = i[i.length-1];
+              try {
+                s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+                  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+                s.async = true; j.appendChild(s);
+              } catch (e) {}
+            })();
+            </script>
        
         </div>
         
@@ -168,97 +165,97 @@
                 wp_reset_postdata(); 
             ?>
         </main>
-		
+        
         <!-- BRANDED BANNERS -->
         
         <?php if(wp_is_mobile()){ ?>
-        	<div class="branded-content">
-        		<div class="branded-box">
+            <div class="branded-content">
+                <div class="branded-box">
 
-					<ins data-revive-zoneid="13" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
-					<script>
-					(function () {
-					  var d = document, s = d.createElement('script'), p = d.location.protocol,
-						  i = d.getElementsByTagName('ins'), j = i[i.length-1];
-					  try {
-						s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
-						  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
-						s.async = true; j.appendChild(s);
-					  } catch (e) {}
-					})();
-					</script>
-       		
-        		</div>
-				
-				<div class="branded-box">
+                    <ins data-revive-zoneid="13" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+                    <script>
+                    (function () {
+                      var d = document, s = d.createElement('script'), p = d.location.protocol,
+                          i = d.getElementsByTagName('ins'), j = i[i.length-1];
+                      try {
+                        s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+                          'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+                        s.async = true; j.appendChild(s);
+                      } catch (e) {}
+                    })();
+                    </script>
+            
+                </div>
+                
+                <div class="branded-box">
 
-					<ins data-revive-zoneid="14" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
-					<script>
-					(function () {
-					  var d = document, s = d.createElement('script'), p = d.location.protocol,
-						  i = d.getElementsByTagName('ins'), j = i[i.length-1];
-					  try {
-						s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
-						  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
-						s.async = true; j.appendChild(s);
-					  } catch (e) {}
-					})();
-					</script>
-					
-				</div>
-			</div>
+                    <ins data-revive-zoneid="14" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+                    <script>
+                    (function () {
+                      var d = document, s = d.createElement('script'), p = d.location.protocol,
+                          i = d.getElementsByTagName('ins'), j = i[i.length-1];
+                      try {
+                        s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+                          'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+                        s.async = true; j.appendChild(s);
+                      } catch (e) {}
+                    })();
+                    </script>
+                    
+                </div>
+            </div>
         <?php } ?>
         
         
         <div style="max-width:970px;margin:0 auto;display:block;clear:both;">
 
-			<ins data-revive-zoneid="23" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
-			<script>
-			(function () {
-			  var d = document, s = d.createElement('script'), p = d.location.protocol,
-				  i = d.getElementsByTagName('ins'), j = i[i.length-1];
-			  try {
-				s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
-				  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
-				s.async = true; j.appendChild(s);
-			  } catch (e) {}
-			})();
-			</script>
+            <ins data-revive-zoneid="23" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+            <script>
+            (function () {
+              var d = document, s = d.createElement('script'), p = d.location.protocol,
+                  i = d.getElementsByTagName('ins'), j = i[i.length-1];
+              try {
+                s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+                  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+                s.async = true; j.appendChild(s);
+              } catch (e) {}
+            })();
+            </script>
         </div>
         
         <div style="max-width:728px;margin:0 auto;">
 
-			<ins data-revive-zoneid="9" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
-			<script>
-			(function () {
-			  var d = document, s = d.createElement('script'), p = d.location.protocol,
-				  i = d.getElementsByTagName('ins'), j = i[i.length-1];
-			  try {
-				s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
-				  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
-				s.async = true; j.appendChild(s);
-			  } catch (e) {}
-			})();
-			</script>
+            <ins data-revive-zoneid="9" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+            <script>
+            (function () {
+              var d = document, s = d.createElement('script'), p = d.location.protocol,
+                  i = d.getElementsByTagName('ins'), j = i[i.length-1];
+              try {
+                s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+                  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+                s.async = true; j.appendChild(s);
+              } catch (e) {}
+            })();
+            </script>
        
         </div>
         
-		<div style="max-width:970px;margin:0 auto;">
+        <div style="max-width:970px;margin:0 auto;">
 
-			<ins data-revive-zoneid="15" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
-			<script>
-			(function () {
-			  var d = document, s = d.createElement('script'), p = d.location.protocol,
-				  i = d.getElementsByTagName('ins'), j = i[i.length-1];
-			  try {
-				s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
-				  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
-				s.async = true; j.appendChild(s);
-			  } catch (e) {}
-			})();
-			</script>
-	
-		</div>  
+            <ins data-revive-zoneid="15" data-revive-ct0="{clickurl_enc}" data-revive-id="dffaf9f7b83c5aba13d22cf8e8e9ac51"></ins>
+            <script>
+            (function () {
+              var d = document, s = d.createElement('script'), p = d.location.protocol,
+                  i = d.getElementsByTagName('ins'), j = i[i.length-1];
+              try {
+                s.src = p === 'http:' ? 'http://bloques.cosas.com/activos4.0/www/innerdev/asyncjs.php' :
+                  'https://bloques.cosas.com/activos4.0/www/delivery/asyncjs.php';
+                s.async = true; j.appendChild(s);
+              } catch (e) {}
+            })();
+            </script>
+    
+        </div>  
         <?php
             
         //SI ES MOBILE
@@ -427,76 +424,26 @@
             }else{ 
         ?>
             <script type='text/javascript'>//<![CDATA[
-			   document.MAX_ct0 = unescape('{clickurl_enc}');
+               document.MAX_ct0 = unescape('{clickurl_enc}');
 
-			   var m3_u = (location.protocol=='https:'?'https://bloques.cosas.com/activos4.0/www/delivery/ajs.php':'http://bloques.cosas.com/activos4.0/www/innerdev/ajs.php');
-			   var m3_r = Math.floor(Math.random()*99999999999);
-			   if (!document.MAX_used) document.MAX_used = ',';
-			   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
-			   document.write ("?zoneid=33");
-			   document.write ('&amp;cb=' + m3_r);
-			   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
-			   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
-			   document.write ("&amp;loc=" + escape(window.location));
-			   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-			   if (document.context) document.write ("&context=" + escape(document.context));
-			   if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
-				   document.write ("&amp;ct0=" + escape(document.MAX_ct0));
-			   }
-			   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-			   document.write ("'><\/scr"+"ipt>");
-			//]]>
+               var m3_u = (location.protocol=='https:'?'https://bloques.cosas.com/activos4.0/www/delivery/ajs.php':'http://bloques.cosas.com/activos4.0/www/innerdev/ajs.php');
+               var m3_r = Math.floor(Math.random()*99999999999);
+               if (!document.MAX_used) document.MAX_used = ',';
+               document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+               document.write ("?zoneid=33");
+               document.write ('&amp;cb=' + m3_r);
+               if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+               document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+               document.write ("&amp;loc=" + escape(window.location));
+               if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+               if (document.context) document.write ("&context=" + escape(document.context));
+               if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+                   document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+               }
+               if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+               document.write ("'><\/scr"+"ipt>");
+            //]]>
             </script><noscript><a href='http://bloques.cosas.com/activos4.0/www/innerdev/ck.php?n=a9735427&amp;cb={random}' target='_blank'><img src='http://bloques.cosas.com/activos4.0/www/innerdev/avw.php?zoneid=33&amp;cb={random}&amp;n=a9735427&amp;ct0={clickurl_enc}' border='0' alt='' /></a></noscript>
-            
-            <h3 class="titus">vida social</h3>
-				
-			<div class="vidaSocial">
-				<div class="swiper-vSocial">
-					<div class="swiper-wrapper">
-						<?php
-							$args = array(
-								'category_name' => 'vida-social',
-							);
-							$vsocial = new WP_Query( $args );
-
-							if ( $vsocial->have_posts() ) {
-								while ( $vsocial->have_posts() ) {
-									$vsocial->the_post();
-						?>
-
-							<div id="post-<?php the_ID(); ?>" class="swiper-slide">
-								<?php 
-									global $post, $posts;
-									$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-									$first_img = $matches [1] [0];
-								?>
-
-								<img src="<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>" alt="">
-
-								<div class="metaContent">
-									<div class="metaVsocial">
-										<?php the_title(); ?>
-									</div>
-								</div>
-							</div>
-
-						<?php
-								}
-							} else {
-								echo 'Upps!! Nada para mostrar';
-							}
-							wp_reset_postdata();
-						?>
-					</div>
-					 <div class="swiper-pagination"></div>
-					<?php
-						$category_id = get_cat_ID('Vida Social');
-						$category_link = get_category_link( $category_id );
-					?>
-					<a class="btnVsocial" href="<?php echo esc_url( $category_link ); ?>">ver más eventos</a>
-				</div>	
-			</div>
-            
             <h3 class="titus">espectáculos</h3>
 
             <main id="main-2" class="site-main-2">
@@ -544,7 +491,7 @@
                 
                 <h3>instagram <i class="fa fa-instagram"></i></h3>
                 <div class="contInstagram">
-                  <?php //get_template_part('instagram'); ?> 
+                  <?php get_template_part('instagram'); ?> 
                 </div>
                 
             </main>
@@ -631,210 +578,206 @@
                 
             </main>
             <?php if(wp_is_mobile()){ ?>
-			   <aside class="sidebar">
-				 <div class="columnas">
+               <aside class="sidebar">
+                 <div class="columnas">
 
-					<div class="headernegro">
+                    <div class="headernegro">
 
-						<div class="subheadcolumnas">
-							<span>COLUMNAS</span>
-						</div>
+                        <div class="subheadcolumnas">
+                            <span>COLUMNAS</span>
+                        </div>
 
-						<div class="subheadtodos">
-							<?php
-								$category_id = get_cat_ID( 'columnas' );
-								$category_link = get_category_link( $category_id );
-							?>
-							<a href="<?php echo esc_url( $category_link ); ?>">
-								<i class="fa fa-plus"></i> Ver todas
-							</a>
-						</div>
-					</div>
+                        <div class="subheadtodos">
+                            <?php
+                                $category_id = get_cat_ID( 'columnas' );
+                                $category_link = get_category_link( $category_id );
+                            ?>
+                            <a href="<?php echo esc_url( $category_link ); ?>">
+                                <i class="fa fa-plus"></i> Ver todas
+                            </a>
+                        </div>
+                    </div>
 
-					<div class="bodycolumnas">
-					   <div class="swiper-columnas">
-						<div class="swiper-wrapper">
-							<?php
-							// WP_Query arguments
-							$args = array (
-								'category_name'          => 'columnas',
-								'posts_per_page'         => '9',
-								'order'                  => 'DESC',
-								'orderby'                => 'date',
-							);
+                    <div class="bodycolumnas">
+                       <div class="swiper-columnas">
+                        <div class="swiper-wrapper">
+                            <?php
+                            // WP_Query arguments
+                            $args = array (
+                                'category_name'          => 'columnas',
+                                'posts_per_page'         => '9',
+                                'order'                  => 'DESC',
+                                'orderby'                => 'date',
+                            );
 
-							// The Query
-							$columnas = new WP_Query( $args );
+                            // The Query
+                            $columnas = new WP_Query( $args );
 
-							// The Loop
-							if ( $columnas->have_posts() ) {
-								while ( $columnas->have_posts() ) {
-									$columnas->the_post(); 
-								?>
-								<div class="swiper-slide">
-									<a id="post-<?php the_ID(); ?>" <?php post_class('columnauno'); ?> href="<?php echo the_permalink(); ?>">
-										<div class="fotocolumnauno">
-										   
-											<div class="img-author" style="background-image:url('<?php echo the_field('img-columnista'); ?>');"></div>
-										</div>
-										<div class="data-columnas">
-											<div class="titulocolumnauno">
-												<h3>
-													<?php
-														if (strlen($post->post_title) > 20) {
+                            // The Loop
+                            if ( $columnas->have_posts() ) {
+                                while ( $columnas->have_posts() ) {
+                                    $columnas->the_post(); 
+                                ?>
+                                <div class="swiper-slide">
+                                    <a id="post-<?php the_ID(); ?>" <?php post_class('columnauno'); ?> href="<?php echo the_permalink(); ?>">
+                                        <div class="fotocolumnauno">
+                                           
+                                            <div class="img-author" style="background-image:url('<?php echo the_field('img-columnista'); ?>');"></div>
+                                        </div>
+                                        <div class="data-columnas">
+                                            <div class="titulocolumnauno">
+                                                <h3>
+                                                    <?php
+                                                        if (strlen($post->post_title) > 20) {
 
-															echo substr(the_title($before = '', $after = '', FALSE), 0, 50) . '...';
+                                                            echo substr(the_title($before = '', $after = '', FALSE), 0, 50) . '...';
 
-														} else {
-															the_title();
-														}
-													?>
-												</h3>
-												<small class="tituloeditor" >
-													<?php echo the_field('nombre_columnista'); ?>
-												</small>  
-											</div> 
-											<div class="textocolumnauno">
-												Seguir leyendo ->
-											</div>
-										</div>
-									</a>
-							   </div> 
-								<?php 
-								}
-							} else {
-								// no posts found
-							}
+                                                        } else {
+                                                            the_title();
+                                                        }
+                                                    ?>
+                                                </h3>
+                                                <small class="tituloeditor" >
+                                                    <?php echo the_field('nombre_columnista'); ?>
+                                                </small>  
+                                            </div> 
+                                            <div class="textocolumnauno">
+                                                Seguir leyendo ->
+                                            </div>
+                                        </div>
+                                    </a>
+                               </div> 
+                                <?php 
+                                }
+                            } else {
+                                // no posts found
+                            }
 
-							// Restore original Post Data
-							wp_reset_postdata();
-							?>
-						</div>
-						<div class="vermenos">
-							VER MENOS <i class="fa fa-angle-up"></i>
-						</div>
-						<div class="vermas">
-							VER MÁS EDITORES <i class="fa fa-angle-down"></i>
-						</div>
-						</div>
+                            // Restore original Post Data
+                            wp_reset_postdata();
+                            ?>
+                        </div>
+                        <div class="vermenos">
+                            VER MENOS <i class="fa fa-angle-up"></i>
+                        </div>
+                        <div class="vermas">
+                            VER MÁS EDITORES <i class="fa fa-angle-down"></i>
+                        </div>
+                        </div>
 
-					</div>
+                    </div>
 
-				</div>
-			   </aside>
+                </div>
+               </aside>
             <?php } ?>
-            
             <main id="main-9" class="site-main-9">
-				<h3 class="titus">Horóscopo</h3>
+                <h3 class="titus">Horóscopo</h3>
 
-				<div class="conte-horoscopo">
-						<?php
-							// WP_Query arguments
-							$args = array (
-								'post_type' => array( 'horoscopo' ),
-								'posts_per_page' => '12'
-							);
-							// The Query
-							$horoscopo = new WP_Query( $args );
-							// The Loop
-							if ( $horoscopo->have_posts() ) {
-								while ( $horoscopo->have_posts() ) {
-									$horoscopo->the_post();
-						?>
-							<div id="post-<?php the_ID(); ?>" <?php post_class('zodiac-sign'); ?>>
+                <div class="conte-horoscopo">
+                        <?php
+                            // WP_Query arguments
+                            $args = array (
+                                'post_type' => array( 'horoscopo' ),
+                                'posts_per_page' => '12'
+                            );
+                            // The Query
+                            $horoscopo = new WP_Query( $args );
+                            // The Loop
+                            if ( $horoscopo->have_posts() ) {
+                                while ( $horoscopo->have_posts() ) {
+                                    $horoscopo->the_post();
+                        ?>
+                            <div id="post-<?php the_ID(); ?>" <?php post_class('zodiac-sign'); ?>>
 
-								<div class="iconAccess">
-									<div class="hor">
-										<img src="<?php the_post_thumbnail_url();?>"/>
-										<?php
-											the_title(''.'<small>','</small>'); 
-										?>
-									</div>
-
-
-									<div class="contentSign">
-										<div class="zodiacContent">
-											<div class="zodiacName">
-												<h3><?php the_title(); ?></h3>
-												<div class="closeZodiac"><span><i class="fa fa-close"></i></span></div>
-											</div>
-											<img class="imgZodiac" />
-											<div class="dateZociac">
-												<i class="fa fa-clock-o"></i>
-												<small><?php the_weekday(); ?>,</small>
-												<small><?php echo substr(get_the_date(),0,2); ?></small>
-												<small><?php the_time('F Y'); ?></small>
-											</div>
-											<?php the_content();?>
-
-											<div class="shareZodiac">
-												<span>compartir</span>
-												<ul>
-													<li class="facebook_share_1"><i class="fa fa-facebook"></i></li>
-													<li class="twitter_share_1"><i class="fa fa-twitter"></i></li>
-													<li class="pinterest_share_1"><i class="fa fa-pinterest-p"></i></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
+                                <div class="iconAccess">
+                                    <div class="hor">
+                                        <img src="<?php the_post_thumbnail_url();?>"/>
+                                        <?php
+                                            the_title(''.'<small>','</small>'); 
+                                        ?>
+                                    </div>
 
 
-							</div>
-						<?php
-								}
-							} else {
-								echo '<p>No hay horóscopo en este momento</p>';
-							}
-							// Restore original Post Data
-							wp_reset_postdata();
-						?>
-				</div>
-			</main>
-			
-			<script>
-				(function ($, root, undefined) {
-					$(function () {
+                                    <div class="contentSign">
+                                        <div class="zodiacContent">
+                                            <div class="zodiacName">
+                                                <h3><?php the_title(); ?></h3>
+                                                <div class="closeZodiac"><span><i class="fa fa-close"></i></span></div>
+                                            </div>
+                                            <img class="imgZodiac" />
+                                            <div class="dateZociac">
+                                                <i class="fa fa-clock-o"></i>
+                                                <small><?php the_weekday(); ?>,</small>
+                                                <small><?php echo substr(get_the_date(),0,2); ?></small>
+                                                <small><?php the_time('F Y'); ?></small>
+                                            </div>
+                                            <?php the_content();?>
 
-						'use strict';
+                                            <div class="shareZodiac">
+                                                <span>compartir</span>
+                                                <ul>
+                                                    <li class="facebook_share_1"><i class="fa fa-facebook"></i></li>
+                                                    <li class="twitter_share_1"><i class="fa fa-twitter"></i></li>
+                                                    <li class="pinterest_share_1"><i class="fa fa-pinterest-p"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-						$('.hor').on('click', function(){
-							var urlImg = $(this).find('img').attr('src');
-							$(this).next('.contentSign').fadeIn(100,function(){
-								$(this).find('img').attr('src',urlImg);
-							});	
-						});
-						$('.closeZodiac').click(function(){
-							var parentId = $('.contentSign').hide();
-						});
 
-						$('.facebook_share_1').click(function(){						
-							var signo = $(this).parent().parent().siblings('.zodiacName').children('h3').text();
-							var texto = $(this).parent().parent().siblings('p').text();
-                            console.log(signo + texto)
-						
+                            </div>
+                        <?php
+                                }
+                            } else {
+                                echo '<p>No hay horóscopo en este momento</p>';
+                            }
+                            // Restore original Post Data
+                            wp_reset_postdata();
+                        ?>
+                </div>
+            </main>
+            <script>
+                (function ($, root, undefined) {
+                    $(function () {
 
-							window.location.href="https://www.facebook.com/dialog/feed?app_id=259189257792642&link=http%3A%2F%2Fcosas.com&picture=http%3A%2F%2Fcosas.com&name=Horoscopo%20-%20"+signo+"&caption=%20&description="+texto+"&redirect_uri=http%3A%2F%2Fcosas.com%2F";
-						});
+                        'use strict';
 
-						$('.twitter_share_1').click(function(){
-							var signo = $(this).parent().parent().siblings('.zodiacName').children('h3').text();
-							var texto = $(this).parent().parent().siblings('p').text().substring(0,109);	
-							texto= texto + '...';
-							window.location.href="http://twitter.com/intent/tweet?text=El%20Tarot%20para%20"+signo+"%20indica:%20"+texto;
-						});
+                        $('.hor').on('click', function(){
+                            var urlImg = $(this).find('img').attr('src');
+                            $(this).next('.contentSign').fadeIn(100,function(){
+                                $(this).find('img').attr('src',urlImg);
+                            }); 
+                        });
+                        $('.closeZodiac').click(function(){
+                            var parentId = $('.contentSign').hide();
+                        });
 
-						$('.pinterest_share_1').click(function(){
-							var url = 'http://cosas.com/wp-content/uploads/2016/06/img-cosas-defalut.png';
-							var signo = $(this).parent().parent().siblings('.zodiacName').children('h3').text();
-							var texto = $(this).parent().parent().siblings('p').text().substring(0,109);
-							window.location.href="https://pinterest.com/pin/create/button/?url="+url+"&media="+url+"&description=El%20Tarot%20para%20"+signo+"%20indica:%20"+texto;
-						});
+                        $('.facebook_share_1').click(function(){                        
+                            var signo = $(this).parent().parent().siblings('.zodiacName').children('h3').text();
+                            var texto = $(this).parent().parent().siblings('p').text();
+                            
 
-					});
-				})(jQuery, this);
-			</script>
-           
+                            window.location.href="https://www.facebook.com/dialog/feed?app_id=259189257792642&link=http%3A%2F%2Fcosas.com&picture=http%3A%2F%2Fcosas.com&name=Horoscopo%20-%20"+signo+"&caption=%20&description="+texto+"&redirect_uri=http%3A%2F%2Fcosas.com%2F";
+                        });
+
+                        $('.twitter_share_1').click(function(){
+                            var signo = $(this).parent().parent().siblings('.zodiacName').children('h3').text();
+                            var texto = $(this).parent().parent().siblings('p').text().substring(0,109);    
+                            texto= texto + '...';
+                            window.location.href="http://twitter.com/intent/tweet?text=El%20Tarot%20para%20"+signo+"%20indica:%20"+texto;
+                        });
+
+                        $('.pinterest_share_1').click(function(){
+                            var url = 'http://cosas.com/wp-content/uploads/2016/06/img-cosas-defalut.png';
+                            var signo = $(this).parent().parent().siblings('.zodiacName').children('h3').text();
+                            var texto = $(this).parent().parent().siblings('p').text().substring(0,109);
+                            window.location.href="https://pinterest.com/pin/create/button/?url="+url+"&media="+url+"&description=El%20Tarot%20para%20"+signo+"%20indica:%20"+texto;
+                        });
+
+                    });
+                })(jQuery, this);
+            </script>
             <main id="main-5" class="site-main-5">
 
                 <h3 class="titus">videos</h3>
@@ -845,7 +788,7 @@
                             <?php 
                                     $args = array (
                                         'post_type'              => 'video-galeria',
-                                        'posts_per_page'         => '3',
+                                        'posts_per_page'         => '1',
                                         'order'                  => 'DESC',
                                         'orderby'                => 'date',
                                     );
@@ -1050,109 +993,61 @@
             <?php get_sidebar(); ?>
             
             <div id="main-2" class="site-main-2-mobile">
-				
-				<script type='text/javascript'><!--//<![CDATA[
-				   document.MAX_ct0 = unescape('{clickurl_enc}');
+                
+                <script type='text/javascript'>//<![CDATA[
+               document.MAX_ct0 = unescape('{clickurl_enc}');
 
-				   var m3_u = (location.protocol=='https:'?'https://bloques.cosas.com/activos4.0/www/delivery/ajs.php':'http://bloques.cosas.com/activos4.0/www/innerdev/ajs.php');
-				   var m3_r = Math.floor(Math.random()*99999999999);
-				   if (!document.MAX_used) document.MAX_used = ',';
-				   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
-				   document.write ("?zoneid=33");
-				   document.write ('&amp;cb=' + m3_r);
-				   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
-				   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
-				   document.write ("&amp;loc=" + escape(window.location));
-				   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-				   if (document.context) document.write ("&context=" + escape(document.context));
-				   if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
-					   document.write ("&amp;ct0=" + escape(document.MAX_ct0));
-				   }
-				   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-				   document.write ("'><\/scr"+"ipt>");
-				//]]>--></script><noscript><a href='http://bloques.cosas.com/activos4.0/www/innerdev/ck.php?n=a9735427&amp;cb={random}' target='_blank'><img src='http://bloques.cosas.com/activos4.0/www/innerdev/avw.php?zoneid=33&amp;cb={random}&amp;n=a9735427&amp;ct0={clickurl_enc}' border='0' alt='' /></a></noscript>
-				
-				<h3 class="titus">vida social</h3>
-				
-				<div class="vidaSocial">
-					<div class="swiper-vSocial">
-						<div class="swiper-wrapper">
-							<?php
-								$args = array(
-									'category_name' => 'vida-social',
-								);
-								$vsocial = new WP_Query( $args );
+               var m3_u = (location.protocol=='https:'?'https://bloques.cosas.com/activos4.0/www/delivery/ajs.php':'http://bloques.cosas.com/activos4.0/www/innerdev/ajs.php');
+               var m3_r = Math.floor(Math.random()*99999999999);
+               if (!document.MAX_used) document.MAX_used = ',';
+               document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+               document.write ("?zoneid=33");
+               document.write ('&amp;cb=' + m3_r);
+               if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+               document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+               document.write ("&amp;loc=" + escape(window.location));
+               if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+               if (document.context) document.write ("&context=" + escape(document.context));
+               if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+                   document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+               }
+               if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+               document.write ("'><\/scr"+"ipt>");
+            //]]>
+            </script><noscript><a href='http://bloques.cosas.com/activos4.0/www/innerdev/ck.php?n=a9735427&amp;cb={random}' target='_blank'><img src='http://bloques.cosas.com/activos4.0/www/innerdev/avw.php?zoneid=33&amp;cb={random}&amp;n=a9735427&amp;ct0={clickurl_enc}' border='0' alt='' /></a></noscript>
 
-								if ( $vsocial->have_posts() ) {
-									while ( $vsocial->have_posts() ) {
-										$vsocial->the_post();
-							?>
-							
-								<div id="post-<?php the_ID(); ?>" class="swiper-slide">
-									<?php 
-										global $post, $posts;
-										$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-										$first_img = $matches [1] [0];
-									?>
-									
-									<img src="<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>" alt="">
-									
-									<div class="metaContent">
-										<div class="metaVsocial">
-											<?php the_title(); ?>
-										</div>
-									</div>
-								</div>
-								
-							<?php
-									}
-								} else {
-									echo 'Upps!! Nada para mostrar';
-								}
-								wp_reset_postdata();
-							?>
-						</div>
-						 <div class="swiper-pagination"></div>
-						<?php
-							$category_id = get_cat_ID('Vida Social');
-							$category_link = get_category_link( $category_id );
-						?>
-						<a class="btnVsocial" href="<?php echo esc_url( $category_link ); ?>">ver más eventos</a>
-					</div>	
-				</div>
-				
-				<h3 class="titus">espectáculos</h3>
-				<div style="display:block;">
-					<?php 
-					// WP_Query arguments
-					$latest_cpt = get_posts("numberposts=3");
-					$args = array (
-						'category_name'          => 'espectaculos',
-						'posts_per_page'         => '6',
-						'ignore_sticky_posts'    => false,
-						'order'                  => 'DESC',
-						'orderby'                => 'date',
-						'post__not_in' => array( $latest_cpt[0]->ID, $latest_cpt[1]->ID, $latest_cpt[2]->ID )
+               <h3 class="titus">espectáculos</h3>
+               <div style="display:block;">
+                    <?php 
+                    // WP_Query arguments
+                    $latest_cpt = get_posts("numberposts=3");
+                    $args = array (
+                        'category_name'          => 'espectaculos',
+                        'posts_per_page'         => '6',
+                        'ignore_sticky_posts'    => false,
+                        'order'                  => 'DESC',
+                        'orderby'                => 'date',
+                        'post__not_in' => array( $latest_cpt[0]->ID, $latest_cpt[1]->ID, $latest_cpt[2]->ID )
 
-					);
+                    );
 
-					// The Query
-					$espectaculos = new WP_Query( $args );
+                    // The Query
+                    $espectaculos = new WP_Query( $args );
 
-					// The Loop
-					if ( $espectaculos->have_posts() ) {
-						while ( $espectaculos->have_posts() ) {
-							$espectaculos->the_post();
-							get_template_part( 'loop-espectaculo');
-						}
-					} else {
-						// no posts found
-					}
+                    // The Loop
+                    if ( $espectaculos->have_posts() ) {
+                        while ( $espectaculos->have_posts() ) {
+                            $espectaculos->the_post();
+                            get_template_part( 'loop-espectaculo');
+                        }
+                    } else {
+                        // no posts found
+                    }
 
-					// Restore original Post Data
-					wp_reset_postdata();
-					?>
-				</div>
+                    // Restore original Post Data
+                    wp_reset_postdata();
+                    ?>
+                </div>
             </div>
            
             <div id="main-3" class="site-main-3-mobile">
@@ -1174,117 +1069,140 @@
                     endwhile;
                 ?>
                 <main id="main-9" class="site-main-9">
-					<h3 class="titus">Horóscopo</h3>
+                    <h3 class="titus">Horóscopo</h3>
 
-					<div class="conte-horoscopo">
-							<?php
-								// WP_Query arguments
-								$args = array (
-									'post_type' => array( 'horoscopo' ),
-									'posts_per_page' => '12'
-								);
-								// The Query
-								$horoscopo = new WP_Query( $args );
-								// The Loop
-								if ( $horoscopo->have_posts() ) {
-									while ( $horoscopo->have_posts() ) {
-										$horoscopo->the_post();
-							?>
-								<div id="post-<?php the_ID(); ?>" <?php post_class('zodiac-sign'); ?>>
+                    <div class="conte-horoscopo">
+                            <?php
+                                // WP_Query arguments
+                                $args = array (
+                                    'post_type' => array( 'horoscopo' ),
+                                    'posts_per_page' => '12'
+                                );
+                                // The Query
+                                $horoscopo = new WP_Query( $args );
+                                // The Loop
+                                if ( $horoscopo->have_posts() ) {
+                                    while ( $horoscopo->have_posts() ) {
+                                        $horoscopo->the_post();
+                            ?>
+                                <div id="post-<?php the_ID(); ?>" <?php post_class('zodiac-sign'); ?>>
 
-									<div class="iconAccess">
-										<div class="hor">
-											<img src="<?php the_post_thumbnail_url();?>"/>
-											<?php
-												the_title(''.'<small>','</small>'); 
-											?>
-										</div>
-
-
-										<div class="contentSign">
-										
-											<div class="zodiacContent">
-												<div class="zodiacName">
-													<h3><?php the_title(); ?></h3>
-													<div class="closeZodiac"><span><i class="fa fa-close"></i></span></div>
-												</div>
-												<img class="imgZodiac" />
-												<div class="dateZociac">
-													<i class="fa fa-clock-o"></i>
-													<small><?php the_weekday(); ?>,</small>
-													<small><?php echo substr(get_the_date(),0,2); ?></small>
-													<small><?php the_time('F Y'); ?></small>
-												</div>
-												<?php the_content();?>
-
-												<div class="shareZodiac">
-													<span>compartir</span>
-													<ul>
-														<li class="facebook_share_1"><i class="fa fa-facebook"></i></li>
-														<li class="twitter_share_1"><i class="fa fa-twitter"></i></li>
-														<li class="pinterest_share_1"><i class="fa fa-pinterest-p"></i></li>
-													</ul>
-												</div>
-											</div>
-
-										</div>
-									</div>
+                                    <div class="iconAccess">
+                                        <div class="hor">
+                                            <img src="<?php the_post_thumbnail_url();?>"/>
+                                            <?php
+                                                the_title(''.'<small>','</small>'); 
+                                            ?>
+                                        </div>
 
 
-								</div>
-							<?php
-									}
-								} else {
-									echo '<p>No hay horóscopo en este momento</p>';
-								}
-								// Restore original Post Data
-								wp_reset_postdata();
-							?>
-					</div>
-				</main>
-				<script>
-					(function ($, root, undefined) {
-						$(function () {
+                                        <div class="contentSign">
+                                        
+                                            <div class="zodiacContent">
+                                                <div class="zodiacName">
+                                                    <h3><?php the_title(); ?></h3>
+                                                    <div class="closeZodiac"><span><i class="fa fa-close"></i></span></div>
+                                                </div>
+                                                <img class="imgZodiac" />
+                                                <div class="dateZociac">
+                                                    <i class="fa fa-clock-o"></i>
+                                                    <small><?php the_weekday(); ?>,</small>
+                                                    <small><?php echo substr(get_the_date(),0,2); ?></small>
+                                                    <small><?php the_time('F Y'); ?></small>
+                                                </div>
+                                                <?php the_content();?>
 
-							'use strict';
+                                                <div class="shareZodiac">
+                                                    <span>compartir</span>
+                                                    <ul>
+                                                        <li class="facebook_share_1"><i class="fa fa-facebook"></i></li>
+                                                        <li class="twitter_share_1"><i class="fa fa-twitter"></i></li>
+                                                        <li class="pinterest_share_1"><i class="fa fa-pinterest-p"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
 
-							$('.hor').on('click', function(){
-								var urlImg = $(this).find('img').attr('src');
-								$(this).next('.contentSign').fadeIn(100,function(){
-									$(this).find('img').attr('src',urlImg);
-								});	
-								console.log(urlImg);
-							});
-							$('.closeZodiac').click(function(){
-								var parentId = $('.contentSign').hide();
-							});
+                                        </div>
+                                    </div>
 
-							$('.facebook_share_1').click(function(){
-								var signo = $(this).siblings("h3").text();							
-								var texto = $(this).siblings("small").text();
 
-								window.location.href="https://www.facebook.com/dialog/feed?app_id=259189257792642&link=http%3A%2F%2Fcosas.com&picture=http%3A%2F%2Fcosas.com&name=Horoscopo%20-%20"+signo+"&caption=%20&description="+texto+"&redirect_uri=http%3A%2F%2Fcosas.com%2F";
-							});
+                                </div>
+                            <?php
+                                    }
+                                } else {
+                                    echo '<p>No hay horóscopo en este momento</p>';
+                                }
+                                // Restore original Post Data
+                                wp_reset_postdata();
+                            ?>
+                    </div>
+                </main>
+                <script>
+                    (function ($, root, undefined) {
+                        $(function () {
 
-							$('.twitter_share_1').click(function(){
-								var signo = $(this).siblings("h3").text();							
-								var texto = $(this).siblings("small").text().substring(0,109);
-								texto= texto + '...';
-								//var res = str.substring(4, 1);
-								window.location.href="http://twitter.com/intent/tweet?text=El%20Tarot%20para%20"+signo+"%20indica:%20"+texto;
-							});
+                            'use strict';
 
-							$('.pinterest_share_1').click(function(){
-								var url = 'http://cosas.com/wp-content/uploads/2016/06/img-cosas-defalut.png';
-								var signo = $(this).siblings("h3").text();							
-								var texto = $(this).siblings("small").text();
-								window.location.href="https://pinterest.com/pin/create/button/?url="+url+"&media="+url+"&description=El%20Tarot%20para%20"+signo+"%20indica:%20"+texto;
-							});
+                            $('.hor').on('click', function(){
+                                var urlImg = $(this).find('img').attr('src');
+                                $(this).next('.contentSign').fadeIn(100,function(){
+                                    $(this).find('img').attr('src',urlImg);
+                                }); 
+                                console.log(urlImg);
+                            });
+                            $('.closeZodiac').click(function(){
+                                var parentId = $('.contentSign').hide();
+                            });
 
-						});
-					})(jQuery, this);
+                            /*$('.facebook_share_1').click(function(){
+                                console.log($(this))
+                                var signo = $(this).siblings("h3").text();                          
+                                var texto = $(this).siblings("small").text();
 
-				</script>
+                                window.location.href="https://www.facebook.com/dialog/feed?app_id=259189257792642&link=http%3A%2F%2Fcosas.com&picture=http%3A%2F%2Fcosas.com&name=Horoscopo%20-%20"+signo+"&caption=%20&description="+texto+"&redirect_uri=http%3A%2F%2Fcosas.com%2F";
+                            });
+
+                            $('.twitter_share_1').click(function(){
+                                var signo = $(this).siblings("h3").text();                          
+                                var texto = $(this).siblings("small").text().substring(0,109);
+                                texto= texto + '...';
+                                //var res = str.substring(4, 1);
+                                window.location.href="http://twitter.com/intent/tweet?text=El%20Tarot%20para%20"+signo+"%20indica:%20"+texto;
+                            });
+
+                            $('.pinterest_share_1').click(function(){
+                                var url = 'http://cosas.com/wp-content/uploads/2016/06/img-cosas-defalut.png';
+                                var signo = $(this).siblings("h3").text();                          
+                                var texto = $(this).siblings("small").text();
+                                window.location.href="https://pinterest.com/pin/create/button/?url="+url+"&media="+url+"&description=El%20Tarot%20para%20"+signo+"%20indica:%20"+texto;
+                            });*/
+
+                            $('.facebook_share_1').click(function(){                        
+                                var signo = $(this).parent().parent().siblings('.zodiacName').children('h3').text();
+                                var texto = $(this).parent().parent().siblings('p').text();
+                                
+
+                                window.location.href="https://www.facebook.com/dialog/feed?app_id=259189257792642&link=http%3A%2F%2Fcosas.com&picture=http%3A%2F%2Fcosas.com&name=Horoscopo%20-%20"+signo+"&caption=%20&description="+texto+"&redirect_uri=http%3A%2F%2Fcosas.com%2F";
+                            });
+
+                            $('.twitter_share_1').click(function(){
+                                var signo = $(this).parent().parent().siblings('.zodiacName').children('h3').text();
+                                var texto = $(this).parent().parent().siblings('p').text().substring(0,109);    
+                                texto= texto + '...';
+                                window.location.href="http://twitter.com/intent/tweet?text=El%20Tarot%20para%20"+signo+"%20indica:%20"+texto;
+                            });
+
+                            $('.pinterest_share_1').click(function(){
+                                var url = 'http://cosas.com/wp-content/uploads/2016/06/img-cosas-defalut.png';
+                                var signo = $(this).parent().parent().siblings('.zodiacName').children('h3').text();
+                                var texto = $(this).parent().parent().siblings('p').text().substring(0,109);
+                                window.location.href="https://pinterest.com/pin/create/button/?url="+url+"&media="+url+"&description=El%20Tarot%20para%20"+signo+"%20indica:%20"+texto;
+                            });
+
+                        });
+                    })(jQuery, this);
+
+                </script>
                  
             </div>
                 
@@ -1292,7 +1210,7 @@
                 
                 <h3>instagram <i class="fa fa-instagram"></i></h3>
                 <div class="contInstagram">
-                  <?php //get_template_part('instagram'); ?> 
+                  <?php get_template_part('instagram'); ?> 
                 </div>
                 
             </main>
@@ -1495,6 +1413,7 @@
     <?php
         }else{ 
     ?>
+        
         <main id="main-5" class="site-main-5-mobile">
 
             <h3 class="titus">videos</h3>
@@ -1527,12 +1446,12 @@
                                         if($var==0){
                                              get_template_part('loop-video1');
                                         }else{
-                                            if($var==1){?>
+                                            if($var==1){ ?>
                                                <div class="video-player">
                                                     <div class="swiper-container-video">
                                                         <div class="btn-nav-video btn-prev">Ver videos anteriores</div>
                                                             <div class="swiper-wrapper">
-                                            <?  get_template_part('loop-video2');
+                                            <?php  get_template_part('loop-video2');
                                             }else if($var < $cantidad_videos_loop){
                                                 get_template_part('loop-video2');
                                             }else if($var == $cantidad_videos_loop){
@@ -1541,7 +1460,7 @@
                                                         <div class="btn-nav-video btn-next">Ver videos anteriores</div>
                                                    </div>
                                             </div>    
-                                        <?   } 
+                                        <?php   } 
                                         }
                                        $var++;
                                         
@@ -1629,8 +1548,7 @@
         </main>
     <?php 
         } 
-    }
-		
+    } 
     get_footer();
     
     ?>
