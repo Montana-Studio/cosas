@@ -1016,53 +1016,67 @@
             //]]>
             </script><noscript><a href='http://bloques.cosas.com/activos4.0/www/innerdev/ck.php?n=a9735427&amp;cb={random}' target='_blank'><img src='http://bloques.cosas.com/activos4.0/www/innerdev/avw.php?zoneid=33&amp;cb={random}&amp;n=a9735427&amp;ct0={clickurl_enc}' border='0' alt='' /></a></noscript>
 
-				<h3 class="titus">vida social</h3>
-				
-				<div class="vidaSocial">
-					<div class="swiper-vSocial">
-						<div class="swiper-wrapper">
-							<?php
-								$args = array(
-									'category_name' => 'vida-social',
-								);
-								$vsocial = new WP_Query( $args );
-								if ( $vsocial->have_posts() ) {
-									while ( $vsocial->have_posts() ) {
-										$vsocial->the_post();
-							?>
+                <h3 class="titus">vida social</h3>
+                
+                <div class="vidaSocial">
+                    <div class="swiper-vSocial">
+                        <div class="swiper-wrapper">
+                            <?php
+                                $args = array(
+                                    'category_name' => 'vida-social',
+                                );
+                                $vsocial = new WP_Query( $args );
+                                if ( $vsocial->have_posts() ) {
+                                    while ( $vsocial->have_posts() ) {
+                                        $vsocial->the_post();
+                            ?>
 
-								<div id="post-<?php the_ID(); ?>" class="swiper-slide">
-									<?php 
-										global $post, $posts;
-										$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-										$first_img = $matches [1] [0];
-									?>
+                                <div id="post-<?php the_ID(); ?>" class="swiper-slide">
+                                    <?php 
+                                        global $post, $posts;
+                                        $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+                                        $first_img = $matches [1] [0];
+                                    ?>
 
-									<img src="<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>" alt="">
+                                    <img src="<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>" alt="">
 
-									<div class="metaContent">
-										<div class="metaVsocial">
-											<?php the_title(); ?>
-										</div>
-									</div>
-								</div>
+                                    <div class="metaContent">
+                                        <div class="metaVsocial">
+                                            <?php //the_title(); ?>
+                                            <?php 
+                                                if (strlen($post->post_title) > 30) {
+                                                    $condicion1 = htmlspecialchars(substr(the_title($before = null, $after = null, FALSE), 30,1) . '...', ENT_QUOTES, 'UTF-8');
+                                                    $condicion2 = htmlspecialchars(substr(the_title($before = null, $after = null, FALSE), 29,1) . '...', ENT_QUOTES, 'UTF-8');
 
-							<?php
-									}
-								} else {
-									echo 'Upps!! Nada para mostrar';
-								}
-								wp_reset_postdata();
-							?>
-						</div>
-						 <div class="swiper-pagination"></div>
-						<?php
-							$category_id = get_cat_ID('Vida Social');
-							$category_link = get_category_link( $category_id );
-						?>
-						<a class="btnVsocial" href="<?php echo esc_url( $category_link ); ?>">ver más eventos</a>
-					</div>	
-				</div>
+                                                    if(strlen($condicion1) == 0 ||strlen($condicion2) == 0){
+                                                        echo substr(the_title($before = '', $after = '', FALSE), 0, 30) . '...';
+                                                    }else{
+                                                        echo substr(the_title($before = '', $after = '', FALSE), 0, 29) . '...';
+                                                    }
+                                                } else {
+                                                    the_title();
+                                                }
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <?php
+                                    }
+                                } else {
+                                    echo 'Upps!! Nada para mostrar';
+                                }
+                                wp_reset_postdata();
+                            ?>
+                        </div>
+                         <div class="swiper-pagination"></div>
+                        <?php
+                            $category_id = get_cat_ID('Vida Social');
+                            $category_link = get_category_link( $category_id );
+                        ?>
+                        <a class="btnVsocial" href="<?php echo esc_url( $category_link ); ?>">ver más eventos</a>
+                    </div>  
+                </div>
                <h3 class="titus">espectáculos</h3>
                <div style="display:block;">
                     <?php 
@@ -1460,7 +1474,7 @@
     <?php
         }else{ 
     ?>
-        <?php /*
+        
         <main id="main-5" class="site-main-5-mobile">
 
             <h3 class="titus">videos</h3>
@@ -1524,7 +1538,7 @@
 
         </main>
     
-        */ ?>
+        
         <main id="main-6" class="site-main-6-mobile">
 
             <h3 class="titus">sociales</h3>
