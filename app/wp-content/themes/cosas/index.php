@@ -1042,7 +1042,21 @@
 
                                     <div class="metaContent">
                                         <div class="metaVsocial">
-                                            <?php the_title(); ?>
+                                            <?php //the_title(); ?>
+                                            <?php 
+                                                if (strlen($post->post_title) > 30) {
+                                                    $condicion1 = htmlspecialchars(substr(the_title($before = null, $after = null, FALSE), 30,1) . '...', ENT_QUOTES, 'UTF-8');
+                                                    $condicion2 = htmlspecialchars(substr(the_title($before = null, $after = null, FALSE), 29,1) . '...', ENT_QUOTES, 'UTF-8');
+
+                                                    if(strlen($condicion1) == 0 ||strlen($condicion2) == 0){
+                                                        echo substr(the_title($before = '', $after = '', FALSE), 0, 30) . '...';
+                                                    }else{
+                                                        echo substr(the_title($before = '', $after = '', FALSE), 0, 29) . '...';
+                                                    }
+                                                } else {
+                                                    the_title();
+                                                }
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
@@ -1460,7 +1474,7 @@
     <?php
         }else{ 
     ?>
-        <?php /*
+        
         <main id="main-5" class="site-main-5-mobile">
 
             <h3 class="titus">videos</h3>
@@ -1524,7 +1538,7 @@
 
         </main>
     
-        */ ?>
+        
         <main id="main-6" class="site-main-6-mobile">
 
             <h3 class="titus">sociales</h3>
