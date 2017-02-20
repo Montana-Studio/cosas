@@ -93,7 +93,7 @@
 }
 .eventosContainer{
 	.post{
-		@include span-columns(4.01);
+		//@include span-columns(4.01);
 		margin:{
 			bottom:20px;
 		}
@@ -194,8 +194,9 @@
 			}
 		}
 		&.tag-pequeno-izquierda{
+			@include span-columns(4);
 			height: 743px;
-			width: 30.5% !important;
+			//width: 30.5% !important;
 			.moreContent{
 				bottom:-380px;
 				height: 30%;
@@ -210,7 +211,7 @@
 		&.tag-pequeno-derecha{
 			height: 743px;
 			//float: right;
-			width: 30.5% !important;
+			//width: 30.5% !important;
 			.moreContent{
 				bottom:-380px;
 				height: 30%;
@@ -224,20 +225,34 @@
 			}
 		}
 		&.tag-mediana{
-			@include span-columns(7.9);
-			width: 63% !important;
+			@include span-columns(8);
+			//@include span-columns(7.9);
+			//width: 63% !important;
 			margin:{
 				bottom:20px;
 				//right:20px;
 			}
 		}
 		&.tag-cuadrado{
-			@include span-columns(3.95);
-			width: 30.5% !important;
+			@include span-columns(4);
+			//@include span-columns(3.95);
+			//width: 30.5% !important;
 			margin:{
 				bottom:20px;
 				//right:20px;
 			}
+		}
+		&:nth-child(2n){
+			@include omega();
+		}
+		&:nth-child(5n){
+			@include omega();
+			margin:{
+				right:2.35765%;
+			}
+		}
+		&:nth-child(7n){
+			@include omega();
 		}
 	}
 }
