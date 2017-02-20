@@ -96,7 +96,6 @@
 		@include span-columns(4.01);
 		margin:{
 			bottom:20px;
-			right:15px;
 		}
 		height:362px;
 		overflow: hidden;
@@ -196,6 +195,7 @@
 		}
 		&.tag-pequeno-izquierda{
 			height: 743px;
+			width: 30.5% !important;
 			.moreContent{
 				bottom:-380px;
 				height: 30%;
@@ -210,9 +210,11 @@
 		&.tag-pequeno-derecha{
 			height: 743px;
 			float: right;
+			width: 30.5% !important;
 			.moreContent{
 				bottom:-380px;
 				height: 30%;
+				right: 32px !important;
 			}
 			&:hover{
 				.moreContent{
@@ -223,16 +225,18 @@
 		}
 		&.tag-mediana{
 			@include span-columns(7.9);
+			width: 63% !important;
 			margin:{
 				bottom:20px;
-				right:15px;
+				//right:20px;
 			}
 		}
 		&.tag-cuadrado{
 			@include span-columns(3.95);
+			width: 30.5% !important;
 			margin:{
 				bottom:20px;
-				right:15px;
+				//right:20px;
 			}
 		}
 	}
