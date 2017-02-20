@@ -54,7 +54,7 @@ get_header();
 			<?php if($contador == 1 ) $posicion = 'tag-pequeno-izquierda';
 				  else  $posicion = 'tag-pequeno-derecha';
 			?>
-			<article id="post-<?php the_ID(); ?>" class="post type-post status-publish <?php echo $posicion ?>">
+			<article id="post-<?php the_ID(); ?>" class="post type-post status-publish <?php echo $posicion ?> estilo-<?php echo $contador; ?>">
 				<a href="<?php echo get_permalink(); ?>">
 				
 					<div class="cont-title-page" style="background-image:url(<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>);"></div>
@@ -77,7 +77,7 @@ get_header();
 				</div>
 			</article>
 		<?php } elseif($contador == 2 || $contador == 5){ ?>
-			<article id="post-<?php the_ID(); ?>" class="post type-post status-publish tag-mediana">
+			<article id="post-<?php the_ID(); ?>" class="post type-post status-publish tag-mediana estilo-<?php echo $contador; ?>">
 				<a href="<?php echo get_permalink(); ?>">
 				
 					<div class="cont-title-page" style="background-image:url(<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>);"></div>
@@ -101,7 +101,7 @@ get_header();
 				</div>
 			</article>
 		<?php }else{ ?>
-			<article id="post-<?php the_ID(); ?>" class="post type-post status-publish tag-cuadrado">
+			<article id="post-<?php the_ID(); ?>" class="post type-post status-publish tag-cuadrado estilo-<?php echo $contador; ?>">
 				<a href="<?php echo get_permalink(); ?>">
 				
 					<div class="cont-title-page" style="background-image:url(<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>);"></div>
