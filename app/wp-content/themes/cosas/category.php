@@ -50,7 +50,7 @@ get_header();
 			$first_img = $matches [1] [0];
 			$contador++;
 		?>
-		<?php if($contador == 1 || $contador == 6){ ?>
+		<?php if($contador == 1){ ?>
 			<?php if($contador == 1 ) $posicion = 'tag-pequeno-izquierda';
 				  else  $posicion = 'tag-pequeno-derecha';
 			?>
@@ -76,7 +76,7 @@ get_header();
 					</div>
 				</div>
 			</article>
-		<?php } elseif($contador == 2 || $contador == 5){ ?>
+		<?php } elseif($contador == 2 ){ ?>
 			<article id="post-<?php the_ID(); ?>" class="post type-post status-publish tag-mediana estilo-<?php echo $contador; ?>">
 				<a href="<?php echo get_permalink(); ?>">
 				
@@ -125,7 +125,7 @@ get_header();
 				</div>
 			</article>
 		<?php } ?>
-		<?php if($contador == 8) $contador = 0; ?>
+		<?php if($contador == 4) $contador = 0; ?>
 		<?php endwhile; ?>
 
 		<?php else: ?>
