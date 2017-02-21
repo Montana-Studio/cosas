@@ -26,7 +26,7 @@
         <?php
             }
         ?>
-
+<!--hello my name is Mauro-->
 	</head>
         <body <?php body_class(); ?>>
         
