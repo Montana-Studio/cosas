@@ -62,8 +62,8 @@ get_header();
 			$contador++;
 		?>
 		<?php if($contador == 1){ ?>
-			<?php if($contador == 1 ) $posicion = 'tag-pequeno-izquierda';
-				  else  $posicion = 'tag-pequeno-derecha';
+			<?php $posicion = 'tag-pequeno-izquierda';
+				  //else  $posicion = 'tag-pequeno-derecha';
 			?>
 			<article id="post-<?php the_ID(); ?>" class="post type-post status-publish <?php echo $posicion ?> estilo-<?php echo $contador; ?>">
 				<a href="<?php echo get_permalink(); ?>">
@@ -156,11 +156,16 @@ get_header();
 	<?php } ?>
 
 
-	<?php next_posts_link(); ?>
-	<?php previous_posts_link(); ?>
+	<?php 
+		the_posts_pagination( array(
+			'mid_size'  => 2,
+			'prev_text' => __( '<i class="fa fa-chevron-left"></i> Anterior', 'textdomain' ),
+			'next_text' => __( 'Siguiente <i class="fa fa-chevron-right"></i>', 'textdomain' ),
+			'screen_reader_text' => __('&nbsp;')
+		) );
+	/*next_posts_link(); ?>
+	
+	<?php previous_posts_link(); */?>
 </section>
 
-
-<?php
-get_footer();
-?>
+<?php get_footer(); ?>

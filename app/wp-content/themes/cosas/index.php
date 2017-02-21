@@ -444,6 +444,66 @@
                document.write ("'><\/scr"+"ipt>");
             //]]>
             </script><noscript><a href='http://bloques.cosas.com/activos4.0/www/innerdev/ck.php?n=a9735427&amp;cb={random}' target='_blank'><img src='http://bloques.cosas.com/activos4.0/www/innerdev/avw.php?zoneid=33&amp;cb={random}&amp;n=a9735427&amp;ct0={clickurl_enc}' border='0' alt='' /></a></noscript>
+			<h3 class="titus">vida social</h3>
+
+			<div class="vidaSocial">
+				<div class="swiper-vSocial">
+					<div class="swiper-wrapper">
+						<?php
+							$args = array(
+								'category_name' => 'vida-social',
+							);
+							$vsocial = new WP_Query( $args );
+							if ( $vsocial->have_posts() ) {
+								while ( $vsocial->have_posts() ) {
+									$vsocial->the_post();
+						?>
+							<?php 
+								global $post, $posts;
+								$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+								$first_img = $matches [1] [0];
+							?>
+
+							<div id="post-<?php the_ID(); ?>" class="swiper-slide" style="background-image:url(<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>);">
+								<a href="<?php the_permalink(); ?>">
+									<div class="metaContent">
+										<div class="metaVsocial">
+											<?php 
+												if (strlen($post->post_title) > 30) {
+													$condicion1 = htmlspecialchars(substr(the_title($before = null, $after = null, FALSE), 30,1) . '...', ENT_QUOTES, 'UTF-8');
+													$condicion2 = htmlspecialchars(substr(the_title($before = null, $after = null, FALSE), 29,1) . '...', ENT_QUOTES, 'UTF-8');
+
+													if(strlen($condicion1) == 0 ||strlen($condicion2) == 0){
+														echo substr(the_title($before = '', $after = '', FALSE), 0, 30) . '...';
+													}else{
+														echo substr(the_title($before = '', $after = '', FALSE), 0, 29) . '...';
+													}
+												} else {
+													the_title();
+												}
+											?>
+										</div>
+									</div>
+								</a>
+							</div>
+
+						<?php
+								}
+							} else {
+								echo 'Upps!! Nada para mostrar';
+							}
+							wp_reset_postdata();
+						?>
+					</div>
+					 <div class="swiper-pagination"></div>
+					<?php
+						$category_id = get_cat_ID('Vida Social');
+						$category_link = get_category_link( $category_id );
+					?>
+					<a class="btnVsocial" href="<?php echo esc_url( $category_link ); ?>">ver más eventos</a>
+				</div>  
+			</div>
+            
             <h3 class="titus">espectáculos</h3>
 
             <main id="main-2" class="site-main-2">
@@ -1016,67 +1076,67 @@
             //]]>
             </script><noscript><a href='http://bloques.cosas.com/activos4.0/www/innerdev/ck.php?n=a9735427&amp;cb={random}' target='_blank'><img src='http://bloques.cosas.com/activos4.0/www/innerdev/avw.php?zoneid=33&amp;cb={random}&amp;n=a9735427&amp;ct0={clickurl_enc}' border='0' alt='' /></a></noscript>
 
-                <h3 class="titus">vida social</h3>
-                
-                <div class="vidaSocial">
-                    <div class="swiper-vSocial">
-                        <div class="swiper-wrapper">
-                            <?php
-                                $args = array(
-                                    'category_name' => 'vida-social',
-                                );
-                                $vsocial = new WP_Query( $args );
-                                if ( $vsocial->have_posts() ) {
-                                    while ( $vsocial->have_posts() ) {
-                                        $vsocial->the_post();
-                            ?>
+				<h3 class="titus">vida social</h3>
 
-                                <div id="post-<?php the_ID(); ?>" class="swiper-slide">
-                                    <?php 
-                                        global $post, $posts;
-                                        $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-                                        $first_img = $matches [1] [0];
-                                    ?>
+				<div class="vidaSocial">
+					<div class="swiper-vSocial">
+						<div class="swiper-wrapper">
+							<?php
+								$args = array(
+									'category_name' => 'vida-social',
+								);
+								$vsocial = new WP_Query( $args );
+								if ( $vsocial->have_posts() ) {
+									while ( $vsocial->have_posts() ) {
+										$vsocial->the_post();
+							?>
 
-                                    <img src="<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>" alt="">
+								<div id="post-<?php the_ID(); ?>" class="swiper-slide">
+									<?php 
+										global $post, $posts;
+										$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+										$first_img = $matches [1] [0];
+									?>
+									<a href="<?php the_permalink(); ?>">
+										<img src="<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>" alt="">
 
-                                    <div class="metaContent">
-                                        <div class="metaVsocial">
-                                            <?php //the_title(); ?>
-                                            <?php 
-                                                if (strlen($post->post_title) > 30) {
-                                                    $condicion1 = htmlspecialchars(substr(the_title($before = null, $after = null, FALSE), 30,1) . '...', ENT_QUOTES, 'UTF-8');
-                                                    $condicion2 = htmlspecialchars(substr(the_title($before = null, $after = null, FALSE), 29,1) . '...', ENT_QUOTES, 'UTF-8');
+										<div class="metaContent">
+											<div class="metaVsocial">
+												<?php 
+													if (strlen($post->post_title) > 30) {
+														$condicion1 = htmlspecialchars(substr(the_title($before = null, $after = null, FALSE), 30,1) . '...', ENT_QUOTES, 'UTF-8');
+														$condicion2 = htmlspecialchars(substr(the_title($before = null, $after = null, FALSE), 29,1) . '...', ENT_QUOTES, 'UTF-8');
 
-                                                    if(strlen($condicion1) == 0 ||strlen($condicion2) == 0){
-                                                        echo substr(the_title($before = '', $after = '', FALSE), 0, 30) . '...';
-                                                    }else{
-                                                        echo substr(the_title($before = '', $after = '', FALSE), 0, 29) . '...';
-                                                    }
-                                                } else {
-                                                    the_title();
-                                                }
-                                            ?>
-                                        </div>
-                                    </div>
-                                </div>
+														if(strlen($condicion1) == 0 ||strlen($condicion2) == 0){
+															echo substr(the_title($before = '', $after = '', FALSE), 0, 30) . '...';
+														}else{
+															echo substr(the_title($before = '', $after = '', FALSE), 0, 29) . '...';
+														}
+													} else {
+														the_title();
+													}
+												?>
+											</div>
+										</div>
+									</a>
+								</div>
 
-                            <?php
-                                    }
-                                } else {
-                                    echo 'Upps!! Nada para mostrar';
-                                }
-                                wp_reset_postdata();
-                            ?>
-                        </div>
-                         <div class="swiper-pagination"></div>
-                        <?php
-                            $category_id = get_cat_ID('Vida Social');
-                            $category_link = get_category_link( $category_id );
-                        ?>
-                        <a class="btnVsocial" href="<?php echo esc_url( $category_link ); ?>">ver más eventos</a>
-                    </div>  
-                </div>
+							<?php
+									}
+								} else {
+									echo 'Upps!! Nada para mostrar';
+								}
+								wp_reset_postdata();
+							?>
+						</div>
+						 <div class="swiper-pagination"></div>
+						<?php
+							$category_id = get_cat_ID('Vida Social');
+							$category_link = get_category_link( $category_id );
+						?>
+						<a class="btnVsocial" href="<?php echo esc_url( $category_link ); ?>">ver más eventos</a>
+					</div>  
+				</div>
                <h3 class="titus">espectáculos</h3>
                <div style="display:block;">
                     <?php 
@@ -1214,29 +1274,6 @@
                             $('.closeZodiac').click(function(){
                                 var parentId = $('.contentSign').hide();
                             });
-
-                            /*$('.facebook_share_1').click(function(){
-                                console.log($(this))
-                                var signo = $(this).siblings("h3").text();                          
-                                var texto = $(this).siblings("small").text();
-
-                                window.location.href="https://www.facebook.com/dialog/feed?app_id=259189257792642&link=http%3A%2F%2Fcosas.com&picture=http%3A%2F%2Fcosas.com&name=Horoscopo%20-%20"+signo+"&caption=%20&description="+texto+"&redirect_uri=http%3A%2F%2Fcosas.com%2F";
-                            });
-
-                            $('.twitter_share_1').click(function(){
-                                var signo = $(this).siblings("h3").text();                          
-                                var texto = $(this).siblings("small").text().substring(0,109);
-                                texto= texto + '...';
-                                //var res = str.substring(4, 1);
-                                window.location.href="http://twitter.com/intent/tweet?text=El%20Tarot%20para%20"+signo+"%20indica:%20"+texto;
-                            });
-
-                            $('.pinterest_share_1').click(function(){
-                                var url = 'http://cosas.com/wp-content/uploads/2016/06/img-cosas-defalut.png';
-                                var signo = $(this).siblings("h3").text();                          
-                                var texto = $(this).siblings("small").text();
-                                window.location.href="https://pinterest.com/pin/create/button/?url="+url+"&media="+url+"&description=El%20Tarot%20para%20"+signo+"%20indica:%20"+texto;
-                            });*/
 
                             $('.facebook_share_1').click(function(){                        
                                 var signo = $(this).parent().parent().siblings('.zodiacName').children('h3').text();

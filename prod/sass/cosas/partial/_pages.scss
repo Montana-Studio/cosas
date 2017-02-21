@@ -164,6 +164,10 @@
                 text:{decoration:underline;}
             }
         }
+		h2{
+			display: none;
+			visibility: hidden;
+		}
         a{
             @include span-columns(1);
             text:{transform:capitalize;}

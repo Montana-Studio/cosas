@@ -196,7 +196,7 @@
 				var galleryThumbs = new Swiper('.gallery-thumbs', {
 					spaceBetween: 10,
 					centeredSlides: true,
-					slidesPerView: 5,
+					slidesPerView: 3,
 					touchRatio: 0.2,
 					slideToClickedSlide: true
 				});

@@ -6,39 +6,54 @@
 	overflow: hidden;
 	min-height:$heightVS;
 	.swiper-vSocial{
+		height:$heightVS;
 		.swiper-wrapper{
 			.swiper-slide{
-				img{
-					position: absolute;
-					left:0;
-					top: 0;
-					width:100%;
+				background:{
+					position: center;
+					size:contain;
 				}
-				.metaContent{
-					width:100%;
-					position: absolute;
-					bottom:-$heightVS;
-					height:50px;
-					.metaVsocial{
-						@include row();
+				a{
+					width: 100%;
+					height: 100%;
+					display: block;
+					.metaContent{
 						width:100%;
-						@include pad(0 0 0 3%);
-						@include display(flex);
-						@include align-items(center);
-						color:$white;
-						height: 100%;
-						background:{
-							color:rgba(54,54,54,.8);
-						}
-						font:{
-							size:em(12);
-						}
-						@include media($notebook){
+						position: absolute;
+						bottom:0;
+						height:50px;
+						.metaVsocial{
+							@include row();
+							width:100%;
+							@include pad(0 0 0 3%);
+							@include display(flex);
+							@include align-items(center);
+							@include transition(background .5s ease-in 0s);
+							color:$white;
+							height: 100%;
+							background:{
+								color:rgba(54,54,54,.8);
+							}
 							font:{
-								size:em(14);
+								size:em(12);
+							}
+							@include media($notebook){
+								font:{
+									size:em(14);
+								}
 							}
 						}
-					}	
+					}
+					&:hover{
+						.metaContent{
+							.metaVsocial{
+								@include transition(background .5s ease-in 0s);
+								background:{
+									color:rgba(54,54,54,1);
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -93,13 +108,18 @@
 }
 .eventosContainer{
 	.post{
-		//@include span-columns(4.01);
 		margin:{
-			bottom:20px;
+			bottom:10px;
 		}
-		height:362px;
+		height:145px;
 		overflow: hidden;
 		position: relative;
+		@include media($notebook){
+			height: 362px;
+			margin:{
+				bottom:20px;
+			}
+		}
 		a{
 			display: block;
 			width: 100%;
@@ -195,8 +215,7 @@
 		}
 		&.tag-pequeno-izquierda{
 			@include span-columns(4);
-			height: 743px;
-			//width: 30.5% !important;
+			height: 300px;
 			.moreContent{
 				bottom:-380px;
 				height: 30%;
@@ -207,40 +226,15 @@
 					bottom:0;
 				}
 			}
-		}
-		&.tag-pequeno-derecha{
-			height: 743px;
-			//float: right;
-			//width: 30.5% !important;
-			.moreContent{
-				bottom:-380px;
-				height: 30%;
-				//right: 32px !important;
-			}
-			&:hover{
-				.moreContent{
-					@include transition(all .5s ease-in-out);
-					bottom:0;
-				}
+			@include media($notebook){
+				height: 743px;
 			}
 		}
 		&.tag-mediana{
 			@include span-columns(8);
-			//@include span-columns(7.9);
-			//width: 63% !important;
-			margin:{
-				bottom:20px;
-				//right:20px;
-			}
 		}
 		&.tag-cuadrado{
 			@include span-columns(4);
-			//@include span-columns(3.95);
-			//width: 30.5% !important;
-			margin:{
-				bottom:20px;
-				//right:20px;
-			}
 		}
 		&:nth-child(2n){
 			@include omega();
@@ -250,9 +244,6 @@
 			margin:{
 				right:2.35765%;
 			}
-		}
-		&:nth-child(7n){
-			@include omega();
 		}
 	}
 }
@@ -289,12 +280,26 @@
 				width:30px;
 				height:30px;
 				border:1px solid $black;
+				margin:{
+					right:5px;
+				}
 				text:{
 					align:center;
 				}
 				i{
 					display: table-cell;
 					vertical-align: middle;
+				}
+				&:last-child{
+					margin:{
+						right:0;
+					}
+				}
+				&:hover{
+					@include transition(background, .5s);
+					background:{
+						color:$white;
+					}
 				}
 			}
 		}
@@ -313,7 +318,7 @@
 		background:{
 			color:$black;
 		}
-		@include media($notebook){
+		@include media(min-width 1441px){
 			@include outer-container(75%);
 		}
 		.gallery-top{
@@ -337,14 +342,13 @@
 					}
 					h1{
 						@extend .no-margins;
-						//@include pad(0 30px);
 						display: table;
 						margin:0 auto;
 						border:{
 							bottom:3px solid $black;
 						}
 						font:{
-							size:em(20);
+							size:em(18);
 							family:$playFair;
 						}
 						@include media($notebook){
@@ -370,8 +374,14 @@
 					margin: 0 auto;
 				}
 			}
+			.swiper-button-white{
+				display: none;
+			}
 			@include media($notebook){
 				height: 500px;
+				.swiper-button-white{
+					display: block;
+				}
 			}
 		}
 		.gallery-thumbs{
@@ -394,6 +404,15 @@
 		.sharecontent{
 			margin:{
 				top:40px;
+			}
+			.shares-post{
+				a{
+					&:hover{
+						@include transition(all, .5s);
+						background:$black;
+						color:$white;
+					}
+				}
 			}
 		}
 	}
