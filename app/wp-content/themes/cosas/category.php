@@ -32,8 +32,19 @@ get_header();
 			<?php get_template_part('pagination'); ?>
 		</div>
 	<?php }else{ ?>
+		<?php
+		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+		$args = array (
+                            'category_name'          => 'vida-social',
+                            'posts_per_page'         => '8',
+                            'paged'                  => $paged,
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        ); 
+		query_posts($args);
+		?>
 	<div class="breadcrumbs">
-
+	
 		<?php if ( function_exists('yoast_breadcrumb') ) {
 				yoast_breadcrumb('<p id="breadcrumbs">','</p>');
 		} ?>
@@ -127,6 +138,7 @@ get_header();
 		<?php } ?>
 		<?php if($contador == 4) $contador = 0; ?>
 		<?php endwhile; ?>
+		
 
 		<?php else: ?>
 
@@ -138,8 +150,17 @@ get_header();
 
 		<?php endif; ?>
 	</div>
+
+
+	
 	<?php }?>
+
+
+	<?php next_posts_link(); ?>
+	<?php previous_posts_link(); ?>
 </section>
+
+
 <?php
 get_footer();
 ?>

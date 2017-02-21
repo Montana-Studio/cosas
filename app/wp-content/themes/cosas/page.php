@@ -6,7 +6,7 @@ get_header();
             <div class="breadcrumbs">
 
                 <?php if ( function_exists('yoast_breadcrumb') ) 
-{yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?>
+                {yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?>
 
             </div>
             <div style="margin:0 auto;clear:both;display:block;max-width:300px;">
