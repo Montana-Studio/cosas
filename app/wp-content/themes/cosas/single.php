@@ -170,8 +170,12 @@
 													<div class="shares-post">
 														<a href="http://www.facebook.com/sharer.php?u='.$full_img_url.'" target="_blank">
 															<i class="fa fa-facebook"></i>
-														</a>
-														<a href="https://pinterest.com/pin/create/button/?url=&media='.$pinterest_url_img.'&description='.$attachment->post_title.'">
+														</a>';
+
+							if(wp_is_mobile()){
+								$top_slider .=	'<a href="whatsapp://send?text=<?php the_title(); ?> – <?php urlencode(the_permalink()); ?>" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a>';
+							}
+											$top_slider.='<a href="https://pinterest.com/pin/create/button/?url=&media='.$pinterest_url_img.'&description='.$attachment->post_title.'">
 															<i class="fa fa-pinterest"></i>
 														</a>
 														<a href="https://plus.google.com/share?url='.$full_img_url.'">
