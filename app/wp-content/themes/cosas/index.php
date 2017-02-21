@@ -466,7 +466,7 @@
 
 							<div id="post-<?php the_ID(); ?>" class="swiper-slide" style="background-image:url(<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>);">
 								<a href="<?php the_permalink(); ?>">
-									<div class="metaContent">
+									<div class="metaContent"> 
 										<div class="metaVsocial">
 											<?php 
 												if (strlen($post->post_title) > 30) {
@@ -1091,14 +1091,13 @@
 										$vsocial->the_post();
 							?>
 
-								<div id="post-<?php the_ID(); ?>" class="swiper-slide">
-									<?php 
-										global $post, $posts;
-										$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-										$first_img = $matches [1] [0];
-									?>
+								<?php 
+									global $post, $posts;
+									$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+									$first_img = $matches [1] [0];
+								?>
+								<div id="post-<?php the_ID(); ?>" class="swiper-slide" style="background-image:url(<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>);">
 									<a href="<?php the_permalink(); ?>">
-										<img src="<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>" alt="">
 
 										<div class="metaContent">
 											<div class="metaVsocial">
