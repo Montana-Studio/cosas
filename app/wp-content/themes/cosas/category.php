@@ -153,7 +153,7 @@ get_header();
 
 
 	
-	<?php }?>
+	<?php } ?>
 
 
 	<?php next_posts_link(); ?>

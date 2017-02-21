@@ -313,6 +313,9 @@
 		background:{
 			color:$black;
 		}
+		@include media($notebook){
+			@include outer-container(75%);
+		}
 		.gallery-top{
 			width:100%;
 			height:300px;
