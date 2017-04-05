@@ -135,6 +135,7 @@
 			<section class="vSocial-content">
 
 				<?php 
+				global $posts;
 				$content_without_images = get_the_content();
 				$content_without_images = preg_replace("/<img[^>]+\>/i", " ", $content_without_images);          
 				$content_without_images = apply_filters('the_content', $content_without_images);
@@ -151,10 +152,14 @@
 													'post_type' => 'attachment',
 													'post_mime_type' => 'image',
 													'order' => 'ASC',
-													'orderby' => 'menu_order ID'
+													'orderby' => 'menu_order ID',
+													'exclude'     => get_post_thumbnail_id()
 												)
 										);
-					foreach($attachments as $att_id => $attachment) {
+
+
+					foreach($attachments as $att_id => $attachment) { 
+
 					    $full_img_url = wp_get_attachment_url($attachment->ID);
 					    $full_img_url = str_replace('localhost', 'com', $full_img_url);
 					    $pinterest_url_img = str_replace('%2F', '/', $full_img_url);
@@ -192,7 +197,7 @@
 										<div class="swiper-slide">
 											<img src="'.$full_img_url.'"/>
 										</div>';
-					} ?>
+					 } ?>
 				
 				<?php endwhile; ?>
 					<div class="swipers">
